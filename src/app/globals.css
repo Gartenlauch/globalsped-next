@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-global-dark: #003b2f;
+  --color-global-deep: #00281f;
+  --color-global-green: #6b9f12;
+  --color-global-light: #f7f7f2;
+  --color-global-white: #ffffff;
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  background: var(--color-global-light);
+  color: var(--color-global-dark);
+}
+
+/* Headings + Navigation + Logo */
+h1,
+h2,
+h3,
+.nav-text,
+.logo-text,
+.nav-title {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-global-green);
+  color: white;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+/*Logo Cube */
+@keyframes spinCube {
+  0% {
+    transform: rotateX(-18deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-18deg) rotateY(360deg);
+  }
+}
+/* Laufschrift */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.cube-spin {
+  animation: spinCube 10s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.marquee-track {
+  animation: marquee 22s linear infinite;
 }
