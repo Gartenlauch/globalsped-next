@@ -13,6 +13,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "jsx": "react-jsx", // oder "react" bei älteren Versionen
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "moduleResolution": "node",
     "plugins": [
       {
         "name": "next"

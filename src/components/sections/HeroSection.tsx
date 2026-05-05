@@ -11,13 +11,13 @@ import {
 import { LogoCube } from "@/components/ui/LogoCube";
 import { de } from "@/content/de";
 
-const routeIcons = {
+const routeIcons: Record<string, typeof Truck> = {
   truck: Truck,
   shield: ShieldCheck,
   globe: Globe2,
 };
 
-const trustIcons = {
+const trustIcons: Record<string, typeof Truck> = {
   experience: BadgeCheck,
   truck: Truck,
   customs: PackageCheck,
@@ -30,45 +30,54 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[690px] overflow-hidden bg-[var(--color-global-deep)] lg:min-h-[720px]"
+      className="relative min-h-[680px] overflow-hidden bg-[var(--color-global-deep)] lg:min-h-[740px]"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-90"
+        className="absolute inset-0 bg-cover bg-center opacity-95"
         style={{ backgroundImage: "url('/images/hero.jpg')" }}
       />
+      <div className="absolute inset-0 bg-[linear-gradient(104deg,rgba(0,30,24,0.78)_2%,rgba(0,40,31,0.68)_42%,rgba(0,52,41,0.42)_72%,rgba(0,52,41,0.2)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(163,230,53,0.16),transparent_42%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_86%_76%,rgba(255,255,255,0.12),transparent_46%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_62%,rgba(0,0,0,0.14)_100%)]" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,40,31,0.88)_0%,rgba(0,59,47,0.65)_45%,rgba(0,59,47,0.18)_100%)] opacity-60" />
-      <div className="absolute inset-0 bg-black/10" />
-      <div className="absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-lime-300/18 blur-[120px] " />
-      <div className="absolute right-[12%] top-[28%] h-96 w-96 rounded-full bg-white/8 blur-[140px]" />
-
-      <div className="relative z-10 flex min-h-[690px] items-center py-20 lg:min-h-[720px] lg:py-24">
+      <div className="relative z-10 flex min-h-[680px] items-start py-10 sm:py-12 lg:min-h-[740px] lg:py-14">
         <div className="container">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
-            <div className="max-w-[780px] text-white">
-              <div className="mb-7 flex items-center gap-4">
-                <LogoCube />
-                <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-lime-300">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.14fr_0.86fr] lg:gap-12">
+            <div className="max-w-[760px] text-white">
+              <div className="mb-5">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-lime-300/95">
                   {hero.badge}
                 </p>
               </div>
 
-              <h1 className="max-w-[760px] text-[28px] font-black uppercase leading-[1.08] tracking-tight sm:text-[36px] md:text-[44px] xl:text-[50px]">
-                <span className="block">{hero.headline.line1}</span>
-                <span className="block text-lime-300">
-                  {hero.headline.highlight}
-                </span>
-                <span className="block">{hero.headline.line2}</span>
-              </h1>
+              <div className="relative max-w-[760px]">
+                <div className="absolute -right-2 -top-5 hidden opacity-90 md:block lg:right-2 lg:top-0">
+                  {/* A/B toggle: use "executive" or "executive-dark" */}
+                  <LogoCube variant="executive-dark" />
+                </div>
+                <h1 className="text-[18px] font-extrabold uppercase leading-[1.08] tracking-[-0.02em] text-balance sm:text-[26px] md:pr-24 md:text-[34px] xl:text-[44px]">
+                  <span className="block drop-shadow-[0_8px_24px_rgba(0,0,0,0.22)]">
+                    {hero.headline.line1}
+                  </span>
+                  <span className="block bg-gradient-to-r from-lime-200 via-lime-300 to-lime-400 bg-clip-text text-transparent">
+                    {hero.headline.highlight}
+                  </span>
+                  <span className="block drop-shadow-[0_8px_24px_rgba(0,0,0,0.22)]">
+                    {hero.headline.line2}
+                  </span>
+                </h1>
+              </div>
 
-              <p className="mt-6 max-w-[650px] text-base leading-8 text-white/86 md:text-lg">
+              <p className="mt-6 max-w-[660px] text-[15px] leading-7 text-white/85 sm:text-base md:text-[17px] md:leading-8">
                 {hero.subline}
               </p>
+           
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-9 flex flex-wrap items-center gap-3.5 sm:gap-4">
                 <Link
                   href={hero.ctaPrimary.href}
-                  className="inline-flex items-center gap-2 rounded-full bg-lime-500 px-7 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_18px_45px_rgba(132,180,0,0.35)] transition hover:-translate-y-0.5 hover:bg-lime-400"
+                  className="inline-flex items-center gap-2 rounded-full bg-lime-500 px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.08em] text-white shadow-[0_16px_40px_rgba(132,180,0,0.32)] transition duration-300 ease-out hover:bg-lime-400 hover:shadow-[0_20px_46px_rgba(132,180,0,0.38)] sm:px-7 sm:py-4 sm:text-sm"
                 >
                   {hero.ctaPrimary.label}
                   <ArrowRight className="h-4 w-4" />
@@ -76,14 +85,14 @@ export function HeroSection() {
 
                 <Link
                   href={hero.ctaSecondary.href}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/[0.03] px-7 py-4 text-sm font-black uppercase tracking-wide text-white backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--color-global-dark)]"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/[0.04] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.07em] text-white/92 backdrop-blur-md transition duration-300 ease-out hover:border-white/60 hover:bg-white/12 hover:text-white sm:px-7 sm:py-4 sm:text-sm"
                 >
                   {hero.ctaSecondary.label}
                 </Link>
               </div>
 
-              <div className="mt-8 max-w-[680px] overflow-hidden rounded-full border border-white/14 bg-white/[0.06] px-4 py-2.5 backdrop-blur-md">
-                <div className="marquee-track flex w-max whitespace-nowrap text-xs font-black uppercase tracking-wide text-white/82">
+              <div className="mt-8 max-w-[690px] overflow-hidden rounded-full border border-white/18 bg-white/[0.07] px-4 py-2.5 backdrop-blur-md">
+                <div className="marquee-track flex w-max whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.08em] text-white/82 sm:text-xs">
                   {marqueeItems.map((item, index) => (
                     <span key={`${item}-${index}`} className="mr-8">
                       {index === 0 && (
@@ -99,32 +108,31 @@ export function HeroSection() {
             </div>
 
             <aside className="hidden lg:block">
-              <div className="relative ml-auto max-w-[520px] rounded-[30px] border border-white/14 bg-white/[0.07] p-4 shadow-[0_35px_120px_rgba(0,0,0,0.42)] backdrop-blur-2xl">
-                <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-lime-300/20 blur-3xl" />
-                <div className="absolute -bottom-10 left-12 h-40 w-40 rounded-full bg-white/8 blur-3xl" />
+              <div className="relative ml-auto max-w-[500px] rounded-[28px] border border-white/18 bg-white/[0.08] p-4 shadow-[0_26px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-lime-300/16 blur-3xl" />
 
-                <div className="relative overflow-hidden rounded-[24px] border border-white/12 bg-[rgba(0,40,31,0.84)] p-7">
-                  <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-lime-300/10 blur-3xl" />
+                <div className="relative overflow-hidden rounded-[22px] border border-white/12 bg-[rgba(0,40,31,0.82)] p-6">
+                  <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-lime-300/9 blur-3xl" />
 
-                  <p className="relative text-[11px] font-black uppercase tracking-[0.32em] text-lime-300">
+                  <p className="relative text-[10px] font-extrabold uppercase tracking-[0.24em] text-lime-300/95">
                     {hero.routeCard.kicker}
                   </p>
 
-                  <h2 className="relative mt-5 text-2xl font-black uppercase leading-tight text-white">
+                  <h2 className="relative mt-4 text-[28px] font-bold leading-[1.14] tracking-[-0.01em] text-white">
                     {hero.routeCard.title}
                   </h2>
 
-                  <p className="relative mt-5 max-w-[390px] text-sm leading-7 text-white/70">
+                  <p className="relative mt-4 max-w-[390px] text-sm leading-7 text-white/74">
                     {hero.routeCard.text}
                   </p>
 
-                  <div className="relative mt-7 space-y-3">
+                  <div className="relative mt-6 space-y-2.5">
                     {hero.routeCard.routes.map((route) => (
                       <div
                         key={route}
-                        className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3 transition hover:bg-white/[0.09]"
+                        className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.055] px-4 py-2.5 transition duration-300 ease-out hover:bg-white/[0.09]"
                       >
-                        <span className="text-sm font-bold text-white/88">
+                        <span className="text-sm font-semibold text-white/90">
                           {route}
                         </span>
                         <ArrowRight className="h-4 w-4 text-lime-300" />
@@ -132,17 +140,17 @@ export function HeroSection() {
                     ))}
                   </div>
 
-                  <div className="relative mt-7 grid grid-cols-3 gap-3">
+                  <div className="relative mt-6 grid grid-cols-3 gap-2.5">
                     {hero.routeCard.highlights.map((item) => {
                       const Icon = routeIcons[item.icon] || Globe2;
 
                       return (
                         <div
                           key={item.label}
-                          className="rounded-2xl border border-white/10 bg-white/[0.07] p-4 text-center"
+                          className="rounded-xl border border-white/10 bg-white/[0.07] p-3 text-center"
                         >
                           <Icon className="mx-auto h-5 w-5 text-lime-300" />
-                          <p className="mt-2 text-xs font-black uppercase text-white/78">
+                          <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.06em] text-white/80">
                             {item.label}
                           </p>
                         </div>
@@ -154,27 +162,27 @@ export function HeroSection() {
             </aside>
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-3 sm:gap-4 md:grid-cols-3">
             {hero.trustItems.map((item) => {
               const Icon = trustIcons[item.icon] || PackageCheck;
 
               return (
                 <article
                   key={item.label}
-                  className="flex gap-4 rounded-2xl border border-white/12 bg-white/[0.065] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.2)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/[0.1]"
+                  className="flex gap-4 rounded-2xl border border-white/15 bg-white/[0.075] p-4 shadow-[0_14px_38px_rgba(0,0,0,0.2)] backdrop-blur-md transition duration-300 ease-out hover:bg-white/[0.1]"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-lime-300/14 text-lime-300 ring-1 ring-lime-300/25">
                     <Icon className="h-5 w-5" />
                   </div>
 
                   <div>
-                    <p className="text-lg font-black uppercase text-lime-300">
+                    <p className="text-lg font-extrabold uppercase tracking-[0.05em] text-lime-300">
                       {item.value}
                     </p>
-                    <h3 className="mt-1 text-xs font-black uppercase tracking-wide text-white">
+                    <h3 className="mt-1 text-xs font-extrabold uppercase tracking-[0.08em] text-white">
                       {item.label}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-6 text-white/72">
+                    <p className="mt-1.5 text-sm leading-6 text-white/74">
                       {item.text}
                     </p>
                   </div>

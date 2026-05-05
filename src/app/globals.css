@@ -15,6 +15,9 @@ body {
   font-family: var(--font-body), sans-serif;
   background: var(--color-global-light);
   color: var(--color-global-dark);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Headings + Navigation + Logo */
@@ -28,8 +31,14 @@ h3,
 }
 
 .container {
-  width: min(1180px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 40px));
   margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    width: min(1200px, calc(100% - 56px));
+  }
 }
 
 .btn-primary {
@@ -52,10 +61,10 @@ h3,
 /*Logo Cube */
 @keyframes spinCube {
   0% {
-    transform: rotateX(-18deg) rotateY(0deg);
+    transform: rotateX(-16deg) rotateY(20deg);
   }
   100% {
-    transform: rotateX(-18deg) rotateY(360deg);
+    transform: rotateX(-16deg) rotateY(380deg);
   }
 }
 /* Laufschrift */
@@ -69,10 +78,29 @@ h3,
 }
 
 .cube-spin {
-  animation: spinCube 10s linear infinite;
+  animation: spinCube 13s linear infinite;
   transform-style: preserve-3d;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.cube-spin--executive-dark {
+  animation-duration: 14.5s;
+  filter: saturate(0.95) contrast(1.03);
+}
+
+.logo-cube-wrap .cube-spin > div {
+  backface-visibility: hidden;
 }
 
 .marquee-track {
-  animation: marquee 30s linear infinite;
+  animation: marquee 34s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cube-spin,
+  .marquee-track {
+    animation: none;
+  }
 }
