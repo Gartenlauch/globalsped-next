@@ -1,11 +1,10 @@
 import { de } from "./de";
-import { en } from "./en";
-import { az } from "./az";
+//import { en } from "./en";
+//import { az } from "./az";
 
 export const content = {
   de,
-  en,
-  az,
+
 };
 
 export function getContent(locale: string) {
