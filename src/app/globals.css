@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --color-global-dark: #003b2f;
   --color-global-deep: #00281f;
@@ -78,15 +79,10 @@ h3,
 }
 
 .cube-spin {
-  animation: spinCube 13s linear infinite;
+  animation: spinCube 12s linear infinite;
   transform-style: preserve-3d;
   will-change: transform;
   transform: translateZ(0);
-}
-
-.cube-spin--executive-dark {
-  animation-duration: 14.5s;
-  filter: saturate(0.95) contrast(1.03);
 }
 
 .logo-cube-wrap .cube-spin > div {
@@ -104,3 +100,4 @@ h3,
     animation: none;
   }
 }
+

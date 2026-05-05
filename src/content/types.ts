@@ -18,6 +18,32 @@ export type HeroContent = {
   featureBoxes: HeroFeatureBox[];
 };
 
+export type DestinationCountry = {
+  name: string;
+  slug: string;
+  cities?: string[];
+};
+
+export type DestinationRegion = {
+  title: string;
+  slug: string;
+  subtitle: string;
+  image: string;
+  countries: DestinationCountry[];
+};
+
+export type DestinationsContent = {
+  badge: string;
+  title: string;
+  highlight: string;
+  intro: string;
+  regions: DestinationRegion[];
+  countryGridTitle: string;
+  countryGridIntro: string;
+  ctaLabel: string;
+};
+
 export type ContentSchema = {
   hero: HeroContent;
+  destinations: DestinationsContent;
 };

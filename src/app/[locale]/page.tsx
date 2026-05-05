@@ -1,11 +1,19 @@
-// src/app/[locale]/page.tsx
-
 import { HeroSection } from "@/components/sections/HeroSection";
+import { DestinationsSection } from "@/components/sections/DestinationsSection";
 
-export default async function HomePage({ params }: any) {
+type Props = {
+  params: Promise<{
+    locale: string;
+  }>;
+};
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
+
   return (
     <>
-      <HeroSection />
+      <HeroSection locale={locale} />
+      <DestinationsSection locale={locale} />
     </>
   );
 }
