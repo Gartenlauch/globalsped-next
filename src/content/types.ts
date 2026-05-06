@@ -43,7 +43,74 @@ export type DestinationsContent = {
   ctaLabel: string;
 };
 
+export type CountryTransportRouteInfo = {
+  label: string;
+  routes: {
+    title: string;
+    description: string;
+  }[];
+};
+
+export type CountryTransportRuntimeInfo = {
+  label: string;
+  value: string;
+};
+
+export type CountryTransportCustomsInfo = {
+  label: string;
+  offices: {
+    route: string;
+    office: string;
+  }[];
+};
+
+export type CountryTransportDocumentsInfo = {
+  label: string;
+  documents: string[];
+  note: string;
+};
+
+export type CountryTransportRequiredInfo = {
+  label: string;
+  intro: string;
+  items: string[];
+};
+
+export type CountryTransportPage = {
+  slug: string;
+  country: string;
+  region: string;
+  heroImage: string;
+  title: string;
+  highlight: string;
+  intro: string;
+  seoText: string;
+  services: string[];
+  cities: string[];
+  transportDetails: {
+    route: CountryTransportRouteInfo;
+    runtime: CountryTransportRuntimeInfo;
+    customsOffice: CountryTransportCustomsInfo;
+    documents: CountryTransportDocumentsInfo;
+    requiredInformation: CountryTransportRequiredInfo;
+  };
+  labels: {
+    backToDestinations: string;
+    introBadge: string;
+    logisticsTitlePrefix: string;
+    citiesTitle: string;
+    faqTitlePrefix: string;
+    faqTitle: string;
+  };
+  faq: {
+    question: string;
+    answer: string;
+  }[];
+  ctaLabel: string;
+};
+
 export type ContentSchema = {
   hero: HeroContent;
   destinations: DestinationsContent;
+  countryPages: CountryTransportPage[];
 };

@@ -17,6 +17,8 @@
     "isolatedModules": true,
     "jsx": "react-jsx", // oder "react" bei älteren Versionen
     "incremental": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
     "plugins": [
       {
         "name": "next"

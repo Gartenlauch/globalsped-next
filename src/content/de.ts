@@ -140,4 +140,112 @@ export const de = {
   
     ctaLabel: "Transport in diese Region anfragen",
   },
+  countryPages: [
+    {
+      slug: "transport-usbekistan",
+      country: "Usbekistan",
+      region: "Zentralasien",
+      heroImage: "/images/country-hero/usbekistan.jpg",
+      title: "Transport nach",
+      highlight: "Usbekistan",
+      intro:
+        "Globalsped organisiert zuverlässige Transporte nach Usbekistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
+      seoText:
+        "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Usbekistan, insbesondere nach Taschkent, Samarkand, Kokand und Navoi. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung, Export- und Importprozesse sowie persönliche Betreuung für anspruchsvolle Lieferketten.",
+      services: [
+        "FTL Komplettladungen nach Usbekistan",
+        "LTL Teilpartien und Sammelgut",
+        "Thermotransporte für temperaturempfindliche Waren",
+        "Projekttransporte und Sondertransporte",
+        "Zollabwicklung, Export, Import und Transit",
+      ],
+      cities: ["Taschkent", "Samarkand", "Kokand", "Navoi"],
+      labels: {
+        backToDestinations: "Zurück zu Destinationen",
+        introBadge: "Internationale Logistik",
+        logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
+        citiesTitle: "Wichtige Zielorte",
+        faqTitlePrefix: "Häufige Fragen zu Transporten nach",
+        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+      },
+      transportDetails: {
+        route: {
+          label: "Route",
+          routes: [
+            {
+              title: "Südroute",
+              description:
+                "LTL (Stückgutverkehr, Sammelgutladungen) und FTL (Komplettladungen) im Regelfall über Österreich, Ungarn, Rumänien, Bulgarien, Türkei, Georgien, Aserbaidschan, Fähre über das Kaspische Meer, Kasachstan bis nach Usbekistan.",
+            },
+            {
+              title: "Nordroute",
+              description:
+                "FTL (Komplettladungen) über Polen, Belarus, Russland, Kasachstan bis nach Usbekistan.",
+            },
+          ],
+        },
+      
+        runtime: {
+          label: "Laufzeit",
+          value: "ca. 14–16 Tage",
+        },
+      
+        customsOffice: {
+          label: "Ausgangszollamt",
+          offices: [
+            {
+              route: "Südroute",
+              office: "BG001015 Kapitan Andreevo",
+            },
+            {
+              route: "Nordroute",
+              office: "PL301040 Koroszczyn",
+            },
+          ],
+        },
+      
+        documents: {
+          label: "Unterlagen",
+          documents: [
+            "Zolldokument",
+            "Ausfuhrbegleitdokument",
+            "EX-A",
+            "EX-C",
+            "T1",
+          ],
+          note:
+            "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
+        },
+      
+        requiredInformation: {
+          label: "Benötigte Informationen",
+          intro:
+            "Für eine reibungslose Transportabwicklung werden folgende Informationen benötigt:",
+          items: [
+            "Vollständige Empfängeradresse",
+            "Kontaktperson des Empfängers",
+            "Telefonnummer, Faxnummer oder E-Mail-Adresse des Empfängers",
+          ],
+        },
+      },
+      faq: [
+        {
+          question: "Bietet Globalsped Transporte nach Usbekistan an?",
+          answer:
+            "Ja. Globalsped organisiert regelmäßige Transporte nach Usbekistan, unter anderem nach Taschkent, Samarkand, Kokand und Navoi.",
+        },
+        {
+          question: "Welche Transportarten sind nach Usbekistan möglich?",
+          answer:
+            "Möglich sind unter anderem FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
+        },
+        {
+          question: "Unterstützt Globalsped bei der Zollabwicklung?",
+          answer:
+            "Ja. Globalsped unterstützt bei Export, Import, Transit und den notwendigen Transportdokumenten.",
+        },
+      ],
+      ctaLabel: "Transport nach Usbekistan anfragen",
+    },
+  ],
 };

@@ -115,10 +115,11 @@ export function DestinationsSection({ locale }: Props) {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {allCountries.map((country) => (
-              <article
-                key={country.slug}
-                className="group relative h-[210px] overflow-hidden rounded-2xl border border-white/12 bg-white/8 shadow-[0_20px_60px_rgba(0,0,0,0.30)]"
-              >
+              <Link
+              href={`/${locale}/transport-${country.slug}`}
+              key={country.slug}
+              className="group relative h-[210px] overflow-hidden rounded-2xl border border-white/12 bg-white/8 shadow-[0_20px_60px_rgba(0,0,0,0.30)]"
+            >
                 <Image
                   src={`/images/countries/${country.slug}.jpg`}
                   alt={`Transport nach ${country.name}`}
@@ -147,7 +148,7 @@ export function DestinationsSection({ locale }: Props) {
                     </p>
                   )}
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
