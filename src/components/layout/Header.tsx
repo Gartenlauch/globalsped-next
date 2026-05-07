@@ -11,7 +11,9 @@ export function Header() {
         <nav className="flex gap-8 items-center text-sm font-bold uppercase tracking-wide nav-text">
           <Link href="/de">Start</Link>
           <Link href="/de#destinationen">Destinationen</Link>
-          <Link href="/de/leistungen">Leistungen</Link>
+          <Link href="/de#zollabwicklung">Zollabwicklung</Link>
+          <Link href="/de/#leistungen">Leistungen</Link>
+          <Link href="/de/#ueber-uns">Über uns</Link>
           <Link href="/de/faq">FAQ</Link>
 
           <Link href="/de/anfrage" className="btn-primary">

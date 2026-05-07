@@ -164,7 +164,7 @@ export function CountryTransportPage({ locale, page }: Props) {
 
         <ul className="grid gap-3">
           {page.transportDetails.customsOffice.offices.map((item) => (
-            <li key={item.office} className="text-sm leading-6 text-white/82">
+            <li key={`${item.route}-${item.office}`} className="text-sm leading-6 text-white/82">
               <span className="font-black text-white">{item.route}:</span>{" "}
               {item.office}
             </li>

@@ -109,8 +109,48 @@ export type CountryTransportPage = {
   ctaLabel: string;
 };
 
+export type AboutUsPage = {
+  aboutUs: {
+    badge: string;
+    title: string;
+    highlight: string;
+    intro: string;
+    text: string;
+    ctaLabel: string;
+    images: {
+      src: string;
+      alt: string;
+      label: string;
+    }[];
+    teamIntroBox: {
+      icon: "communication" | "network" | "experience" | "customs";
+      title: string;
+      text: string;
+    };
+    teamBadge: string;
+    teamTitle: string;
+    teamText: string;
+    facts: {
+      value: string;
+      label: string;
+    }[];
+    teamListTitle: string;
+    teamListIntro: string;
+    teamMembers: {
+      imgURL: string;
+      name: string;
+      job: string;
+      contact: {
+        phone: string;
+        email: string;
+      };
+    }[];
+  };
+}
+
 export type ContentSchema = {
   hero: HeroContent;
   destinations: DestinationsContent;
   countryPages: CountryTransportPage[];
+  aboutUsPages: AboutUsPage;
 };
