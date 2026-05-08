@@ -1,15 +1,26 @@
 import { Header } from "@/components/layout/Header";
-import { ScrollHandler } from "@/app/[locale]/SmothScroll"
+import { Footer } from "@/components/layout/Footer";
+import { ScrollHandler } from "@/app/[locale]/SmothScroll";
+
 type Props = {
   children: React.ReactNode;
+  params: Promise<{
+    locale: string;
+  }>;
 };
 
-export default function LocaleLayout({ children }: Props) {
+export default async function LocaleLayout({
+  children,
+  params,
+}: Props) {
+  const { locale } = await params;
+
   return (
     <>
-      <Header />
+      <Header locale={locale}/>
       <ScrollHandler />
       {children}
+      <Footer locale={locale} />
     </>
   );
 }

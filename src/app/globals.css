@@ -11,6 +11,15 @@
   --font-body: var(--font-body);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0px;
+}
+
+section[id] {
+  scroll-margin-top: 0px;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body), sans-serif;

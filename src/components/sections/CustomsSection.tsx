@@ -24,7 +24,7 @@ export function CustomsSection({ locale }: Props) {
       className="relative overflow-hidden bg-[var(--color-global-deep)] py-28 text-white"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{ backgroundImage: "url(/images/customs/customs-map.jpg)" }}
       />
 

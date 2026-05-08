@@ -30,7 +30,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[680px] overflow-hidden bg-[var(--color-global-deep)] lg:min-h-[740px]"
+      className="relative flex min-h-[700px] items-center justify-center overflow-hidden pt-18 md:pt-20"
     >
       <div
         className="absolute inset-0 bg-cover bg-center opacity-95"
@@ -72,7 +72,7 @@ export function HeroSection() {
               <p className="mt-6 max-w-[660px] text-[15px] leading-7 text-white/85 sm:text-base md:text-[17px] md:leading-8">
                 {hero.subline}
               </p>
-           
+
 
               <div className="mt-9 flex flex-wrap items-center gap-3.5 sm:gap-4">
                 <Link

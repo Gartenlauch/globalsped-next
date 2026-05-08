@@ -4,7 +4,7 @@ Navigation Items:
 - Destinationen
 - Leistungen
 - Zollabwicklung
-- Vorteile
+- Über Uns
 - Kontakt
 - Anfrage
 - FAQ
@@ -16,7 +16,6 @@ Homepage sections:
 - Destinationen
 - Zollabwicklung
 - Über uns
-- Vorteile
 - Kontakt CTA
 
 Separate pages:

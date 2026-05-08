@@ -1,4 +1,22 @@
 export const de = {
+  header: {
+    logoLabel: "GLOBALSPED",
+    nav: [
+      { label: "Start", href: "/{locale}" },
+      { label: "Leistungen", href: "/{locale}#leistungen" },
+      { label: "Destinationen", href: "/{locale}#destinationen" },
+      { label: "Zollabwicklung", href: "/{locale}#zollabwicklung" },
+      { label: "Über uns", href: "/{locale}#ueber-uns" },
+      { label: "Kontakt", href: "/{locale}#kontakt" },
+      { label: "FAQ", href: "/{locale}/faq" },
+    ],
+    cta: {
+      label: "Anfrage",
+      href: "/{locale}/anfrage",
+    },
+    menuOpenLabel: "Menü öffnen",
+    menuCloseLabel: "Menü schließen",
+  },
   hero: {
     badge: "Globalsped International Logistics Solutions",
 
@@ -1470,12 +1488,12 @@ export const de = {
 
     images: [
       {
-        src: "/images/about/globalsped-team-logistics.png",
+        src: "/images/about/globalsped-backoffice.png",
         alt: "GLOBALSPED Team bei der internationalen Transportplanung",
         label: "Backoffice & Planung",
       },
       {
-        src: "/images/about/globalsped-headquater.jpg",
+        src: "/images/about/globalsped-headquater.png",
         alt: "Internationale Logistikroute mit LKW Richtung Zentralasien",
         label: "Standort und Wohlfühlroase",
       },
@@ -1604,5 +1622,100 @@ export const de = {
         },
       },
     ],
+  },
+  contact: {
+    badge: "Kontakt",
+    title: "Kontaktieren Sie uns",
+    highlight: "für Ihre Transportanfrage",
+    intro: "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
+
+    form: {
+      nameLabel: "Name",
+      emailLabel: "E-Mail",
+      messageLabel: "Nachricht",
+      namePlaceholder: "Ihr Name",
+      emailPlaceholder: "Ihre E-Mail-Adresse",
+      messagePlaceholder: "Ihre Nachricht",
+      submitLabel: "Nachricht senden",
+      validationRequired: "Bitte füllen Sie alle Felder aus.",
+      successMessage: "Vielen Dank. Ihre Nachricht wurde versendet.",
+    },
+
+    locationsTitle: "Unsere Standorte",
+    routeLabel: "Route planen",
+
+    locations: [
+      {
+        title: "Deutschland (HQ)",
+        address: "Pendelhagen 1, D-83416 Saaldorf-Surheim",
+        phone: "+49 (0)8654 5762-0",
+        email: "info@globalsped.de",
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%2C%20Germany",
+      },
+      {
+        title: "Österreich",
+        address: "Metzgerstraße 54, A-5020 Salzburg",
+        phone: "+43 (0)662 45084-21",
+        email: "afrim.sabani@globalsped.de",
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%2C%20Austria",
+      },
+    ],
+
+    mapTitle: "Standorte auf Google Maps",
+    mapEmbedUrl: "https://www.google.com/maps?q=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%20Germany%20OR%20Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%20Austria&output=embed",
+  },
+  footer: {
+    companyName: "GLOBALSPED",
+    claim: "International Transport Solutions",
+    text:
+      "Spezialisierte Transport- und Logistiklösungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Zollabwicklung, FTL, LTL, Thermotransporten und Projektlogistik.",
+
+    contactTitle: "Kontakt",
+    contact: {
+      email: "info@globalsped.de",
+      phone: "+49 (0) 8654 5762 0",
+      address: "Pendel­hagen 1, D-83416 Saaldorf-Surheim",
+    },
+
+    pageLinksTitle: "Seiten",
+    pageLinks: [
+      { label: "Start", href: "/de" },
+      { label: "Impressum", href: "/de/impressum" },
+      { label: "Datenschutzerklärung", href: "/de/datenschutz" },
+    ],
+
+    transportsTitle: "Main Transporte",
+    transports: [
+      { label: "Transport Usbekistan", href: "/de/transport-usbekistan" },
+      { label: "Transport Kasachstan", href: "/de/transport-kasachstan" },
+      { label: "Transport Kirgisistan", href: "/de/transport-kirgisistan" },
+      { label: "Transport Turkmenistan", href: "/de/transport-turkmenistan" },
+      { label: "Transport Tadschikistan", href: "/de/transport-tadschikistan" },
+      { label: "Transport Mongolei", href: "/de/transport-mongolei" },
+      { label: "Transport Aserbaidschan", href: "/de/transport-aserbaidschan" },
+      { label: "Transport Georgien", href: "/de/transport-georgien" },
+      { label: "Transport Armenien", href: "/de/transport-armenien" },
+      { label: "Transport Irak", href: "/de/transport-irak" },
+      { label: "Transport Ukraine", href: "/de/transport-ukraine" },
+    ],
+
+    membershipsTitle: "Mitgliedschaften & Standards",
+    memberships: [
+      {
+        label: "GDP",
+        text: "Good Distribution Practice",
+        href: "https://en.wikipedia.org/wiki/Good_distribution_practice",
+        icon: "shield",
+      },
+      {
+        label: "FIATA",
+        text: "International Federation of Freight Forwarders Associations",
+        href: "https://en.wikipedia.org/wiki/International_Federation_of_Freight_Forwarders_Associations",
+        icon: "globe",
+      },
+    ],
+
+    copyright:
+      "© GLOBALSPED International Tranport GmbH. Alle Rechte vorbehalten.",
   },
 };

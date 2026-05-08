@@ -1,3 +1,24 @@
+
+
+
+export type Header = {
+  header: {
+    logoLabel: string;
+    nav: {
+      label: string;
+      href: string;
+    }[];
+    cta: {
+      label: string;
+      href: string;
+    };
+    menuOpenLabel: string;
+    menuCloseLabel: string;
+  };
+}
+
+
+
 export type HeroFeatureBox = {
   title: string;
   icon: "globe" | "route" | "shield";
@@ -147,10 +168,75 @@ export type AboutUsPage = {
     }[];
   };
 }
+export type Footer = {
+  footer: {
+    companyName: string;
+    claim: string;
+    text: string;
+    contactTitle: string;
+    contact: {
+      email: string;
+      phone: string;
+      address: string;
+    };
+    pageLinksTitle: string;
+    pageLinks: {
+      label: string;
+      href: string;
+    }[];
+    transportsTitle: string;
+    transports: {
+      label: string;
+      href: string;
+    }[];
+    membershipsTitle: string;
+    memberships: {
+      label: string;
+      text: string;
+      href: string;
+      icon: "shield" | "globe";
+    }[];
+    copyright: string;
+  };
+}
 
+
+export type ContactContent = {
+  contact: {
+    badge: string;
+    title: string;
+    highlight: string;
+    intro: string;
+    form: {
+      nameLabel: string;
+      emailLabel: string;
+      messageLabel: string;
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      messagePlaceholder: string;
+      submitLabel: string;
+      validationRequired: string;
+      successMessage: string;
+    };
+    locationsTitle: string;
+    routeLabel: string;
+    locations: {
+      title: string;
+      address: string;
+      phone: string;
+      email: string;
+      mapsUrl: string;
+    }[];
+    mapTitle: string;
+    mapEmbedUrl: string;
+  };
+}
 export type ContentSchema = {
+  header: Header;
   hero: HeroContent;
   destinations: DestinationsContent;
   countryPages: CountryTransportPage[];
-  aboutUsPages: AboutUsPage;
+  about: AboutUsPage;
+  contact: ContactContent
+  footer: Footer
 };

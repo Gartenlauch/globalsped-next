@@ -59,29 +59,28 @@ export function AboutUsSection({ locale }: Props) {
                     </div>
 
                     <div className="grid gap-5">
-  {t.images.map((image, index) => (
-    <div
-      key={image.src}
-      className={`group relative overflow-hidden rounded-3xl border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.38)] ${
-        index === 0 ? "min-h-[260px]" : "min-h-[220px]"
-      }`}
-    >
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        className="object-cover transition duration-700 group-hover:scale-105"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
-      />
+                        {t.images.map((image, index) => (
+                            <div
+                                key={image.src}
+                                className={`group relative overflow-hidden rounded-3xl border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.38)] ${index === 0 ? "min-h-[260px]" : "min-h-[220px]"
+                                    }`}
+                            >
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    fill
+                                    className="object-cover transition duration-700 group-hover:scale-105"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
+                                />
 
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_35%,rgba(0,40,31,0.58)_100%)]" />
+                                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_35%,rgba(0,40,31,0.58)_100%)]" />
 
-      <div className="absolute bottom-5 left-5 rounded-full border border-white/20 bg-[rgba(0,40,31,0.72)] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-lime-300 backdrop-blur-md">
-        {image.label}
-      </div>
-    </div>
-  ))}
-</div>
+                                <div className="absolute bottom-5 left-5 rounded-full border border-white/20 bg-[rgba(0,40,31,0.72)] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-lime-300 backdrop-blur-md">
+                                    {image.label}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">

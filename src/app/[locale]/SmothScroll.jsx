@@ -6,28 +6,23 @@ import { usePathname } from "next/navigation";
 export function ScrollHandler() {
   const pathname = usePathname();
 
-  const scrollToHash = () => {
+  useEffect(() => {
     const hash = window.location.hash;
     if (!hash) return;
 
-    const element = document.querySelector(hash);
-    if (!element) return;
+    const timer = window.setTimeout(() => {
+      const element = document.querySelector(hash);
 
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 120);
 
-  useEffect(() => {
-    const timeout = window.setTimeout(scrollToHash, 80);
-    return () => window.clearTimeout(timeout);
+    return () => window.clearTimeout(timer);
   }, [pathname]);
-
-  useEffect(() => {
-    window.addEventListener("hashchange", scrollToHash);
-    return () => window.removeEventListener("hashchange", scrollToHash);
-  }, []);
 
   return null;
 }

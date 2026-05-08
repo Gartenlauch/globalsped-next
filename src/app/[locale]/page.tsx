@@ -3,6 +3,7 @@ import { DestinationsSection } from "@/components/sections/DestinationsSection";
 import { CustomsSection } from "@/components/sections/CustomsSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AboutUsSection } from "@/components/sections/AboutUsSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 type Props = {
   locale: string;
 };
@@ -18,6 +19,7 @@ export default async function HomePage({ params }: Props) {
       <ServicesSection locale={locale} />
       <CustomsSection locale={locale} />
       <AboutUsSection locale={locale} />
+      <ContactSection locale={locale} />
       
     </>
   );
