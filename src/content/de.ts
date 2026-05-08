@@ -7,8 +7,8 @@ export const de = {
       { label: "Destinationen", href: "/{locale}#destinationen" },
       { label: "Zollabwicklung", href: "/{locale}#zollabwicklung" },
       { label: "Über uns", href: "/{locale}#ueber-uns" },
+      { label: "Jobs", href: "/{locale}#jobs" },
       { label: "Kontakt", href: "/{locale}#kontakt" },
-      { label: "FAQ", href: "/{locale}/faq" },
     ],
     cta: {
       label: "Anfrage",
@@ -1615,13 +1615,91 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-fini.jpg",
         name: "Fini",
-        job: "Security",
+        job: "Inkasso",
         contact: {
           phone: "+49 (0)8654 5762 0",
           email: "fini@globalsped.de",
         },
       },
     ],
+  },
+  jobs: {
+    badge: "Karriere bei GLOBALSPED",
+    title: "Jobs in der internationalen Spedition",
+    highlight: "für Menschen, die mitdenken und gestalten wollen",
+    intro:
+      "Sie suchen keinen eintönigen Bürojob, sondern eine abwechslungsreiche Aufgabe in der internationalen Logistik? Bei GLOBALSPED arbeiten Sie an Transportlösungen für Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten – mit direktem Kundenkontakt, Verantwortung und Entwicklungsmöglichkeiten.",
+  
+    image: {
+      src: "/images/jobs/globalsped-jobs.jpg",
+      alt: "Karriere und Jobs bei GLOBALSPED",
+    },
+    imageOverlayCards: [
+      {
+        title: "Karriere bei GLOBALSPED",
+        text: "Internationale Aufgaben. Direkter Kundenkontakt. Echte Verantwortung.",
+        icon: "users",
+      },
+      {
+        title: "Entwicklung & Perspektive",
+        text: "Abwechslungsreiche Tätigkeiten mit persönlicher Weiterentwicklung.",
+        icon: "star",
+      },
+    ],
+  
+    openPositionsTitle: "Offene Stellenangebote",
+    applyLabel: "Jetzt bewerben",
+    detailsLabel: "Aufgaben ansehen",
+    email: "jobs@globalsped.de",
+  
+    positions: [
+      {
+        title: "Export Sachbearbeiter (m/w/d)",
+        subtitle: "Exportabwicklung, Zollunterlagen und internationale Kundenbetreuung",
+        description: "In dieser Position unterstützen Sie unsere Exportabwicklung für internationale Transporte in anspruchsvolle Zielmärkte. Sie arbeiten strukturiert, kommunizieren sicher mit Kunden und Partnern und behalten auch bei komplexen Dokumentenprozessen den Überblick.",
+        tasks: [
+          "Annahme, Bearbeitung und Nachverfolgung von Kundenaufträgen",
+          "Erfassung und Pflege transportrelevanter Daten im Warenwirtschaftssystem",
+          "Erstellung von Versandunterlagen, Lieferscheinen, Rechnungen und länderspezifischen Begleitdokumenten",
+          "Zolltechnische Abwicklung bei Transporten in Drittstaaten",
+          "Telefonische und schriftliche Betreuung internationaler Kunden in englischer Sprache",
+          "Prüfung von Eingangs- und Ausgangsfrachten",
+          "Ausstellen von Lieferantenerklärungen",
+          "Erstellung der monatlichen Intrahandelsstatistik",
+        ],
+      },
+      {
+        title: "Kaufmann/-frau für Spedition & Logistikdienstleistungen (m/w/d)",
+        subtitle: "Disposition, internationale Sendungen, Import, Export, See- und Luftfracht",
+        description: "Sie organisieren internationale Sendungen, koordinieren Kunden, Partner und Frachtführer und sorgen dafür, dass Dokumente, Termine und Informationen zuverlässig zusammenlaufen.",
+        tasks: [
+          "Ansprechpartner für Kunden in den Bereichen Import, Export, See- und Luftfracht sowie Container-Trucking",
+          "Einkauf von Frachtraum und Abstimmung mit Transportpartnern",
+          "Disposition, Organisation und Abwicklung internationaler Sendungen",
+          "Erstellung erforderlicher Dokumente, unter anderem über ATLAS und DBH",
+          "Dokumentation von Aufträgen und Angeboten",
+          "Steuerung und Überwachung des Dokumenten- und Informationsflusses",
+          "Überwachung von Lieferterminen zur fristgerechten Vertragserfüllung",
+        ],
+      },
+    ],
+  
+    initiative: {
+      title: "Quereinstieg & Initiativbewerbung",
+      text: "Sie erfüllen nicht jedes fachliche Kriterium, bringen aber Organisationstalent, Sprachkenntnisse, Lernbereitschaft und PC-Grundkenntnisse mit? Dann freuen wir uns ebenfalls über Ihre Initiativbewerbung.",
+    },
+  
+    companyTitle: "Unser Unternehmen",
+    companyText: "GLOBALSPED ist eine internationale Spedition mit Schwerpunkt auf Exporten nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten. Statt Massengeschäft entwickeln wir individuelle Transportlösungen für komplexe Anforderungen – von Hilfsguttransporten über Medikamentenlieferungen bis zu Maschinen- und Projekttransporten.",
+  
+    values: [
+      "Internationale Transporte statt Standardroutine",
+      "Kurze Entscheidungswege und persönliche Zusammenarbeit",
+      "Aufgaben mit Verantwortung und Entwicklungsmöglichkeiten",
+      "Teamarbeit, Sprachenvielfalt und operative Nähe zum Kunden",
+    ],
+  
+    closing: "Wenn Sie kreativ denken, lernbereit sind und auch ungewöhnliche Aufgaben professionell lösen möchten, möchten wir Sie gerne kennenlernen.",
   },
   contact: {
     badge: "Kontakt",
@@ -1682,6 +1760,7 @@ export const de = {
       { label: "Start", href: "/de" },
       { label: "Impressum", href: "/de/impressum" },
       { label: "Datenschutzerklärung", href: "/de/datenschutz" },
+      { label: "FAQ", href: "/de/faq" },
     ],
 
     transportsTitle: "Main Transporte",

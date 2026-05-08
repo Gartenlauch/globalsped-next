@@ -231,12 +231,50 @@ export type ContactContent = {
     mapEmbedUrl: string;
   };
 }
+
+export type JobsPage = {
+  jobs: {
+    badge: string;
+    title: string;
+    highlight: string;
+    intro: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+    imageOverlayCards: {
+      title: string;
+      text: string;
+      icon: "users" | "star";
+    }[];
+    openPositionsTitle: string;
+    applyLabel: string;
+    detailsLabel: string;
+    email: string;
+    positions: {
+      title: string;
+      subtitle: string;
+      description: string;
+      tasks: string[];
+    }[];
+    initiative: {
+      title: string;
+      text: string;
+    };
+    companyTitle: string;
+    companyText: string;
+    values: string[];
+    closing: string;
+  };
+
+}
 export type ContentSchema = {
   header: Header;
   hero: HeroContent;
   destinations: DestinationsContent;
   countryPages: CountryTransportPage[];
   about: AboutUsPage;
+  jobs: JobsPage;
   contact: ContactContent
   footer: Footer
 };
