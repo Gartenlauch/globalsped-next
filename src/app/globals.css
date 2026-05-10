@@ -110,3 +110,24 @@ h3,
   }
 }
 
+/* Transport Form */
+.input-premium {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 0.9rem 1rem;
+  color: var(--color-global-dark);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-premium:focus {
+  border-color: rgba(190, 242, 100, 0.9);
+  box-shadow: 0 0 0 4px rgba(190, 242, 100, 0.18);
+}
+
+.input-premium::placeholder {
+  color: rgba(0, 40, 31, 0.45);
+}
+

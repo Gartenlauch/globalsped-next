@@ -48,7 +48,7 @@ export function Footer({ locale }: Props) {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
           <div>
             <div className="text-2xl font-black uppercase tracking-tight text-lime-300">
-              {t.companyName}
+              {t.shortName}
             </div>
             <div className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
               {t.claim}
@@ -62,7 +62,7 @@ export function Footer({ locale }: Props) {
               <div className="flex items-center gap-3">
                 <Building2 size={18} className="text-lime-300 shrink-0" />
                 <span>
-                  Globalsped Internationale Spedition GmbH
+                  {t.companyName}
                 </span>
               </div>
               <a

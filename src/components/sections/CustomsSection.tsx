@@ -28,7 +28,7 @@ export function CustomsSection({ locale }: Props) {
         style={{ backgroundImage: "url(/images/customs/customs-map.jpg)" }}
       />
 
-<div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,40,31,0.85)_0%,rgba(0,40,31,0.75)_35%,rgba(0,40,31,0.65)_60%,rgba(0,40,31,0.85)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,40,31,0.85)_0%,rgba(0,40,31,0.75)_35%,rgba(0,40,31,0.65)_60%,rgba(0,40,31,0.85)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_25%,rgba(163,230,53,0.18),transparent_30%)]" />
 
       <div className="container relative z-10">
@@ -102,10 +102,10 @@ export function CustomsSection({ locale }: Props) {
               ))}
             </ul>
             <div className="mt-8">
-  <Link href={`/${locale}/anfrage`} className="btn-primary">
-    {t.ctaLabel}
-  </Link>
-</div>
+              <Link href={t.cta.href} className="btn-primary">
+                {t.cta.label}
+              </Link>
+            </div>
           </article>
 
           <article className="rounded-3xl border border-white/10 bg-[rgba(0,40,31,0.80)] p-7 shadow-[0_25px_80px_rgba(0,0,0,0.50)] backdrop-blur-xl">

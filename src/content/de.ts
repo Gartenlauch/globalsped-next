@@ -12,7 +12,7 @@ export const de = {
     ],
     cta: {
       label: "Anfrage",
-      href: "/{locale}/anfrage",
+      href: "/de/transport-anfrage",
     },
     menuOpenLabel: "Menü öffnen",
     menuCloseLabel: "Menü schließen",
@@ -31,7 +31,7 @@ export const de = {
 
     ctaPrimary: {
       label: "Transport anfragen",
-      href: "/de/anfrage",
+      href: "/de/transport-anfrage",
     },
 
     ctaSecondary: {
@@ -1346,9 +1346,10 @@ export const de = {
     title: "Zollabwicklung für Transporte in Drittstaaten",
     highlight: "nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
     intro: "GLOBALSPED unterstützt Unternehmen bei der professionellen Zollabwicklung für internationale Transporte in Drittstaaten. Wir begleiten Export-, Import- und Transitprozesse für Transporte nach Zentralasien, in den Kaukasus, nach Osteuropa und in den Mittleren Osten. Dazu gehören die Vorbereitung wichtiger Transport- und Zolldokumente, die Abstimmung mit Versendern, Empfängern, Fahrern und Zollpartnern sowie die Koordination entlang komplexer internationaler Routen.",
-
-    ctaLabel: "Zollabwicklung anfragen",
-
+    cta: {
+      href: "/de/transport-anfrage",
+      label: "Zollabwicklung anfragen",
+    },
     processTitle: "Unsere Unterstützung bei Export, Import und Transit",
     processItems: [
       {
@@ -1402,10 +1403,11 @@ export const de = {
     badge: "Unsere Leistungen",
     title: "Logistiklösungen für komplexe Märkte.",
     highlight: "Zuverlässig. Persönlich. International.",
-    intro:
-      "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
-
-    ctaLabel: "Transport anfragen",
+    intro: "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
+    cta:  {
+      label: "Transport anfragen",
+      href: "/de/transport-anfragen"
+    },
     learnMoreLabel: "Mehr erfahren",
     strengthsBadge: "Unsere Logistiklösungen",
 
@@ -1489,7 +1491,10 @@ export const de = {
     highlight: "für anspruchsvolle internationale Transporte",
     intro: "GLOBALSPED ist eine internationale Spedition mit Spezialisierung auf Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Seit vielen Jahren organisieren wir Sammelgut, LTL-Teilladungen, FTL-Komplettladungen, Thermotransporte, ADR-Transporte, Projektlogistik und Zollgüter für Unternehmen mit komplexen Anforderungen.",
     text: "Unsere Stärke liegt in kurzen Kommunikationswegen, persönlicher Betreuung und einem erfahrenen Team mit aktuellem Logistik-Fachwissen und sprachlicher Kompetenz. Gerade auf anspruchsvollen Routen zählt nicht nur der Preis, sondern die verlässliche Koordination von Versender, Empfänger, Fahrer, Zollpartnern und internationalen Netzwerkpartnern.",
-    ctaLabel: "Transport anfragen",
+    cta: {
+      label: "Transport anfragen",
+      href: "/de/transport-anfrage"
+    },
 
     images: [
       {
@@ -1748,7 +1753,8 @@ export const de = {
     mapEmbedUrl: "https://www.google.com/maps?q=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%20Germany%20OR%20Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%20Austria&output=embed",
   },
   footer: {
-    companyName: "GLOBALSPED",
+    companyName: "Globalsped Internationale Spedition GmbH",
+    shortName: "GLOBALSPED",
     claim: "International Transport Solutions",
     text:
       "Spezialisierte Transport- und Logistiklösungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Zollabwicklung, FTL, LTL, Thermotransporten und Projektlogistik.",
