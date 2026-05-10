@@ -1,19 +1,5 @@
-export type FaqIntent = "informational" | "commercial" | "transactional" | "comparison" | "problem-solving";
-export type SearchIntentPrimary = "know" | "do" | "compare" | "buy" | "solve";
+import type { FaqItem } from "./types";
 
-export type FaqItem = {
-  slug: string;
-  question: string;
-  answer: string;
-  category: string;
-  intent: FaqIntent;
-  searchIntentPrimary: SearchIntentPrimary;
-  relatedTopics: string[];
-  excerpt: string;
-  metaTitle: string;
-  metaDescription: string;
-  keywords: string[];
-};
 
 export const faqItems: FaqItem[] = [
   {
@@ -606,5 +592,73 @@ GLOBALSPED unterstützt B2B-Unternehmen aus verschiedenen Branchen bei internati
     metaTitle: "Transport nach Zentralasien anfragen",
     metaDescription: "So fragen Sie ein Transportangebot nach Zentralasien an: benötigte Angaben zu Ware, Route, Maßen, Gewicht, Termin und Zoll.",
     keywords: ["Angebot Transport Zentralasien", "Transport anfragen", "Spedition Anfrage", "Frachtangebot Zentralasien"]
+  },
+  {
+    slug: "globalsped-internationale-spedition-dienstleistungen",
+    question: "Welche internationalen Transporte organisiert GLOBALSPED?",
+    answer: `GLOBALSPED organisiert internationale Transporte zwischen Europa, Zentralasien, dem Kaukasus und dem Mittleren Osten. Dazu gehören FTL-Transporte, LTL-Teilladungen, Thermotransporte, Gefahrguttransporte, Spezialtransporte, Projektlogistik sowie Export- und Importabwicklung.
+  
+  Besonders wichtig ist die Verbindung aus Transportplanung, Zollverständnis und regionaler Erfahrung. Viele Lieferungen in diese Regionen scheitern nicht an der reinen Strecke, sondern an fehlenden Dokumenten, unklaren Zuständigkeiten oder nicht abgestimmten Zollprozessen.
+  
+  GLOBALSPED unterstützt Unternehmen dabei, internationale Lieferketten strukturiert zu planen, Risiken zu reduzieren und Transporte in anspruchsvolle Zielmärkte zuverlässig vorzubereiten.`,
+    category: "Allgemein",
+    intent: "commercial",
+    searchIntentPrimary: "buy",
+    relatedTopics: ["Internationale Spedition", "Zentralasien", "Kaukasus", "Mittlerer Osten", "Zollabwicklung"],
+    excerpt: "GLOBALSPED organisiert FTL, LTL, Thermotransporte, Gefahrgut, Spezialtransporte und Zollabwicklung zwischen Europa, Zentralasien und dem Kaukasus.",
+    metaTitle: "GLOBALSPED: Internationale Spedition & Logistik",
+    metaDescription: "GLOBALSPED organisiert internationale Transporte, Zollabwicklung, FTL, LTL, Thermotransporte und Spezialtransporte.",
+    keywords: ["GLOBALSPED", "internationale Spedition", "Logistikunternehmen", "Transport Zentralasien"]
+  },
+  {
+    slug: "ftl-direkttransport-zentralasien-vorteile",
+    question: "Wann ist ein FTL-Direkttransport nach Zentralasien sinnvoll?",
+    answer: `Ein FTL-Direkttransport nach Zentralasien ist sinnvoll, wenn eine Sendung zeitkritisch, hochwertig, empfindlich oder umfangreich genug für einen kompletten LKW ist. FTL reduziert Umschlagpunkte und ermöglicht eine bessere Kontrolle über Route, Laufzeit und Fahrzeug.
+  
+  Bei Transporten nach Kasachstan, Usbekistan, Kirgisistan oder Turkmenistan kann eine Komplettladung besonders vorteilhaft sein, wenn Zollprozesse, Temperaturführung, Gefahrgutanforderungen oder feste Liefertermine eine Rolle spielen.
+  
+  GLOBALSPED prüft anhand von Warenart, Zielort, Termin und Dokumentenanforderungen, ob ein FTL-Direkttransport die wirtschaftlich und operativ passende Lösung ist.`,
+    category: "Transporte",
+    intent: "commercial",
+    searchIntentPrimary: "buy",
+    relatedTopics: ["FTL Transporte", "Direkttransport", "Zentralasien", "Kasachstan", "Usbekistan"],
+    excerpt: "FTL-Direkttransporte nach Zentralasien sind sinnvoll bei großen, zeitkritischen, hochwertigen oder empfindlichen Sendungen.",
+    metaTitle: "FTL-Direkttransport nach Zentralasien",
+    metaDescription: "Wann ist ein FTL-Direkttransport nach Zentralasien sinnvoll? Vorteile bei Laufzeit, Sicherheit, Zoll und Kontrolle.",
+    keywords: ["FTL Zentralasien", "Direkttransport Zentralasien", "Komplettladung Kasachstan", "Full Truck Load"]
+  },
+  {
+    slug: "ltl-teilladung-zentralasien-ablauf",
+    question: "Wie funktioniert eine LTL-Teilladung nach Zentralasien?",
+    answer: `Eine LTL-Teilladung nach Zentralasien eignet sich, wenn eine Sendung keinen kompletten LKW benötigt und wirtschaftlich mit anderen Sendungen kombiniert werden kann. Dabei müssen Konsolidierung, Laufzeit, Verpackung, Umschlag und Zollabwicklung sorgfältig geplant werden.
+  
+  LTL-Transporte können Kosten senken, sind aber meist weniger direkt als FTL-Direkttransporte. Besonders bei längeren Strecken nach Kasachstan, Usbekistan oder Kirgisistan ist wichtig, dass die Ware eindeutig gekennzeichnet und vollständig dokumentiert ist.
+  
+  GLOBALSPED prüft, ob eine Teilladung logistisch sinnvoll ist oder ob FTL, Express oder Spezialtransport besser zu Ware, Termin und Zielregion passen.`,
+    category: "Transporte",
+    intent: "informational",
+    searchIntentPrimary: "know",
+    relatedTopics: ["LTL Transporte", "Teilladung", "Zentralasien", "Zollabwicklung", "Sammelgut"],
+    excerpt: "LTL-Teilladungen nach Zentralasien eignen sich für kleinere Sendungen, erfordern aber genaue Planung von Laufzeit, Umschlag und Zoll.",
+    metaTitle: "LTL-Teilladung nach Zentralasien erklärt",
+    metaDescription: "Wie funktioniert eine LTL-Teilladung nach Zentralasien? Ablauf, Vorteile, Grenzen und Zollanforderungen im Überblick.",
+    keywords: ["LTL Zentralasien", "Teilladung Zentralasien", "Less Than Truck Load", "Transport Teilladung"]
+  },
+  {
+    slug: "sammelgut-zentralasien-wann-sinnvoll",
+    question: "Wann ist Sammelgut nach Zentralasien sinnvoll?",
+    answer: `Sammelgut nach Zentralasien ist sinnvoll, wenn kleinere Sendungen wirtschaftlich transportiert werden sollen und keine extrem kurze Laufzeit erforderlich ist. Mehrere Sendungen werden gebündelt, wodurch Transportkosten reduziert werden können.
+  
+  Bei internationalen Sammelguttransporten sind stabile Verpackung, klare Kennzeichnung, vollständige Exportdokumente und realistische Laufzeiten besonders wichtig. Je nach Zielregion können Umschlagpunkte, Konsolidierung und Zollprozesse zusätzliche Zeit benötigen.
+  
+  GLOBALSPED bewertet je nach Ware, Termin und Zielort, ob Sammelgut, LTL-Teilladung oder FTL-Direkttransport die passende Lösung für Transporte nach Zentralasien ist.`,
+    category: "Transporte",
+    intent: "comparison",
+    searchIntentPrimary: "compare",
+    relatedTopics: ["Sammelgut", "LTL Transporte", "Zentralasien", "Transportkosten", "Lieferzeiten"],
+    excerpt: "Sammelgut nach Zentralasien kann Kosten reduzieren, benötigt aber klare Dokumentation, stabile Verpackung und realistische Laufzeiten.",
+    metaTitle: "Sammelgut nach Zentralasien: Wann sinnvoll?",
+    metaDescription: "Wann eignet sich Sammelgut nach Zentralasien? Vorteile, Grenzen und Unterschiede zu LTL und FTL im internationalen Transport.",
+    keywords: ["Sammelgut Zentralasien", "LTL Zentralasien", "Teilladung Zentralasien", "Transportkosten"]
   }
 ];

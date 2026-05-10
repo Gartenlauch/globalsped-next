@@ -1429,16 +1429,21 @@ export const de = {
           "Temperaturgeführte Transporte für sensible Güter – mit moderner Kühltechnik und durchgehender Überwachung.",
       },
       {
-        icon: "crane",
-        title: "Projektlogistik",
-        text:
-          "Individuelle Lösungen für komplexe Projekte, Schwertransporte und überdimensionale Ladungen.",
+        icon: "shield",
+        title: "Gefahrguttransporte",
+        text: "Sichere und regelkonforme Transporte sensibler Gefahrgüter inklusive ADR-konformer Dokumentation und internationaler Abwicklung.",
       },
       {
         icon: "fileShield",
         title: "Zoll & Dokumente",
         text: "Komplette Zollabwicklung und Unterstützung bei allen erforderlichen Dokumenten für Export, Import und Transit.",
       },
+      {
+        icon: "crane",
+        title: "Projektlogistik",
+        text:
+          "Individuelle Lösungen für komplexe Projekte, Schwertransporte und überdimensionale Ladungen.",
+      }
     ],
 
     imageOne: {

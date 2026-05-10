@@ -4,7 +4,7 @@ import {
   Boxes,
   CheckCircle2,
   FileCheck2,
-  ShieldCheck,
+  ShieldAlert,
   Thermometer,
   Truck,
   Warehouse,
@@ -21,6 +21,7 @@ const serviceIcons = {
   temperature: Thermometer,
   crane: Warehouse,
   fileShield: FileCheck2,
+  shield: ShieldAlert,
 };
 
 export function ServicesSection({ locale }: Props) {
@@ -68,18 +69,15 @@ export function ServicesSection({ locale }: Props) {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
-          {t.serviceItems.map((item, index) => {
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {t.serviceItems.map((item) => {
             const Icon =
               serviceIcons[item.icon as keyof typeof serviceIcons] ?? Truck;
-
-            const cardSize =
-              index < 3 ? "lg:col-span-2" : "lg:col-span-3";
 
             return (
               <article
                 key={item.title}
-                className={`group relative flex min-h-[255px] flex-col overflow-hidden rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.72)] p-5 shadow-[0_25px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-lime-300/45 hover:shadow-[0_30px_100px_rgba(163,230,53,0.16)] ${cardSize}`}
+                className="group relative flex min-h-[255px] flex-col overflow-hidden rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.72)] p-5 shadow-[0_25px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-lime-300/45 hover:shadow-[0_30px_100px_rgba(163,230,53,0.16)]"
               >
                 <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-lime-300/10 blur-3xl transition group-hover:bg-lime-300/20" />
 
@@ -99,7 +97,9 @@ export function ServicesSection({ locale }: Props) {
 
                 <div className="relative mt-4 inline-flex items-center text-sm font-black uppercase tracking-wide text-lime-300">
                   {t.learnMoreLabel}
-                  <span className="ml-2 transition group-hover:translate-x-1">→</span>
+                  <span className="ml-2 transition group-hover:translate-x-1">
+                    →
+                  </span>
                 </div>
               </article>
             );

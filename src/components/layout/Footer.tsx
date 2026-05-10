@@ -4,6 +4,7 @@ import {
   Mail,
   MapPin,
   Phone,
+  Building2,
   ShieldCheck,
   ExternalLink,
 } from "lucide-react";
@@ -23,25 +24,25 @@ export function Footer({ locale }: Props) {
 
   return (
     <footer className="relative overflow-hidden border-t border-lime-300/20 bg-[#031a15] text-white shadow-[0_-30px_90px_rgba(0,0,0,0.45)]">
-     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.28)_0%,rgba(3,26,21,1)_45%,rgba(1,12,10,1)_100%)]" />
-     <div className="absolute left-0 top-0 flex w-full items-center justify-center">
-  {/* LINKE LINIE */}
-  <div className="h-[2px] flex-1 bg-[linear-gradient(90deg,transparent,rgba(163,230,53,0.75))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.28)_0%,rgba(3,26,21,1)_45%,rgba(1,12,10,1)_100%)]" />
+      <div className="absolute left-0 top-0 flex w-full items-center justify-center">
+        {/* LINKE LINIE */}
+        <div className="h-[2px] flex-1 bg-[linear-gradient(90deg,transparent,rgba(163,230,53,0.75))]" />
 
-  {/* LOGO */}
-  <div className="mx-6 flex h-16 w-16 items-center justify-center rounded-full border border-lime-300/30 bg-[rgba(3,26,21,0.95)] shadow-[0_0_35px_rgba(163,230,53,0.18)] backdrop-blur-xl">
-    <img
-      src="/images/globalsped_logo.jpg"
-      alt="GLOBALSPED Logo"
-      className="h-8 w-8 object-contain"
-    />
-  </div>
+        {/* LOGO */}
+        <div className="mx-6 flex h-16 w-16 items-center justify-center rounded-full border border-lime-300/30 bg-[rgba(3,26,21,0.95)] shadow-[0_0_35px_rgba(163,230,53,0.18)] backdrop-blur-xl">
+          <img
+            src="/images/globalsped_logo.jpg"
+            alt="GLOBALSPED Logo"
+            className="h-8 w-8 object-contain"
+          />
+        </div>
 
-  {/* RECHTE LINIE */}
-  <div className="h-[2px] flex-1 bg-[linear-gradient(90deg,rgba(163,230,53,0.75),transparent)]" />
-</div>
+        {/* RECHTE LINIE */}
+        <div className="h-[2px] flex-1 bg-[linear-gradient(90deg,rgba(163,230,53,0.75),transparent)]" />
+      </div>
 
-<div className="absolute -top-24 left-1/2 h-48 w-[680px] -translate-x-1/2 rounded-full bg-lime-300/10 blur-3xl" />
+      <div className="absolute -top-24 left-1/2 h-48 w-[680px] -translate-x-1/2 rounded-full bg-lime-300/10 blur-3xl" />
 
       <div className="container relative z-10 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
@@ -58,6 +59,12 @@ export function Footer({ locale }: Props) {
             </p>
 
             <div className="mt-6 grid gap-3 text-sm text-white/78">
+              <div className="flex items-center gap-3">
+                <Building2 size={18} className="text-lime-300 shrink-0" />
+                <span>
+                  Globalsped Internationale Spedition GmbH
+                </span>
+              </div>
               <a
                 href={`mailto:${t.contact.email}`}
                 className="flex items-center gap-3 transition hover:text-lime-300"
