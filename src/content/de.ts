@@ -108,8 +108,7 @@ export const de = {
     badge: "Destinationen",
     title: "Transporte nach Zentralasien,",
     highlight: "Kaukasus und Mittleren Osten",
-    intro:
-      "Globalsped organisiert internationale Transporte von Europa in anspruchsvolle Zielmärkte. Wir verbinden Erfahrung, zuverlässige Partnernetzwerke und professionelle Zollabwicklung für FTL, LTL, Thermotransporte und Projekttransporte.",
+    intro: "Globalsped organisiert internationale Transporte von Europa in anspruchsvolle Zielmärkte. Wir verbinden Erfahrung, zuverlässige Partnernetzwerke und professionelle Zollabwicklung für FTL, LTL, Thermotransporte und Projekttransporte.",
 
     regions: [
       {
@@ -130,8 +129,7 @@ export const de = {
       {
         title: "Kaukasus",
         slug: "kaukasus",
-        subtitle:
-          "Zuverlässige Logistiklösungen für Transporte nach Aserbaidschan, Georgien und Armenien – inklusive Zoll- und Transitunterstützung.",
+        subtitle: "Zuverlässige Logistiklösungen für Transporte nach Aserbaidschan, Georgien und Armenien – inklusive Zoll- und Transitunterstützung.",
         image: "/images/destinations/kaukasus.jpg",
         countries: [
           { name: "Aserbaidschan", slug: "aserbaidschan", cities: ["Baku", "Ganja", "Sumqayit"] },
@@ -158,7 +156,8 @@ export const de = {
 
     cta: {
       label: "Transport anfragen",
-      href: "/de/transport-anfrage"
+      href: "/de/transport-anfrage",
+    }
   },
   countryPages: [
     {
@@ -1807,7 +1806,6 @@ export const de = {
       },
     ],
 
-    copyright:
-      "© GLOBALSPED International Tranport GmbH. Alle Rechte vorbehalten.",
+    copyright: "© GLOBALSPED International Tranport GmbH. Alle Rechte vorbehalten.",
   },
 };
