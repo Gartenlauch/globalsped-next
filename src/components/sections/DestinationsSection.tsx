@@ -154,8 +154,8 @@ export function DestinationsSection({ locale }: Props) {
         </div>
 
         <div className="mt-12">
-          <Link href={`/${locale}/anfrage`} className="btn-primary">
-            {t.ctaLabel}
+          <Link href={t.cta.href} className="btn-primary">
+            {t.cta.label}
           </Link>
         </div>
       </div>

@@ -156,7 +156,9 @@ export const de = {
     countryGridTitle: "Ausgewählte Zielländer",
     countryGridIntro: "Unsere wichtigsten Zielmärkte für internationale Transporte, FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung.",
 
-    ctaLabel: "Transport in diese Region anfragen",
+    cta: {
+      label: "Transport anfragen",
+      href: "/de/transport-anfrage"
   },
   countryPages: [
     {
@@ -1406,7 +1408,7 @@ export const de = {
     intro: "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
     cta:  {
       label: "Transport anfragen",
-      href: "/de/transport-anfragen"
+      href: "/de/transport-anfrage"
     },
     learnMoreLabel: "Mehr erfahren",
     strengthsBadge: "Unsere Logistiklösungen",
