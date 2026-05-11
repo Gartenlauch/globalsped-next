@@ -1,26 +1,20 @@
-// app/manifest.ts
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Globalsped Internationale Logistik Solutions',
-    short_name: 'Globalsped',
-    description: 'Globalsped Internation Logistik Website',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#fff',
-    theme_color: '#fff',
+    name: "Globalsped International GmbH",
+    short_name: "Globalsped",
+    description: "Internationale Transporte zwischen Europa, Zentralasien, Kaukasus und dem Mittleren Osten.",
+    start_url: "/de",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#003b2f",
     icons: [
       {
-        src: '/favicon/gsboicon-192x192.png', // Pfad zu Ihrem Icon im public-Ordner
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: '/favicon/icon-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
+        src: "/favIcon/android-icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
       },
     ],
-  }
+  };
 }

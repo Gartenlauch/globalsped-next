@@ -1,24 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
 import {
-    BadgeCheck,
+    Award,
+    FileCheck2,
     Globe2,
     Headphones,
-    Network,
-    ShieldCheck,
-} from "lucide-react";
+    Mail,
+    MessageCircle,
+    Phone,
+  } from "lucide-react";
 import { getContent } from "@/content";
 
 type Props = {
     locale: string;
 };
 
-const valueIcons = {
-    experience: BadgeCheck,
-    network: Network,
-    communication: Headphones,
-    customs: ShieldCheck,
+const valueIcons: Record<string, typeof Globe2> = {
+    experience: Award,
+    network: Globe2,
+    communication: MessageCircle,
+    customs: FileCheck2,
 };
 
 export function AboutUsSection({ locale }: Props) {
@@ -128,7 +129,7 @@ export function AboutUsSection({ locale }: Props) {
                 <div className="mt-16">
                     <div className="max-w-[860px]">
                         <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.25em] text-lime-300">
-                            {t.teamBadge}
+                            {t.badge}
                         </p>
 
                         <h3 className="text-[28px] font-black uppercase leading-tight md:text-[36px]">
@@ -143,7 +144,7 @@ export function AboutUsSection({ locale }: Props) {
                     <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                         {t.teamMembers.map((member) => (
                             <article
-                                key={member.email ?? member.name}
+                                key={member.contact.email ?? member.name}
                                 className="group overflow-hidden rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.74)] shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-lime-300/45 hover:shadow-[0_30px_90px_rgba(163,230,53,0.14)]"
                             >
                                 <div className="relative aspect-square overflow-hidden bg-white/5">

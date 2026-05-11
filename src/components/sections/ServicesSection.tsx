@@ -150,10 +150,10 @@ export function ServicesSection({ locale }: Props) {
 
         <div className="mt-16 flex justify-center">
           <Link
-            href={`/${locale}/anfrage`}
+            href={t.cta.href}
             className="inline-flex items-center rounded-full bg-lime-300 px-10 py-5 text-sm font-black uppercase tracking-[0.12em] text-[var(--color-global-dark)] shadow-[0_15px_45px_rgba(163,230,53,0.30)] transition duration-300 hover:scale-[1.03] hover:bg-lime-200 hover:shadow-[0_20px_60px_rgba(163,230,53,0.45)]"
           >
-            {t.ctaLabel}
+            {t.cta.label}
           </Link>
         </div>
       </div>

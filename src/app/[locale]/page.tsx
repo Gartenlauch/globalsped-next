@@ -5,14 +5,16 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AboutUsSection } from "@/components/sections/AboutUsSection";
 import { JobsSection } from "@/components/sections/JobsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-type Props = {
-  locale: string;
-};
 
+
+type Props = {
+  params: Promise<{
+    locale: string;
+  }>;
+};
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
-
   return (
     <>
       <HeroSection locale={locale} />

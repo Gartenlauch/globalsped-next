@@ -120,7 +120,7 @@ export type CountryTransportPage = {
     introBadge: string;
     logisticsTitlePrefix: string;
     citiesTitle: string;
-    faqTitlePrefix: string;
+    faqTitlePrefix?: string;
     faqTitle: string;
   };
   faq: {

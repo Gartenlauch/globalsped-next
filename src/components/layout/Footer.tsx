@@ -14,7 +14,7 @@ type Props = {
   locale: string;
 };
 
-const membershipIcons = {
+const membershipIcons: Record<string, typeof ShieldCheck> = {
   shield: ShieldCheck,
   globe: Globe2,
 };

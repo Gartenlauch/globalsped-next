@@ -1,12 +1,14 @@
 import Link from "next/link";
+
 import type { FaqItem, FaqPageContent } from "@/content/faq";
 
 type Props = {
   faqs: FaqItem[];
   content: FaqPageContent["detail"];
+  locale: "de";
 };
 
-export function RelatedFaqs({ faqs, content }: Props) {
+export function RelatedFaqs({ faqs, content, locale }: Props) {
   if (faqs.length === 0) {
     return null;
   }
@@ -22,7 +24,7 @@ export function RelatedFaqs({ faqs, content }: Props) {
           {faqs.map((faq) => (
             <Link
               key={faq.slug}
-              href={`/de/faq/${faq.slug}`}
+              href={`/${locale}/faq/${faq.slug}`}
               className="block rounded-2xl bg-white/8 p-4 text-sm leading-6 text-white/85 transition hover:bg-white/12 hover:text-white"
             >
               {faq.question}
