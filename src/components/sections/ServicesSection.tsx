@@ -95,12 +95,15 @@ export function ServicesSection({ locale }: Props) {
                   {item.text}
                 </p>
 
-                <div className="relative mt-4 inline-flex items-center text-sm font-black uppercase tracking-wide text-lime-300">
+                <Link
+                  href={item.href}
+                  className="relative mt-4 inline-flex items-center text-sm font-black uppercase tracking-wide text-lime-300 transition hover:text-lime-200"
+                >
                   {t.learnMoreLabel}
                   <span className="ml-2 transition group-hover:translate-x-1">
                     →
                   </span>
-                </div>
+                </Link>
               </article>
             );
           })}

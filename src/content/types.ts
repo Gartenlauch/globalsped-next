@@ -1,6 +1,3 @@
-
-
-
 export type Header = {
   header: {
     logoLabel: string;

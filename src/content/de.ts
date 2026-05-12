@@ -1355,29 +1355,24 @@ export const de = {
     processItems: [
       {
         title: "Export & Ausfuhr",
-        text:
-          "Unterstützung bei Ausfuhrbegleitdokumenten, Handelsrechnung, Packliste, Warendaten und allen relevanten Informationen für die Ausfuhr in Drittstaaten.",
+        text: "Unterstützung bei Ausfuhrbegleitdokumenten, Handelsrechnung, Packliste, Warendaten und allen relevanten Informationen für die Ausfuhr in Drittstaaten.",
       },
       {
         title: "Transitverfahren",
-        text:
-          "Koordination von Transitdokumenten wie T1 sowie Abstimmung mit Zollstellen entlang der Route – insbesondere bei Transporten nach Zentralasien und in den Kaukasus.",
+        text: "Koordination von Transitdokumenten wie T1 sowie Abstimmung mit Zollstellen entlang der Route – insbesondere bei Transporten nach Zentralasien und in den Kaukasus.",
       },
       {
         title: "Import & Zielland",
-        text:
-          "Vorbereitung der notwendigen Informationen für Empfänger, Zollpartner und Behörden im Zielland, damit die Importabwicklung möglichst reibungslos erfolgen kann.",
+        text: "Vorbereitung der notwendigen Informationen für Empfänger, Zollpartner und Behörden im Zielland, damit die Importabwicklung möglichst reibungslos erfolgen kann.",
       },
       {
         title: "Dokumentenprüfung",
-        text:
-          "Prüfung wichtiger Angaben wie Warenbeschreibung, Empfängeradresse, Kontaktperson, Packstücke, Gewichte, Maße, Rechnungsdaten und Transportdokumente.",
+        text: "Prüfung wichtiger Angaben wie Warenbeschreibung, Empfängeradresse, Kontaktperson, Packstücke, Gewichte, Maße, Rechnungsdaten und Transportdokumente.",
       },
     ],
 
     requiredTitle: "Welche Unterlagen werden für die Zollabwicklung benötigt?",
-    requiredIntro:
-      "Für internationale Transporte in Drittstaaten sind je nach Ware, Route und Zielland unterschiedliche Dokumente erforderlich. Häufig benötigt werden:",
+    requiredIntro: "Für internationale Transporte in Drittstaaten sind je nach Ware, Route und Zielland unterschiedliche Dokumente erforderlich. Häufig benötigt werden:",
 
     requiredDocuments: [
       "Handelsrechnung oder Proforma-Rechnung",
@@ -1397,7 +1392,7 @@ export const de = {
       "Klare Abstimmung zwischen Versender, Empfänger, Fahrer und Zollpartnern",
       "Reduzierung von Verzögerungen durch vollständige Dokumentenvorbereitung",
       "Unterstützung bei Export-, Import- und Transitprozessen",
-      "Praktische Erfahrung mit FTL, LTL, Thermotransporten und Projekttransporten",
+      "Praktische Erfahrung mit FTL, LTL, Thermotransporten und Gefahrguttransporten",
     ],
   },
   services: {
@@ -1416,36 +1411,38 @@ export const de = {
       {
         icon: "truck",
         title: "FTL – Komplettladungen",
-        text:
-          "Direkttransporte mit exklusiver Nutzung des Fahrzeugs für maximale Sicherheit, Effizienz und termingerechte Lieferung.",
+        text: "Direkttransporte mit exklusiver Nutzung des Fahrzeugs für maximale Sicherheit, Effizienz und termingerechte Lieferung.",
+        href: "/de/leistungen/ftl-komplettladungen",
       },
       {
         icon: "boxes",
         title: "LTL – Teilladungen",
-        text:
-          "Wirtschaftliche Transportlösungen durch gebündelte Ladungen und regelmäßige Verbindungen in unsere Zielregionen.",
+        text: "Wirtschaftliche Transportlösungen durch gebündelte Ladungen und regelmäßige Verbindungen in unsere Zielregionen.",
+        href: "/de/leistungen/ltl-teilladungen",
       },
       {
         icon: "temperature",
         title: "Thermotransporte",
-        text:
-          "Temperaturgeführte Transporte für sensible Güter – mit moderner Kühltechnik und durchgehender Überwachung.",
+        text: "Temperaturgeführte Transporte für sensible Güter – mit moderner Kühltechnik und durchgehender Überwachung.",
+        href: "/de/leistungen/thermotransporte",
       },
       {
         icon: "shield",
         title: "Gefahrguttransporte",
         text: "Sichere und regelkonforme Transporte sensibler Gefahrgüter inklusive ADR-konformer Dokumentation und internationaler Abwicklung.",
+        href: "/de/leistungen/gefahrguttransporte",
       },
       {
         icon: "fileShield",
         title: "Zoll & Dokumente",
         text: "Komplette Zollabwicklung und Unterstützung bei allen erforderlichen Dokumenten für Export, Import und Transit.",
+        href: "/de/leistungen/zoll-dokumente",
       },
       {
         icon: "crane",
         title: "Projektlogistik",
-        text:
-          "Individuelle Lösungen für komplexe Projekte, Schwertransporte und überdimensionale Ladungen.",
+        text: "Individuelle Lösungen für komplexe Projekte, Schwertransporte und überdimensionale Ladungen.",
+        href: "/de/leistungen/projektlogistik",
       }
     ],
 
