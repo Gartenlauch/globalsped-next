@@ -216,12 +216,7 @@ export function JobsSection({ locale }: Props) {
                     <div className="flex items-center gap-4 text-sm font-bold uppercase tracking-wide text-white/86">
                         <Mail size={20} className="text-lime-300" />
                         {t.closing}
-                        <a
-                            href={`mailto:${t.email}`}
-                            className="text-lime-300 underline-offset-4 hover:underline"
-                        >
-                            {t.email}
-                        </a>
+                  
                     </div>
 
                     <a href={`mailto:${t.email}`} className="btn-primary">

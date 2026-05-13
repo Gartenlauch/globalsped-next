@@ -158,12 +158,12 @@ export function TransportRequestPage({ locale }: Props) {
       current.map((unit, unitIndex) =>
         unitIndex === index
           ? {
-              ...unit,
-              [key]:
-                key === "packagingType"
-                  ? value
-                  : Number(value.replace(",", ".")),
-            }
+            ...unit,
+            [key]:
+              key === "packagingType"
+                ? value
+                : Number(value.replace(",", ".")),
+          }
           : unit
       )
     );
@@ -292,13 +292,12 @@ export function TransportRequestPage({ locale }: Props) {
                     return (
                       <div
                         key={label}
-                        className={`rounded-2xl border px-4 py-3 text-sm font-black uppercase tracking-wide transition ${
-                          active
-                            ? "border-lime-300/45 bg-lime-300/12 text-white"
-                            : done
-                              ? "border-lime-300/25 bg-lime-300/8 text-white/80"
-                              : "border-white/10 bg-white/5 text-white/45"
-                        }`}
+                        className={`rounded-2xl border px-4 py-3 text-sm font-black uppercase tracking-wide transition ${active
+                          ? "border-lime-300/45 bg-lime-300/12 text-white"
+                          : done
+                            ? "border-lime-300/25 bg-lime-300/8 text-white/80"
+                            : "border-white/10 bg-white/5 text-white/45"
+                          }`}
                       >
                         <span className="mr-2 text-lime-300">{index + 1}</span>
                         {label}
@@ -323,44 +322,75 @@ export function TransportRequestPage({ locale }: Props) {
                     </h2>
                   </div>
 
-                  <div className="grid gap-4 md:grid-cols-2">
+                  <div className="grid gap-4 lg:grid-cols-3">
                     <Field label={t.labels.pickupLocation}>
-                      <input
-                        list="europe-countries"
-                        value={transport.pickupLocation}
-                        onChange={(event) =>
-                          updateTransport("pickupLocation", event.target.value)
-                        }
-                        placeholder={t.placeholders.pickupLocation}
-                        className="input-premium"
-                      />
+                      <div className="relative">
+                        <input
+                          list="europe-countries"
+                          value={transport.pickupLocation}
+                          onChange={(event) =>
+                            updateTransport("pickupLocation", event.target.value)
+                          }
+                          placeholder={t.placeholders.pickupLocation}
+                          className="input-premium pr-11"
+                        />
+
+                        {transport.pickupLocation && (
+                          <button
+                            type="button"
+                            onClick={() => updateTransport("pickupLocation", "")}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 text-emerald-950/50 transition hover:bg-emerald-950/10 hover:text-emerald-950"
+                            aria-label="Abholort löschen"
+                          >
+                            <X size={18} strokeWidth={2.75} />
+                          </button>
+                        )}
+                      </div>
+
                       <datalist id="europe-countries">
                         {t.europeanCountries.map((country) => (
                           <option key={country} value={country} />
                         ))}
                       </datalist>
+
                       <FieldHint>{t.hints.pickupLocation}</FieldHint>
                     </Field>
 
                     <Field label={t.labels.deliveryCountry}>
-                      <select
-                        value={transport.deliveryCountry}
-                        onChange={(event) =>
-                          updateDeliveryCountry(event.target.value)
-                        }
-                        className="input-premium"
-                      >
-                        <option value="">Bitte wählen</option>
-                        {t.destinationCountries.map((country) => (
-                          <option key={country} value={country}>
-                            {country}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative">
+                        <select
+                          value={transport.deliveryCountry}
+                          onChange={(event) =>
+                            updateDeliveryCountry(event.target.value)
+                          }
+                          className="input-premium pr-11"
+                        >
+                          <option value="">Bitte wählen</option>
+
+                          {t.destinationCountries.map((country) => (
+                            <option key={country} value={country}>
+                              {country}
+                            </option>
+                          ))}
+                        </select>
+
+                        {transport.deliveryCountry && (
+                          <button
+                            type="button"
+                            onClick={() => updateDeliveryCountry("")}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 text-emerald-950/50 transition hover:bg-emerald-950/10 hover:text-emerald-950"
+                            aria-label="Zustellland löschen"
+                          >
+                            <X size={18} strokeWidth={2.75} />
+                          </button>
+                        )}
+                      </div>
+
+                      <FieldHint>&nbsp;</FieldHint>
                     </Field>
 
-                    {transport.deliveryCountry && (
-                      <Field label={t.labels.destinationCity}>
+                    <Field label={t.labels.destinationCity}>
+                      <div className="relative">
                         <input
                           list="destination-cities"
                           value={transport.destinationCity}
@@ -368,16 +398,34 @@ export function TransportRequestPage({ locale }: Props) {
                             updateTransport("destinationCity", event.target.value)
                           }
                           placeholder={t.placeholders.destinationCity}
-                          className="input-premium"
+                          disabled={!transport.deliveryCountry}
+                          className="input-premium pr-11 disabled:cursor-not-allowed disabled:opacity-45"
                         />
-                        <datalist id="destination-cities">
-                          {destinationCityOptions.map((city) => (
-                            <option key={city} value={city} />
-                          ))}
-                        </datalist>
-                        <FieldHint>{t.hints.destinationCity}</FieldHint>
-                      </Field>
-                    )}
+
+                        {transport.destinationCity && (
+                          <button
+                            type="button"
+                            onClick={() => updateTransport("destinationCity", "")}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 text-emerald-950/50 transition hover:bg-emerald-950/10 hover:text-emerald-950"
+                            aria-label="Zielstadt löschen"
+                          >
+                            <X size={18} strokeWidth={2.75} />
+                          </button>
+                        )}
+                      </div>
+
+                      <datalist id="destination-cities">
+                        {destinationCityOptions.map((city) => (
+                          <option key={city} value={city} />
+                        ))}
+                      </datalist>
+
+                      <FieldHint>
+                        {transport.deliveryCountry
+                          ? t.hints.destinationCity
+                          : " "}
+                      </FieldHint>
+                    </Field>
                   </div>
 
                   <div className="mt-6">
@@ -401,11 +449,10 @@ export function TransportRequestPage({ locale }: Props) {
                           key={value}
                           type="button"
                           onClick={() => setShipmentType(value)}
-                          className={`rounded-2xl border p-4 text-left transition ${
-                            shipmentType === value
-                              ? "border-lime-300/50 bg-lime-300/12 shadow-[0_0_30px_rgba(163,230,53,0.12)]"
-                              : "border-white/12 bg-white/5 hover:border-lime-300/30"
-                          }`}
+                          className={`rounded-2xl border p-4 text-left transition ${shipmentType === value
+                            ? "border-lime-300/50 bg-lime-300/12 shadow-[0_0_30px_rgba(163,230,53,0.12)]"
+                            : "border-white/12 bg-white/5 hover:border-lime-300/30"
+                            }`}
                         >
                           <Icon className="mb-3 text-lime-300" size={22} />
                           <span className="text-sm font-black uppercase">
@@ -466,7 +513,11 @@ export function TransportRequestPage({ locale }: Props) {
                                 type="number"
                                 value={unit.quantity}
                                 onChange={(event) =>
-                                  updateUnit(index, "quantity", event.target.value)
+                                  updateUnit(
+                                    index,
+                                    "quantity",
+                                    event.target.value
+                                  )
                                 }
                                 className="input-premium"
                               />
@@ -631,15 +682,6 @@ export function TransportRequestPage({ locale }: Props) {
                       </select>
 
                       <FieldHint>{t.hints.adrUnavailable}</FieldHint>
-
-                      {selectedAdrClass && (
-                        <div className="mt-3 rounded-2xl border border-lime-300/20 bg-lime-300/8 p-3 text-sm leading-6 text-white/78">
-                          <strong className="block text-lime-300">
-                            {selectedAdrClass.label}
-                          </strong>
-                          {selectedAdrClass.description}
-                        </div>
-                      )}
                     </Field>
 
                     <Field label={t.labels.temperatureControlled}>
@@ -660,8 +702,18 @@ export function TransportRequestPage({ locale }: Props) {
                           </option>
                         ))}
                       </select>
+
                       <FieldHint>{t.hints.temperatureControlled}</FieldHint>
                     </Field>
+
+                    {selectedAdrClass && (
+                      <div className="rounded-2xl border border-lime-300/20 bg-lime-300/8 px-4 py-3 text-sm leading-6 text-white/78 md:col-span-2">
+                        <strong className="mr-2 text-lime-300">
+                          {selectedAdrClass.label}
+                        </strong>
+                        <span>{selectedAdrClass.description}</span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="mt-6">
@@ -848,7 +900,10 @@ export function TransportRequestPage({ locale }: Props) {
                   </SummaryBlock>
 
                   <SummaryBlock title={t.summary.contactData}>
-                    <SummaryLine label={t.labels.company} value={contact.company} />
+                    <SummaryLine
+                      label={t.labels.company}
+                      value={contact.company}
+                    />
                     <SummaryLine
                       label={t.labels.contactPerson}
                       value={contact.contactPerson}
@@ -874,7 +929,11 @@ export function TransportRequestPage({ locale }: Props) {
                 )}
 
                 {step < 3 ? (
-                  <button type="button" onClick={nextStep} className="btn-primary">
+                  <button
+                    type="button"
+                    onClick={nextStep}
+                    className="btn-primary"
+                  >
                     {t.labels.next}
                     <ArrowRight size={17} />
                   </button>
@@ -898,6 +957,10 @@ export function TransportRequestPage({ locale }: Props) {
 
               <div className="mt-5 grid gap-3 text-sm">
                 <SummaryLine
+                  label={t.labels.pickupLocation}
+                  value={transport.pickupLocation || "-"}
+                />
+                <SummaryLine
                   label={t.labels.deliveryCountry}
                   value={transport.deliveryCountry || "-"}
                 />
@@ -912,7 +975,11 @@ export function TransportRequestPage({ locale }: Props) {
                 {shipmentType === "loadingMeters" && (
                   <SummaryLine
                     label={t.labels.loadingMeters}
-                    value={transport.loadingMeters ? `${transport.loadingMeters} m` : "-"}
+                    value={
+                      transport.loadingMeters
+                        ? `${transport.loadingMeters} m`
+                        : "-"
+                    }
                   />
                 )}
                 <SummaryLine
@@ -929,6 +996,19 @@ export function TransportRequestPage({ locale }: Props) {
                     value={`${totals.totalVolume.toLocaleString("de-DE", {
                       maximumFractionDigits: 2,
                     })} m³`}
+                  />
+                )}
+                {selectedAdrClass && (
+                  <SummaryLine
+                    label={t.labels.dangerousGoods}
+                    value={`${selectedAdrClass.label}: ${selectedAdrClass.description}`}
+                  />
+                )}
+
+                {selectedTemperature && (
+                  <SummaryLine
+                    label={t.labels.temperatureControlled}
+                    value={selectedTemperature.label}
                   />
                 )}
               </div>
@@ -981,7 +1061,11 @@ function Field({
 }
 
 function FieldHint({ children }: { children: React.ReactNode }) {
-  return <span className="text-xs font-medium normal-case leading-5 tracking-normal text-white/48">{children}</span>;
+  return (
+    <span className="min-h-[38px] text-xs font-medium normal-case leading-5 tracking-normal text-white/48">
+      {children}
+    </span>
+  );
 }
 
 function SummaryBlock({
