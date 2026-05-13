@@ -663,142 +663,142 @@ GLOBALSPED unterstützt B2B-Unternehmen aus verschiedenen Branchen bei internati
   },
 
   {
-slug: "falsche-zolltarifnummer-folgen-internationaler-transport",
-question: "Was passiert bei einer falschen Zolltarifnummer im internationalen Transport?",
-answer: `Eine falsche Zolltarifnummer kann zu Verzögerungen, Nachverzollungen, zusätzlichen Prüfungen oder zur vorübergehenden Zurückhaltung der Ware führen. Besonders bei Exporten nach Zentralasien, in den Kaukasus oder in den Mittleren Osten prüfen Behörden häufig, ob Warenbeschreibung, Rechnungsdaten und Zolltarifnummer zusammenpassen.
+    slug: "falsche-zolltarifnummer-folgen-internationaler-transport",
+    question: "Was passiert bei einer falschen Zolltarifnummer im internationalen Transport?",
+    answer: `Eine falsche Zolltarifnummer kann zu Verzögerungen, Nachverzollungen, zusätzlichen Prüfungen oder zur vorübergehenden Zurückhaltung der Ware führen. Besonders bei Exporten nach Zentralasien, in den Kaukasus oder in den Mittleren Osten prüfen Behörden häufig, ob Warenbeschreibung, Rechnungsdaten und Zolltarifnummer zusammenpassen.
 
 Kritisch wird es vor allem bei technischen Produkten, Ersatzteilen, Chemikalien oder Maschinenkomponenten. Bereits kleine Abweichungen können Einfluss auf Einfuhrabgaben, Genehmigungen oder notwendige Zertifikate haben. Unterschiedliche Übersetzungen oder unklare Warenbezeichnungen erhöhen das Risiko zusätzlicher Rückfragen an Grenzen.
 
 GLOBALSPED unterstützt Unternehmen dabei, Exportdokumente, Warenbeschreibungen und transportrelevante Unterlagen frühzeitig auf Plausibilität zu prüfen. Welche Anforderungen gelten, hängt immer von Warenart, Zielland, Zolltarifnummer und aktuellen Vorgaben ab.`,
-  category: "Zoll",
-  intent: "problem-solving",
-  searchIntentPrimary: "solve",
-  relatedTopics: ["Zollabwicklung", "Exportdokumente", "Zolltarifnummer", "Zentralasien", "Grenzabwicklung"],
-  excerpt: "Eine falsche Zolltarifnummer kann zu Verzögerungen, Nachforderungen oder zusätzlichen Zollprüfungen bei internationalen Transporten führen.",
-  metaTitle: "Falsche Zolltarifnummer: Risiken im Export",
-  metaDescription: "Welche Folgen eine falsche Zolltarifnummer bei internationalen Transporten nach Zentralasien oder in den Kaukasus haben kann.",
-  keywords: ["Zolltarifnummer falsch", "Export Zollprobleme", "Zollabwicklung Zentralasien", "internationale Transporte"]
-},
-{
-  slug: "ursprungsnachweis-export-zentralasien-bedeutung",
-  question: "Wann ist ein Ursprungsnachweis bei Exporten nach Zentralasien wichtig?",
-  answer: `Ein Ursprungsnachweis ist wichtig, wenn Importvorschriften, Zollvergünstigungen oder empfängerbezogene Anforderungen dies verlangen. Bei Transporten nach Kasachstan, Usbekistan oder andere Staaten in Zentralasien können Ursprungsangaben Einfluss auf Zollprozesse und Warenfreigaben haben.
+    category: "Zoll",
+    intent: "problem-solving",
+    searchIntentPrimary: "solve",
+    relatedTopics: ["Zollabwicklung", "Exportdokumente", "Zolltarifnummer", "Zentralasien", "Grenzabwicklung"],
+    excerpt: "Eine falsche Zolltarifnummer kann zu Verzögerungen, Nachforderungen oder zusätzlichen Zollprüfungen bei internationalen Transporten führen.",
+    metaTitle: "Falsche Zolltarifnummer: Risiken im Export",
+    metaDescription: "Welche Folgen eine falsche Zolltarifnummer bei internationalen Transporten nach Zentralasien oder in den Kaukasus haben kann.",
+    keywords: ["Zolltarifnummer falsch", "Export Zollprobleme", "Zollabwicklung Zentralasien", "internationale Transporte"]
+  },
+  {
+    slug: "ursprungsnachweis-export-zentralasien-bedeutung",
+    question: "Wann ist ein Ursprungsnachweis bei Exporten nach Zentralasien wichtig?",
+    answer: `Ein Ursprungsnachweis ist wichtig, wenn Importvorschriften, Zollvergünstigungen oder empfängerbezogene Anforderungen dies verlangen. Bei Transporten nach Kasachstan, Usbekistan oder andere Staaten in Zentralasien können Ursprungsangaben Einfluss auf Zollprozesse und Warenfreigaben haben.
 
 Probleme entstehen häufig dann, wenn Ursprungsland, Handelsrechnung und technische Produktunterlagen nicht konsistent sind. Auch bei Re-Exporten, internationalen Lieferketten oder mehreren Lieferanten müssen Dokumente sauber abgestimmt werden. Fehlende oder fehlerhafte Ursprungsnachweise können zusätzliche Prüfungen oder Rückfragen auslösen.
 
 GLOBALSPED koordiniert Transport- und Dokumentenprozesse so, dass relevante Exportunterlagen frühzeitig berücksichtigt werden. Welche Nachweise erforderlich sind, hängt von Warenart, Empfängeranforderung, Zielland und aktuellen Importvorgaben ab.`,
-  category: "Zoll",
-  intent: "informational",
-  searchIntentPrimary: "know",
-  relatedTopics: ["Ursprungsnachweis", "Exportlogistik", "Zollabwicklung", "Kasachstan", "Importvorschriften"],
-  excerpt: "Ursprungsnachweise können bei Exporten nach Zentralasien entscheidend für Zollabwicklung, Einfuhrfreigabe und Importanforderungen sein.",
-  metaTitle: "Ursprungsnachweis für Exporte nach Zentralasien",
-  metaDescription: "Wann Ursprungsnachweise bei Transporten nach Kasachstan oder Usbekistan wichtig werden und welche Risiken Fehler verursachen.",
-  keywords: ["Ursprungsnachweis Export", "Zoll Zentralasien", "Exportdokumente", "Kasachstan Import"]
-},
-{
-  slug: "sanktionspruefung-exportlogistik-risiken",
-  question: "Warum ist die Sanktionsprüfung bei internationalen Transporten wichtig?",
-  answer: `Die Sanktionsprüfung ist wichtig, weil internationale Transporte durch verschiedene Länder, Banken, Zollsysteme und Kontrollstellen laufen. Bereits unvollständige Empfängerdaten, sensible Waren oder problematische Transitkonstellationen können zu Verzögerungen oder zusätzlichen Prüfungen führen.
+    category: "Zoll",
+    intent: "informational",
+    searchIntentPrimary: "know",
+    relatedTopics: ["Ursprungsnachweis", "Exportlogistik", "Zollabwicklung", "Kasachstan", "Importvorschriften"],
+    excerpt: "Ursprungsnachweise können bei Exporten nach Zentralasien entscheidend für Zollabwicklung, Einfuhrfreigabe und Importanforderungen sein.",
+    metaTitle: "Ursprungsnachweis für Exporte nach Zentralasien",
+    metaDescription: "Wann Ursprungsnachweise bei Transporten nach Kasachstan oder Usbekistan wichtig werden und welche Risiken Fehler verursachen.",
+    keywords: ["Ursprungsnachweis Export", "Zoll Zentralasien", "Exportdokumente", "Kasachstan Import"]
+  },
+  {
+    slug: "sanktionspruefung-exportlogistik-risiken",
+    question: "Warum ist die Sanktionsprüfung bei internationalen Transporten wichtig?",
+    answer: `Die Sanktionsprüfung ist wichtig, weil internationale Transporte durch verschiedene Länder, Banken, Zollsysteme und Kontrollstellen laufen. Bereits unvollständige Empfängerdaten, sensible Waren oder problematische Transitkonstellationen können zu Verzögerungen oder zusätzlichen Prüfungen führen.
 
 Besonders bei Lieferungen in den Mittleren Osten, nach Osteuropa oder in Teile Zentralasiens prüfen Unternehmen häufig Warenart, Endempfänger, Zahlungswege und Exportdokumente genauer. Risiken entstehen oft nicht nur durch die Ware selbst, sondern durch fehlende Transparenz in der Lieferkette oder unklare Endverwendung.
 
 GLOBALSPED berücksichtigt bei der Transportplanung relevante Dokumenten- und Routingthemen, damit potenzielle Risiken frühzeitig erkannt werden können. Anforderungen und Prüfprozesse hängen immer vom konkreten Zielland, der Produktgruppe und aktuellen regulatorischen Vorgaben ab.`,
-  category: "Risiko",
-  intent: "problem-solving",
-  searchIntentPrimary: "solve",
-  relatedTopics: ["Sanktionsprüfung", "Exportlogistik", "Risikomanagement", "Mittlerer Osten", "Zollabwicklung"],
-  excerpt: "Sanktionsprüfungen helfen, Verzögerungen, Rückfragen und Risiken bei internationalen Transporten frühzeitig zu erkennen.",
-  metaTitle: "Sanktionsprüfung bei internationalen Transporten",
-  metaDescription: "Warum Sanktionsprüfungen bei Exporten nach Zentralasien, Osteuropa oder in den Mittleren Osten relevant sind.",
-  keywords: ["Sanktionsprüfung Export", "Export Risiko", "internationale Lieferketten", "Transport Compliance"]
-},
-{
-  slug: "standzeiten-grenzen-zentralasien-ursachen",
-  question: "Wie entstehen Standzeiten an Grenzen nach Zentralasien?",
-  answer: `Standzeiten an Grenzen entstehen häufig durch unvollständige Dokumente, hohe Auslastung von Grenzübergängen, zusätzliche Zollprüfungen oder fehlende Abstimmung zwischen Beteiligten. Besonders Transporte nach Zentralasien sind oft von mehreren Transitländern und unterschiedlichen Kontrollsystemen abhängig.
+    category: "Risiko",
+    intent: "problem-solving",
+    searchIntentPrimary: "solve",
+    relatedTopics: ["Sanktionsprüfung", "Exportlogistik", "Risikomanagement", "Mittlerer Osten", "Zollabwicklung"],
+    excerpt: "Sanktionsprüfungen helfen, Verzögerungen, Rückfragen und Risiken bei internationalen Transporten frühzeitig zu erkennen.",
+    metaTitle: "Sanktionsprüfung bei internationalen Transporten",
+    metaDescription: "Warum Sanktionsprüfungen bei Exporten nach Zentralasien, Osteuropa oder in den Mittleren Osten relevant sind.",
+    keywords: ["Sanktionsprüfung Export", "Export Risiko", "internationale Lieferketten", "Transport Compliance"]
+  },
+  {
+    slug: "standzeiten-grenzen-zentralasien-ursachen",
+    question: "Wie entstehen Standzeiten an Grenzen nach Zentralasien?",
+    answer: `Standzeiten an Grenzen entstehen häufig durch unvollständige Dokumente, hohe Auslastung von Grenzübergängen, zusätzliche Zollprüfungen oder fehlende Abstimmung zwischen Beteiligten. Besonders Transporte nach Zentralasien sind oft von mehreren Transitländern und unterschiedlichen Kontrollsystemen abhängig.
 
 Zusätzliche Verzögerungen entstehen, wenn Handelsrechnung, Packliste oder Warenbeschreibung voneinander abweichen. Auch Feiertage, Fahrverbote, Fahrzeugwechsel oder kurzfristige Änderungen von Importvorgaben können Einfluss auf die Laufzeit haben.
 
 GLOBALSPED plant internationale Straßentransporte mit Fokus auf Dokumentenkonsistenz, realistische Transitzeiten und abgestimmte Grenzabwicklung. Die tatsächliche Dauer hängt jedoch von Route, Zielland, Warenart und aktueller Verkehrslage an Grenzstellen ab.`,
-  category: "Lieferzeiten",
-  intent: "informational",
-  searchIntentPrimary: "know",
-  relatedTopics: ["Standzeiten", "Grenzabwicklung", "Zentralasien", "Transit", "Zollkoordination"],
-  excerpt: "Standzeiten an Grenzen entstehen oft durch Dokumentenabweichungen, Zollprüfungen oder überlastete Grenzübergänge.",
-  metaTitle: "Standzeiten an Grenzen nach Zentralasien",
-  metaDescription: "Warum Standzeiten bei Transporten nach Zentralasien entstehen und welche Faktoren Grenzabwicklungen verzögern können.",
-  keywords: ["Standzeiten Grenze", "Grenzabwicklung Zentralasien", "Zollverzögerung", "Transitprobleme"]
-},
-{
-  slug: "gps-tracking-internationale-transporte-grenzen",
-  question: "Welche Grenzen hat GPS-Tracking bei internationalen Transporten?",
-  answer: `GPS-Tracking verbessert die Transparenz internationaler Transporte, ersetzt aber keine operative Kommunikation oder strukturierte Transportkoordination. Besonders auf langen Routen nach Zentralasien oder in den Mittleren Osten können Grenzwartezeiten, Umladungen oder Netzabdeckungen die Datenqualität beeinflussen.
+    category: "Lieferzeiten",
+    intent: "informational",
+    searchIntentPrimary: "know",
+    relatedTopics: ["Standzeiten", "Grenzabwicklung", "Zentralasien", "Transit", "Zollkoordination"],
+    excerpt: "Standzeiten an Grenzen entstehen oft durch Dokumentenabweichungen, Zollprüfungen oder überlastete Grenzübergänge.",
+    metaTitle: "Standzeiten an Grenzen nach Zentralasien",
+    metaDescription: "Warum Standzeiten bei Transporten nach Zentralasien entstehen und welche Faktoren Grenzabwicklungen verzögern können.",
+    keywords: ["Standzeiten Grenze", "Grenzabwicklung Zentralasien", "Zollverzögerung", "Transitprobleme"]
+  },
+  {
+    slug: "gps-tracking-internationale-transporte-grenzen",
+    question: "Welche Grenzen hat GPS-Tracking bei internationalen Transporten?",
+    answer: `GPS-Tracking verbessert die Transparenz internationaler Transporte, ersetzt aber keine operative Kommunikation oder strukturierte Transportkoordination. Besonders auf langen Routen nach Zentralasien oder in den Mittleren Osten können Grenzwartezeiten, Umladungen oder Netzabdeckungen die Datenqualität beeinflussen.
 
 Viele Kunden erwarten eine minutengenaue Sendungsverfolgung. In der Praxis liefern Tracking-Systeme jedoch nicht immer in jedem Transitland identische Informationen. Zusätzlich entstehen Verzögerungen oft durch Zollprozesse oder Dokumentenprüfungen, die sich nicht allein über GPS-Daten erkennen lassen.
 
 GLOBALSPED kombiniert technische Trackinglösungen mit aktiver Statuskommunikation und operativer Abstimmung entlang der Lieferkette. Wie transparent ein Transport abgebildet werden kann, hängt von Route, Fahrzeugtyp, Zielland und eingesetzten Systemen ab.`,
-  category: "Tracking",
-  intent: "comparison",
-  searchIntentPrimary: "compare",
-  relatedTopics: ["GPS-Tracking", "Sendungsverfolgung", "Zentralasien", "Lieferketten", "Transportkoordination"],
-  excerpt: "GPS-Tracking verbessert die Transparenz internationaler Transporte, hat jedoch bei Grenzprozessen und Transitwegen operative Grenzen.",
-  metaTitle: "GPS-Tracking bei internationalen Transporten",
-  metaDescription: "Welche Grenzen GPS-Tracking bei Transporten nach Zentralasien, Osteuropa oder in den Mittleren Osten hat.",
-  keywords: ["GPS Tracking Transport", "Sendungsverfolgung international", "Tracking Zentralasien", "Logistik Transparenz"]
-},
-{
-  slug: "temperaturabweichung-thermotransport-vorgehen",
-  question: "Was passiert bei einer Temperaturabweichung im Thermotransport?",
-  answer: `Eine Temperaturabweichung im Thermotransport muss dokumentiert, bewertet und mit den Beteiligten abgestimmt werden. Entscheidend ist dabei, wie stark die Abweichung war, wie lange sie bestand und welche Anforderungen für die Ware gelten.
+    category: "Tracking",
+    intent: "comparison",
+    searchIntentPrimary: "compare",
+    relatedTopics: ["GPS-Tracking", "Sendungsverfolgung", "Zentralasien", "Lieferketten", "Transportkoordination"],
+    excerpt: "GPS-Tracking verbessert die Transparenz internationaler Transporte, hat jedoch bei Grenzprozessen und Transitwegen operative Grenzen.",
+    metaTitle: "GPS-Tracking bei internationalen Transporten",
+    metaDescription: "Welche Grenzen GPS-Tracking bei Transporten nach Zentralasien, Osteuropa oder in den Mittleren Osten hat.",
+    keywords: ["GPS Tracking Transport", "Sendungsverfolgung international", "Tracking Zentralasien", "Logistik Transparenz"]
+  },
+  {
+    slug: "temperaturabweichung-thermotransport-vorgehen",
+    question: "Was passiert bei einer Temperaturabweichung im Thermotransport?",
+    answer: `Eine Temperaturabweichung im Thermotransport muss dokumentiert, bewertet und mit den Beteiligten abgestimmt werden. Entscheidend ist dabei, wie stark die Abweichung war, wie lange sie bestand und welche Anforderungen für die Ware gelten.
 
 Besonders bei Pharma-Produkten, sensiblen Lebensmitteln oder chemischen Erzeugnissen können bereits kurze Unterbrechungen der Kühlkette relevant sein. Ursachen reichen von langen Grenzwartezeiten über technische Probleme bis zu unklaren Temperaturvorgaben in den Transportdokumenten.
 
 GLOBALSPED berücksichtigt bei temperaturgeführten internationalen Transporten Themen wie Temperaturüberwachung, Fahrzeugauswahl und realistische Routenplanung. Welche Maßnahmen notwendig sind, hängt immer von Produktgruppe, Temperaturbereich, Empfängeranforderung und Zielland ab.`,
-  category: "Thermotransporte",
-  intent: "problem-solving",
-  searchIntentPrimary: "solve",
-  relatedTopics: ["Thermotransporte", "Temperaturüberwachung", "Kühltransport", "Lieferketten", "Pharmalogistik"],
-  excerpt: "Temperaturabweichungen im Thermotransport müssen dokumentiert und abhängig von Ware, Dauer und Temperaturbereich bewertet werden.",
-  metaTitle: "Temperaturabweichung im Thermotransport",
-  metaDescription: "Was bei Temperaturabweichungen in internationalen Thermotransporten nach Zentralasien oder Osteuropa wichtig ist.",
-  keywords: ["Temperaturabweichung", "Thermotransport", "Kühltransport Risiken", "Temperaturüberwachung"]
-},
-{
-  slug: "transportversicherung-hochwertige-maschinen",
-  question: "Wann ist eine zusätzliche Transportversicherung für Maschinen sinnvoll?",
-  answer: `Eine zusätzliche Transportversicherung kann sinnvoll sein, wenn hochwertige Maschinen, sensible Industrieanlagen oder schwer ersetzbare Komponenten international transportiert werden. Gesetzliche Haftungsregelungen decken in vielen Fällen nicht den tatsächlichen Warenwert oder Folgeschäden ab.
+    category: "Thermotransporte",
+    intent: "problem-solving",
+    searchIntentPrimary: "solve",
+    relatedTopics: ["Thermotransporte", "Temperaturüberwachung", "Kühltransport", "Lieferketten", "Pharmalogistik"],
+    excerpt: "Temperaturabweichungen im Thermotransport müssen dokumentiert und abhängig von Ware, Dauer und Temperaturbereich bewertet werden.",
+    metaTitle: "Temperaturabweichung im Thermotransport",
+    metaDescription: "Was bei Temperaturabweichungen in internationalen Thermotransporten nach Zentralasien oder Osteuropa wichtig ist.",
+    keywords: ["Temperaturabweichung", "Thermotransport", "Kühltransport Risiken", "Temperaturüberwachung"]
+  },
+  {
+    slug: "transportversicherung-hochwertige-maschinen",
+    question: "Wann ist eine zusätzliche Transportversicherung für Maschinen sinnvoll?",
+    answer: `Eine zusätzliche Transportversicherung kann sinnvoll sein, wenn hochwertige Maschinen, sensible Industrieanlagen oder schwer ersetzbare Komponenten international transportiert werden. Gesetzliche Haftungsregelungen decken in vielen Fällen nicht den tatsächlichen Warenwert oder Folgeschäden ab.
 
 Besonders bei Projektlogistik, langen Transitwegen oder mehreren Umladungen steigt das Risiko von Beschädigungen, Feuchtigkeit, Verrutschen oder Verzögerungen. Auch unzureichende Verpackung oder unklare Ladeanforderungen können problematisch werden.
 
 GLOBALSPED unterstützt Unternehmen dabei, Transportanforderungen, Verpackung, Laufzeit und Versicherungsbedarf gemeinsam zu betrachten. Welche Absicherung sinnvoll ist, hängt von Warenwert, Route, Verpackung, Zielland und den konkreten Vertragsbedingungen ab.`,
-  category: "Versicherung",
-  intent: "commercial",
-  searchIntentPrimary: "buy",
-  relatedTopics: ["Transportversicherung", "Projektlogistik", "Maschinentransport", "Spezialtransporte", "Risiko"],
-  excerpt: "Bei hochwertigen Maschinen können zusätzliche Transportversicherungen sinnvoll sein, weil gesetzliche Haftungsgrenzen oft nicht ausreichen.",
-  metaTitle: "Transportversicherung für Maschinen sinnvoll?",
-  metaDescription: "Wann eine zusätzliche Transportversicherung für Maschinen, Industrieanlagen oder Projektlogistik sinnvoll sein kann.",
-  keywords: ["Transportversicherung Maschinen", "Projektlogistik Versicherung", "Maschinentransport", "Warenversicherung"]
-},
-{
-  slug: "beschaedigte-verpackung-export-risiken",
-  question: "Welche Risiken entstehen durch beschädigte Verpackung beim Export?",
-  answer: `Beschädigte oder ungeeignete Verpackungen können zu Transportschäden, Problemen bei Umladungen oder Rückfragen an Zoll- und Kontrollstellen führen. Besonders bei langen internationalen Straßentransporten wirken starke Temperaturschwankungen, Feuchtigkeit und wiederholte Umschlagprozesse auf die Ware ein.
+    category: "Versicherung",
+    intent: "commercial",
+    searchIntentPrimary: "buy",
+    relatedTopics: ["Transportversicherung", "Projektlogistik", "Maschinentransport", "Spezialtransporte", "Risiko"],
+    excerpt: "Bei hochwertigen Maschinen können zusätzliche Transportversicherungen sinnvoll sein, weil gesetzliche Haftungsgrenzen oft nicht ausreichen.",
+    metaTitle: "Transportversicherung für Maschinen sinnvoll?",
+    metaDescription: "Wann eine zusätzliche Transportversicherung für Maschinen, Industrieanlagen oder Projektlogistik sinnvoll sein kann.",
+    keywords: ["Transportversicherung Maschinen", "Projektlogistik Versicherung", "Maschinentransport", "Warenversicherung"]
+  },
+  {
+    slug: "beschaedigte-verpackung-export-risiken",
+    question: "Welche Risiken entstehen durch beschädigte Verpackung beim Export?",
+    answer: `Beschädigte oder ungeeignete Verpackungen können zu Transportschäden, Problemen bei Umladungen oder Rückfragen an Zoll- und Kontrollstellen führen. Besonders bei langen internationalen Straßentransporten wirken starke Temperaturschwankungen, Feuchtigkeit und wiederholte Umschlagprozesse auf die Ware ein.
 
 Kritisch wird es vor allem bei Maschinen, Ersatzteilen, Elektronik oder empfindlichen Industriekomponenten. Beschädigte Verpackungen können außerdem Zweifel an Warenzustand, Sicherung oder Dokumentenkonsistenz auslösen. In einigen Fällen erschwert dies auch die Schadensbewertung.
 
 GLOBALSPED berücksichtigt bei internationalen Transporten Faktoren wie Verpackungsart, Ladeeinheit, Umschlagpunkte und Transportrisiko. Welche Verpackung geeignet ist, hängt von Ware, Route, Laufzeit und Transportart ab.`,
-category: "Spezialtransporte",
-intent: "problem-solving",
-searchIntentPrimary: "solve",
-relatedTopics: ["Verpackung", "Transportschäden", "Spezialtransporte", "Exportlogistik", "Risiko"],
-excerpt: "Beschädigte Verpackungen können bei internationalen Transporten zu Schäden, Verzögerungen und Problemen bei Zoll- oder Schadensprüfungen führen.",
-metaTitle: "Beschädigte Verpackung beim Export: Risiken",
-metaDescription: "Welche Risiken beschädigte Verpackungen bei internationalen Transporten nach Zentralasien oder Osteuropa verursachen können.",
-keywords: ["Verpackung Export", "Transportschäden", "internationale Transporte", "Export Risiko"]
-},
-    
+    category: "Spezialtransporte",
+    intent: "problem-solving",
+    searchIntentPrimary: "solve",
+    relatedTopics: ["Verpackung", "Transportschäden", "Spezialtransporte", "Exportlogistik", "Risiko"],
+    excerpt: "Beschädigte Verpackungen können bei internationalen Transporten zu Schäden, Verzögerungen und Problemen bei Zoll- oder Schadensprüfungen führen.",
+    metaTitle: "Beschädigte Verpackung beim Export: Risiken",
+    metaDescription: "Welche Risiken beschädigte Verpackungen bei internationalen Transporten nach Zentralasien oder Osteuropa verursachen können.",
+    keywords: ["Verpackung Export", "Transportschäden", "internationale Transporte", "Export Risiko"]
+  },
+
 
 ];
 

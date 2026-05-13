@@ -49,8 +49,8 @@ export function CountryTransportPage({ locale, page }: Props) {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href={`/${locale}/anfrage`} className="btn-primary">
-                {page.ctaLabel}
+              <Link href={page.cta.href} className="btn-primary">
+                {page.cta.label}
               </Link>
 
               <Link
@@ -244,8 +244,8 @@ export function CountryTransportPage({ locale, page }: Props) {
           </div>
 
           <div className="mt-10">
-            <Link href={`/${locale}/anfrage`} className="btn-primary">
-              {page.ctaLabel}
+            <Link href={page.cta.href} className="btn-primary">
+              {page.cta.label}
             </Link>
           </div>
         </div>

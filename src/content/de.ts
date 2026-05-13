@@ -264,7 +264,11 @@ export const de = {
             "Ja. Globalsped unterstützt bei Export, Import, Transit und den notwendigen Transportdokumenten.",
         },
       ],
-      ctaLabel: "Transport nach Usbekistan anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Usbekistan anfragen",
+
+      }
     },
     {
       slug: "transport-kasachstan",
@@ -367,7 +371,10 @@ export const de = {
           answer: "Ja. Globalsped unterstützt bei Export, Import, Transit und den notwendigen Transportdokumenten.",
         },
       ],
-      ctaLabel: "Transport nach Kasachstan anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Kasachstan anfragen",
+      }
     },
     {
       slug: "transport-kirgisistan",
@@ -473,7 +480,10 @@ export const de = {
           answer: "Ja. Globalsped unterstützt bei Export, Import, Transit und allen notwendigen Dokumenten für einen reibungslosen Transport nach Kirgisistan.",
         },
       ],
-      ctaLabel: "Transport nach Kirgisistan anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Kirgisistan anfragen",
+      }
     },
     {
       slug: "transport-turkmenistan",
@@ -577,7 +587,10 @@ export const de = {
           answer: "Typischerweise werden Industrieprodukte, Maschinen, Konsumgüter und temperaturempfindliche Waren transportiert. Globalsped bietet hierfür passende Transportlösungen.",
         },
       ],
-      ctaLabel: "Transport nach Turkmenistan anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Turkmenistan anfragen",
+      }
     },
 
     {
@@ -688,8 +701,10 @@ export const de = {
           answer: "Häufig werden Maschinen, Industrieprodukte, Konsumgüter sowie temperaturempfindliche Waren nach Tadschikistan transportiert.",
         },
       ],
-
-      ctaLabel: "Transport nach Tadschikistan anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Tadschikistan anfragen",
+      }
     },
     {
       slug: "transport-mongolei",
@@ -795,7 +810,10 @@ export const de = {
           answer: "Möglich sind FTL Komplettladungen, LTL Teilladungen, Sammelguttransporte sowie Projekt- und Sondertransporte – abgestimmt auf die Anforderungen des Zielmarktes.",
         },
       ],
-      ctaLabel: "Transport in die Mongolei anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport in die Mongolei anfragen",
+      }
     },
     {
       slug: "transport-aserbaidschan",
@@ -901,8 +919,10 @@ export const de = {
           answer: "Häufig werden Industrieprodukte, Maschinen, Konsumgüter sowie Projektladungen transportiert. Auch temperaturgeführte Transporte sind möglich.",
         },
       ],
-
-      ctaLabel: "Transport nach Aserbaidschan anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Aserbaidschan anfragen",
+      }
     },
     {
       slug: "transport-georgien",
@@ -1009,7 +1029,10 @@ export const de = {
         },
       ],
 
-      ctaLabel: "Transport nach Georgien anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Georgien anfragen",
+      }
     },
     {
       slug: "transport-armenien",
@@ -1116,7 +1139,10 @@ export const de = {
         },
       ],
 
-      ctaLabel: "Transport nach Armenien anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport nach Armenien anfragen",
+      }
     },
     {
       slug: "transport-irak",
@@ -1222,7 +1248,10 @@ export const de = {
           answer: "Häufig werden Maschinen, Industrieanlagen, Ersatzteile, Konsumgüter sowie Projektladungen transportiert. Globalsped bietet hierfür passende Transportlösungen.",
         },
       ],
-      ctaLabel: "Transport in den Irak anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport in den Irak anfragen",
+      }
     },
     {
       slug: "transport-ukraine",
@@ -1338,8 +1367,10 @@ export const de = {
             "Möglich sind FTL Komplettladungen, LTL Teilladungen, Sammelguttransporte, Thermotransporte sowie Projekt- und Sondertransporte.",
         },
       ],
-
-      ctaLabel: "Transport in die Ukraine anfragen",
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport in die Ukraine anfragen",
+      }
     },
   ],
   customs: {
@@ -1400,7 +1431,7 @@ export const de = {
     title: "Logistiklösungen für komplexe Märkte.",
     highlight: "Zuverlässig. Persönlich. International.",
     intro: "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
-    cta:  {
+    cta: {
       label: "Transport anfragen",
       href: "/de/transport-anfrage"
     },
@@ -1637,7 +1668,7 @@ export const de = {
     highlight: "für Menschen, die mitdenken und gestalten wollen",
     intro:
       "Sie suchen keinen eintönigen Bürojob, sondern eine abwechslungsreiche Aufgabe in der internationalen Logistik? Bei GLOBALSPED arbeiten Sie an Transportlösungen für Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten – mit direktem Kundenkontakt, Verantwortung und Entwicklungsmöglichkeiten.",
-  
+
     image: {
       src: "/images/jobs/globalsped-jobs.jpg",
       alt: "Karriere und Jobs bei GLOBALSPED",
@@ -1654,12 +1685,12 @@ export const de = {
         icon: "star",
       },
     ],
-  
+
     openPositionsTitle: "Offene Stellenangebote",
     applyLabel: "Jetzt bewerben",
     detailsLabel: "Aufgaben ansehen",
     email: "jobs@globalsped.de",
-  
+
     positions: [
       {
         title: "Export Sachbearbeiter (m/w/d)",
@@ -1691,22 +1722,22 @@ export const de = {
         ],
       },
     ],
-  
+
     initiative: {
       title: "Quereinstieg & Initiativbewerbung",
       text: "Sie erfüllen nicht jedes fachliche Kriterium, bringen aber Organisationstalent, Sprachkenntnisse, Lernbereitschaft und PC-Grundkenntnisse mit? Dann freuen wir uns ebenfalls über Ihre Initiativbewerbung.",
     },
-  
+
     companyTitle: "Unser Unternehmen",
     companyText: "GLOBALSPED ist eine internationale Spedition mit Schwerpunkt auf Exporten nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten. Statt Massengeschäft entwickeln wir individuelle Transportlösungen für komplexe Anforderungen – von Hilfsguttransporten über Medikamentenlieferungen bis zu Maschinen- und Projekttransporten.",
-  
+
     values: [
       "Internationale Transporte statt Standardroutine",
       "Kurze Entscheidungswege und persönliche Zusammenarbeit",
       "Aufgaben mit Verantwortung und Entwicklungsmöglichkeiten",
       "Teamarbeit, Sprachenvielfalt und operative Nähe zum Kunden",
     ],
-  
+
     closing: "Wenn Sie kreativ denken, lernbereit sind und auch ungewöhnliche Aufgaben professionell lösen möchten, möchten wir Sie gerne kennenlernen.",
   },
   contact: {

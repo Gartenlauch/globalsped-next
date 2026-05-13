@@ -124,7 +124,10 @@ export type CountryTransportPage = {
     question: string;
     answer: string;
   }[];
-  ctaLabel: string;
+  cta: {
+    label: string;
+    href: string;
+  },
 };
 
 export type AboutUsPage = {
