@@ -16,7 +16,7 @@ type Props = {
 };
 
 export function ServicePage({ locale, service }: Props) {
-    console.log('services', service, 'locale', locale)
+
   return (
     <main className="bg-[var(--color-global-deep)] text-white">
       <section className="relative overflow-hidden pt-36 pb-24">

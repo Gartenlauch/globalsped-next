@@ -120,10 +120,26 @@ export type CountryTransportPage = {
     faqTitlePrefix?: string;
     faqTitle: string;
   };
-  faq: {
-    question: string;
-    answer: string;
-  }[];
+  countryAuthorityContent: {
+    title: string;
+    intro: string;
+    operationalHints: {
+      title: string;
+      text: string;
+    }[];
+    authorityLinks: {
+      label: string;
+      href: string;
+      source: string;
+      topic: string;
+      reason: string;
+    }[];
+    internalLinks: {
+      label: string;
+      href: string;
+      reason: string;
+    }[];
+  };
   cta: {
     label: string;
     href: string;

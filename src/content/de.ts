@@ -247,23 +247,81 @@ export const de = {
           ],
         },
       },
-      faq: [
-        {
-          question: "Bietet Globalsped Transporte nach Usbekistan an?",
-          answer:
-            "Ja. Globalsped organisiert regelmäßige Transporte nach Usbekistan, unter anderem nach Taschkent, Samarkand, Kokand und Navoi.",
-        },
-        {
-          question: "Welche Transportarten sind nach Usbekistan möglich?",
-          answer:
-            "Möglich sind unter anderem FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
-        },
-        {
-          question: "Unterstützt Globalsped bei der Zollabwicklung?",
-          answer:
-            "Ja. Globalsped unterstützt bei Export, Import, Transit und den notwendigen Transportdokumenten.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Bei Transporten nach Usbekistan sind vollständige Exportpapiere, korrekte Warenklassifizierung und eine abgestimmte Transitplanung besonders wichtig. Die Kombination aus Binnenland, Transitstrecken und landesspezifischen Einfuhrvorgaben macht eine sorgfältige Vorbereitung erforderlich.",
+        operationalHints: [
+          {
+            title: "Einfuhrdokumente exakt vorbereiten",
+            text:
+              "Für Usbekistan sollten Handelsrechnung, Packliste, CMR, Ausfuhrdokumente und Warenbeschreibung vor Versand konsistent geprüft werden. Abweichungen zwischen Dokumenten und Ladung können die Abfertigung verzögern.",
+          },
+          {
+            title: "Transitstrecken frühzeitig prüfen",
+            text:
+              "Da Usbekistan ein Binnenland ist, hängt die Laufzeit stark vom gewählten Transitkorridor, Grenzabläufen und regionalen Verkehrsbedingungen ab. Besonders bei terminrelevanten Lieferungen ist ein belastbarer Routenplan wichtig.",
+          },
+          {
+            title: "Zolltarifnummer und Warenwert plausibel angeben",
+            text:
+              "Unklare Zolltarifnummern, unvollständige Artikelbeschreibungen oder nicht nachvollziehbare Warenwerte führen häufig zu Rückfragen. Eine saubere Vorprüfung reduziert Standzeiten.",
+          },
+          {
+            title: "Sanktions- und Compliance-Prüfung einplanen",
+            text:
+              "Vor Exporten nach Usbekistan sollten Empfänger, Warenart und Verwendungszweck geprüft werden. Dies ist besonders bei technischen Gütern, Ersatzteilen und Industrieausrüstung relevant.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in Usbekistan",
+            href: "https://www.gtai.de/de/trade/usbekistan-wirtschaft/zoll-und-einfuhr-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Aktuelle länderspezifische Quelle zu Einfuhrverfahren, Dokumenten, Abgaben sowie Verboten und Beschränkungen.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Hilft bei der fachlich korrekten Einordnung von Waren und stärkt die Zoll-Entity-Signale.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Relevant für internationale Straßentransporte mit Transit durch mehrere Zollgebiete.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Exportabwicklung",
+            reason:
+              "Offizielle Quelle zur Ausfuhr aus Deutschland und zur Prüfung exportrelevanter Vorgaben.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "FTL-Komplettladungen nach Zentralasien",
+            href: "/de/ftl-transporte",
+            reason:
+              "Verbindet Usbekistan-Transporte mit der passenden Service-Leistung für Direkttransporte.",
+          },
+          {
+            label: "Zoll & Dokumente für Exporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Stärkt die interne Relevanz für Exportdokumente und Zollabwicklung.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Usbekistan anfragen",
@@ -353,24 +411,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Bietet Globalsped Transporte nach Kasachstan an?",
-          answer: "Ja. Globalsped organisiert regelmäßige Transporte nach Kasachstan, unter anderem nach Astana, Almaty, Atyrau und Aktau.",
-        },
-        {
-          question: "Welche Transportarten sind nach Kasachstan möglich?",
-          answer: "Möglich sind unter anderem FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
-        },
-        {
-          question: "Wie lange dauert ein Transport nach Kasachstan?",
-          answer: "Je nach Route und Zielort beträgt die Laufzeit über die Südroute ca. 31–39 Tage und über die Nordroute ca. 10–16 Tage.",
-        },
-        {
-          question: "Unterstützt Globalsped bei der Zollabwicklung für Kasachstan?",
-          answer: "Ja. Globalsped unterstützt bei Export, Import, Transit und den notwendigen Transportdokumenten.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Für Transporte nach Kasachstan sind eine saubere Exportdokumentation, korrekte Zolltarifnummern und eine frühzeitige Prüfung von Transit- und Einfuhrvorgaben entscheidend. Besonders bei Maschinen, Ersatzteilen, Industrieausrüstung und Handelsware reduziert eine vollständige Dokumentenprüfung Verzögerungen an Grenz- und Zollstellen.",
+        operationalHints: [
+          {
+            title: "Zoll- und Einfuhrprüfung früh vorbereiten",
+            text:
+              "Bei Exporten nach Kasachstan sollten Handelsrechnung, Packliste, Warenbeschreibung, Zolltarifnummer und Ursprungsangaben vor Abholung geprüft werden. Unklare Warenbeschreibungen oder abweichende Gewichte führen häufig zu Rückfragen in der Zollabwicklung.",
+          },
+          {
+            title: "TIR und CMR sauber abstimmen",
+            text:
+              "Bei Straßentransporten nach Kasachstan sind TIR- und CMR-Dokumente zentrale Bestandteile der Transport- und Transitabwicklung. Die Angaben müssen mit Rechnung, Packliste und tatsächlicher Ladung übereinstimmen.",
+          },
+          {
+            title: "EAWU-Anforderungen berücksichtigen",
+            text:
+              "Kasachstan ist Teil der Eurasischen Wirtschaftsunion. Je nach Ware können Konformitätsnachweise, technische Anforderungen oder zusätzliche Importdokumente erforderlich sein.",
+          },
+          {
+            title: "Transitkorridore realistisch planen",
+            text:
+              "Für Transporte nach Kasachstan sollten Grenzübergänge, saisonale Laufzeiten und mögliche Wartezeiten im Transit frühzeitig berücksichtigt werden. Eine realistische Laufzeitplanung ist besonders bei Produktions- und Projektlieferungen wichtig.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in Kasachstan",
+            href: "https://www.gtai.de/de/trade/kasachstan-wirtschaft/zoll-einfuhr-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Länderspezifische Authority-Quelle zu Einfuhrverfahren, Warenbegleitdokumenten, Abgaben sowie Verboten und Beschränkungen.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Stärkt die semantische Verknüpfung zu Zolltarifnummern, Exportprüfung und korrekter Wareneinreihung.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Offizielle Fachquelle zum internationalen TIR-Transitsystem für grenzüberschreitende Straßentransporte.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Ausfuhrabwicklung",
+            reason:
+              "Offizielle Quelle zu Exportvorgaben und Ausfuhrprozessen aus Deutschland in Drittländer.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Zoll & Dokumente für internationale Transporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Stärkt die interne Themenverknüpfung zwischen Kasachstan-Transporten, Zollabwicklung und Exportdokumenten.",
+          },
+          {
+            label: "Transportanfrage für Kasachstan stellen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Führt Nutzer mit konkretem Transportbedarf direkt zur Conversion.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Kasachstan anfragen",
@@ -458,28 +573,81 @@ export const de = {
           ],
         },
       },
-      faq: [
-        {
-          question: "Wie lange dauert ein Transport nach Kirgisistan?",
-          answer: "Die Laufzeit für Transporte nach Kirgisistan beträgt in der Regel zwischen 18 und 25 Tagen, abhängig von Route, Transportart (FTL oder LTL) und Zielort.",
-        },
-        {
-          question: "Welche Routen werden für Transporte nach Kirgisistan genutzt?",
-          answer: "Transporte erfolgen in der Regel über die Südroute (Türkei, Georgien, Aserbaidschan, Kaspisches Meer, Kasachstan) oder die Nordroute (Polen, Belarus, Russland, Kasachstan).",
-        },
-        {
-          question: "Welche Transportarten sind nach Kirgisistan möglich?",
-          answer: "Möglich sind FTL Komplettladungen, LTL Teilladungen, Sammelguttransporte, Thermotransporte sowie Projekt- und Sondertransporte.",
-        },
-        {
-          question: "Welche Dokumente werden für den Transport nach Kirgisistan benötigt?",
-          answer: "Typischerweise werden Zolldokumente wie Ausfuhrbegleitdokumente (EX-A, EX-C) sowie Transitdokumente (T1) benötigt. Globalsped unterstützt bei der vollständigen Abwicklung.",
-        },
-        {
-          question: "Bietet Globalsped Unterstützung bei der Zollabwicklung?",
-          answer: "Ja. Globalsped unterstützt bei Export, Import, Transit und allen notwendigen Dokumenten für einen reibungslosen Transport nach Kirgisistan.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte nach Kirgisistan erfordern eine präzise Abstimmung von Transitstrecke, Zollpapieren und Warenbegleitdokumenten. Aufgrund der geografischen Lage und der Gebirgsregionen sollten Laufzeiten und Routen realistisch geplant werden.",
+        operationalHints: [
+          {
+            title: "Transitabhängigkeit berücksichtigen",
+            text:
+              "Kirgisistan ist im Straßengüterverkehr stark von internationalen Transitkorridoren abhängig. Grenzübergänge, Wetterbedingungen und regionale Infrastruktur können die Laufzeit beeinflussen.",
+          },
+          {
+            title: "Dokumente vor Abfahrt auf Konsistenz prüfen",
+            text:
+              "CMR, Handelsrechnung, Packliste und Ausfuhrdokumente müssen in Warenbezeichnung, Gewicht und Packstückzahl übereinstimmen. Unstimmigkeiten führen häufig zu zusätzlichen Prüfungen.",
+          },
+          {
+            title: "EAWU-Bezug beachten",
+            text:
+              "Kirgisistan ist Mitglied der Eurasischen Wirtschaftsunion. Je nach Ware können technische Anforderungen, Konformitätsnachweise oder zusätzliche Importvorgaben relevant sein.",
+          },
+          {
+            title: "Gebirgs- und Winterbedingungen einplanen",
+            text:
+              "Bei Transporten in entlegene Regionen Kirgisistans sollten saisonale Straßenbedingungen, Höhenlagen und mögliche Einschränkungen im Winter bereits in der Planung berücksichtigt werden.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Authority-Quelle für internationale Straßentransporte und Transitverfahren über mehrere Zollgrenzen.",
+          },
+          {
+            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
+            source: "UNECE",
+            topic: "CMR",
+            reason:
+              "Offizielle Grundlage für den internationalen Straßengüterverkehr und transportrechtliche Dokumentation.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Stärkt die fachliche Einordnung von Exportwaren und die semantische Relevanz für Zollprozesse.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Ausfuhrabwicklung",
+            reason:
+              "Offizielle Grundlage für Exportformalitäten bei Lieferungen aus Deutschland in Drittländer.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "LTL-Teilladungen nach Zentralasien",
+            href: "/de/ltl-transporte",
+            reason:
+              "Passt zu Sammelgut- und Teilladungstransporten in Richtung Kirgisistan.",
+          },
+          {
+            label: "Transportanfrage für Kirgisistan stellen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Leitet Nutzer mit konkretem Bedarf direkt in den Anfrageprozess.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Kirgisistan anfragen",
@@ -573,20 +741,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Welche Herausforderungen gibt es beim Transport nach Turkmenistan?",
-          answer: "Transporte nach Turkmenistan erfordern Erfahrung in der Zollabwicklung und Routenplanung. Besonders die Abstimmung von Transitdokumenten und Grenzprozessen ist entscheidend für eine reibungslose Lieferung.",
-        },
-        {
-          question: "Ist ein Transport nach Turkmenistan zuverlässig planbar?",
-          answer: "Ja, mit der richtigen Vorbereitung und einem erfahrenen Logistikpartner lassen sich Transporte nach Turkmenistan zuverlässig planen und durchführen – auch bei komplexen Anforderungen.",
-        },
-        {
-          question: "Für welche Waren eignet sich ein Transport nach Turkmenistan?",
-          answer: "Typischerweise werden Industrieprodukte, Maschinen, Konsumgüter und temperaturempfindliche Waren transportiert. Globalsped bietet hierfür passende Transportlösungen.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte nach Turkmenistan benötigen eine besonders sorgfältige Vorbereitung von Dokumenten, Transitstrecken und Empfängerangaben. Aufgrund landesspezifischer Vorgaben und Transitabhängigkeiten sollte die Transportplanung frühzeitig erfolgen.",
+        operationalHints: [
+          {
+            title: "Dokumentationsqualität ist entscheidend",
+            text:
+              "Für Turkmenistan sollten Handelsrechnung, Packliste, CMR und Ausfuhrunterlagen vollständig und eindeutig sein. Besonders Warenbeschreibung, Warenwert, Gewicht und Empfängerdaten müssen konsistent sein.",
+          },
+          {
+            title: "Transitplanung früh abstimmen",
+            text:
+              "Je nach Route können Transitländer, Grenzübergänge und regionale Vorschriften die Laufzeit beeinflussen. Eine abgestimmte Routenplanung reduziert operative Unsicherheiten.",
+          },
+          {
+            title: "Compliance-Prüfung nicht vernachlässigen",
+            text:
+              "Vor Versand sollten Warenart, Empfänger und Endverwendung geprüft werden. Dies ist besonders bei technischen Gütern, Ersatzteilen und Industriekomponenten relevant.",
+          },
+          {
+            title: "Zoll- und Einfuhrvorgaben vorab klären",
+            text:
+              "Da Einfuhr- und Abfertigungsanforderungen je nach Ware unterschiedlich sein können, sollten Importvorgaben und benötigte Begleitdokumente vor Transportbeginn abgestimmt werden.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Ausfuhrabwicklung",
+            reason:
+              "Offizielle Quelle für Exportvorgaben und Ausfuhrprozesse aus Deutschland in Drittländer.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Relevant für Straßentransporte mit mehreren Zoll- und Transitabschnitten.",
+          },
+          {
+            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
+            source: "UNECE",
+            topic: "CMR",
+            reason:
+              "Stärkt die transportrechtliche Entity-Verknüpfung zu CMR und internationalem Straßengüterverkehr.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Authority-Quelle für korrekte Zolltarifnummern und Exportprüfung.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Zoll & Dokumente für internationale Transporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Thematisch passend für Transporte mit erhöhtem Dokumentationsbedarf.",
+          },
+          {
+            label: "Projektlogistik für komplexe Transporte",
+            href: "/de/projektlogistik",
+            reason:
+              "Geeignet für industrielle Lieferungen und komplexere Transporte nach Turkmenistan.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Turkmenistan anfragen",
@@ -687,20 +916,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Welche Besonderheiten gibt es beim Transport nach Tadschikistan?",
-          answer: "Transporte nach Tadschikistan erfordern Erfahrung in der Routenplanung und Grenzabwicklung, da mehrere Transitländer durchquert werden. Eine sorgfältige Vorbereitung der Dokumente ist entscheidend.",
-        },
-        {
-          question: "Ist ein Transport nach Tadschikistan zuverlässig planbar?",
-          answer: "Ja, mit einem erfahrenen Logistikpartner lassen sich Transporte nach Tadschikistan zuverlässig planen. Entscheidend sind die richtige Route und eine professionelle Zollabwicklung.",
-        },
-        {
-          question: "Welche Güter werden typischerweise nach Tadschikistan transportiert?",
-          answer: "Häufig werden Maschinen, Industrieprodukte, Konsumgüter sowie temperaturempfindliche Waren nach Tadschikistan transportiert.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Bei Transporten nach Tadschikistan sind sorgfältige Dokumentation, belastbare Transitplanung und eine realistische Einschätzung der Infrastruktur besonders wichtig. Je nach Zielregion können Grenzabläufe, Gebirgsstrecken und saisonale Bedingungen die Durchführung beeinflussen.",
+        operationalHints: [
+          {
+            title: "Begleitdokumente vollständig vorbereiten",
+            text:
+              "Für Tadschikistan sollten CMR, Handelsrechnung, Packliste und Zollunterlagen vollständig und widerspruchsfrei sein. Besonders bei Industrie- und Ersatzteillieferungen sind präzise Warenbeschreibungen wichtig.",
+          },
+          {
+            title: "Transit und Grenzabwicklung realistisch planen",
+            text:
+              "Tadschikistan ist stark transitabhängig. Route, Grenzübergänge und lokale Abfertigung sollten vor Transportbeginn abgestimmt werden, um unnötige Standzeiten zu vermeiden.",
+          },
+          {
+            title: "Infrastruktur- und Gebirgsbedingungen beachten",
+            text:
+              "Je nach Zielort können Straßenverhältnisse, Höhenlagen und saisonale Einschränkungen relevant sein. Für empfindliche oder terminrelevante Ware ist eine realistische Laufzeitplanung entscheidend.",
+          },
+          {
+            title: "Einfuhrbeschränkungen prüfen",
+            text:
+              "Je nach Warengruppe können zusätzliche Einfuhrvorgaben oder Beschränkungen bestehen. Eine Vorprüfung reduziert das Risiko von Verzögerungen bei der Importabfertigung.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in Tadschikistan",
+            href: "https://www.gtai.de/de/trade/tadschikistan-wirtschaft/zoll-einfuhr-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Länderspezifische Quelle zu Einfuhrverfahren, Warenbegleitdokumenten, Abgaben sowie Verboten und Beschränkungen.",
+          },
+          {
+            label: "GTAI-Informationen zu Einfuhrverboten und Beschränkungen in Tadschikistan",
+            href: "https://www.gtai.de/de/trade/tadschikistan/zoll/einfuhrverbote-und-beschraenkungen-645316",
+            source: "Germany Trade & Invest",
+            topic: "Einfuhrbeschränkungen",
+            reason:
+              "Stärkt die fachliche Tiefe bei Warenkontrolle, Beschränkungen und Importprüfung.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Relevant für Transitplanung und internationale Straßentransporte nach Zentralasien.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Ausfuhrabwicklung",
+            reason:
+              "Offizielle Quelle zur deutschen Exportabwicklung in Drittländer.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Zoll & Dokumente für Transporte nach Zentralasien",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Stärkt die semantische Verbindung zwischen Tadschikistan-Transporten und Zollkompetenz.",
+          },
+          {
+            label: "Transportanfrage für Tadschikistan stellen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Führt direkt zur Leadgenerierung für konkrete Transportanfragen.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Tadschikistan anfragen",
@@ -796,20 +1086,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Wie lange dauert ein Transport in die Mongolei?",
-          answer: "Die Laufzeit für Transporte in die Mongolei beträgt in der Regel zwischen 20 und 30 Tagen, abhängig von Route, Infrastruktur und Zielort.",
-        },
-        {
-          question: "Welche besonderen Herausforderungen gibt es bei Transporten in die Mongolei?",
-          answer: "Die Mongolei gilt als logistisch anspruchsvoller Markt aufgrund großer Entfernungen, begrenzter Infrastruktur und klimatischer Bedingungen. Eine sorgfältige Planung und erfahrene Partner sind entscheidend.",
-        },
-        {
-          question: "Welche Transportarten sind in die Mongolei möglich?",
-          answer: "Möglich sind FTL Komplettladungen, LTL Teilladungen, Sammelguttransporte sowie Projekt- und Sondertransporte – abgestimmt auf die Anforderungen des Zielmarktes.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte in die Mongolei benötigen eine besonders belastbare Routen- und Transitplanung. Aufgrund der großen Distanzen, der Binnenlage und der infrastrukturellen Besonderheiten sind vollständige Dokumente und realistische Laufzeiten entscheidend.",
+        operationalHints: [
+          {
+            title: "Lange Transitstrecken realistisch kalkulieren",
+            text:
+              "Die Mongolei ist für europäische Straßentransporte ein anspruchsvolles Ziel. Transitländer, Grenzübergänge und regionale Infrastruktur beeinflussen die Laufzeit erheblich.",
+          },
+          {
+            title: "Dokumente vor Verladung prüfen",
+            text:
+              "CMR, Handelsrechnung, Packliste und Ausfuhrdokumente müssen eindeutig und vollständig sein. Besonders bei Maschinen, Ersatzteilen und Industrieausrüstung sind präzise Warenbeschreibungen wichtig.",
+          },
+          {
+            title: "Zolltarifnummer und Empfängerdaten abstimmen",
+            text:
+              "Unklare Zolltarifnummern oder abweichende Empfängerdaten können Rückfragen verursachen. Eine saubere Vorabprüfung verhindert Verzögerungen im Transit und bei der Einfuhr.",
+          },
+          {
+            title: "Saisonale Bedingungen berücksichtigen",
+            text:
+              "Wetter, Straßenverhältnisse und regionale Erreichbarkeit können in der Mongolei eine größere Rolle spielen als bei Standardzielen. Eine flexible Laufzeitplanung ist sinnvoll.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zur Wirtschaft und zu Rahmenbedingungen in der Mongolei",
+            href: "https://www.gtai.de/de/trade/mongolei-wirtschaft",
+            source: "Germany Trade & Invest",
+            topic: "Länder- und Handelsinformationen",
+            reason:
+              "Institutionelle Quelle für wirtschaftliche Rahmenbedingungen, Recht, Zoll und Außenhandel.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Stärkt die fachliche Einordnung internationaler Transittransporte in entfernte Binnenmärkte.",
+          },
+          {
+            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
+            source: "UNECE",
+            topic: "CMR",
+            reason:
+              "Offizielle Grundlage für CMR-Dokumentation im internationalen Straßengüterverkehr.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Exportabwicklung",
+            reason:
+              "Offizielle Quelle zu Ausfuhrprozessen aus Deutschland in Drittländer.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Projektlogistik für internationale Spezialtransporte",
+            href: "/de/projektlogistik",
+            reason:
+              "Mongolei-Transporte haben häufig erhöhten Planungsbedarf bei Route, Laufzeit und Abwicklung.",
+          },
+          {
+            label: "Transportanfrage für Mongolei stellen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Führt Nutzer direkt zur konkreten Anfrage.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in die Mongolei anfragen",
@@ -905,20 +1256,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Wie lange dauert ein Transport nach Aserbaidschan?",
-          answer: "Die Laufzeit für Transporte nach Aserbaidschan beträgt in der Regel zwischen 7 und 14 Tagen, abhängig von Route, Grenzabwicklung und Zielort.",
-        },
-        {
-          question: "Warum ist Aserbaidschan ein wichtiger Logistikstandort?",
-          answer: "Aserbaidschan ist ein zentraler Transitknoten zwischen Europa und Zentralasien. Insbesondere die Verbindung über das Kaspische Meer spielt eine wichtige Rolle im internationalen Warenverkehr.",
-        },
-        {
-          question: "Welche Waren werden typischerweise nach Aserbaidschan transportiert?",
-          answer: "Häufig werden Industrieprodukte, Maschinen, Konsumgüter sowie Projektladungen transportiert. Auch temperaturgeführte Transporte sind möglich.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte nach Aserbaidschan verbinden Zollabwicklung, Kaukasus-Transit und präzise Exportdokumentation. Besonders bei Industrie-, Maschinenbau- und Handelswaren ist eine saubere Vorbereitung der Unterlagen wichtig.",
+        operationalHints: [
+          {
+            title: "Einfuhrvorgaben vor Versand prüfen",
+            text:
+              "Für Aserbaidschan sollten Importvorgaben, Warenbegleitdokumente und mögliche produktspezifische Anforderungen vor Transportbeginn geklärt werden.",
+          },
+          {
+            title: "Kaukasus-Transit sauber planen",
+            text:
+              "Je nach Route können Transitländer, Grenzübergänge und regionale Abfertigungsprozesse die Laufzeit beeinflussen. Eine realistische Routenplanung reduziert Verzögerungen.",
+          },
+          {
+            title: "Warenwert und Zolltarifnummer konsistent angeben",
+            text:
+              "Unklare Warenwerte oder unpräzise Zolltarifnummern können zu Rückfragen führen. Handelsrechnung, Packliste und CMR sollten dieselben Daten enthalten.",
+          },
+          {
+            title: "Compliance bei technischen Waren prüfen",
+            text:
+              "Bei Maschinen, Ersatzteilen und Industriekomponenten sollte vorab geprüft werden, ob Exportkontrolle oder zusätzliche Nachweise relevant sind.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in Aserbaidschan",
+            href: "https://www.gtai.de/de/trade/aserbaidschan-wirtschaft/zoll-einfuhr-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Aktuelle länderspezifische Authority-Quelle zu Einfuhrverfahren, Dokumenten und Abgaben.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Stärkt die fachliche Relevanz für korrekte Wareneinreihung und Exportdokumentation.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Relevant für internationale Straßentransporte über mehrere Zollgebiete in Richtung Kaukasus.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Exportabwicklung",
+            reason:
+              "Offizielle Grundlage für Ausfuhrprozesse und Exportkontrolle aus Deutschland.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "FTL-Komplettladungen in den Kaukasus",
+            href: "/de/ftl-transporte",
+            reason:
+              "Verbindet Aserbaidschan-Transporte mit einer wichtigen Service-Leistung.",
+          },
+          {
+            label: "Zoll & Dokumente für Aserbaidschan-Transporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Stärkt die interne Themenautorität für Zollabwicklung und Dokumente.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Aserbaidschan anfragen",
@@ -1014,21 +1426,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Wie lange dauert ein Transport nach Georgien?",
-          answer: "Die Laufzeit für Transporte nach Georgien beträgt in der Regel zwischen 7 und 12 Tagen, abhängig von Route, Grenzabwicklung und Zielort.",
-        },
-        {
-          question: "Warum ist Georgien ein wichtiger Logistikstandort?",
-          answer: "Georgien ist ein strategisches Bindeglied zwischen Europa und Asien und dient als wichtiger Transitkorridor für Transporte in den Kaukasus und nach Zentralasien.",
-        },
-        {
-          question: "Welche Transportarten sind nach Georgien möglich?",
-          answer: "Möglich sind FTL Komplettladungen, LTL Teilladungen, Sammelguttransporte, Thermotransporte sowie Projekt- und Sondertransporte.",
-        },
-      ],
-
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Georgien ist für Transporte in den Kaukasus und weiter Richtung Zentralasien ein wichtiger Ziel- und Transitmarkt. Entscheidend sind vollständige Transportdokumente, korrekte Zollangaben und eine abgestimmte Abwicklung mit den lokalen Importprozessen.",
+        operationalHints: [
+          {
+            title: "Zollanmeldung und Fristen beachten",
+            text:
+              "Für Georgien sollten Einfuhrdokumente frühzeitig vorbereitet werden. Verzögerungen entstehen häufig, wenn Warenbeschreibung, Rechnung, Packliste oder Transportdaten nicht zusammenpassen.",
+          },
+          {
+            title: "Kaukasus-Route realistisch planen",
+            text:
+              "Je nach Herkunftsort und Transitstrecke können Grenzabfertigung, regionale Verkehrsbedingungen und saisonale Einflüsse die Laufzeit beeinflussen.",
+          },
+          {
+            title: "Präferenz- und Ursprungsfragen prüfen",
+            text:
+              "Bei bestimmten Waren kann der Ursprung für Zollbehandlung und Dokumentation relevant sein. Eine frühzeitige Prüfung verhindert Nachforderungen.",
+          },
+          {
+            title: "Dokumente bei Waren mit Sonderanforderungen abstimmen",
+            text:
+              "Für einzelne Produktgruppen können zusätzliche Nachweise, Zertifikate oder Kennzeichnungsvorgaben erforderlich sein. Dies sollte vor Abholung geprüft werden.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in Georgien",
+            href: "https://www.gtai.de/de/trade/georgien-wirtschaft/zoll-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Aktuelle Authority-Quelle zu georgischen Einfuhrverfahren, Abgaben und Warenbegleitdokumenten.",
+          },
+          {
+            label: "GTAI-Informationen zum Zollverfahren in Georgien",
+            href: "https://www.gtai.de/de/trade/georgien/zoll/zollverfahren--610482",
+            source: "Germany Trade & Invest",
+            topic: "Zollverfahren",
+            reason:
+              "Vertieft die fachliche Relevanz für Zollanmeldung und Importabfertigung.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Stärkt die Entity-Verknüpfung zu internationalem Transit und Straßengüterverkehr.",
+          },
+          {
+            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
+            source: "UNECE",
+            topic: "CMR",
+            reason:
+              "Offizielle Grundlage für CMR-bezogene Transportdokumentation.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Transporte in den Kaukasus anfragen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Unterstützt Conversion für konkrete Georgien- und Kaukasus-Transporte.",
+          },
+          {
+            label: "Zoll & Dokumente für internationale Transporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Stärkt die semantische Verbindung zu Zoll- und Dokumentenkompetenz.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Georgien anfragen",
@@ -1124,21 +1596,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Welche Besonderheiten gibt es beim Transport nach Armenien?",
-          answer: "Transporte nach Armenien erfordern aufgrund der geografischen und politischen Rahmenbedingungen eine sorgfältige Routenplanung. Erfahrung in der Region ist entscheidend für eine sichere und zuverlässige Abwicklung.",
-        },
-        {
-          question: "Wie lange dauert ein Transport nach Armenien?",
-          answer: "Die Laufzeit für Transporte nach Armenien beträgt in der Regel zwischen 10 und 18 Tagen, abhängig von Route, Grenzabwicklung und Zielort.",
-        },
-        {
-          question: "Ist ein Transport nach Armenien zuverlässig planbar?",
-          answer: "Ja, mit einem erfahrenen Logistikpartner lassen sich Transporte nach Armenien zuverlässig planen. Entscheidend sind eine flexible Routenstrategie und professionelle Zollabwicklung.",
-        },
-      ],
-
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Für Transporte nach Armenien sind präzise Exportdokumente, abgestimmte Transitwege und eine frühzeitige Prüfung der Einfuhrvorgaben wichtig. Aufgrund der geografischen Lage müssen Route und Grenzprozesse besonders sorgfältig geplant werden.",
+        operationalHints: [
+          {
+            title: "Transitroute vorab klären",
+            text:
+              "Armenien erfordert je nach Ausgangsort eine sorgfältige Abstimmung der Transitstrecke. Grenzabläufe, regionale Routen und politische Rahmenbedingungen können die Laufzeit beeinflussen.",
+          },
+          {
+            title: "EAWU-Kontext berücksichtigen",
+            text:
+              "Armenien ist Mitglied der Eurasischen Wirtschaftsunion. Für bestimmte Waren können technische Anforderungen, Konformitätsnachweise oder zusätzliche Dokumente relevant sein.",
+          },
+          {
+            title: "Dokumente konsistent halten",
+            text:
+              "Handelsrechnung, Packliste, CMR und Ausfuhrdokumente sollten bei Warenbezeichnung, Gewicht, Packstückzahl und Warenwert übereinstimmen.",
+          },
+          {
+            title: "Sanktions- und Exportkontrolle prüfen",
+            text:
+              "Bei technischen Gütern, Maschinen und Ersatzteilen sollte vor Versand geprüft werden, ob Exportkontrollvorgaben oder Endverwendungsprüfungen relevant sind.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zur Wirtschaft und zu Rahmenbedingungen in Armenien",
+            href: "https://www.gtai.de/de/trade/armenien-wirtschaft",
+            source: "Germany Trade & Invest",
+            topic: "Länder- und Handelsinformationen",
+            reason:
+              "Institutionelle Quelle für wirtschaftliche Rahmenbedingungen, Recht, Zoll und Außenhandel in Armenien.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transit",
+            reason:
+              "Relevant für internationale Straßentransporte mit Transitabwicklung.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Stärkt die fachliche Verbindung zu Wareneinreihung und Exportdokumentation.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Exportabwicklung",
+            reason:
+              "Offizielle Quelle zu deutschen Exportformalitäten und Ausfuhrprozessen.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Projektlogistik für komplexe Transporte",
+            href: "/de/projektlogistik",
+            reason:
+              "Passt zu anspruchsvollen Lieferungen mit erhöhter Routen- und Dokumentationsplanung.",
+          },
+          {
+            label: "Zoll & Dokumente für Armenien-Transporte",
+            href: "/de/zoll-dokumente",
+            reason:
+              "Stärkt die thematische Verknüpfung mit Exportdokumenten und Zollabwicklung.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Armenien anfragen",
@@ -1234,20 +1766,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Welche Besonderheiten gibt es beim Transport in den Irak?",
-          answer: "Transporte in den Irak erfordern Erfahrung in Sicherheitsplanung, Zollabwicklung und Routenführung. Eine sorgfältige Vorbereitung ist entscheidend für eine erfolgreiche Durchführung.",
-        },
-        {
-          question: "Wie lange dauert ein Transport in den Irak?",
-          answer: "Die Laufzeit beträgt in der Regel zwischen 8 und 18 Tagen, abhängig von Route, Zielregion und aktuellen Rahmenbedingungen.",
-        },
-        {
-          question: "Welche Güter werden typischerweise in den Irak transportiert?",
-          answer: "Häufig werden Maschinen, Industrieanlagen, Ersatzteile, Konsumgüter sowie Projektladungen transportiert. Globalsped bietet hierfür passende Transportlösungen.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte in den Irak erfordern eine besonders sorgfältige Prüfung von Dokumenten, Empfängerangaben, Zollwerten und Compliance-Anforderungen. Je nach Zielregion und Warenart können zusätzliche Abstimmungen vor Versand notwendig sein.",
+        operationalHints: [
+          {
+            title: "Vorabanforderungen und Zollwerte prüfen",
+            text:
+              "Für Irak-Transporte sollten Handelsrechnung, Warenwert, Zahlungs- und Empfängerdaten besonders sorgfältig vorbereitet werden. Unklare oder unvollständige Angaben können die Abfertigung verzögern.",
+          },
+          {
+            title: "Compliance vor Transportbeginn klären",
+            text:
+              "Bei Exporten in den Irak sollten Empfänger, Endverwendung und Warenart frühzeitig geprüft werden. Dies gilt besonders für technische Güter, Ersatzteile und Industrieausrüstung.",
+          },
+          {
+            title: "Regionale Zielorte unterscheiden",
+            text:
+              "Lieferungen nach Bagdad, Basra, Erbil oder in andere Regionen können unterschiedliche operative Anforderungen haben. Route, Grenzabfertigung und lokale Zustellung sollten vorab abgestimmt werden.",
+          },
+          {
+            title: "Dokumente mit lokaler Importabwicklung abstimmen",
+            text:
+              "Packliste, CMR, Handelsrechnung und ggf. zusätzliche Nachweise sollten mit den Anforderungen des Empfängers und der Importabfertigung abgeglichen werden.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zur Wirtschaft und zu Zollthemen im Irak",
+            href: "https://www.gtai.de/de/trade/irak-wirtschaft",
+            source: "Germany Trade & Invest",
+            topic: "Länder- und Zollinformationen",
+            reason:
+              "Institutionelle Quelle für Rahmenbedingungen, Recht, Zoll und wirtschaftliche Entwicklungen im Irak.",
+          },
+          {
+            label: "GTAI-Informationen zu neuen Regeln zur Zollwertermittlung im Irak",
+            href: "https://www.gtai.de/de/trade/irak/zoll/irak-zollwert-1986908",
+            source: "Germany Trade & Invest",
+            topic: "Zollwert / Vorabanmeldung",
+            reason:
+              "Aktuelle Quelle zu irakischen Zollwert- und Vorabanmeldeanforderungen.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Exportabwicklung",
+            reason:
+              "Offizielle Grundlage für Ausfuhrprozesse, Exportkontrolle und Drittlandslieferungen.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Stärkt die fachliche Relevanz für korrekte Warenklassifizierung und Exportdokumente.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Zoll & Dokumente für Irak-Transporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Sehr relevant wegen erhöhter Anforderungen an Dokumente, Zollwerte und Compliance.",
+          },
+          {
+            label: "Transportanfrage für Irak stellen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Leitet qualifizierte Nutzer direkt zur Anfrage.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in den Irak anfragen",
@@ -1350,23 +1943,81 @@ export const de = {
         },
       },
 
-      faq: [
-        {
-          question: "Welche Besonderheiten gibt es beim Transport in die Ukraine?",
-          answer:
-            "Transporte in die Ukraine erfordern eine aktuelle Routenprüfung, sorgfältige Dokumentenabstimmung und flexible Planung der Grenzabwicklung. Ein erfahrener Logistikpartner hilft, Verzögerungen zu vermeiden.",
-        },
-        {
-          question: "Wie lange dauert ein Transport in die Ukraine?",
-          answer:
-            "Die Laufzeit beträgt in der Regel zwischen 3 und 8 Tagen, abhängig von Abholort, Zielregion, Transportart und Grenzabwicklung.",
-        },
-        {
-          question: "Welche Transportarten sind in die Ukraine möglich?",
-          answer:
-            "Möglich sind FTL Komplettladungen, LTL Teilladungen, Sammelguttransporte, Thermotransporte sowie Projekt- und Sondertransporte.",
-        },
-      ],
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte in die Ukraine erfordern eine genaue Prüfung von Route, Empfänger, Warenart und Exportdokumenten. Aufgrund der aktuellen Lage sind Compliance, Sicherheit und flexible Transportplanung besonders wichtig.",
+        operationalHints: [
+          {
+            title: "Route und Zustellregion sorgfältig prüfen",
+            text:
+              "Bei Ukraine-Transporten sollten Zielregion, Sicherheitslage, verfügbare Grenzübergänge und lokale Zustellmöglichkeiten vor Versand abgestimmt werden.",
+          },
+          {
+            title: "Export- und Einfuhrdokumente vollständig vorbereiten",
+            text:
+              "Handelsrechnung, Packliste, CMR, Ausfuhranmeldung und Warenbeschreibung sollten vollständig und konsistent sein. Abweichungen führen häufig zu Verzögerungen.",
+          },
+          {
+            title: "Sanktions- und Compliance-Prüfung durchführen",
+            text:
+              "Vor Transportbeginn sollten Empfänger, Warenart, Endverwendung und mögliche Exportkontrollvorgaben geprüft werden. Dies ist bei technischen Gütern besonders wichtig.",
+          },
+          {
+            title: "Laufzeiten flexibel planen",
+            text:
+              "Grenzabfertigung, Sicherheitslage und regionale Einschränkungen können sich kurzfristig auswirken. Für dringende Lieferungen ist eine realistische und flexible Planung erforderlich.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in der Ukraine",
+            href: "https://www.gtai.de/de/trade/ukraine-wirtschaft/zoll-und-einfuhr-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Länderspezifische Authority-Quelle zu Einfuhrverfahren, Warenbegleitdokumenten, Abgaben und Beschränkungen.",
+          },
+          {
+            label: "Informationen des deutschen Zolls zur Ausfuhr",
+            href: "https://www.zoll.de/EN/Businesses/Movement-of-goods/Export/export_node.html",
+            source: "Deutscher Zoll",
+            topic: "Exportabwicklung",
+            reason:
+              "Offizielle Quelle für Exportvorgaben, Ausfuhranmeldung und Drittlandslieferungen.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Stärkt die Relevanz für korrekte Wareneinreihung und Exportdokumentation.",
+          },
+          {
+            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
+            source: "UNECE",
+            topic: "CMR",
+            reason:
+              "Offizielle Grundlage für CMR-bezogene Dokumentation im internationalen Straßentransport.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "Zoll & Dokumente für Ukraine-Transporte",
+            href: "/de/leistungen/zoll-dokumente",
+            reason:
+              "Stärkt die interne Verbindung zu Exportdokumenten, Compliance und Zollabwicklung.",
+          },
+          {
+            label: "Transportanfrage für Ukraine stellen",
+            href: "/de/transport-anfrage",
+            reason:
+              "Leitet Nutzer mit konkretem Transportbedarf direkt zur Anfrage.",
+          },
+        ],
+      },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in die Ukraine anfragen",

@@ -1,5 +1,6 @@
 "use client";
-
+import { httpsCallable } from "firebase/functions";
+import { functions } from "@/lib/firebase/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -41,6 +42,8 @@ export function TransportRequestPage({ locale }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [validationMessage, setValidationMessage] = useState("");
   const [shipmentType, setShipmentType] = useState<ShipmentType>("ltl");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [transport, setTransport] = useState({
     pickupLocation: "",
@@ -256,8 +259,47 @@ export function TransportRequestPage({ locale }: Props) {
     setStep((current) => Math.max(current - 1, 1));
   };
 
-  const submitRequest = () => {
-    setSubmitted(true);
+  const submitRequest = async () => {
+    setIsSubmitting(true);
+    setValidationMessage("");
+
+    try {
+      const submitTransportLead = httpsCallable(
+        functions,
+        "submitTransportLead"
+      );
+
+      await submitTransportLead({
+        locale,
+        pagePath: `/${locale}/transport-anfrage`,
+
+        contact,
+
+        transport: {
+          ...transport,
+          shipmentType,
+          adrClass: selectedAdrClass?.label ?? "",
+          adrDescription: selectedAdrClass?.description ?? "",
+          temperatureControlled: selectedTemperature?.label ?? "",
+        },
+
+        cargo: {
+          units,
+          totalWeight: totals.totalWeight,
+          totalVolume: showVolume ? totals.totalVolume : null,
+          pieces: totals.pieces,
+        },
+      });
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      setValidationMessage(
+        "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -673,7 +715,7 @@ export function TransportRequestPage({ locale }: Props) {
                         }
                         className="input-premium"
                       >
-                        <option value="">{t.labels.none}</option>
+                        <option value="">{t.labels.noneADR}</option>
                         {t.adrClasses.map((adrClass) => (
                           <option key={adrClass.value} value={adrClass.value}>
                             {adrClass.label}
@@ -695,7 +737,7 @@ export function TransportRequestPage({ locale }: Props) {
                         }
                         className="input-premium"
                       >
-                        <option value="">{t.labels.none}</option>
+                        <option value="">{t.labels.noneThermo}</option>
                         {t.temperatureOptions.map((option) => (
                           <option key={option.value} value={option.value}>
                             {option.label}
@@ -890,12 +932,12 @@ export function TransportRequestPage({ locale }: Props) {
                       value={
                         selectedAdrClass
                           ? `${selectedAdrClass.label}: ${selectedAdrClass.description}`
-                          : t.labels.none
+                          : t.labels.noneADR
                       }
                     />
                     <SummaryLine
                       label={t.labels.temperatureControlled}
-                      value={selectedTemperature?.label ?? t.labels.none}
+                      value={selectedTemperature?.label ?? t.labels.noneThermo}
                     />
                   </SummaryBlock>
 
@@ -941,9 +983,10 @@ export function TransportRequestPage({ locale }: Props) {
                   <button
                     type="button"
                     onClick={submitRequest}
-                    className="btn-primary"
+                    disabled={isSubmitting}
+                    className="btn-primary disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {t.labels.submit}
+                      {isSubmitting ? "Sending..." : t.labels.submit}
                     <Send size={17} />
                   </button>
                 )}

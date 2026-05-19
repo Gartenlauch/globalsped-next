@@ -62,7 +62,8 @@ export type TransportRequestContent = {
     privacy: string;
     yes: string;
     no: string;
-    none: string;
+    noneADR: string;
+    noneThermo: string;
     next: string;
     back: string;
     submit: string;
