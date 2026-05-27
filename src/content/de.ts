@@ -52,7 +52,7 @@ export const de = {
       "Armenien",
       "Mongolei",
       "Irak",
-      "Ukraine"
+      "Ukraine",
     ],
 
     routeCard: {
@@ -108,7 +108,8 @@ export const de = {
     badge: "Destinationen",
     title: "Transporte nach Zentralasien,",
     highlight: "Kaukasus und Mittleren Osten",
-    intro: "Globalsped organisiert internationale Transporte von Europa in anspruchsvolle Zielmärkte. Wir verbinden Erfahrung, zuverlässige Partnernetzwerke und professionelle Zollabwicklung für FTL, LTL, Thermotransporte und Projekttransporte.",
+    intro:
+      "Globalsped organisiert internationale Transporte von Europa in anspruchsvolle Zielmärkte. Wir verbinden Erfahrung, zuverlässige Partnernetzwerke und professionelle Zollabwicklung für FTL, LTL, Thermotransporte und Projekttransporte.",
 
     regions: [
       {
@@ -118,22 +119,51 @@ export const de = {
           "Spezialisierte Transporte nach Kasachstan, Usbekistan, Kirgisistan, Turkmenistan, Tadschikistan und in weitere Märkte Zentralasiens.",
         image: "/images/destinations/zentralasien.jpg",
         countries: [
-          { name: "Kasachstan", slug: "kasachstan", cities: ["Astana", "Almaty", "Atyrau"] },
-          { name: "Usbekistan", slug: "usbekistan", cities: ["Taschkent", "Samarkand", "Navoi"] },
-          { name: "Kirgisistan", slug: "kirgisistan", cities: ["Bischkek", "Osch"] },
-          { name: "Turkmenistan", slug: "turkmenistan", cities: ["Aschgabat", "Mary"] },
-          { name: "Tadschikistan", slug: "tadschikistan", cities: ["Duschanbe", "Chudschand"] },
+          {
+            name: "Kasachstan",
+            slug: "kasachstan",
+            cities: ["Astana", "Almaty", "Atyrau"],
+          },
+          {
+            name: "Usbekistan",
+            slug: "usbekistan",
+            cities: ["Taschkent", "Samarkand", "Navoi"],
+          },
+          {
+            name: "Kirgisistan",
+            slug: "kirgisistan",
+            cities: ["Bischkek", "Osch"],
+          },
+          {
+            name: "Turkmenistan",
+            slug: "turkmenistan",
+            cities: ["Aschgabat", "Mary"],
+          },
+          {
+            name: "Tadschikistan",
+            slug: "tadschikistan",
+            cities: ["Duschanbe", "Chudschand"],
+          },
           { name: "Mongolei", slug: "mongolei", cities: ["Ulaanbaatar"] },
         ],
       },
       {
         title: "Kaukasus",
         slug: "kaukasus",
-        subtitle: "Zuverlässige Logistiklösungen für Transporte nach Aserbaidschan, Georgien und Armenien – inklusive Zoll- und Transitunterstützung.",
+        subtitle:
+          "Zuverlässige Logistiklösungen für Transporte nach Aserbaidschan, Georgien und Armenien – inklusive Zoll- und Transitunterstützung.",
         image: "/images/destinations/kaukasus.jpg",
         countries: [
-          { name: "Aserbaidschan", slug: "aserbaidschan", cities: ["Baku", "Ganja", "Sumqayit"] },
-          { name: "Georgien", slug: "georgien", cities: ["Tiflis", "Batumi", "Kutaissi"] },
+          {
+            name: "Aserbaidschan",
+            slug: "aserbaidschan",
+            cities: ["Baku", "Ganja", "Sumqayit"],
+          },
+          {
+            name: "Georgien",
+            slug: "georgien",
+            cities: ["Tiflis", "Batumi", "Kutaissi"],
+          },
           { name: "Armenien", slug: "armenien", cities: ["Jerewan", "Gyumri"] },
         ],
       },
@@ -145,19 +175,28 @@ export const de = {
         image: "/images/destinations/mittlerer-osten.jpg",
         countries: [
           { name: "Irak", slug: "irak", cities: ["Bagdad", "Erbil"] },
-          { name: "Türkei", slug: "tuerkei", cities: ["Istanbul", "Ankara", "Izmir"] },
-          { name: "Ukraine", slug: "ukraine", cities: ["Kiew", "Lwiw", "Odessa"] },
+          {
+            name: "Türkei",
+            slug: "tuerkei",
+            cities: ["Istanbul", "Ankara", "Izmir"],
+          },
+          {
+            name: "Ukraine",
+            slug: "ukraine",
+            cities: ["Kiew", "Lwiw", "Odessa"],
+          },
         ],
       },
     ],
 
     countryGridTitle: "Ausgewählte Zielländer",
-    countryGridIntro: "Unsere wichtigsten Zielmärkte für internationale Transporte, FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung.",
+    countryGridIntro:
+      "Unsere wichtigsten Zielmärkte für internationale Transporte, FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung.",
 
     cta: {
       label: "Transport anfragen",
       href: "/de/transport-anfrage",
-    }
+    },
   },
   countryPages: [
     {
@@ -184,8 +223,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitlePrefix: "Häufige Fragen zu Transporten nach",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
       transportDetails: {
         route: {
@@ -229,10 +269,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
+          note: "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
         },
 
         requiredInformation: {
@@ -253,23 +292,19 @@ export const de = {
         operationalHints: [
           {
             title: "Einfuhrdokumente exakt vorbereiten",
-            text:
-              "Für Usbekistan sollten Handelsrechnung, Packliste, CMR, Ausfuhrdokumente und Warenbeschreibung vor Versand konsistent geprüft werden. Abweichungen zwischen Dokumenten und Ladung können die Abfertigung verzögern.",
+            text: "Für Usbekistan sollten Handelsrechnung, Packliste, CMR, Ausfuhrdokumente und Warenbeschreibung vor Versand konsistent geprüft werden. Abweichungen zwischen Dokumenten und Ladung können die Abfertigung verzögern.",
           },
           {
             title: "Transitstrecken frühzeitig prüfen",
-            text:
-              "Da Usbekistan ein Binnenland ist, hängt die Laufzeit stark vom gewählten Transitkorridor, Grenzabläufen und regionalen Verkehrsbedingungen ab. Besonders bei terminrelevanten Lieferungen ist ein belastbarer Routenplan wichtig.",
+            text: "Da Usbekistan ein Binnenland ist, hängt die Laufzeit stark vom gewählten Transitkorridor, Grenzabläufen und regionalen Verkehrsbedingungen ab. Besonders bei terminrelevanten Lieferungen ist ein belastbarer Routenplan wichtig.",
           },
           {
             title: "Zolltarifnummer und Warenwert plausibel angeben",
-            text:
-              "Unklare Zolltarifnummern, unvollständige Artikelbeschreibungen oder nicht nachvollziehbare Warenwerte führen häufig zu Rückfragen. Eine saubere Vorprüfung reduziert Standzeiten.",
+            text: "Unklare Zolltarifnummern, unvollständige Artikelbeschreibungen oder nicht nachvollziehbare Warenwerte führen häufig zu Rückfragen. Eine saubere Vorprüfung reduziert Standzeiten.",
           },
           {
             title: "Sanktions- und Compliance-Prüfung einplanen",
-            text:
-              "Vor Exporten nach Usbekistan sollten Empfänger, Warenart und Verwendungszweck geprüft werden. Dies ist besonders bei technischen Gütern, Ersatzteilen und Industrieausrüstung relevant.",
+            text: "Vor Exporten nach Usbekistan sollten Empfänger, Warenart und Verwendungszweck geprüft werden. Dies ist besonders bei technischen Gütern, Ersatzteilen und Industrieausrüstung relevant.",
           },
         ],
         authorityLinks: [
@@ -324,8 +359,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Usbekistan anfragen",
-
-      }
+      },
     },
     {
       slug: "transport-kasachstan",
@@ -351,7 +385,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
       transportDetails: {
         route: {
@@ -392,10 +428,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
+          note: "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
         },
         requiredInformation: {
           label: "Benötigte Informationen",
@@ -416,23 +451,19 @@ export const de = {
         operationalHints: [
           {
             title: "Zoll- und Einfuhrprüfung früh vorbereiten",
-            text:
-              "Bei Exporten nach Kasachstan sollten Handelsrechnung, Packliste, Warenbeschreibung, Zolltarifnummer und Ursprungsangaben vor Abholung geprüft werden. Unklare Warenbeschreibungen oder abweichende Gewichte führen häufig zu Rückfragen in der Zollabwicklung.",
+            text: "Bei Exporten nach Kasachstan sollten Handelsrechnung, Packliste, Warenbeschreibung, Zolltarifnummer und Ursprungsangaben vor Abholung geprüft werden. Unklare Warenbeschreibungen oder abweichende Gewichte führen häufig zu Rückfragen in der Zollabwicklung.",
           },
           {
             title: "TIR und CMR sauber abstimmen",
-            text:
-              "Bei Straßentransporten nach Kasachstan sind TIR- und CMR-Dokumente zentrale Bestandteile der Transport- und Transitabwicklung. Die Angaben müssen mit Rechnung, Packliste und tatsächlicher Ladung übereinstimmen.",
+            text: "Bei Straßentransporten nach Kasachstan sind TIR- und CMR-Dokumente zentrale Bestandteile der Transport- und Transitabwicklung. Die Angaben müssen mit Rechnung, Packliste und tatsächlicher Ladung übereinstimmen.",
           },
           {
             title: "EAWU-Anforderungen berücksichtigen",
-            text:
-              "Kasachstan ist Teil der Eurasischen Wirtschaftsunion. Je nach Ware können Konformitätsnachweise, technische Anforderungen oder zusätzliche Importdokumente erforderlich sein.",
+            text: "Kasachstan ist Teil der Eurasischen Wirtschaftsunion. Je nach Ware können Konformitätsnachweise, technische Anforderungen oder zusätzliche Importdokumente erforderlich sein.",
           },
           {
             title: "Transitkorridore realistisch planen",
-            text:
-              "Für Transporte nach Kasachstan sollten Grenzübergänge, saisonale Laufzeiten und mögliche Wartezeiten im Transit frühzeitig berücksichtigt werden. Eine realistische Laufzeitplanung ist besonders bei Produktions- und Projektlieferungen wichtig.",
+            text: "Für Transporte nach Kasachstan sollten Grenzübergänge, saisonale Laufzeiten und mögliche Wartezeiten im Transit frühzeitig berücksichtigt werden. Eine realistische Laufzeitplanung ist besonders bei Produktions- und Projektlieferungen wichtig.",
           },
         ],
         authorityLinks: [
@@ -487,7 +518,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Kasachstan anfragen",
-      }
+      },
     },
     {
       slug: "transport-kirgisistan",
@@ -513,7 +544,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
       transportDetails: {
         route: {
@@ -554,10 +587,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – gerne unterstützen wir Sie bei der Erstellung der erforderlichen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – gerne unterstützen wir Sie bei der Erstellung der erforderlichen Transport- und Zolldokumente.",
         },
         requiredInformation: {
           label: "Benötigte Informationen",
@@ -577,23 +609,19 @@ export const de = {
         operationalHints: [
           {
             title: "Transitabhängigkeit berücksichtigen",
-            text:
-              "Kirgisistan ist im Straßengüterverkehr stark von internationalen Transitkorridoren abhängig. Grenzübergänge, Wetterbedingungen und regionale Infrastruktur können die Laufzeit beeinflussen.",
+            text: "Kirgisistan ist im Straßengüterverkehr stark von internationalen Transitkorridoren abhängig. Grenzübergänge, Wetterbedingungen und regionale Infrastruktur können die Laufzeit beeinflussen.",
           },
           {
             title: "Dokumente vor Abfahrt auf Konsistenz prüfen",
-            text:
-              "CMR, Handelsrechnung, Packliste und Ausfuhrdokumente müssen in Warenbezeichnung, Gewicht und Packstückzahl übereinstimmen. Unstimmigkeiten führen häufig zu zusätzlichen Prüfungen.",
+            text: "CMR, Handelsrechnung, Packliste und Ausfuhrdokumente müssen in Warenbezeichnung, Gewicht und Packstückzahl übereinstimmen. Unstimmigkeiten führen häufig zu zusätzlichen Prüfungen.",
           },
           {
             title: "EAWU-Bezug beachten",
-            text:
-              "Kirgisistan ist Mitglied der Eurasischen Wirtschaftsunion. Je nach Ware können technische Anforderungen, Konformitätsnachweise oder zusätzliche Importvorgaben relevant sein.",
+            text: "Kirgisistan ist Mitglied der Eurasischen Wirtschaftsunion. Je nach Ware können technische Anforderungen, Konformitätsnachweise oder zusätzliche Importvorgaben relevant sein.",
           },
           {
             title: "Gebirgs- und Winterbedingungen einplanen",
-            text:
-              "Bei Transporten in entlegene Regionen Kirgisistans sollten saisonale Straßenbedingungen, Höhenlagen und mögliche Einschränkungen im Winter bereits in der Planung berücksichtigt werden.",
+            text: "Bei Transporten in entlegene Regionen Kirgisistans sollten saisonale Straßenbedingungen, Höhenlagen und mögliche Einschränkungen im Winter bereits in der Planung berücksichtigt werden.",
           },
         ],
         authorityLinks: [
@@ -606,7 +634,8 @@ export const de = {
               "Authority-Quelle für internationale Straßentransporte und Transitverfahren über mehrere Zollgrenzen.",
           },
           {
-            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            label:
+              "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
             href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
             source: "UNECE",
             topic: "CMR",
@@ -648,7 +677,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Kirgisistan anfragen",
-      }
+      },
     },
     {
       slug: "transport-turkmenistan",
@@ -659,9 +688,11 @@ export const de = {
       title: "Transport nach",
       highlight: "Turkmenistan",
 
-      intro: "Globalsped organisiert zuverlässige Transporte nach Turkmenistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Zentralasien.",
+      intro:
+        "Globalsped organisiert zuverlässige Transporte nach Turkmenistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Zentralasien.",
 
-      seoText: "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Turkmenistan, insbesondere nach Aschgabat, Türkmenbaşy und in weitere wirtschaftlich relevante Regionen. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung, Export- und Importprozesse sowie individuelle Betreuung für komplexe Transporte in anspruchsvolle Märkte Zentralasiens.",
+      seoText:
+        "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Turkmenistan, insbesondere nach Aschgabat, Türkmenbaşy und in weitere wirtschaftlich relevante Regionen. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung, Export- und Importprozesse sowie individuelle Betreuung für komplexe Transporte in anspruchsvolle Märkte Zentralasiens.",
 
       services: [
         "FTL Komplettladungen nach Turkmenistan",
@@ -678,7 +709,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -719,10 +752,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
         },
 
         requiredInformation: {
@@ -744,23 +776,19 @@ export const de = {
         operationalHints: [
           {
             title: "Dokumentationsqualität ist entscheidend",
-            text:
-              "Für Turkmenistan sollten Handelsrechnung, Packliste, CMR und Ausfuhrunterlagen vollständig und eindeutig sein. Besonders Warenbeschreibung, Warenwert, Gewicht und Empfängerdaten müssen konsistent sein.",
+            text: "Für Turkmenistan sollten Handelsrechnung, Packliste, CMR und Ausfuhrunterlagen vollständig und eindeutig sein. Besonders Warenbeschreibung, Warenwert, Gewicht und Empfängerdaten müssen konsistent sein.",
           },
           {
             title: "Transitplanung früh abstimmen",
-            text:
-              "Je nach Route können Transitländer, Grenzübergänge und regionale Vorschriften die Laufzeit beeinflussen. Eine abgestimmte Routenplanung reduziert operative Unsicherheiten.",
+            text: "Je nach Route können Transitländer, Grenzübergänge und regionale Vorschriften die Laufzeit beeinflussen. Eine abgestimmte Routenplanung reduziert operative Unsicherheiten.",
           },
           {
             title: "Compliance-Prüfung nicht vernachlässigen",
-            text:
-              "Vor Versand sollten Warenart, Empfänger und Endverwendung geprüft werden. Dies ist besonders bei technischen Gütern, Ersatzteilen und Industriekomponenten relevant.",
+            text: "Vor Versand sollten Warenart, Empfänger und Endverwendung geprüft werden. Dies ist besonders bei technischen Gütern, Ersatzteilen und Industriekomponenten relevant.",
           },
           {
             title: "Zoll- und Einfuhrvorgaben vorab klären",
-            text:
-              "Da Einfuhr- und Abfertigungsanforderungen je nach Ware unterschiedlich sein können, sollten Importvorgaben und benötigte Begleitdokumente vor Transportbeginn abgestimmt werden.",
+            text: "Da Einfuhr- und Abfertigungsanforderungen je nach Ware unterschiedlich sein können, sollten Importvorgaben und benötigte Begleitdokumente vor Transportbeginn abgestimmt werden.",
           },
         ],
         authorityLinks: [
@@ -781,7 +809,8 @@ export const de = {
               "Relevant für Straßentransporte mit mehreren Zoll- und Transitabschnitten.",
           },
           {
-            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            label:
+              "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
             href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
             source: "UNECE",
             topic: "CMR",
@@ -815,7 +844,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Turkmenistan anfragen",
-      }
+      },
     },
 
     {
@@ -848,7 +877,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -870,7 +901,8 @@ export const de = {
 
         runtime: {
           label: "Laufzeit",
-          value: "ca. 20–30 Tage (abhängig von Route, Grenzabwicklung und Zielregion)",
+          value:
+            "ca. 20–30 Tage (abhängig von Route, Grenzabwicklung und Zielregion)",
         },
 
         customsOffice: {
@@ -893,10 +925,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
         },
 
         requiredInformation: {
@@ -918,23 +949,19 @@ export const de = {
         operationalHints: [
           {
             title: "Begleitdokumente vollständig vorbereiten",
-            text:
-              "Für Tadschikistan sollten CMR, Handelsrechnung, Packliste und Zollunterlagen vollständig und widerspruchsfrei sein. Besonders bei Industrie- und Ersatzteillieferungen sind präzise Warenbeschreibungen wichtig.",
+            text: "Für Tadschikistan sollten CMR, Handelsrechnung, Packliste und Zollunterlagen vollständig und widerspruchsfrei sein. Besonders bei Industrie- und Ersatzteillieferungen sind präzise Warenbeschreibungen wichtig.",
           },
           {
             title: "Transit und Grenzabwicklung realistisch planen",
-            text:
-              "Tadschikistan ist stark transitabhängig. Route, Grenzübergänge und lokale Abfertigung sollten vor Transportbeginn abgestimmt werden, um unnötige Standzeiten zu vermeiden.",
+            text: "Tadschikistan ist stark transitabhängig. Route, Grenzübergänge und lokale Abfertigung sollten vor Transportbeginn abgestimmt werden, um unnötige Standzeiten zu vermeiden.",
           },
           {
             title: "Infrastruktur- und Gebirgsbedingungen beachten",
-            text:
-              "Je nach Zielort können Straßenverhältnisse, Höhenlagen und saisonale Einschränkungen relevant sein. Für empfindliche oder terminrelevante Ware ist eine realistische Laufzeitplanung entscheidend.",
+            text: "Je nach Zielort können Straßenverhältnisse, Höhenlagen und saisonale Einschränkungen relevant sein. Für empfindliche oder terminrelevante Ware ist eine realistische Laufzeitplanung entscheidend.",
           },
           {
             title: "Einfuhrbeschränkungen prüfen",
-            text:
-              "Je nach Warengruppe können zusätzliche Einfuhrvorgaben oder Beschränkungen bestehen. Eine Vorprüfung reduziert das Risiko von Verzögerungen bei der Importabfertigung.",
+            text: "Je nach Warengruppe können zusätzliche Einfuhrvorgaben oder Beschränkungen bestehen. Eine Vorprüfung reduziert das Risiko von Verzögerungen bei der Importabfertigung.",
           },
         ],
         authorityLinks: [
@@ -947,7 +974,8 @@ export const de = {
               "Länderspezifische Quelle zu Einfuhrverfahren, Warenbegleitdokumenten, Abgaben sowie Verboten und Beschränkungen.",
           },
           {
-            label: "GTAI-Informationen zu Einfuhrverboten und Beschränkungen in Tadschikistan",
+            label:
+              "GTAI-Informationen zu Einfuhrverboten und Beschränkungen in Tadschikistan",
             href: "https://www.gtai.de/de/trade/tadschikistan/zoll/einfuhrverbote-und-beschraenkungen-645316",
             source: "Germany Trade & Invest",
             topic: "Einfuhrbeschränkungen",
@@ -989,7 +1017,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Tadschikistan anfragen",
-      }
+      },
     },
     {
       slug: "transport-mongolei",
@@ -1021,7 +1049,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in die",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten in die {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -1043,7 +1073,8 @@ export const de = {
 
         runtime: {
           label: "Laufzeit",
-          value: "ca. 20–30 Tage (abhängig von Route, Infrastruktur und Zielort)",
+          value:
+            "ca. 20–30 Tage (abhängig von Route, Infrastruktur und Zielort)",
         },
 
         customsOffice: {
@@ -1062,10 +1093,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
         },
 
         requiredInformation: {
@@ -1087,28 +1117,25 @@ export const de = {
         operationalHints: [
           {
             title: "Lange Transitstrecken realistisch kalkulieren",
-            text:
-              "Die Mongolei ist für europäische Straßentransporte ein anspruchsvolles Ziel. Transitländer, Grenzübergänge und regionale Infrastruktur beeinflussen die Laufzeit erheblich.",
+            text: "Die Mongolei ist für europäische Straßentransporte ein anspruchsvolles Ziel. Transitländer, Grenzübergänge und regionale Infrastruktur beeinflussen die Laufzeit erheblich.",
           },
           {
             title: "Dokumente vor Verladung prüfen",
-            text:
-              "CMR, Handelsrechnung, Packliste und Ausfuhrdokumente müssen eindeutig und vollständig sein. Besonders bei Maschinen, Ersatzteilen und Industrieausrüstung sind präzise Warenbeschreibungen wichtig.",
+            text: "CMR, Handelsrechnung, Packliste und Ausfuhrdokumente müssen eindeutig und vollständig sein. Besonders bei Maschinen, Ersatzteilen und Industrieausrüstung sind präzise Warenbeschreibungen wichtig.",
           },
           {
             title: "Zolltarifnummer und Empfängerdaten abstimmen",
-            text:
-              "Unklare Zolltarifnummern oder abweichende Empfängerdaten können Rückfragen verursachen. Eine saubere Vorabprüfung verhindert Verzögerungen im Transit und bei der Einfuhr.",
+            text: "Unklare Zolltarifnummern oder abweichende Empfängerdaten können Rückfragen verursachen. Eine saubere Vorabprüfung verhindert Verzögerungen im Transit und bei der Einfuhr.",
           },
           {
             title: "Saisonale Bedingungen berücksichtigen",
-            text:
-              "Wetter, Straßenverhältnisse und regionale Erreichbarkeit können in der Mongolei eine größere Rolle spielen als bei Standardzielen. Eine flexible Laufzeitplanung ist sinnvoll.",
+            text: "Wetter, Straßenverhältnisse und regionale Erreichbarkeit können in der Mongolei eine größere Rolle spielen als bei Standardzielen. Eine flexible Laufzeitplanung ist sinnvoll.",
           },
         ],
         authorityLinks: [
           {
-            label: "GTAI-Informationen zur Wirtschaft und zu Rahmenbedingungen in der Mongolei",
+            label:
+              "GTAI-Informationen zur Wirtschaft und zu Rahmenbedingungen in der Mongolei",
             href: "https://www.gtai.de/de/trade/mongolei-wirtschaft",
             source: "Germany Trade & Invest",
             topic: "Länder- und Handelsinformationen",
@@ -1124,7 +1151,8 @@ export const de = {
               "Stärkt die fachliche Einordnung internationaler Transittransporte in entfernte Binnenmärkte.",
           },
           {
-            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            label:
+              "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
             href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
             source: "UNECE",
             topic: "CMR",
@@ -1150,15 +1178,14 @@ export const de = {
           {
             label: "Transportanfrage für Mongolei stellen",
             href: "/de/transport-anfrage",
-            reason:
-              "Führt Nutzer direkt zur konkreten Anfrage.",
+            reason: "Führt Nutzer direkt zur konkreten Anfrage.",
           },
         ],
       },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in die Mongolei anfragen",
-      }
+      },
     },
     {
       slug: "transport-aserbaidschan",
@@ -1190,7 +1217,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -1231,10 +1260,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
         },
 
         requiredInformation: {
@@ -1256,23 +1284,19 @@ export const de = {
         operationalHints: [
           {
             title: "Einfuhrvorgaben vor Versand prüfen",
-            text:
-              "Für Aserbaidschan sollten Importvorgaben, Warenbegleitdokumente und mögliche produktspezifische Anforderungen vor Transportbeginn geklärt werden.",
+            text: "Für Aserbaidschan sollten Importvorgaben, Warenbegleitdokumente und mögliche produktspezifische Anforderungen vor Transportbeginn geklärt werden.",
           },
           {
             title: "Kaukasus-Transit sauber planen",
-            text:
-              "Je nach Route können Transitländer, Grenzübergänge und regionale Abfertigungsprozesse die Laufzeit beeinflussen. Eine realistische Routenplanung reduziert Verzögerungen.",
+            text: "Je nach Route können Transitländer, Grenzübergänge und regionale Abfertigungsprozesse die Laufzeit beeinflussen. Eine realistische Routenplanung reduziert Verzögerungen.",
           },
           {
             title: "Warenwert und Zolltarifnummer konsistent angeben",
-            text:
-              "Unklare Warenwerte oder unpräzise Zolltarifnummern können zu Rückfragen führen. Handelsrechnung, Packliste und CMR sollten dieselben Daten enthalten.",
+            text: "Unklare Warenwerte oder unpräzise Zolltarifnummern können zu Rückfragen führen. Handelsrechnung, Packliste und CMR sollten dieselben Daten enthalten.",
           },
           {
             title: "Compliance bei technischen Waren prüfen",
-            text:
-              "Bei Maschinen, Ersatzteilen und Industriekomponenten sollte vorab geprüft werden, ob Exportkontrolle oder zusätzliche Nachweise relevant sind.",
+            text: "Bei Maschinen, Ersatzteilen und Industriekomponenten sollte vorab geprüft werden, ob Exportkontrolle oder zusätzliche Nachweise relevant sind.",
           },
         ],
         authorityLinks: [
@@ -1327,7 +1351,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Aserbaidschan anfragen",
-      }
+      },
     },
     {
       slug: "transport-georgien",
@@ -1359,7 +1383,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -1400,10 +1426,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
         },
 
         requiredInformation: {
@@ -1425,23 +1450,19 @@ export const de = {
         operationalHints: [
           {
             title: "Zollanmeldung und Fristen beachten",
-            text:
-              "Für Georgien sollten Einfuhrdokumente frühzeitig vorbereitet werden. Verzögerungen entstehen häufig, wenn Warenbeschreibung, Rechnung, Packliste oder Transportdaten nicht zusammenpassen.",
+            text: "Für Georgien sollten Einfuhrdokumente frühzeitig vorbereitet werden. Verzögerungen entstehen häufig, wenn Warenbeschreibung, Rechnung, Packliste oder Transportdaten nicht zusammenpassen.",
           },
           {
             title: "Kaukasus-Route realistisch planen",
-            text:
-              "Je nach Herkunftsort und Transitstrecke können Grenzabfertigung, regionale Verkehrsbedingungen und saisonale Einflüsse die Laufzeit beeinflussen.",
+            text: "Je nach Herkunftsort und Transitstrecke können Grenzabfertigung, regionale Verkehrsbedingungen und saisonale Einflüsse die Laufzeit beeinflussen.",
           },
           {
             title: "Präferenz- und Ursprungsfragen prüfen",
-            text:
-              "Bei bestimmten Waren kann der Ursprung für Zollbehandlung und Dokumentation relevant sein. Eine frühzeitige Prüfung verhindert Nachforderungen.",
+            text: "Bei bestimmten Waren kann der Ursprung für Zollbehandlung und Dokumentation relevant sein. Eine frühzeitige Prüfung verhindert Nachforderungen.",
           },
           {
             title: "Dokumente bei Waren mit Sonderanforderungen abstimmen",
-            text:
-              "Für einzelne Produktgruppen können zusätzliche Nachweise, Zertifikate oder Kennzeichnungsvorgaben erforderlich sein. Dies sollte vor Abholung geprüft werden.",
+            text: "Für einzelne Produktgruppen können zusätzliche Nachweise, Zertifikate oder Kennzeichnungsvorgaben erforderlich sein. Dies sollte vor Abholung geprüft werden.",
           },
         ],
         authorityLinks: [
@@ -1470,7 +1491,8 @@ export const de = {
               "Stärkt die Entity-Verknüpfung zu internationalem Transit und Straßengüterverkehr.",
           },
           {
-            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            label:
+              "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
             href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
             source: "UNECE",
             topic: "CMR",
@@ -1496,7 +1518,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Georgien anfragen",
-      }
+      },
     },
     {
       slug: "transport-armenien",
@@ -1528,7 +1550,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten nach {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -1569,10 +1593,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
         },
 
         requiredInformation: {
@@ -1594,28 +1617,25 @@ export const de = {
         operationalHints: [
           {
             title: "Transitroute vorab klären",
-            text:
-              "Armenien erfordert je nach Ausgangsort eine sorgfältige Abstimmung der Transitstrecke. Grenzabläufe, regionale Routen und politische Rahmenbedingungen können die Laufzeit beeinflussen.",
+            text: "Armenien erfordert je nach Ausgangsort eine sorgfältige Abstimmung der Transitstrecke. Grenzabläufe, regionale Routen und politische Rahmenbedingungen können die Laufzeit beeinflussen.",
           },
           {
             title: "EAWU-Kontext berücksichtigen",
-            text:
-              "Armenien ist Mitglied der Eurasischen Wirtschaftsunion. Für bestimmte Waren können technische Anforderungen, Konformitätsnachweise oder zusätzliche Dokumente relevant sein.",
+            text: "Armenien ist Mitglied der Eurasischen Wirtschaftsunion. Für bestimmte Waren können technische Anforderungen, Konformitätsnachweise oder zusätzliche Dokumente relevant sein.",
           },
           {
             title: "Dokumente konsistent halten",
-            text:
-              "Handelsrechnung, Packliste, CMR und Ausfuhrdokumente sollten bei Warenbezeichnung, Gewicht, Packstückzahl und Warenwert übereinstimmen.",
+            text: "Handelsrechnung, Packliste, CMR und Ausfuhrdokumente sollten bei Warenbezeichnung, Gewicht, Packstückzahl und Warenwert übereinstimmen.",
           },
           {
             title: "Sanktions- und Exportkontrolle prüfen",
-            text:
-              "Bei technischen Gütern, Maschinen und Ersatzteilen sollte vor Versand geprüft werden, ob Exportkontrollvorgaben oder Endverwendungsprüfungen relevant sind.",
+            text: "Bei technischen Gütern, Maschinen und Ersatzteilen sollte vor Versand geprüft werden, ob Exportkontrollvorgaben oder Endverwendungsprüfungen relevant sind.",
           },
         ],
         authorityLinks: [
           {
-            label: "GTAI-Informationen zur Wirtschaft und zu Rahmenbedingungen in Armenien",
+            label:
+              "GTAI-Informationen zur Wirtschaft und zu Rahmenbedingungen in Armenien",
             href: "https://www.gtai.de/de/trade/armenien-wirtschaft",
             source: "Germany Trade & Invest",
             topic: "Länder- und Handelsinformationen",
@@ -1665,7 +1685,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport nach Armenien anfragen",
-      }
+      },
     },
     {
       slug: "transport-irak",
@@ -1697,7 +1717,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in den",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten in den {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -1719,7 +1741,8 @@ export const de = {
 
         runtime: {
           label: "Laufzeit",
-          value: "ca. 8–18 Tage (abhängig von Route, Sicherheitslage und Zielregion)",
+          value:
+            "ca. 8–18 Tage (abhängig von Route, Sicherheitslage und Zielregion)",
         },
 
         customsOffice: {
@@ -1738,10 +1761,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
         },
 
         requiredInformation: {
@@ -1763,28 +1785,25 @@ export const de = {
         operationalHints: [
           {
             title: "Vorabanforderungen und Zollwerte prüfen",
-            text:
-              "Für Irak-Transporte sollten Handelsrechnung, Warenwert, Zahlungs- und Empfängerdaten besonders sorgfältig vorbereitet werden. Unklare oder unvollständige Angaben können die Abfertigung verzögern.",
+            text: "Für Irak-Transporte sollten Handelsrechnung, Warenwert, Zahlungs- und Empfängerdaten besonders sorgfältig vorbereitet werden. Unklare oder unvollständige Angaben können die Abfertigung verzögern.",
           },
           {
             title: "Compliance vor Transportbeginn klären",
-            text:
-              "Bei Exporten in den Irak sollten Empfänger, Endverwendung und Warenart frühzeitig geprüft werden. Dies gilt besonders für technische Güter, Ersatzteile und Industrieausrüstung.",
+            text: "Bei Exporten in den Irak sollten Empfänger, Endverwendung und Warenart frühzeitig geprüft werden. Dies gilt besonders für technische Güter, Ersatzteile und Industrieausrüstung.",
           },
           {
             title: "Regionale Zielorte unterscheiden",
-            text:
-              "Lieferungen nach Bagdad, Basra, Erbil oder in andere Regionen können unterschiedliche operative Anforderungen haben. Route, Grenzabfertigung und lokale Zustellung sollten vorab abgestimmt werden.",
+            text: "Lieferungen nach Bagdad, Basra, Erbil oder in andere Regionen können unterschiedliche operative Anforderungen haben. Route, Grenzabfertigung und lokale Zustellung sollten vorab abgestimmt werden.",
           },
           {
             title: "Dokumente mit lokaler Importabwicklung abstimmen",
-            text:
-              "Packliste, CMR, Handelsrechnung und ggf. zusätzliche Nachweise sollten mit den Anforderungen des Empfängers und der Importabfertigung abgeglichen werden.",
+            text: "Packliste, CMR, Handelsrechnung und ggf. zusätzliche Nachweise sollten mit den Anforderungen des Empfängers und der Importabfertigung abgeglichen werden.",
           },
         ],
         authorityLinks: [
           {
-            label: "GTAI-Informationen zur Wirtschaft und zu Zollthemen im Irak",
+            label:
+              "GTAI-Informationen zur Wirtschaft und zu Zollthemen im Irak",
             href: "https://www.gtai.de/de/trade/irak-wirtschaft",
             source: "Germany Trade & Invest",
             topic: "Länder- und Zollinformationen",
@@ -1792,7 +1811,8 @@ export const de = {
               "Institutionelle Quelle für Rahmenbedingungen, Recht, Zoll und wirtschaftliche Entwicklungen im Irak.",
           },
           {
-            label: "GTAI-Informationen zu neuen Regeln zur Zollwertermittlung im Irak",
+            label:
+              "GTAI-Informationen zu neuen Regeln zur Zollwertermittlung im Irak",
             href: "https://www.gtai.de/de/trade/irak/zoll/irak-zollwert-1986908",
             source: "Germany Trade & Invest",
             topic: "Zollwert / Vorabanmeldung",
@@ -1826,15 +1846,14 @@ export const de = {
           {
             label: "Transportanfrage für Irak stellen",
             href: "/de/transport-anfrage",
-            reason:
-              "Leitet qualifizierte Nutzer direkt zur Anfrage.",
+            reason: "Leitet qualifizierte Nutzer direkt zur Anfrage.",
           },
         ],
       },
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in den Irak anfragen",
-      }
+      },
     },
     {
       slug: "transport-tuerkei",
@@ -1845,9 +1864,11 @@ export const de = {
       title: "Transport in die",
       highlight: "Türkei",
 
-      intro: "Globalsped organisiert zuverlässige Transporte in die Türkei – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten in den Mittleren Osten.",
+      intro:
+        "Globalsped organisiert zuverlässige Transporte in die Türkei – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten in den Mittleren Osten.",
 
-      seoText: "Wir unterstützen Unternehmen bei internationalen Landtransporten von Europa in die Türkei, insbesondere nach Istanbul, Ankara, Izmir, Bursa und weitere wichtige Wirtschaftsregionen. Die Türkei ist ein bedeutender Logistikstandort zwischen Europa, dem Kaukasus, Zentralasien und dem Nahen Osten und spielt eine zentrale Rolle als Transit- und Handelsdrehscheibe. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere, zuverlässige und effiziente Transporte.",
+      seoText:
+        "Wir unterstützen Unternehmen bei internationalen Landtransporten von Europa in die Türkei, insbesondere nach Istanbul, Ankara, Izmir, Bursa und weitere wichtige Wirtschaftsregionen. Die Türkei ist ein bedeutender Logistikstandort zwischen Europa, dem Kaukasus, Zentralasien und dem Nahen Osten und spielt eine zentrale Rolle als Transit- und Handelsdrehscheibe. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere, zuverlässige und effiziente Transporte.",
 
       services: [
         "FTL Komplettladungen in die Türkei",
@@ -1864,6 +1885,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in den",
         citiesTitle: "Wichtige Zielorte",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -1904,15 +1928,15 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
         },
 
         requiredInformation: {
           label: "Benötigte Informationen",
-          intro: "Für eine reibungslose Transportabwicklung werden folgende Informationen benötigt:",
+          intro:
+            "Für eine reibungslose Transportabwicklung werden folgende Informationen benötigt:",
           items: [
             "Vollständige Empfängeradresse",
             "Kontaktperson des Empfängers",
@@ -1928,28 +1952,23 @@ export const de = {
         operationalHints: [
           {
             title: "Export- und Zolldokumente konsistent vorbereiten",
-            text:
-              "Abweichungen zwischen Handelsrechnung, Packliste, CMR und Zolltarifnummern führen bei Türkei-Transporten häufig zu Verzögerungen oder zusätzlichen Zollprüfungen.",
+            text: "Abweichungen zwischen Handelsrechnung, Packliste, CMR und Zolltarifnummern führen bei Türkei-Transporten häufig zu Verzögerungen oder zusätzlichen Zollprüfungen.",
           },
           {
             title: "Grenzübergänge realistisch einplanen",
-            text:
-              "Grenzübergänge wie Kapıkule können je nach Saison, Feiertagen und Verkehrsaufkommen erhebliche Wartezeiten verursachen. Laufzeiten sollten entsprechend geplant werden.",
+            text: "Grenzübergänge wie Kapıkule können je nach Saison, Feiertagen und Verkehrsaufkommen erhebliche Wartezeiten verursachen. Laufzeiten sollten entsprechend geplant werden.",
           },
           {
             title: "Transit- und TIR-Prozesse frühzeitig abstimmen",
-            text:
-              "Bei Transitverkehren Richtung Kaukasus, Zentralasien oder Mittlerer Osten sollten TIR- und Transitverfahren vor Transportbeginn vollständig abgestimmt werden.",
+            text: "Bei Transitverkehren Richtung Kaukasus, Zentralasien oder Mittlerer Osten sollten TIR- und Transitverfahren vor Transportbeginn vollständig abgestimmt werden.",
           },
           {
             title: "Technische Waren und Dual-Use-Produkte prüfen",
-            text:
-              "Für bestimmte Maschinen, Elektronik- oder Industriekomponenten können Exportkontrolle, Compliance-Prüfungen oder zusätzliche Nachweise erforderlich sein.",
+            text: "Für bestimmte Maschinen, Elektronik- oder Industriekomponenten können Exportkontrolle, Compliance-Prüfungen oder zusätzliche Nachweise erforderlich sein.",
           },
           {
             title: "ADR- und Thermotransporte sauber vorbereiten",
-            text:
-              "Gefahrgut- und temperaturgeführte Transporte erfordern vollständige Begleitdokumente sowie abgestimmte Grenz- und Zollprozesse entlang der Route.",
+            text: "Gefahrgut- und temperaturgeführte Transporte erfordern vollständige Begleitdokumente sowie abgestimmte Grenz- und Zollprozesse entlang der Route.",
           },
         ],
         authorityLinks: [
@@ -1986,7 +2005,8 @@ export const de = {
               "Stärkt die semantische Relevanz für internationale Transportregelwerke, Transitprozesse und CMR-Themen.",
           },
           {
-            label: "Türkische Zollbehörde – Zoll- und Außenhandelsinformationen",
+            label:
+              "Türkische Zollbehörde – Zoll- und Außenhandelsinformationen",
             href: "https://ticaret.gov.tr/",
             source: "Republik Türkei – Handelsministerium",
             topic: "Nationale Zollinformationen",
@@ -2006,7 +2026,7 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in die Türkei anfragen",
-      }
+      },
     },
     {
       slug: "transport-ukraine",
@@ -2038,7 +2058,9 @@ export const de = {
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in die",
         citiesTitle: "Wichtige Zielorte",
-        faqTitle: "Häufige Fragen zu Transporten in die {country}",
+        authorityBadge: "Dokumente & Hinweise",
+        authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",
+        internalLinksTitle: "Relevante GLOBALSPED Inhalte",
       },
 
       transportDetails: {
@@ -2060,7 +2082,8 @@ export const de = {
 
         runtime: {
           label: "Laufzeit",
-          value: "ca. 3–8 Tage (abhängig von Route, Zielregion und Grenzabwicklung)",
+          value:
+            "ca. 3–8 Tage (abhängig von Route, Zielregion und Grenzabwicklung)",
         },
 
         customsOffice: {
@@ -2083,10 +2106,9 @@ export const de = {
             "Handelsrechnung",
             "Packliste / Ladeliste",
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
-            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note:
-            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung und Prüfung aller notwendigen Transport- und Zolldokumente für die Ukraine.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung und Prüfung aller notwendigen Transport- und Zolldokumente für die Ukraine.",
         },
 
         requiredInformation: {
@@ -2109,23 +2131,19 @@ export const de = {
         operationalHints: [
           {
             title: "Route und Zustellregion sorgfältig prüfen",
-            text:
-              "Bei Ukraine-Transporten sollten Zielregion, Sicherheitslage, verfügbare Grenzübergänge und lokale Zustellmöglichkeiten vor Versand abgestimmt werden.",
+            text: "Bei Ukraine-Transporten sollten Zielregion, Sicherheitslage, verfügbare Grenzübergänge und lokale Zustellmöglichkeiten vor Versand abgestimmt werden.",
           },
           {
             title: "Export- und Einfuhrdokumente vollständig vorbereiten",
-            text:
-              "Handelsrechnung, Packliste, CMR, Ausfuhranmeldung und Warenbeschreibung sollten vollständig und konsistent sein. Abweichungen führen häufig zu Verzögerungen.",
+            text: "Handelsrechnung, Packliste, CMR, Ausfuhranmeldung und Warenbeschreibung sollten vollständig und konsistent sein. Abweichungen führen häufig zu Verzögerungen.",
           },
           {
             title: "Sanktions- und Compliance-Prüfung durchführen",
-            text:
-              "Vor Transportbeginn sollten Empfänger, Warenart, Endverwendung und mögliche Exportkontrollvorgaben geprüft werden. Dies ist bei technischen Gütern besonders wichtig.",
+            text: "Vor Transportbeginn sollten Empfänger, Warenart, Endverwendung und mögliche Exportkontrollvorgaben geprüft werden. Dies ist bei technischen Gütern besonders wichtig.",
           },
           {
             title: "Laufzeiten flexibel planen",
-            text:
-              "Grenzabfertigung, Sicherheitslage und regionale Einschränkungen können sich kurzfristig auswirken. Für dringende Lieferungen ist eine realistische und flexible Planung erforderlich.",
+            text: "Grenzabfertigung, Sicherheitslage und regionale Einschränkungen können sich kurzfristig auswirken. Für dringende Lieferungen ist eine realistische und flexible Planung erforderlich.",
           },
         ],
         authorityLinks: [
@@ -2154,7 +2172,8 @@ export const de = {
               "Stärkt die Relevanz für korrekte Wareneinreihung und Exportdokumentation.",
           },
           {
-            label: "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
+            label:
+              "UNECE-CMR-Informationen zum internationalen Straßengüterverkehr",
             href: "https://unece.org/DAM/trans/conventn/cmr_e.pdf",
             source: "UNECE",
             topic: "CMR",
@@ -2180,14 +2199,16 @@ export const de = {
       cta: {
         href: "/de/transport-anfrage",
         label: "Transport in die Ukraine anfragen",
-      }
+      },
     },
   ],
   customs: {
     badge: "Zollabwicklung",
     title: "Zollabwicklung für Transporte in Drittstaaten",
-    highlight: "nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
-    intro: "GLOBALSPED unterstützt Unternehmen bei der professionellen Zollabwicklung für internationale Transporte in Drittstaaten. Wir begleiten Export-, Import- und Transitprozesse für Transporte nach Zentralasien, in den Kaukasus, nach Osteuropa und in den Mittleren Osten. Dazu gehören die Vorbereitung wichtiger Transport- und Zolldokumente, die Abstimmung mit Versendern, Empfängern, Fahrern und Zollpartnern sowie die Koordination entlang komplexer internationaler Routen.",
+    highlight:
+      "nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
+    intro:
+      "GLOBALSPED unterstützt Unternehmen bei der professionellen Zollabwicklung für internationale Transporte in Drittstaaten. Wir begleiten Export-, Import- und Transitprozesse für Transporte nach Zentralasien, in den Kaukasus, nach Osteuropa und in den Mittleren Osten. Dazu gehören die Vorbereitung wichtiger Transport- und Zolldokumente, die Abstimmung mit Versendern, Empfängern, Fahrern und Zollpartnern sowie die Koordination entlang komplexer internationaler Routen.",
     cta: {
       href: "/de/transport-anfrage",
       label: "Zollabwicklung anfragen",
@@ -2213,7 +2234,8 @@ export const de = {
     ],
 
     requiredTitle: "Welche Unterlagen werden für die Zollabwicklung benötigt?",
-    requiredIntro: "Für internationale Transporte in Drittstaaten sind je nach Ware, Route und Zielland unterschiedliche Dokumente erforderlich. Häufig benötigt werden:",
+    requiredIntro:
+      "Für internationale Transporte in Drittstaaten sind je nach Ware, Route und Zielland unterschiedliche Dokumente erforderlich. Häufig benötigt werden:",
 
     requiredDocuments: [
       "Handelsrechnung oder Proforma-Rechnung",
@@ -2240,10 +2262,11 @@ export const de = {
     badge: "Unsere Leistungen",
     title: "Logistiklösungen für komplexe Märkte.",
     highlight: "Zuverlässig. Persönlich. International.",
-    intro: "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
+    intro:
+      "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
     cta: {
       label: "Transport anfragen",
-      href: "/de/transport-anfrage"
+      href: "/de/transport-anfrage",
     },
     learnMoreLabel: "Mehr erfahren",
     strengthsBadge: "Unsere Logistiklösungen",
@@ -2284,7 +2307,7 @@ export const de = {
         title: "Projektlogistik",
         text: "Individuelle Lösungen für komplexe Projekte, Schwertransporte und überdimensionale Ladungen.",
         href: "/de/leistungen/projektlogistik",
-      }
+      },
     ],
 
     imageOne: {
@@ -2328,11 +2351,12 @@ export const de = {
     badge: "Über GLOBALSPED",
     title: "Erfahrung, Netzwerk und persönliche Betreuung",
     highlight: "für anspruchsvolle internationale Transporte",
-    intro: "GLOBALSPED ist eine internationale Spedition mit Spezialisierung auf Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Seit vielen Jahren organisieren wir Sammelgut, LTL-Teilladungen, FTL-Komplettladungen, Thermotransporte, ADR-Transporte, Projektlogistik und Zollgüter für Unternehmen mit komplexen Anforderungen.",
+    intro:
+      "GLOBALSPED ist eine internationale Spedition mit Spezialisierung auf Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Seit vielen Jahren organisieren wir Sammelgut, LTL-Teilladungen, FTL-Komplettladungen, Thermotransporte, ADR-Transporte, Projektlogistik und Zollgüter für Unternehmen mit komplexen Anforderungen.",
     text: "Unsere Stärke liegt in kurzen Kommunikationswegen, persönlicher Betreuung und einem erfahrenen Team mit aktuellem Logistik-Fachwissen und sprachlicher Kompetenz. Gerade auf anspruchsvollen Routen zählt nicht nur der Preis, sondern die verlässliche Koordination von Versender, Empfänger, Fahrer, Zollpartnern und internationalen Netzwerkpartnern.",
     cta: {
       label: "Transport anfragen",
-      href: "/de/transport-anfrage"
+      href: "/de/transport-anfrage",
     },
 
     images: [
@@ -2377,7 +2401,8 @@ export const de = {
       text: "Wir verstehen uns nicht als anonyme Plattform, sondern als persönlicher Logistikpartner. Unser Team verbindet praktische Erfahrung, Marktkenntnis und klare Kommunikation – besonders dort, wo Transporte komplex, zeitkritisch oder dokumentenintensiv sind.",
     },
     teamListTitle: "Ihr persönliches GLOBALSPED Team",
-    teamListIntro: "Unsere Account Agents und Ansprechpartner unterstützen Sie persönlich bei Transportanfragen, Zollthemen und der operativen Abwicklung Ihrer Sendungen.",
+    teamListIntro:
+      "Unsere Account Agents und Ansprechpartner unterstützen Sie persönlich bei Transportanfragen, Zollthemen und der operativen Abwicklung Ihrer Sendungen.",
 
     teamMembers: [
       {
@@ -2513,8 +2538,10 @@ export const de = {
     positions: [
       {
         title: "Export Sachbearbeiter (m/w/d)",
-        subtitle: "Exportabwicklung, Zollunterlagen und internationale Kundenbetreuung",
-        description: "In dieser Position unterstützen Sie unsere Exportabwicklung für internationale Transporte in anspruchsvolle Zielmärkte. Sie arbeiten strukturiert, kommunizieren sicher mit Kunden und Partnern und behalten auch bei komplexen Dokumentenprozessen den Überblick.",
+        subtitle:
+          "Exportabwicklung, Zollunterlagen und internationale Kundenbetreuung",
+        description:
+          "In dieser Position unterstützen Sie unsere Exportabwicklung für internationale Transporte in anspruchsvolle Zielmärkte. Sie arbeiten strukturiert, kommunizieren sicher mit Kunden und Partnern und behalten auch bei komplexen Dokumentenprozessen den Überblick.",
         tasks: [
           "Annahme, Bearbeitung und Nachverfolgung von Kundenaufträgen",
           "Erfassung und Pflege transportrelevanter Daten im Warenwirtschaftssystem",
@@ -2527,9 +2554,12 @@ export const de = {
         ],
       },
       {
-        title: "Kaufmann/-frau für Spedition & Logistikdienstleistungen (m/w/d)",
-        subtitle: "Disposition, internationale Sendungen, Import, Export, See- und Luftfracht",
-        description: "Sie organisieren internationale Sendungen, koordinieren Kunden, Partner und Frachtführer und sorgen dafür, dass Dokumente, Termine und Informationen zuverlässig zusammenlaufen.",
+        title:
+          "Kaufmann/-frau für Spedition & Logistikdienstleistungen (m/w/d)",
+        subtitle:
+          "Disposition, internationale Sendungen, Import, Export, See- und Luftfracht",
+        description:
+          "Sie organisieren internationale Sendungen, koordinieren Kunden, Partner und Frachtführer und sorgen dafür, dass Dokumente, Termine und Informationen zuverlässig zusammenlaufen.",
         tasks: [
           "Ansprechpartner für Kunden in den Bereichen Import, Export, See- und Luftfracht sowie Container-Trucking",
           "Einkauf von Frachtraum und Abstimmung mit Transportpartnern",
@@ -2548,7 +2578,8 @@ export const de = {
     },
 
     companyTitle: "Unser Unternehmen",
-    companyText: "GLOBALSPED ist eine internationale Spedition mit Schwerpunkt auf Exporten nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten. Statt Massengeschäft entwickeln wir individuelle Transportlösungen für komplexe Anforderungen – von Hilfsguttransporten über Medikamentenlieferungen bis zu Maschinen- und Projekttransporten.",
+    companyText:
+      "GLOBALSPED ist eine internationale Spedition mit Schwerpunkt auf Exporten nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten. Statt Massengeschäft entwickeln wir individuelle Transportlösungen für komplexe Anforderungen – von Hilfsguttransporten über Medikamentenlieferungen bis zu Maschinen- und Projekttransporten.",
 
     values: [
       "Internationale Transporte statt Standardroutine",
@@ -2557,13 +2588,15 @@ export const de = {
       "Teamarbeit, Sprachenvielfalt und operative Nähe zum Kunden",
     ],
 
-    closing: "Wenn Sie kreativ denken, lernbereit sind und auch ungewöhnliche Aufgaben professionell lösen möchten, möchten wir Sie gerne kennenlernen.",
+    closing:
+      "Wenn Sie kreativ denken, lernbereit sind und auch ungewöhnliche Aufgaben professionell lösen möchten, möchten wir Sie gerne kennenlernen.",
   },
   contact: {
     badge: "Kontakt",
     title: "Kontaktieren Sie uns",
     highlight: "für Ihre Transportanfrage",
-    intro: "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
+    intro:
+      "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
 
     form: {
       nameLabel: "Name",
@@ -2586,26 +2619,28 @@ export const de = {
         address: "Pendelhagen 1, D-83416 Saaldorf-Surheim",
         phone: "+49 (0)8654 5762-0",
         email: "info@globalsped.de",
-        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%2C%20Germany",
+        mapsUrl:
+          "https://www.google.com/maps/dir/?api=1&destination=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%2C%20Germany",
       },
       {
         title: "Österreich",
         address: "Metzgerstraße 54, A-5020 Salzburg",
         phone: "+43 (0)662 45084-21",
         email: "afrim.sabani@globalsped.de",
-        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%2C%20Austria",
+        mapsUrl:
+          "https://www.google.com/maps/dir/?api=1&destination=Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%2C%20Austria",
       },
     ],
 
     mapTitle: "Standorte auf Google Maps",
-    mapEmbedUrl: "https://www.google.com/maps?q=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%20Germany%20OR%20Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%20Austria&output=embed",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%20Germany%20OR%20Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%20Austria&output=embed",
   },
   footer: {
     companyName: "Globalsped Internationale Spedition GmbH",
     shortName: "GLOBALSPED",
     claim: "International Transport Solutions",
-    text:
-      "Spezialisierte Transport- und Logistiklösungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Zollabwicklung, FTL, LTL, Thermotransporten und Projektlogistik.",
+    text: "Spezialisierte Transport- und Logistiklösungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Zollabwicklung, FTL, LTL, Thermotransporten und Projektlogistik.",
 
     contactTitle: "Kontakt",
     contact: {
@@ -2653,6 +2688,7 @@ export const de = {
       },
     ],
 
-    copyright: "© GLOBALSPED International Tranport GmbH. Alle Rechte vorbehalten.",
+    copyright:
+      "© GLOBALSPED International Tranport GmbH. Alle Rechte vorbehalten.",
   },
 };

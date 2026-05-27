@@ -12,9 +12,7 @@ export type Header = {
     menuOpenLabel: string;
     menuCloseLabel: string;
   };
-}
-
-
+};
 
 export type HeroFeatureBox = {
   title: string;
@@ -117,8 +115,9 @@ export type CountryTransportPage = {
     introBadge: string;
     logisticsTitlePrefix: string;
     citiesTitle: string;
-    faqTitlePrefix?: string;
-    faqTitle: string;
+    authorityBadge: string;
+    authorityLinksTitle: string;
+    internalLinksTitle: string;
   };
   countryAuthorityContent: {
     title: string;
@@ -143,7 +142,7 @@ export type CountryTransportPage = {
   cta: {
     label: string;
     href: string;
-  },
+  };
 };
 
 export type AboutUsPage = {
@@ -183,7 +182,7 @@ export type AboutUsPage = {
       };
     }[];
   };
-}
+};
 export type Footer = {
   footer: {
     companyName: string;
@@ -214,8 +213,7 @@ export type Footer = {
     }[];
     copyright: string;
   };
-}
-
+};
 
 export type ContactContent = {
   contact: {
@@ -246,7 +244,7 @@ export type ContactContent = {
     mapTitle: string;
     mapEmbedUrl: string;
   };
-}
+};
 
 export type JobsPage = {
   jobs: {
@@ -282,8 +280,7 @@ export type JobsPage = {
     values: string[];
     closing: string;
   };
-
-}
+};
 export type ContentSchema = {
   header: Header;
   hero: HeroContent;
@@ -291,6 +288,6 @@ export type ContentSchema = {
   countryPages: CountryTransportPage[];
   about: AboutUsPage;
   jobs: JobsPage;
-  contact: ContactContent
-  footer: Footer
+  contact: ContactContent;
+  footer: Footer;
 };

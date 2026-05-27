@@ -145,7 +145,7 @@ export function JobsSection({ locale }: Props) {
                                         </ul>
 
                                         <Link
-                                            href="/de/bewerbung" className="btn-primary"
+                                            href="/de/bewerbung"
                                             className="mt-7 inline-flex items-center gap-3 rounded-full bg-lime-300 px-6 py-3 text-sm font-black uppercase tracking-wide text-[var(--color-global-dark)] transition hover:bg-lime-200"
                                         >
                                             <Mail size={17} />

@@ -246,7 +246,7 @@ export function CountryTransportPage({ locale, page }: Props) {
         <div className="container">
           <div className="max-w-3xl">
             <p className="text-sm font-black uppercase tracking-[0.22em] text-[var(--color-global-medium)]">
-              Dokumente & Hinweise
+              {page.labels.authorityBadge}
             </p>
 
             <h2 className="mt-3 text-[28px] font-black uppercase md:text-[36px]">
@@ -275,7 +275,7 @@ export function CountryTransportPage({ locale, page }: Props) {
 
             <aside className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-black uppercase">
-                Seriöse Quellen & weiterführende Informationen
+                {page.labels.authorityLinksTitle}
               </h3>
 
               <div className="mt-5 grid gap-4">
@@ -305,7 +305,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.countryAuthorityContent.internalLinks.length > 0 && (
                 <div className="mt-8 border-t border-black/10 pt-6">
                   <h4 className="font-black uppercase">
-                    Relevante GLOBALSPED Inhalte
+                    {page.labels.internalLinksTitle}
                   </h4>
 
                   <div className="mt-4 grid gap-3">
