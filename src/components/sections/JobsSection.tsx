@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
     BriefcaseBusiness,
     Building2,
@@ -18,7 +19,7 @@ type Props = {
 const imageCardIcons = {
     users: Users,
     star: Star,
-  } as const;
+} as const;
 
 export function JobsSection({ locale }: Props) {
     const t = getContent(locale).jobs;
@@ -143,15 +144,13 @@ export function JobsSection({ locale }: Props) {
                                             ))}
                                         </ul>
 
-                                        <a
-                                            href={`mailto:${t.email}?subject=Bewerbung: ${encodeURIComponent(
-                                                position.title
-                                            )}`}
+                                        <Link
+                                            href="/de/bewerbung" className="btn-primary"
                                             className="mt-7 inline-flex items-center gap-3 rounded-full bg-lime-300 px-6 py-3 text-sm font-black uppercase tracking-wide text-[var(--color-global-dark)] transition hover:bg-lime-200"
                                         >
                                             <Mail size={17} />
                                             {t.applyLabel}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </details>
                             ))}
@@ -216,12 +215,12 @@ export function JobsSection({ locale }: Props) {
                     <div className="flex items-center gap-4 text-sm font-bold uppercase tracking-wide text-white/86">
                         <Mail size={20} className="text-lime-300" />
                         {t.closing}
-                  
-                    </div>
 
-                    <a href={`mailto:${t.email}`} className="btn-primary">
+                    </div>
+                    <Link href="/de/bewerbung" className="btn-primary">
                         {t.applyLabel}
-                    </a>
+                    </Link>
+
                 </div>
             </div>
         </section>

@@ -145,7 +145,7 @@ export const de = {
         image: "/images/destinations/mittlerer-osten.jpg",
         countries: [
           { name: "Irak", slug: "irak", cities: ["Bagdad", "Erbil"] },
-          { name: "Türkei", slug: "tuerkei", cities: ["Istanbul", "Ankara"] },
+          { name: "Türkei", slug: "tuerkei", cities: ["Istanbul", "Ankara", "Izmir"] },
           { name: "Ukraine", slug: "ukraine", cities: ["Kiew", "Lwiw", "Odessa"] },
         ],
       },
@@ -226,11 +226,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
@@ -390,11 +389,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – gerne sind wir Ihnen bei der Erstellung der notwendigen Unterlagen behilflich.",
@@ -553,11 +551,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – gerne unterstützen wir Sie bei der Erstellung der erforderlichen Transport- und Zolldokumente.",
@@ -719,11 +716,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
@@ -894,11 +890,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
@@ -1064,11 +1059,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
@@ -1234,11 +1228,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
@@ -1404,11 +1397,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
@@ -1574,11 +1566,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente.",
@@ -1744,11 +1735,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
@@ -1847,6 +1837,178 @@ export const de = {
       }
     },
     {
+      slug: "transport-tuerkei",
+      country: "Türkei",
+      region: "Mittlerer Osten",
+      heroImage: "/images/country-hero/tuerkei.jpg",
+
+      title: "Transport in die",
+      highlight: "Türkei",
+
+      intro: "Globalsped organisiert zuverlässige Transporte in die Türkei – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten in den Mittleren Osten.",
+
+      seoText: "Wir unterstützen Unternehmen bei internationalen Landtransporten von Europa in die Türkei, insbesondere nach Istanbul, Ankara, Izmir, Bursa und weitere wichtige Wirtschaftsregionen. Die Türkei ist ein bedeutender Logistikstandort zwischen Europa, dem Kaukasus, Zentralasien und dem Nahen Osten und spielt eine zentrale Rolle als Transit- und Handelsdrehscheibe. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere, zuverlässige und effiziente Transporte.",
+
+      services: [
+        "FTL Komplettladungen in die Türkei",
+        "LTL Teilpartien und Sammelgut",
+        "Thermotransporte für temperaturempfindliche Waren",
+        "Projekttransporte und Sondertransporte",
+        "Zollabwicklung, Export, Import und Transit",
+      ],
+
+      cities: ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana", "Antalya"],
+
+      labels: {
+        backToDestinations: "Zurück zu Destinationen",
+        introBadge: "Internationale Logistik",
+        logisticsTitlePrefix: "Logistiklösungen für Transporte in den",
+        citiesTitle: "Wichtige Zielorte",
+      },
+
+      transportDetails: {
+        route: {
+          label: "Route",
+          routes: [
+            {
+              title: "Südosteuropa / Türkei Route",
+              description:
+                "FTL- und LTL-Transporte erfolgen im Regelfall über Österreich, Ungarn, Rumänien und Bulgarien direkt in die Türkei. Je nach Zielregion, Warenart und Transportanforderung koordinieren wir geeignete Routen für zuverlässige Transporte nach Istanbul, Ankara, Izmir, Bursa sowie in weitere türkische Wirtschaftsregionen.",
+            },
+            {
+              title: "Individuelle Projektlösungen",
+              description:
+                "Je nach Anforderung werden individuelle Routen für Projekttransporte und sensible Güter geplant, abgestimmt auf Sicherheits- und Infrastrukturbedingungen.",
+            },
+          ],
+        },
+
+        runtime: {
+          label: "Laufzeit",
+          value: "Ca. 6-10 Tage (abhängig von Route und Grenzabwicklung)",
+        },
+
+        customsOffice: {
+          label: "Ausgangszollamt",
+          offices: [
+            {
+              route: "Südroute",
+              office: "BG001015 Kapitan Andreevo",
+            },
+          ],
+        },
+
+        documents: {
+          label: "Unterlagen",
+          documents: [
+            "Handelsrechnung",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
+          ],
+          note:
+            "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
+        },
+
+        requiredInformation: {
+          label: "Benötigte Informationen",
+          intro: "Für eine reibungslose Transportabwicklung werden folgende Informationen benötigt:",
+          items: [
+            "Vollständige Empfängeradresse",
+            "Kontaktperson des Empfängers",
+            "Telefonnummer oder E-Mail-Adresse des Empfängers",
+          ],
+        },
+      },
+
+      countryAuthorityContent: {
+        title: "Wichtige Informationen & Dokumente",
+        intro:
+          "Transporte in die Türkei verbinden EU-Exportprozesse, Zollabwicklung und komplexe Transit- und Grenzprozesse zwischen Europa und dem Mittleren Osten. Besonders bei Industrie-, Maschinenbau-, Automotive- und Handelswaren ist eine präzise Dokumentation entscheidend.",
+        operationalHints: [
+          {
+            title: "Export- und Zolldokumente konsistent vorbereiten",
+            text:
+              "Abweichungen zwischen Handelsrechnung, Packliste, CMR und Zolltarifnummern führen bei Türkei-Transporten häufig zu Verzögerungen oder zusätzlichen Zollprüfungen.",
+          },
+          {
+            title: "Grenzübergänge realistisch einplanen",
+            text:
+              "Grenzübergänge wie Kapıkule können je nach Saison, Feiertagen und Verkehrsaufkommen erhebliche Wartezeiten verursachen. Laufzeiten sollten entsprechend geplant werden.",
+          },
+          {
+            title: "Transit- und TIR-Prozesse frühzeitig abstimmen",
+            text:
+              "Bei Transitverkehren Richtung Kaukasus, Zentralasien oder Mittlerer Osten sollten TIR- und Transitverfahren vor Transportbeginn vollständig abgestimmt werden.",
+          },
+          {
+            title: "Technische Waren und Dual-Use-Produkte prüfen",
+            text:
+              "Für bestimmte Maschinen, Elektronik- oder Industriekomponenten können Exportkontrolle, Compliance-Prüfungen oder zusätzliche Nachweise erforderlich sein.",
+          },
+          {
+            title: "ADR- und Thermotransporte sauber vorbereiten",
+            text:
+              "Gefahrgut- und temperaturgeführte Transporte erfordern vollständige Begleitdokumente sowie abgestimmte Grenz- und Zollprozesse entlang der Route.",
+          },
+        ],
+        authorityLinks: [
+          {
+            label: "GTAI-Informationen zu Zoll und Einfuhr in der Türkei",
+            href: "https://www.gtai.de/de/trade/tuerkei-wirtschaft/zoll-einfuhr-kompakt",
+            source: "Germany Trade & Invest",
+            topic: "Zoll und Einfuhr",
+            reason:
+              "Hochwertige Authority-Quelle zu türkischen Einfuhrbestimmungen, Zollverfahren und Dokumentationsanforderungen.",
+          },
+          {
+            label: "TARIC-Datenbank für Zolltarifnummern",
+            href: "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=de",
+            source: "Europäische Kommission",
+            topic: "Zolltarifnummern",
+            reason:
+              "Relevante Fachquelle zur korrekten Wareneinreihung und Vorbereitung internationaler Exportdokumente.",
+          },
+          {
+            label: "IRU-Informationen zum TIR-Verfahren",
+            href: "https://www.iru.org/what-we-do/facilitating-trade-and-transit/tir",
+            source: "IRU",
+            topic: "TIR / Transitverfahren",
+            reason:
+              "Internationale Authority-Quelle für TIR- und Transitprozesse im grenzüberschreitenden Straßengüterverkehr.",
+          },
+          {
+            label: "UNECE-Regelungen zum internationalen Straßengüterverkehr",
+            href: "https://unece.org/transport",
+            source: "UNECE",
+            topic: "Internationaler Straßentransport",
+            reason:
+              "Stärkt die semantische Relevanz für internationale Transportregelwerke, Transitprozesse und CMR-Themen.",
+          },
+          {
+            label: "Türkische Zollbehörde – Zoll- und Außenhandelsinformationen",
+            href: "https://ticaret.gov.tr/",
+            source: "Republik Türkei – Handelsministerium",
+            topic: "Nationale Zollinformationen",
+            reason:
+              "Offizielle Regierungsquelle zu Zollverfahren, Importanforderungen und regulatorischen Vorgaben in der Türkei.",
+          },
+        ],
+        internalLinks: [
+          {
+            label: "FAQ zu Zoll- und Exportdokumenten",
+            href: "/de/faq",
+            reason:
+              "Sinnvolle interne Vertiefung zu Exportpapieren, Zollprozessen und internationalen Transportanforderungen.",
+          },
+        ],
+      },
+      cta: {
+        href: "/de/transport-anfrage",
+        label: "Transport in die Türkei anfragen",
+      }
+    },
+    {
       slug: "transport-ukraine",
       country: "Ukraine",
       region: "Osteuropa",
@@ -1918,13 +2080,10 @@ export const de = {
         documents: {
           label: "Unterlagen",
           documents: [
-            "Zolldokument",
-            "Ausfuhrbegleitdokument",
-            "EX-A",
-            "EX-C",
-            "T1",
             "Handelsrechnung",
-            "Packliste",
+            "Packliste / Ladeliste",
+            "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
+            "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,"
           ],
           note:
             "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung und Prüfung aller notwendigen Transport- und Zolldokumente für die Ukraine.",
@@ -2222,9 +2381,18 @@ export const de = {
 
     teamMembers: [
       {
+        imgURL: "/images/team/globalsped-robert.jpg",
+        name: "Robert Tiefenthaler",
+        job: "Geschäftsführer",
+        contact: {
+          phone: "+49 8654 5762 20",
+          email: "rt@globalsped.de",
+        },
+      },
+      {
         imgURL: "/images/team/globalsped-selina.jpg",
         name: "Selina Tatzmann",
-        job: "Account Agent",
+        job: "Hauptgesellschafterin",
         contact: {
           phone: "+49 8654 5762 27",
           email: "st@globalsped.de",
@@ -2269,7 +2437,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-herbert.jpg",
         name: "Herbert Sesko",
-        job: "Manager",
+        job: "Prokurist",
         contact: {
           phone: "+49 8654 5762 21",
           email: "hs@globalsped.de",

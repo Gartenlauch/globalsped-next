@@ -17,7 +17,18 @@ type Props = {
   page: CountryTransportPageType;
 };
 
+function splitRuntime(value: string) {
+  const match = value.match(/^(ca\.\s*\d+\s*[–-]\s*\d+\s*Tage)(.*)$/i);
+
+  return {
+    main: match?.[1] ?? value,
+    note: match?.[2]?.trim() ?? "",
+  };
+}
+
 export function CountryTransportPage({ locale, page }: Props) {
+  const runtime = splitRuntime(page.transportDetails.runtime.value);
+
   return (
     <main className="bg-[var(--color-global-deep)] text-white">
 
@@ -132,9 +143,17 @@ export function CountryTransportPage({ locale, page }: Props) {
                 </h3>
               </div>
 
-              <p className="text-3xl font-black text-white">
-                {page.transportDetails.runtime.value}
-              </p>
+              <div>
+                <p className="text-[28px] font-black leading-tight text-white md:text-[32px]">
+                  {runtime.main}
+                </p>
+
+                {runtime.note && (
+                  <p className="mt-3 text-sm font-semibold leading-6 text-white/68 md:text-base">
+                    {runtime.note}
+                  </p>
+                )}
+              </div>
             </article>
 
             {/* Zielorte */}
