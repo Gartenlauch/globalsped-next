@@ -52,8 +52,8 @@ export function CookieConsentBanner({ locale }: Props) {
                     flipButtons: false,
                 },
                 preferencesModal: {
-                    layout: "box wide",
-                    position: "middle center",
+                    layout: "box",
+                    position: "right",
                     equalWeightButtons: true,
                     flipButtons: false,
                 },
