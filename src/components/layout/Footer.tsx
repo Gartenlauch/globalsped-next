@@ -9,6 +9,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { getContent } from "@/content";
+import { CookieSettingsButton } from "@/components/cookies/CookieSettingsButton";
 
 type Props = {
   locale: string;
@@ -105,6 +106,10 @@ export function Footer({ locale }: Props) {
                 </li>
               ))}
             </ul>
+            <CookieSettingsButton
+  label="Cookie-Einstellungen"
+  className="text-sm text-white/70 transition hover:text-lime-300"
+/>
           </div>
 
           <div>
