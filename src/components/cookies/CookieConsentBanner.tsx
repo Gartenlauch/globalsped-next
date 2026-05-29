@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -41,20 +41,24 @@ function updateGoogleConsent(consent: {
 
 export function CookieConsentBanner({ locale }: Props) {
     const t = getCookieConsentContent(locale);
-
+    const initializedRef = useRef(false);
     useEffect(() => {
+        if (initializedRef.current) return;
+
+        initializedRef.current = true;
         CookieConsent.run({
+            autoShow: false,
             guiOptions: {
                 consentModal: {
-                    layout: "box wide",
+                    layout: "bar",
                     position: "middle center",
-                    equalWeightButtons: true,
+                    equalWeightButtons: false,
                     flipButtons: false,
                 },
                 preferencesModal: {
                     layout: "box",
                     position: "right",
-                    equalWeightButtons: true,
+                    equalWeightButtons: false,
                     flipButtons: false,
                 },
             },
@@ -76,6 +80,7 @@ export function CookieConsentBanner({ locale }: Props) {
 
             language: {
                 default: "de",
+                autoDetect: "browser",
                 translations: {
                     de: {
                         consentModal: {
@@ -141,7 +146,18 @@ export function CookieConsentBanner({ locale }: Props) {
                     marketing: cookie.categories.includes("marketing"),
                 });
             },
+            disablePageInteraction: true
+
         });
+        const showTimer = window.setTimeout(() => {
+            if (!CookieConsent.validConsent()) {
+                CookieConsent.show(true);
+            }
+        }, 350);
+
+        return () => {
+            window.clearTimeout(showTimer);
+        };
     }, [locale, t]);
 
     return null;

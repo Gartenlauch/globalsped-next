@@ -105,11 +105,13 @@ export function Footer({ locale }: Props) {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsButton
+                  label="Cookie-Einstellungen"
+                  className="text-sm font-semibold text-white/76 transition hover:text-lime-300"
+                />
+              </li>
             </ul>
-            <CookieSettingsButton
-  label="Cookie-Einstellungen"
-  className="text-sm text-white/70 transition hover:text-lime-300"
-/>
           </div>
 
           <div>
