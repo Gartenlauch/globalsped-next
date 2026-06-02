@@ -5,7 +5,7 @@ export const transportRequestDe: TransportRequestContent = {
   title: "Transport unverbindlich",
   highlight: "anfragen",
   intro:
-    "Senden Sie uns Ihre Transportdaten für internationale Transporte, LTL, FTL, Palettenware, Projektlogistik oder Sondertransporte.\nUnser Team prüft Ihre Anfrage persönlich und meldet sich schnellstmöglich.",
+    "Senden Sie uns Ihre Transportdaten für internationale Transporte, LTL, FTL, Palettenware, Projektlogistik oder Sondertransporte.\nUnser Team prüft Route, Transportart, Dokumente und besondere Anforderungen persönlich und meldet sich mit einer passenden Einschätzung.",
 
   steps: {
     transport: "Transportdaten",

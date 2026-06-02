@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getContent } from "@/content";
 import { CountryTransportPage } from "@/components/pages/CountryTransportPage";
+import { getMetadataContent } from "@/content/metadata";
+import { buildPageMetadata } from "@/content/metadata/helpers";
 
 type Props = {
   params: Promise<{
@@ -12,16 +14,28 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const page = getContent(locale).countryPages?.find((p) => p.slug === slug);
+  const metadata = getMetadataContent(locale);
 
-  if (!page) {
-    return {};
+  const countryMeta = metadata.countries[slug];
+
+  if (!countryMeta) {
+    return buildPageMetadata({
+      locale,
+      meta: metadata.pages.notFound,
+    });
   }
 
-  return {
-    title: `Transport nach ${page.country} | Globalsped`,
-    description: `Internationale Transporte nach ${page.country}: FTL, LTL, Sammelgut, Thermotransporte, Projekttransporte und Zollabwicklung.`,
-  };
+  return buildPageMetadata({
+    locale,
+    meta: {
+      title: countryMeta.title,
+      description: countryMeta.description,
+      path: `/${locale}/${slug}`,
+      ogTitle: countryMeta.ogTitle,
+      ogDescription: countryMeta.ogDescription,
+      ogImage: countryMeta.ogImage,
+    },
+  });
 }
 
 export default async function DynamicCountryPage({ params }: Props) {

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
-
 import { getDatenschutzContent } from "@/content/legal/datenschutz";
+import { getMetadataContent } from "@/content/metadata";
+import { buildPageMetadata } from "@/content/metadata/helpers";
 
 type Props = {
   params: Promise<{
@@ -12,16 +13,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const content = getDatenschutzContent(locale);
+  const metadata = getMetadataContent(locale);
 
-  return {
-    title: content.meta.title,
-    description: content.meta.description,
-    robots: {
-      index: true,
-      follow: true,
-    },
-  };
+  return buildPageMetadata({
+    locale,
+    meta: metadata.pages.privacy,
+  });
 }
 
 export default async function DatenschutzPage({ params }: Props) {

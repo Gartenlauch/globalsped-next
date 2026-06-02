@@ -10,7 +10,7 @@ export const datenschutzDe: DatenschutzContent = {
   badge: "Datenschutz",
   title: "Datenschutzerklärung",
   intro:
-    "In dieser Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten wir beim Besuch unserer Webseite und bei der Nutzung unserer Online-Formulare verarbeiten.",
+    "In dieser Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten wir beim Besuch unserer Webseite, bei der Nutzung unserer Formulare und bei der Analyse unserer Online-Angebote verarbeiten.",
 
   backLink: {
     label: "Zurück zur Startseite",
@@ -24,8 +24,8 @@ export const datenschutzDe: DatenschutzContent = {
       id: "overview",
       title: "1. Datenschutz auf einen Blick",
       paragraphs: [
-        "Die folgenden Hinweise geben einen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Webseite besuchen oder eines unserer Formulare nutzen.",
-        "Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können, zum Beispiel Name, E-Mail-Adresse, Telefonnummer, Unternehmensdaten, Bewerbungsdaten oder technische Zugriffsdaten.",
+        "Die folgenden Hinweise geben einen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Webseite besuchen oder eines unserer Online-Formulare nutzen.",
+        "Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können, zum Beispiel Name, E-Mail-Adresse, Telefonnummer, Unternehmensdaten, Bewerbungsdaten, Transportdaten oder technische Zugriffsdaten.",
       ],
     },
     {
@@ -50,18 +50,18 @@ export const datenschutzDe: DatenschutzContent = {
     },
     {
       id: "hosting",
-      title: "3. Hosting und technische Bereitstellung der Webseite",
+      title: "3. Hosting und technische Bereitstellung",
       paragraphs: [
-        "Unsere Webseite wird technisch über Firebase App Hosting bzw. Google Cloud Dienste bereitgestellt. Beim Aufruf der Webseite werden technisch erforderliche Daten verarbeitet, damit die Webseite sicher, stabil und fehlerfrei ausgeliefert werden kann.",
+        "Unsere Webseite wird über Firebase App Hosting und Dienste der Google Cloud bereitgestellt. Der App-Hosting-Standort ist europe-west4.",
+        "Beim Aufruf der Webseite werden technisch erforderliche Daten verarbeitet, damit die Webseite sicher, stabil und fehlerfrei ausgeliefert werden kann.",
         "Zu diesen Daten können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp, Betriebssystem, Referrer-URL, aufgerufene Seiten und technische Statusinformationen gehören.",
-        "Die Verarbeitung erfolgt zur Bereitstellung, Sicherheit und Stabilität der Webseite auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im sicheren und zuverlässigen Betrieb unserer Online-Angebote.",
+        "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im sicheren, stabilen und effizienten Betrieb unserer Webseite.",
       ],
       lists: [
         {
           title: "Eingesetzte technische Dienste können insbesondere sein:",
           items: [
             "Firebase App Hosting",
-            "Firebase Hosting",
             "Google Cloud Functions",
             "Cloud Firestore",
             "Firebase Storage",
@@ -74,17 +74,17 @@ export const datenschutzDe: DatenschutzContent = {
       id: "cookies",
       title: "4. Cookies und Consent-Management",
       paragraphs: [
-        "Unsere Webseite verwendet ein Cookie-Consent-Banner, über das Sie festlegen können, welche Kategorien von Cookies und externen Diensten Sie zulassen möchten.",
+        "Unsere Webseite verwendet ein Cookie-Consent-Banner. Darüber können Sie festlegen, welche Kategorien von Cookies und externen Diensten Sie zulassen möchten.",
         "Notwendige Cookies und vergleichbare Technologien sind erforderlich, um grundlegende Funktionen der Webseite bereitzustellen. Statistik- und Marketingdienste werden nur aktiviert, wenn Sie zuvor eingewilligt haben.",
-        "Die Speicherung oder der Zugriff auf Informationen auf Ihrem Endgerät erfolgt bei nicht notwendigen Diensten auf Grundlage Ihrer Einwilligung gemäß § 25 TDDDG und Art. 6 Abs. 1 lit. a DSGVO.",
+        "Die Speicherung von Informationen auf Ihrem Endgerät oder der Zugriff auf solche Informationen erfolgt bei nicht notwendigen Diensten nur auf Grundlage Ihrer Einwilligung gemäß § 25 TDDDG und Art. 6 Abs. 1 lit. a DSGVO.",
       ],
       lists: [
         {
           title: "Cookie-Kategorien",
           items: [
             "Notwendig: technische Funktionen, Sicherheit und Speicherung Ihrer Cookie-Auswahl.",
-            "Statistik: Analyse der Nutzung unserer Webseite, zum Beispiel über Google Analytics.",
-            "Marketing: Conversion-Tracking und Kampagnenauswertung, zum Beispiel über Google Ads, sofern aktiviert.",
+            "Statistik: Analyse der Nutzung unserer Webseite, insbesondere über Google Analytics 4.",
+            "Marketing: Conversion-Tracking und Kampagnenauswertung, insbesondere über Google Ads und Google Conversion Tracking.",
           ],
         },
         {
@@ -125,6 +125,12 @@ export const datenschutzDe: DatenschutzContent = {
             "Unternehmensname, Ansprechpartner, E-Mail-Adresse, Telefonnummer und Land",
           ],
         },
+        {
+          title: "Interne Empfänger",
+          items: [
+            "Transportanfragen können intern an logistik@globalsped.de oder zuständige Fachabteilungen weitergeleitet werden.",
+          ],
+        },
       ],
     },
     {
@@ -132,7 +138,8 @@ export const datenschutzDe: DatenschutzContent = {
       title: "7. Bewerbungsformular und Datei-Upload",
       paragraphs: [
         "Wenn Sie sich über unser Bewerbungsformular bewerben, verarbeiten wir Ihre Bewerbungsdaten ausschließlich zur Bearbeitung Ihrer Bewerbung und zur Durchführung des Bewerbungsverfahrens.",
-        "Übermittelte Bewerbungsunterlagen werden in Firebase Storage gespeichert. Die Bewerbungsdaten werden zusätzlich in Firestore oder einem vergleichbaren System zur internen Bearbeitung erfasst. Bei Eingang der Bewerbung können E-Mail-Benachrichtigungen an GLOBALSPED und gegebenenfalls an die von Ihnen angegebene E-Mail-Adresse ausgelöst werden.",
+        "Übermittelte Bewerbungsunterlagen werden in Firebase Storage gespeichert. Die Bewerbungsdaten werden zusätzlich in Firestore oder einem vergleichbaren System zur internen Bearbeitung erfasst.",
+        "Bei Eingang der Bewerbung können E-Mail-Benachrichtigungen an bewerbung@globalsped.de und gegebenenfalls an die von Ihnen angegebene E-Mail-Adresse ausgelöst werden.",
         "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO in Verbindung mit vorvertraglichen Maßnahmen im Rahmen des Bewerbungsverfahrens sowie, soweit einschlägig, § 26 BDSG.",
         "Bewerbungsdaten werden grundsätzlich nur so lange gespeichert, wie dies für die Entscheidung über die Bewerbung erforderlich ist. Nach Abschluss des Bewerbungsverfahrens werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen oder Sie einer längeren Speicherung ausdrücklich zugestimmt haben.",
       ],
@@ -153,19 +160,19 @@ export const datenschutzDe: DatenschutzContent = {
       ],
     },
     {
-      id: "firestore-storage-mail",
-      title: "8. Verarbeitung über Firebase, Firestore, Storage und E-Mail-Dienste",
+      id: "firebase",
+      title: "8. Verarbeitung über Firebase, Firestore, Storage und Cloud Functions",
       paragraphs: [
         "Für die Verarbeitung von Formularanfragen und Bewerbungen nutzen wir technische Dienste von Firebase und Google Cloud. Dazu zählen insbesondere Cloud Firestore zur Speicherung strukturierter Datensätze, Firebase Storage zur Speicherung hochgeladener Dateien und Cloud Functions zur serverseitigen Verarbeitung.",
-        "Soweit E-Mails automatisiert ausgelöst werden, können hierfür Mail-Dokumente in einer technischen Datenbank erstellt werden, die anschließend durch einen E-Mail-Dienst verarbeitet werden.",
+        "Soweit E-Mails automatisiert ausgelöst werden, können hierfür technische Mail-Dokumente erstellt werden, die anschließend durch einen E-Mail-Dienst verarbeitet werden.",
         "Die Verarbeitung dient der sicheren Erfassung, technischen Weiterleitung und internen Bearbeitung von Anfragen und Bewerbungen.",
       ],
     },
     {
       id: "analytics",
-      title: "9. Google Analytics",
+      title: "9. Google Analytics 4",
       paragraphs: [
-        "Diese Webseite kann Google Analytics 4 verwenden, einen Webanalysedienst von Google. Google Analytics hilft uns zu verstehen, wie Besucher unsere Webseite nutzen, welche Inhalte besonders relevant sind und wie wir unsere Webseite verbessern können.",
+        "Diese Webseite verwendet Google Analytics 4, einen Webanalysedienst von Google. Google Analytics hilft uns zu verstehen, wie Besucher unsere Webseite nutzen, welche Inhalte besonders relevant sind und wie wir unsere Webseite verbessern können.",
         "Google Analytics wird nur aktiviert, wenn Sie zuvor über unser Cookie-Consent-Banner in die Kategorie Statistik eingewilligt haben.",
         "Rechtsgrundlage für die Nutzung ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO sowie § 25 TDDDG. Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen widerrufen.",
         "Im Rahmen der Nutzung können insbesondere Nutzungsdaten, Geräteinformationen, Browserinformationen, gekürzte oder verarbeitete IP-Adressen, Interaktionen mit der Webseite und technische Identifikatoren verarbeitet werden.",
@@ -173,9 +180,9 @@ export const datenschutzDe: DatenschutzContent = {
     },
     {
       id: "google-ads",
-      title: "10. Google Ads und Conversion Tracking",
+      title: "10. Google Ads und Google Conversion Tracking",
       paragraphs: [
-        "Soweit wir Google Ads oder Google Conversion Tracking einsetzen, erfolgt dies zur Messung der Wirksamkeit unserer Werbemaßnahmen und zur Optimierung unserer Kampagnen.",
+        "Diese Webseite verwendet Google Ads und Google Conversion Tracking, um die Wirksamkeit von Werbemaßnahmen zu messen und Kampagnen zu optimieren.",
         "Google Ads und Conversion Tracking werden nur aktiviert, wenn Sie über unser Cookie-Consent-Banner in die Kategorie Marketing eingewilligt haben.",
         "Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO sowie § 25 TDDDG. Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen widerrufen.",
       ],
@@ -184,7 +191,7 @@ export const datenschutzDe: DatenschutzContent = {
       id: "consent-mode",
       title: "11. Google Consent Mode",
       paragraphs: [
-        "Wir können den Google Consent Mode verwenden, um Google-Dienste abhängig von Ihrer Cookie-Auswahl zu steuern. Dabei werden Consent-Signale an Google übermittelt, zum Beispiel ob Statistik- oder Marketingdienste erlaubt wurden.",
+        "Wir verwenden den Google Consent Mode, um Google-Dienste abhängig von Ihrer Cookie-Auswahl zu steuern. Dabei werden Consent-Signale an Google übermittelt, zum Beispiel ob Statistik- oder Marketingdienste erlaubt wurden.",
         "Der Consent Mode ersetzt keine Einwilligung. Statistik- und Marketingdienste werden nur entsprechend Ihrer Auswahl im Cookie-Consent-Banner aktiviert.",
       ],
       lists: [
@@ -208,12 +215,13 @@ export const datenschutzDe: DatenschutzContent = {
       ],
     },
     {
-      id: "maps",
+      id: "google-maps",
       title: "13. Google Maps",
       paragraphs: [
-        "Sofern auf unserer Webseite Google Maps eingebunden wird, erfolgt dies zur Darstellung von Standorten und zur erleichterten Auffindbarkeit unseres Unternehmens.",
-        "Beim Aufruf einer Seite mit eingebundener Google Maps Karte können Daten, insbesondere IP-Adresse und technische Nutzungsdaten, an Google übermittelt werden.",
-        "Google Maps wird nur eingesetzt, wenn eine entsprechende Einbindung auf der Webseite tatsächlich vorhanden ist. Falls keine Google Maps Karte eingebunden ist, findet über unsere Webseite keine Datenverarbeitung durch Google Maps statt.",
+        "Diese Webseite verwendet Google Maps zur Darstellung von Standorten und zur erleichterten Auffindbarkeit unseres Unternehmens.",
+        "Beim Aufruf einer Seite mit eingebundener Google Maps Karte können Daten, insbesondere IP-Adresse, Standort- und Nutzungsdaten sowie technische Informationen, an Google übermittelt werden.",
+        "Google Maps wird nur geladen, wenn hierfür eine entsprechende Einwilligung vorliegt oder die Einbindung datenschutzkonform so gestaltet ist, dass vor einer Einwilligung keine personenbezogenen Daten an Google übertragen werden.",
+        "Rechtsgrundlage ist, soweit eine Einwilligung eingeholt wird, Art. 6 Abs. 1 lit. a DSGVO sowie § 25 TDDDG.",
       ],
     },
     {

@@ -9,33 +9,24 @@ import {
 import { FaqHero } from "@/components/faq/FaqHero";
 import { FaqCategoryFilter } from "@/components/faq/FaqCategoryFilter";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
+import { getMetadataContent } from "@/content/metadata";
+import { buildPageMetadata } from "@/content/metadata/helpers";
 
-const locale = "de";
 const baseUrl = "https://www.globalsped.de";
 
-export function generateMetadata(): Metadata {
-    const metadata = getFaqMetadata(locale).landing;
 
-    return {
-        title: metadata.metaTitle,
-        description: metadata.metaDescription,
-        alternates: {
-            canonical: `${baseUrl}${metadata.canonicalPath}`,
-        },
-        openGraph: {
-            title: metadata.openGraphTitle,
-            description: metadata.openGraphDescription,
-            url: `${baseUrl}${metadata.canonicalPath}`,
-            siteName: "GLOBALSPED",
-            locale: "de_DE",
-            type: "website",
-        },
-        robots: {
-            index: true,
-            follow: true,
-        },
-    };
+
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const metadata = getMetadataContent(locale);
+
+    return buildPageMetadata({
+        locale,
+        meta: metadata.pages.faq,
+    });
 }
+
 type Props = {
     params: Promise<{
         locale: "de";

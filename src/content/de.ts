@@ -2677,18 +2677,18 @@ export const de = {
       {
         label: "GDP",
         text: "Good Distribution Practice",
-        href: "https://en.wikipedia.org/wiki/Good_distribution_practice",
+        href: "https://www.dekra-certification.de/de/gdp-good-distribution-practice-zertifizierung/",
         icon: "shield",
       },
       {
         label: "FIATA",
         text: "International Federation of Freight Forwarders Associations",
-        href: "https://en.wikipedia.org/wiki/International_Federation_of_Freight_Forwarders_Associations",
+        href: "https://fiata.org/",
         icon: "globe",
       },
     ],
 
     copyright:
-      "© GLOBALSPED International Tranport GmbH. Alle Rechte vorbehalten.",
+      "© GLOBALSPED International Transport GmbH. Alle Rechte vorbehalten.",
   },
 };
