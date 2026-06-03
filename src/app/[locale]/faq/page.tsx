@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {
     getAllFaqs,
     getFaqCategories,
-    getFaqMetadata,
     getFaqPageContent,
     getFeaturedFaqs,
 } from "@/lib/faq";
@@ -11,10 +10,10 @@ import { FaqCategoryFilter } from "@/components/faq/FaqCategoryFilter";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
+import { siteUrl } from "@/content/metadata/config"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
-const baseUrl = "https://www.globalsped.de";
-
-
+const baseUrl = siteUrl;
 
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -44,7 +43,13 @@ export default async function FaqPage({ params }: Props) {
         <>
             <FaqJsonLd
                 faqs={featuredFaqs}
-                pageUrl={`${baseUrl}/de/faq`}
+                pagePath={`/${locale}/faq`}
+            />
+            <BreadcrumbJsonLd
+                items={[
+                    { name: "Start", href: `/${locale}` },
+                    { name: "FAQ", href: `/${locale}/faq` },
+                ]}
             />
 
             <main className="bg-[#f7f7f2]">

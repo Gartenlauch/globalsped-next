@@ -4,6 +4,11 @@ import { getServiceBySlug, getServiceSlugs } from "@/content/services/de/";
 import type { Metadata } from "next";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
+import { absoluteUrl } from "@/lib/seo/urls";
+
 
 type Props = {
   params: Promise<{
@@ -15,10 +20,9 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const metadata = getMetadataContent(locale);
+  const service = getServiceBySlug(slug);
 
-  const serviceMeta = metadata.services[slug];
-
-  if (!serviceMeta) {
+  if (!service) {
     return buildPageMetadata({
       locale,
       meta: metadata.pages.services,
@@ -28,12 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildPageMetadata({
     locale,
     meta: {
-      title: serviceMeta.title,
-      description: serviceMeta.description,
+      title: service.seo.title,
+      description: service.seo.description,
       path: `/${locale}/leistungen/${slug}`,
-      ogTitle: serviceMeta.ogTitle,
-      ogDescription: serviceMeta.ogDescription,
-      ogImage: serviceMeta.ogImage,
     },
   });
 }
@@ -53,5 +54,33 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  return <ServicePage locale={locale} service={service} />;
+  return (
+    <>
+      <WebPageJsonLd
+        locale={locale}
+        path={`/${locale}/leistungen/${slug}`}
+        name={service.seo.title}
+        description={service.seo.description}
+        mainEntityId={`${absoluteUrl(`/${locale}/leistungen/${slug}`)}#service`}
+      />
+
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Start", href: `/${locale}` },
+          { name: "Leistungen", href: `/${locale}/leistungen` },
+          { name: service.hero.title, href: `/${locale}/leistungen/${slug}` },
+        ]}
+      />
+
+      <ServiceJsonLd
+        path={`/${locale}/leistungen/${slug}`}
+        name={service.hero.title}
+        description={service.seo.description}
+        serviceType={service.badge}
+        areaServed={service.regions?.items}
+      />
+      <ServicePage locale={locale} service={service} />
+
+    </>
+  );
 }

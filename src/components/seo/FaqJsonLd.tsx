@@ -1,15 +1,20 @@
+// src/components/seo/FaqJsonLd.tsx
+
 import type { FaqItem } from "@/content/faq";
+import { JsonLd } from "./JsonLd";
+import { absoluteUrl } from "@/lib/seo/urls";
 
 type Props = {
   faqs: FaqItem[];
-  pageUrl: string;
+  pagePath: string;
 };
 
-export function FaqJsonLd({ faqs, pageUrl }: Props) {
+export function FaqJsonLd({ faqs, pagePath }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    url: pageUrl,
+    "@id": `${absoluteUrl(pagePath)}#faq`,
+    url: absoluteUrl(pagePath),
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
@@ -20,12 +25,5 @@ export function FaqJsonLd({ faqs, pageUrl }: Props) {
     })),
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-      }}
-    />
-  );
+  return <JsonLd data={jsonLd} />;
 }

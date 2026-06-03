@@ -83,12 +83,15 @@ export function DestinationsSection({ locale }: Props) {
                   </p>
 
                   <ul className="mt-5 grid gap-2 text-sm font-semibold text-white/90">
-                    {region.countries.map((country) => (
+                    {region.countries.map((country) => {
+                      if(country.slug==='ukraine')
+                        return null
+                      return (
                       <li key={country.slug} className="flex items-center gap-3">
                         <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_12px_rgba(163,230,53,0.85)]" />
                         {country.name}
                       </li>
-                    ))}
+                    )})}
                   </ul>
                 </div>
               </article>

@@ -2,6 +2,8 @@ import { TransportRequestPage } from "@/components/pages/TransportRequestPage";
 import type { Metadata } from "next";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
+import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 
 type Props = {
   params: Promise<{
@@ -22,5 +24,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
 
-  return <TransportRequestPage locale={locale} />;
+  return (
+    <>
+      <WebPageJsonLd
+        locale={locale}
+        path={`/${locale}/transport-anfrage`}
+        name="Transportanfrage international"
+        description="Transportanfrage für FTL, LTL, Thermo, Gefahrgut, Palettenware oder Projektlogistik direkt online stellen."
+        type="ContactPage"
+      />
+
+      <ServiceJsonLd
+        path={`/${locale}/transport-anfrage`}
+        name="Internationale Transportanfrage"
+        description="Anfrage für internationale Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten."
+        serviceType="Internationale Transport- und Logistikanfrage"
+      />
+      <TransportRequestPage locale={locale} />
+    </>
+  );
 }

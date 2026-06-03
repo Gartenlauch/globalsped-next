@@ -12,7 +12,7 @@ import { RelatedFaqs } from "@/components/faq/RelatedFaqs";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { FaqBackLink } from "@/components/faq/FaqBackLink";
-
+import { siteUrl } from "@/content/metadata/config"
 type Props = {
   params: Promise<{
     locale: "de";
@@ -20,7 +20,7 @@ type Props = {
   }>;
 };
 
-const baseUrl = "https://www.globalsped.de";
+const baseUrl = siteUrl
 
 export function generateStaticParams() {
   return getAllFaqs("de").map((faq) => ({
@@ -76,30 +76,21 @@ export default async function FaqDetailPage({ params }: Props) {
     <>
       <FaqJsonLd
         faqs={[faq]}
-        pageUrl={`${baseUrl}/${locale}/faq/${faq.slug}`}
+        pagePath={`/${locale}/faq/${slug}`}
       />
 
       <BreadcrumbJsonLd
         items={[
-          {
-            name: pageContent.breadcrumbs.home,
-            url: `${baseUrl}/${locale}`,
-          },
-          {
-            name: pageContent.breadcrumbs.faq,
-            url: `${baseUrl}/${locale}/faq`,
-          },
-          {
-            name: faq.question,
-            url: `${baseUrl}/${locale}/faq/${faq.slug}`,
-          },
+          { name: "Start", href: `/${locale}` },
+          { name: "FAQ", href: `/${locale}/faq` },
+          { name: faq.question, href: `/${locale}/faq/${slug}` },
         ]}
       />
 
       <main className="bg-[#f7f7f2]">
         <section className="mx-auto max-w-7xl px-6 pt-24 pb-10 lg:px-8 lg:pt-32 lg:pb-16">
           <FaqBackLink locale={locale} content={pageContent.detail} />
-          
+
           <FaqBreadcrumbs
             currentLabel={faq.question}
             content={pageContent.breadcrumbs}

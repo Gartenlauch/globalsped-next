@@ -5,6 +5,7 @@ import { CookieConsentBanner } from "@/components/cookies/CookieConsentBanner";
 import type { Metadata } from "next";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
+import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 
 type Props = {
   children: React.ReactNode;
@@ -33,6 +34,7 @@ export default async function LocaleLayout({
     <>
       <Header locale={locale}/>
       <ScrollHandler />
+      <GlobalJsonLd />
       {children}
       <CookieConsentBanner locale={locale} />
       <Footer locale={locale} />

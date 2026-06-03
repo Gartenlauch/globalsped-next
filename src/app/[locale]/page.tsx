@@ -5,9 +5,12 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AboutUsSection } from "@/components/sections/AboutUsSection";
 import { JobsSection } from "@/components/sections/JobsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import type { Metadata } from "next";
+import { absoluteUrl } from "@/lib/seo/urls";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { getMetadataContent } from "@/content/metadata";
-import { buildPageMetadata } from "@/content/metadata/helpers";
+
+
 
 type Props = {
   params: Promise<{
@@ -15,20 +18,28 @@ type Props = {
   }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const metadata = getMetadataContent(locale);
-
-  return buildPageMetadata({
-    locale,
-    meta: metadata.pages.home,
-  });
-}
-
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
+  const metadata = getMetadataContent(locale);
+  const pageMeta = metadata.pages.home;
   return (
     <>
+      <WebPageJsonLd
+        locale={locale}
+        path={`/${locale}`}
+        name={pageMeta.title}
+        description={pageMeta.description}
+        mainEntityId={`${absoluteUrl()}/#organization`}
+      />
+
+      <BreadcrumbJsonLd
+        items={[
+          {
+            name: "Start",
+            href: `/${locale}`,
+          },
+        ]}
+      />
       <HeroSection locale={locale} />
       <DestinationsSection locale={locale} />
       <ServicesSection locale={locale} />
@@ -36,7 +47,7 @@ export default async function HomePage({ params }: Props) {
       <AboutUsSection locale={locale} />
       <JobsSection locale={locale} />
       <ContactSection locale={locale} />
-      
+
     </>
   );
 }

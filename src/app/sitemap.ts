@@ -1,7 +1,7 @@
 import { getAllFaqs } from "@/lib/faq";
-
+import { siteUrl } from "@/content/metadata/config";
 export default function sitemap() {
-  const baseUrl = "https://www.globalsped.de";
+  const baseUrl = siteUrl
   const faqs = getAllFaqs("de");
 
   return [
