@@ -60,6 +60,7 @@ h3,
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  cursor: pointer;
 }
 
 .btn-primary:hover {

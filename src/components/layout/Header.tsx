@@ -105,6 +105,7 @@ export function Header({ locale }: Props) {
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
+        onTouchStart={()=>setIsOpen((prev) => !prev )}
 
         className="absolute right-4 top-1/2 z-[100000] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl transition lg:hidden"
       >

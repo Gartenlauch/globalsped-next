@@ -18,6 +18,36 @@ import {
 
 import { getTransportRequestContent } from "@/content/forms/transport";
 
+
+const initialTransport = {
+  pickupLocation: "",
+  deliveryCountry: "",
+  destinationCity: "",
+  loadingMeters: "",
+  goodsDescription: "",
+  vehicleType: "",
+  pickupDate: "",
+  adrClass: "",
+  unNumber: "",
+  packingGroup: "",
+  adrPoints: "",
+  limitedQuantity: "",
+  temperatureControlled: "",
+  notes: "",
+};
+
+const initialContact = {
+  company: "",
+  contactPerson: "",
+  email: "",
+  phone: "",
+  country: "",
+  message: "",
+  privacy: false,
+};
+
+
+
 type Props = {
   locale: string;
 };
@@ -35,40 +65,7 @@ type Unit = {
 
 export function TransportRequestPage({ locale }: Props) {
   const t = getTransportRequestContent(locale);
-
-  const formTopRef = useRef<HTMLDivElement>(null);
-
-  const [step, setStep] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
-  const [validationMessage, setValidationMessage] = useState("");
-  const [shipmentType, setShipmentType] = useState<ShipmentType>("ltl");
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const [transport, setTransport] = useState({
-    pickupLocation: "",
-    deliveryCountry: "",
-    destinationCity: "",
-    loadingMeters: "",
-    goodsDescription: "",
-    vehicleType: "",
-    pickupDate: "",
-    adrClass: "",
-    temperatureControlled: "",
-    notes: "",
-  });
-
-  const [contact, setContact] = useState({
-    company: "",
-    contactPerson: "",
-    email: "",
-    phone: "",
-    country: "",
-    message: "",
-    privacy: false,
-  });
-
-  const [units, setUnits] = useState<Unit[]>([
+  const createInitialUnits = () => [
     {
       packagingType: t.packagingTypes[0],
       quantity: 1,
@@ -77,7 +74,35 @@ export function TransportRequestPage({ locale }: Props) {
       height: 120,
       weight: 0,
     },
-  ]);
+  ];
+  const formTopRef = useRef<HTMLDivElement>(null);
+
+  const pickupLocationRef = useRef<HTMLInputElement>(null);
+  const deliveryCountryRef = useRef<HTMLSelectElement>(null);
+  const loadingMetersRef = useRef<HTMLInputElement>(null);
+  const vehicleTypeRef = useRef<HTMLSelectElement>(null);
+
+  const companyRef = useRef<HTMLInputElement>(null);
+  const contactPersonRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const privacyRef = useRef<HTMLInputElement>(null);
+
+
+
+  const [step, setStep] = useState(1);
+  const [submitted, setSubmitted] = useState(false);
+  const [validationMessage, setValidationMessage] = useState("");
+  const [invalidFields, setInvalidFields] = useState<string[]>([]);
+  const [shipmentType, setShipmentType] = useState<ShipmentType>("ltl");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [transport, setTransport] = useState(initialTransport);
+
+  const [contact, setContact] = useState(initialContact);
+
+  const [units, setUnits] = useState<Unit[]>(createInitialUnits);
 
   const selectedAdrClass = useMemo(
     () => t.adrClasses.find((item) => item.value === transport.adrClass),
@@ -134,10 +159,85 @@ export function TransportRequestPage({ locale }: Props) {
     });
   }, [step]);
 
+  const scrollToInvalidField = (field: string) => {
+    const fieldRefs: Record<string, React.RefObject<HTMLElement | null>> = {
+      pickupLocation: pickupLocationRef,
+      deliveryCountry: deliveryCountryRef,
+      loadingMeters: loadingMetersRef,
+      vehicleType: vehicleTypeRef,
+      company: companyRef,
+      contactPerson: contactPersonRef,
+      email: emailRef,
+      phone: phoneRef,
+      privacy: privacyRef,
+    };
+
+    window.setTimeout(() => {
+      const element = fieldRefs[field]?.current;
+
+      if (!element) return;
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+
+      element.focus({
+        preventScroll: true,
+      });
+    }, 80);
+  };
+
+  const hasFieldError = (field: string) => invalidFields.includes(field);
+
+  const getInputClassName = (field: string, additionalClasses = "") => {
+    return [
+      "input-premium",
+      additionalClasses,
+      hasFieldError(field)
+        ? "border-red-300 bg-red-50 text-red-950 shadow-[0_0_0_4px_rgba(252,165,165,0.18)]"
+        : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+  };
+
   const updateTransport = (key: keyof typeof transport, value: string) => {
     setTransport((current) => ({
       ...current,
       [key]: value,
+    }));
+
+    setInvalidFields((current) => current.filter((field) => field !== key));
+  };
+
+  const updateAdrClass = (value: string) => {
+    setTransport((current) => ({
+      ...current,
+      adrClass: value,
+      unNumber: value ? current.unNumber : "",
+      packingGroup: value ? current.packingGroup : "",
+      adrPoints: value ? current.adrPoints : "",
+      limitedQuantity: value ? current.limitedQuantity : "",
+    }));
+  };
+
+  const updateAdrPoints = (value: string) => {
+    const numericValue = value.replace(/\D/g, "");
+    const limitedValue = Math.min(Number(numericValue || 0), 1000);
+
+    setTransport((current) => ({
+      ...current,
+      adrPoints: numericValue ? String(limitedValue) : "",
+    }));
+  };
+
+  const updateUnNumber = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 4);
+
+    setTransport((current) => ({
+      ...current,
+      unNumber: digits ? `UN ${digits}` : "",
     }));
   };
 
@@ -147,6 +247,12 @@ export function TransportRequestPage({ locale }: Props) {
       deliveryCountry: value,
       destinationCity: "",
     }));
+
+    setInvalidFields((current) =>
+      current.filter(
+        (field) => field !== "deliveryCountry" && field !== "destinationCity"
+      )
+    );
   };
 
   const updateContact = (key: keyof typeof contact, value: string | boolean) => {
@@ -154,6 +260,8 @@ export function TransportRequestPage({ locale }: Props) {
       ...current,
       [key]: value,
     }));
+
+    setInvalidFields((current) => current.filter((field) => field !== key));
   };
 
   const updateUnit = (index: number, key: keyof Unit, value: string) => {
@@ -191,9 +299,14 @@ export function TransportRequestPage({ locale }: Props) {
   };
 
   const validateStepOne = () => {
-    if (!transport.pickupLocation || !transport.deliveryCountry) {
-      setValidationMessage(t.validation.requiredFields);
-      return false;
+    const errors: string[] = [];
+
+    if (!transport.pickupLocation) {
+      errors.push("pickupLocation");
+    }
+
+    if (!transport.deliveryCountry) {
+      errors.push("deliveryCountry");
     }
 
     if (shipmentType === "ltl") {
@@ -208,41 +321,65 @@ export function TransportRequestPage({ locale }: Props) {
       );
 
       if (invalidUnit) {
-        setValidationMessage(t.validation.requiredFields);
-        return false;
+        errors.push("units");
       }
     }
 
     if (shipmentType === "loadingMeters" && !transport.loadingMeters) {
-      setValidationMessage(t.validation.requiredFields);
-      return false;
+      errors.push("loadingMeters");
     }
 
     if (shipmentType === "ftl" && !transport.vehicleType) {
+      errors.push("vehicleType");
+    }
+
+    if (errors.length > 0) {
+      setInvalidFields(errors);
       setValidationMessage(t.validation.requiredFields);
+      scrollToInvalidField(errors[0]);
       return false;
     }
 
+    setInvalidFields([]);
     setValidationMessage("");
     return true;
   };
 
   const validateStepTwo = () => {
-    if (
-      !contact.company ||
-      !contact.contactPerson ||
-      !contact.email ||
-      !contact.phone
-    ) {
-      setValidationMessage(t.validation.requiredFields);
-      return false;
+    const errors: string[] = [];
+
+    if (!contact.company) {
+      errors.push("company");
+    }
+
+    if (!contact.contactPerson) {
+      errors.push("contactPerson");
+    }
+
+    if (!contact.email) {
+      errors.push("email");
+    }
+
+    if (!contact.phone) {
+      errors.push("phone");
     }
 
     if (!contact.privacy) {
-      setValidationMessage(t.validation.privacyRequired);
+      errors.push("privacy");
+    }
+
+    if (errors.length > 0) {
+      setInvalidFields(errors);
+      setValidationMessage(
+        errors.includes("privacy")
+          ? t.validation.privacyRequired
+          : t.validation.requiredFields
+      );
+      scrollToInvalidField(errors[0]);
       return false;
     }
 
+    setInvalidFields([]);
     setValidationMessage("");
     return true;
   };
@@ -259,7 +396,29 @@ export function TransportRequestPage({ locale }: Props) {
     setStep((current) => Math.max(current - 1, 1));
   };
 
+  const resetForm = () => {
+    setSubmitted(false);
+    setValidationMessage("");
+    setInvalidFields([]);
+    setStep(1);
+    setShipmentType("ltl");
+    setTransport(initialTransport);
+    setContact(initialContact);
+    setUnits(createInitialUnits());
+
+    window.setTimeout(() => {
+      formTopRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
+
   const submitRequest = async () => {
+    if (!validateStepTwo()) {
+      setStep(2);
+      return;
+    }
     setIsSubmitting(true);
     setValidationMessage("");
 
@@ -278,8 +437,13 @@ export function TransportRequestPage({ locale }: Props) {
         transport: {
           ...transport,
           shipmentType,
+          adrClassValue: transport.adrClass,
           adrClass: selectedAdrClass?.label ?? "",
           adrDescription: selectedAdrClass?.description ?? "",
+          unNumber: transport.unNumber,
+          packingGroup: transport.packingGroup,
+          adrPoints: transport.adrPoints,
+          limitedQuantity: transport.limitedQuantity,
           temperatureControlled: selectedTemperature?.label ?? "",
         },
 
@@ -368,13 +532,14 @@ export function TransportRequestPage({ locale }: Props) {
                     <Field label={t.labels.pickupLocation}>
                       <div className="relative">
                         <input
+                          ref={pickupLocationRef}
                           list="europe-countries"
                           value={transport.pickupLocation}
                           onChange={(event) =>
                             updateTransport("pickupLocation", event.target.value)
                           }
                           placeholder={t.placeholders.pickupLocation}
-                          className="input-premium pr-11"
+                          className={getInputClassName("pickupLocation", "pr-11")}
                         />
 
                         {transport.pickupLocation && (
@@ -401,14 +566,13 @@ export function TransportRequestPage({ locale }: Props) {
                     <Field label={t.labels.deliveryCountry}>
                       <div className="relative">
                         <select
+                          ref={deliveryCountryRef}
                           value={transport.deliveryCountry}
                           onChange={(event) =>
                             updateDeliveryCountry(event.target.value)
                           }
-                          className="input-premium pr-11"
+                          className={getInputClassName("deliveryCountry", "pr-11")}
                         >
-                          <option value="">Bitte wählen</option>
-
                           {t.destinationCountries.map((country) => (
                             <option key={country} value={country}>
                               {country}
@@ -653,11 +817,12 @@ export function TransportRequestPage({ locale }: Props) {
                     <div className="mt-6 grid gap-4 md:grid-cols-2">
                       <Field label={t.labels.vehicleType}>
                         <select
+                          ref={vehicleTypeRef}
                           value={transport.vehicleType}
                           onChange={(event) =>
                             updateTransport("vehicleType", event.target.value)
                           }
-                          className="input-premium"
+                          className={getInputClassName("vehicleType")}
                         >
                           <option value="">Bitte wählen</option>
                           {t.vehicleTypes.map((type) => (
@@ -689,7 +854,7 @@ export function TransportRequestPage({ locale }: Props) {
                         onChange={(event) =>
                           updateTransport("pickupDate", event.target.value)
                         }
-                        className="input-premium"
+                        className="input-premium min-w-0 max-w-full appearance-none"
                       />
                     </Field>
 
@@ -697,22 +862,16 @@ export function TransportRequestPage({ locale }: Props) {
                       <input
                         value={transport.goodsDescription}
                         onChange={(event) =>
-                          updateTransport(
-                            "goodsDescription",
-                            event.target.value
-                          )
+                          updateTransport("goodsDescription", event.target.value)
                         }
                         placeholder={t.placeholders.goodsDescription}
                         className="input-premium"
                       />
                     </Field>
-
                     <Field label={t.labels.dangerousGoods}>
                       <select
                         value={transport.adrClass}
-                        onChange={(event) =>
-                          updateTransport("adrClass", event.target.value)
-                        }
+                        onChange={(event) => updateAdrClass(event.target.value)}
                         className="input-premium"
                       >
                         <option value="">{t.labels.noneADR}</option>
@@ -730,10 +889,7 @@ export function TransportRequestPage({ locale }: Props) {
                       <select
                         value={transport.temperatureControlled}
                         onChange={(event) =>
-                          updateTransport(
-                            "temperatureControlled",
-                            event.target.value
-                          )
+                          updateTransport("temperatureControlled", event.target.value)
                         }
                         className="input-premium"
                       >
@@ -749,13 +905,24 @@ export function TransportRequestPage({ locale }: Props) {
                     </Field>
 
                     {selectedAdrClass && (
-                      <div className="rounded-2xl border border-lime-300/20 bg-lime-300/8 px-4 py-3 text-sm leading-6 text-white/78 md:col-span-2">
-                        <strong className="mr-2 text-lime-300">
-                          {selectedAdrClass.label}
-                        </strong>
-                        <span>{selectedAdrClass.description}</span>
-                      </div>
+                      <>
+                        <AdrDetailsFields
+                          transport={transport}
+                          t={t}
+                          updateTransport={(key, value) => updateTransport(key, value)}
+                          updateUnNumber={updateUnNumber}
+                          updateAdrPoints={updateAdrPoints}
+                        />
+
+                        <div className="rounded-2xl border border-lime-300/20 bg-lime-300/8 px-4 py-3 text-sm leading-6 text-white/78 md:col-span-2">
+                          <strong className="mr-2 text-lime-300">
+                            {selectedAdrClass.label}
+                          </strong>
+                          <span>{selectedAdrClass.description}</span>
+                        </div>
+                      </>
                     )}
+
                   </div>
 
                   <div className="mt-6">
@@ -786,46 +953,50 @@ export function TransportRequestPage({ locale }: Props) {
                   <div className="grid gap-4 md:grid-cols-2">
                     <Field label={t.labels.company}>
                       <input
+                        ref={companyRef}
                         value={contact.company}
                         onChange={(event) =>
                           updateContact("company", event.target.value)
                         }
                         placeholder={t.placeholders.company}
-                        className="input-premium"
+                        className={getInputClassName("company")}
                       />
                     </Field>
 
                     <Field label={t.labels.contactPerson}>
                       <input
+                        ref={contactPersonRef}
                         value={contact.contactPerson}
                         onChange={(event) =>
                           updateContact("contactPerson", event.target.value)
                         }
                         placeholder={t.placeholders.contactPerson}
-                        className="input-premium"
+                        className={getInputClassName("contactPerson")}
                       />
                     </Field>
 
                     <Field label={t.labels.email}>
                       <input
+                        ref={emailRef}
                         type="email"
                         value={contact.email}
                         onChange={(event) =>
                           updateContact("email", event.target.value)
                         }
                         placeholder={t.placeholders.email}
-                        className="input-premium"
+                        className={getInputClassName("email")}
                       />
                     </Field>
 
                     <Field label={t.labels.phone}>
                       <input
+                        ref={phoneRef}
                         value={contact.phone}
                         onChange={(event) =>
                           updateContact("phone", event.target.value)
                         }
                         placeholder={t.placeholders.phone}
-                        className="input-premium"
+                        className={getInputClassName("phone")}
                       />
                     </Field>
 
@@ -854,19 +1025,27 @@ export function TransportRequestPage({ locale }: Props) {
                     </Field>
                   </div>
 
-                  <label className="mt-5 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-white/78">
+                  <label
+                    className={`mt-5 flex items-start gap-3 rounded-2xl border p-4 text-sm leading-6 text-white/78 transition ${hasFieldError("privacy")
+                        ? "border-red-300/60 bg-red-500/10"
+                        : "border-white/10 bg-white/5"
+                      }`}
+                  >
                     <input
+                      ref={privacyRef}
                       type="checkbox"
                       checked={contact.privacy}
                       onChange={(event) =>
                         updateContact("privacy", event.target.checked)
                       }
-                      className="mt-1"
+                      className="mt-1 h-4 w-4 shrink-0 accent-lime-300"
                     />
-                    {t.labels.privacy}
+
+                    <span>{t.labels.privacy}</span>
                   </label>
                 </div>
               )}
+
 
               {step === 3 && (
                 <div>
@@ -935,6 +1114,26 @@ export function TransportRequestPage({ locale }: Props) {
                           : t.labels.noneADR
                       }
                     />
+                    {selectedAdrClass && (
+                      <>
+                        <SummaryLine
+                          label={t.labels.unNumber}
+                          value={transport.unNumber || "-"}
+                        />
+                        <SummaryLine
+                          label={t.labels.packingGroup}
+                          value={transport.packingGroup || "-"}
+                        />
+                        <SummaryLine
+                          label={t.labels.adrPoints}
+                          value={transport.adrPoints || "-"}
+                        />
+                        <SummaryLine
+                          label={t.labels.limitedQuantity}
+                          value={transport.limitedQuantity || "-"}
+                        />
+                      </>
+                    )}
                     <SummaryLine
                       label={t.labels.temperatureControlled}
                       value={selectedTemperature?.label ?? t.labels.noneThermo}
@@ -986,7 +1185,7 @@ export function TransportRequestPage({ locale }: Props) {
                     disabled={isSubmitting}
                     className="btn-primary disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                      {isSubmitting ? "Sending..." : t.labels.submit}
+                    {isSubmitting ? "Sending..." : t.labels.submit}
                     <Send size={17} />
                   </button>
                 )}
@@ -1047,6 +1246,26 @@ export function TransportRequestPage({ locale }: Props) {
                     value={`${selectedAdrClass.label}: ${selectedAdrClass.description}`}
                   />
                 )}
+                {selectedAdrClass && (
+                  <>
+                    <SummaryLine
+                      label={t.labels.unNumber}
+                      value={transport.unNumber || "-"}
+                    />
+                    <SummaryLine
+                      label={t.labels.packingGroup}
+                      value={transport.packingGroup || "-"}
+                    />
+                    <SummaryLine
+                      label={t.labels.adrPoints}
+                      value={transport.adrPoints || "-"}
+                    />
+                    <SummaryLine
+                      label={t.labels.limitedQuantity}
+                      value={transport.limitedQuantity || "-"}
+                    />
+                  </>
+                )}
 
                 {selectedTemperature && (
                   <SummaryLine
@@ -1075,7 +1294,7 @@ export function TransportRequestPage({ locale }: Props) {
 
             <button
               type="button"
-              onClick={() => setSubmitted(false)}
+              onClick={resetForm}
               className="btn-primary mt-7"
             >
               {t.success.close}
@@ -1096,7 +1315,7 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label className="grid gap-2 text-sm font-black uppercase tracking-wide text-white/74">
+    <label className="grid min-w-0 gap-2 text-sm font-black uppercase tracking-wide text-white/74">
       {label}
       {children}
     </label>
@@ -1108,6 +1327,89 @@ function FieldHint({ children }: { children: React.ReactNode }) {
     <span className="min-h-[38px] text-xs font-medium normal-case leading-5 tracking-normal text-white/48">
       {children}
     </span>
+  );
+}
+
+function AdrDetailsFields({
+  transport,
+  t,
+  updateTransport,
+  updateUnNumber,
+  updateAdrPoints,
+}: {
+  transport: {
+    unNumber: string;
+    packingGroup: string;
+    adrPoints: string;
+    limitedQuantity: string;
+  };
+  t: ReturnType<typeof getTransportRequestContent>;
+  updateTransport: (
+    key: "packingGroup" | "limitedQuantity",
+    value: string
+  ) => void;
+  updateUnNumber: (value: string) => void;
+  updateAdrPoints: (value: string) => void;
+}) {
+  return (
+    <div className="md:col-span-2">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <Field label={t.labels.unNumber}>
+          <input
+            value={transport.unNumber}
+            onChange={(event) => updateUnNumber(event.target.value)}
+            placeholder={t.placeholders.unNumber}
+            inputMode="numeric"
+            className="input-premium min-w-0 max-w-full"
+          />
+        </Field>
+
+        <Field label={t.labels.packingGroup}>
+          <select
+            value={transport.packingGroup}
+            onChange={(event) =>
+              updateTransport("packingGroup", event.target.value)
+            }
+            className="input-premium min-w-0 max-w-full"
+          >
+            {t.packingGroups.map((group) => (
+              <option key={group.value} value={group.value}>
+                {group.label}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label={t.labels.adrPoints}>
+          <input
+            type="number"
+            min={0}
+            max={1000}
+            value={transport.adrPoints}
+            onChange={(event) => updateAdrPoints(event.target.value)}
+            placeholder={t.placeholders.adrPoints}
+            className="input-premium min-w-0 max-w-full"
+          />
+        </Field>
+
+        <Field label={t.labels.limitedQuantity}>
+          <select
+            value={transport.limitedQuantity}
+            onChange={(event) =>
+              updateTransport("limitedQuantity", event.target.value)
+            }
+            className="input-premium min-w-0 max-w-full"
+          >
+            <option value="">{t.labels.pleaseSelect}</option>
+            {t.limitedQuantityOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </Field>
+      </div>
+    </div>
   );
 }
 

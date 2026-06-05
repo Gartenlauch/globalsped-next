@@ -27,10 +27,10 @@ export const de = {
     },
 
     subline:
-      "GLOBALSPED organisiert seit über 30 Jahren FTL-, LTL-, Thermo- und Projekttransporte inklusive Zollabwicklung – spezialisiert auf komplexe Routen zwischen Europa, Zentralasien, Kaukasus und dem Mittleren Osten.",
+      "GLOBALSPED organisiert FTL, LTL, Sammelgut, Thermotransporte, Gefahrgut und Projektlogistik für Unternehmen mit anspruchsvollen Zielmärkten – inklusive Routenplanung, Zollabwicklung und persönlicher Betreuung",
 
     ctaPrimary: {
-      label: "Transport anfragen",
+      label: "Transport unverbindlich anfragen",
       href: "/de/transport-anfrage",
     },
 
@@ -344,7 +344,7 @@ export const de = {
         internalLinks: [
           {
             label: "FTL-Komplettladungen nach Zentralasien",
-            href: "/de/ftl-transporte",
+            href: "/de/leistungen/ftl-komplettladungen",
             reason:
               "Verbindet Usbekistan-Transporte mit der passenden Service-Leistung für Direkttransporte.",
           },
@@ -662,7 +662,7 @@ export const de = {
         internalLinks: [
           {
             label: "LTL-Teilladungen nach Zentralasien",
-            href: "/de/ltl-transporte",
+            href: "/de/leistungen/ltl-teilladungen",
             reason:
               "Passt zu Sammelgut- und Teilladungstransporten in Richtung Kirgisistan.",
           },
@@ -835,7 +835,7 @@ export const de = {
           },
           {
             label: "Projektlogistik für komplexe Transporte",
-            href: "/de/projektlogistik",
+            href: "/de/leistungen/projektlogistik",
             reason:
               "Geeignet für industrielle Lieferungen und komplexere Transporte nach Turkmenistan.",
           },
@@ -1171,7 +1171,7 @@ export const de = {
         internalLinks: [
           {
             label: "Projektlogistik für internationale Spezialtransporte",
-            href: "/de/projektlogistik",
+            href: "/de/leistungen/projektlogistik",
             reason:
               "Mongolei-Transporte haben häufig erhöhten Planungsbedarf bei Route, Laufzeit und Abwicklung.",
           },
@@ -1336,7 +1336,7 @@ export const de = {
         internalLinks: [
           {
             label: "FTL-Komplettladungen in den Kaukasus",
-            href: "/de/ftl-transporte",
+            href: "/de/leistungen/ftl-komplettladungen",
             reason:
               "Verbindet Aserbaidschan-Transporte mit einer wichtigen Service-Leistung.",
           },
@@ -1670,13 +1670,13 @@ export const de = {
         internalLinks: [
           {
             label: "Projektlogistik für komplexe Transporte",
-            href: "/de/projektlogistik",
+            href: "/de/leistungen/projektlogistik",
             reason:
               "Passt zu anspruchsvollen Lieferungen mit erhöhter Routen- und Dokumentationsplanung.",
           },
           {
             label: "Zoll & Dokumente für Armenien-Transporte",
-            href: "/de/zoll-dokumente",
+            href: "/de/leistungen/zoll-dokumente",
             reason:
               "Stärkt die thematische Verknüpfung mit Exportdokumenten und Zollabwicklung.",
           },

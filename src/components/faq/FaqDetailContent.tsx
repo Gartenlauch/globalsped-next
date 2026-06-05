@@ -23,8 +23,8 @@ export function FaqDetailContent({ faq, content }: Props) {
       </p>
 
       <div className="mt-10 space-y-6 text-base leading-8 text-slate-700">
-        {paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+        {paragraphs.map((paragraph, i) => (
+          <p key={paragraph+'-'+i}>{paragraph}</p>
         ))}
       </div>
 

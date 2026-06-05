@@ -32,6 +32,8 @@ export type TransportRequestContent = {
   europeanCountries: string[];
   vehicleTypes: string[];
   temperatureOptions: SelectOption[];
+  packingGroups: SelectOption[];
+  limitedQuantityOptions: SelectOption[];
   adrClasses: AdrClassOption[];
   destinationCities: Record<string, string[]>;
 
@@ -51,6 +53,11 @@ export type TransportRequestContent = {
     vehicleType: string;
     pickupDate: string;
     dangerousGoods: string;
+    unNumber: string;
+    packingGroup: string;
+    adrPoints: string;
+    pleaseSelect: string;
+    limitedQuantity: string;
     temperatureControlled: string;
     notes: string;
     company: string;
@@ -82,6 +89,9 @@ export type TransportRequestContent = {
     pickupLocation: string;
     destinationCity: string;
     goodsDescription: string;
+    unNumber: string;
+    adrPoints: string;
+    limitedQuantity: string;
     notes: string;
     company: string;
     contactPerson: string;
@@ -94,6 +104,9 @@ export type TransportRequestContent = {
     title: string;
     transportData: string;
     goodsData: string;
+    unNumber: string;
+    adrPoints: string;
+    limitedQuantity: string;
     contactData: string;
     totalWeight: string;
     totalVolume: string;

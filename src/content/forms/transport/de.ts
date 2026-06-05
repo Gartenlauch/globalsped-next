@@ -29,6 +29,7 @@ export const transportRequestDe: TransportRequestContent = {
   ],
 
   destinationCountries: [
+    "Bitte wählen",
     "Kasachstan",
     "Usbekistan",
     "Kirgisistan",
@@ -92,6 +93,35 @@ export const transportRequestDe: TransportRequestContent = {
     {
       value: "15-25",
       label: "+15°C bis +25°C",
+    },
+  ],
+  packingGroups: [
+    {
+      value: "",
+      label: "Bitte wählen",
+    },
+    {
+      value: "I (X): Hohe Gefahr",
+      label: "I (X): Hohe Gefahr",
+    },
+    {
+      value: "II (Y): Mittlere Gefahr",
+      label: "II (Y): Mittlere Gefahr",
+    },
+    {
+      value: "III (Z): Geringe Gefahr",
+      label: "III (Z): Geringe Gefahr",
+    },
+  ],
+
+  limitedQuantityOptions: [
+    {
+      value: "Ja",
+      label: "Ja",
+    },
+    {
+      value: "Nein",
+      label: "Nein",
     },
   ],
 
@@ -344,6 +374,10 @@ export const transportRequestDe: TransportRequestContent = {
     vehicleType: "Fahrzeugtyp",
     pickupDate: "Gewünschtes Abholdatum",
     dangerousGoods: "Gefahrgut",
+    unNumber: "UN Nummer",
+    packingGroup: "Verpackungsgruppe",
+    adrPoints: "ADR unter 1000 Punkte",
+    limitedQuantity: "Limited Quantity",
     temperatureControlled: "Temperaturgeführt",
     notes: "Besondere Hinweise",
     company: "Firma",
@@ -352,11 +386,13 @@ export const transportRequestDe: TransportRequestContent = {
     phone: "Telefon",
     country: "Land",
     message: "Nachricht",
-    privacy: "Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden.",
+    privacy:
+      "Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden.",
     yes: "Ja",
     no: "Nein",
     noneADR: "Kein Gefahrgut",
     noneThermo: "Kein Thermotransport",
+    pleaseSelect: "Bitte wählen",
     next: "Weiter",
     back: "Zurück",
     submit: "Anfrage absenden",
@@ -379,6 +415,9 @@ export const transportRequestDe: TransportRequestContent = {
     pickupLocation: "z. B. München, Deutschland",
     destinationCity: "z. B. Almaty",
     goodsDescription: "z. B. Maschinenbauteile, Handelsware, Ersatzteile",
+    unNumber: "z. B. UN 1203",
+    adrPoints: "max. 1000",
+    limitedQuantity: "z. B. LQ gemäß ADR oder Menge je Innenverpackung",
     notes: "Zusätzliche Informationen zur Abholung, Ware oder Lieferung",
     company: "Ihre Firma",
     contactPerson: "Vorname Nachname",
@@ -386,7 +425,6 @@ export const transportRequestDe: TransportRequestContent = {
     phone: "+49 ...",
     message: "Ihre Nachricht an GLOBALSPED",
   },
-
   summary: {
     title: "Ihre Transportübersicht",
     transportData: "Transportdaten",
@@ -395,6 +433,9 @@ export const transportRequestDe: TransportRequestContent = {
     totalWeight: "Gesamtgewicht",
     totalVolume: "Gesamtvolumen",
     pieces: "Packstücke",
+    unNumber: "UN Nummer",
+    adrPoints: "ADR unter 1000 Punkte",
+    limitedQuantity: "Limited Quantity",
   },
 
   success: {
