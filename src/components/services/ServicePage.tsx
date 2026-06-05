@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  ExternalLink,
   CheckCircle2,
   FileText,
   Globe2,
@@ -90,6 +91,9 @@ export function ServicePage({ locale, service }: Props) {
               text={service.solutions.text}
               items={service.solutions.items}
             />
+            {service.expertSection && (
+              <ServiceExpertSection section={service.expertSection} />
+            )}
           </div>
 
           <aside className="min-w-0 h-fit rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.76)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-6 lg:sticky lg:top-28">
@@ -164,6 +168,81 @@ function ServiceBlock({
           </div>
         ))}
       </div>
+    </article>
+  );
+}
+
+function ServiceExpertSection({
+  section,
+}: {
+  section: NonNullable<ServicePageContent["expertSection"]>;
+}) {
+  return (
+    <article className="rounded-3xl border border-lime-300/20 bg-lime-300/10 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-7">
+      <p className="mb-3 text-xs font-black uppercase tracking-[0.24em] text-lime-300">
+        {section.badge}
+      </p>
+
+      <h2 className="text-2xl font-black uppercase text-white">
+        {section.title}
+      </h2>
+
+      <p className="mt-4 text-base leading-8 text-white/78">
+        {section.intro}
+      </p>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        {section.cards.map((card) => (
+          <div
+            key={card.title}
+            className="rounded-2xl border border-white/10 bg-white/7 p-5"
+          >
+            <h3 className="text-lg font-black uppercase text-lime-300">
+              {card.title}
+            </h3>
+
+            <p className="mt-3 text-sm leading-7 text-white/78">
+              {card.text}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-7 rounded-2xl border border-white/10 bg-[rgba(0,40,31,0.58)] p-5">
+        <h3 className="font-black uppercase text-white">
+          {section.authorityTitle}
+        </h3>
+
+        <div className="mt-4 grid gap-3">
+          {section.authorityLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${link.label} - externer Link`}
+              className="group rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-lime-300/40 hover:bg-lime-300/10"
+            >
+              <span className="flex items-start gap-2 font-black text-lime-300 group-hover:text-lime-200">
+                <span>{link.label}</span>
+                <ExternalLink
+                  size={15}
+                  className="mt-1 shrink-0 opacity-80"
+                  aria-hidden="true"
+                />
+              </span>
+
+              <span className="mt-1 block text-sm text-white/58">
+                {link.source}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <p className="mt-5 text-sm leading-7 text-white/68">
+        {section.note}
+      </p>
     </article>
   );
 }
