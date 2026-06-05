@@ -5,6 +5,14 @@ admin.initializeApp();
 
 const db = admin.firestore();
 
+type TransportUploadedDocument = {
+  name: string;
+  path: string;
+  downloadUrl: string;
+  contentType: string;
+  size: number;
+};
+
 type TransportLeadPayload = {
   locale: string;
   pagePath: string;
@@ -18,6 +26,10 @@ type TransportLeadPayload = {
   };
   transport: Record<string, unknown>;
   cargo: Record<string, unknown>;
+  documents?: {
+    standardDocs?: TransportUploadedDocument[];
+    adrDocs?: TransportUploadedDocument[];
+  };
 };
 
 export const submitTransportLead = onCall(
@@ -67,9 +79,9 @@ export const submitTransportLead = onCall(
         internalQueued: true,
         customerQueued: true,
       },
-      documents: data.documents ?? {
-        standardDocs: [],
-        adrDocs: [],
+      documents: {
+        standardDocs: data.documents?.standardDocs ?? [],
+        adrDocs: data.documents?.adrDocs ?? [],
       },
     };
 

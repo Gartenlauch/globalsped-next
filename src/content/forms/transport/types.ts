@@ -131,5 +131,6 @@ export type TransportRequestContent = {
     privacyRequired: string;
     fileType: string;
     fileSize: string;
+    submitError: string;
   };
 };

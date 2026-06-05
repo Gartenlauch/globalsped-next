@@ -458,5 +458,6 @@ export const transportRequestDe: TransportRequestContent = {
     privacyRequired: "Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.",
     fileType: "Bitte laden Sie nur Dateien im Format PDF, JPG, PNG, DOC oder DOCX hoch.",
     fileSize: "Die ausgewählten Dateien dürfen insgesamt maximal 10 MB groß sein.",
+    submitError: "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.",
   },
 };

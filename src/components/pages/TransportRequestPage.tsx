@@ -517,11 +517,8 @@ export function TransportRequestPage({ locale }: Props) {
   };
 
   const submitRequest = async () => {
-    if (!validateStepTwo()) {
-      setStep(2);
-      return;
-    }
     if (isSubmitting) return;
+
     setIsSubmitting(true);
     setValidationMessage("");
 
@@ -539,9 +536,12 @@ export function TransportRequestPage({ locale }: Props) {
         functions,
         "submitTransportLead"
       );
+
       await submitTransportLead({
+        requestId,
         locale,
         pagePath: `/${locale}/transport-anfrage`,
+        source: "homepage",
 
         contact,
 
@@ -564,6 +564,7 @@ export function TransportRequestPage({ locale }: Props) {
           totalVolume: showVolume ? totals.totalVolume : null,
           pieces: totals.pieces,
         },
+
         documents: {
           standardDocs: uploadedStandardDocs,
           adrDocs: uploadedAdrDocs,
@@ -573,9 +574,7 @@ export function TransportRequestPage({ locale }: Props) {
       setSubmitted(true);
     } catch (error) {
       console.error(error);
-      setValidationMessage(
-        "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail."
-      );
+      setValidationMessage(t.validation.submitError);
     } finally {
       setIsSubmitting(false);
     }
