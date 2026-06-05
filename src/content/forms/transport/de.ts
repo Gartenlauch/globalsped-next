@@ -398,6 +398,9 @@ export const transportRequestDe: TransportRequestContent = {
     submit: "Anfrage absenden",
     addUnit: "Weitere Einheit hinzufügen",
     removeUnit: "Entfernen",
+    standardDocs: "Warendokumente / Bilder hochladen",
+    adrDocs: "ADR-Dokumente hochladen",
+    removeFile: "Datei entfernen",
   },
 
   hints: {
@@ -409,6 +412,12 @@ export const transportRequestDe: TransportRequestContent = {
       "Sie können ein europäisches Land oder direkt einen konkreten Abholort eingeben.",
     temperatureControlled:
       "Bitte wählen Sie den benötigten Temperaturbereich, falls der Transport temperaturgeführt erfolgen soll.",
+    standardDocs:
+      "Optional: z. B. Warendokumente, Fotos der Ware, Packlisten oder technische Unterlagen.",
+    adrDocs:
+      "Optional: z. B. Sicherheitsdatenblatt, ADR-Dokumente oder Gefahrgut-Unterlagen.",
+    uploadFormats:
+      "Erlaubt sind PDF, JPG, PNG, DOC und DOCX. Maximale Gesamtgröße: 10 MB.",
   },
 
   placeholders: {
@@ -447,5 +456,7 @@ export const transportRequestDe: TransportRequestContent = {
   validation: {
     requiredFields: "Bitte füllen Sie alle Pflichtfelder aus.",
     privacyRequired: "Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.",
+    fileType: "Bitte laden Sie nur Dateien im Format PDF, JPG, PNG, DOC oder DOCX hoch.",
+    fileSize: "Die ausgewählten Dateien dürfen insgesamt maximal 10 MB groß sein.",
   },
 };

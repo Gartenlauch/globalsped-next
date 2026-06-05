@@ -76,6 +76,10 @@ export type TransportRequestContent = {
     submit: string;
     addUnit: string;
     removeUnit: string;
+    standardDocs: string;
+    adrDocs: string;
+    removeFile: string;
+    
   };
 
   hints: {
@@ -83,6 +87,9 @@ export type TransportRequestContent = {
     destinationCity: string;
     pickupLocation: string;
     temperatureControlled: string;
+    standardDocs: string;
+    adrDocs: string;
+    uploadFormats: string;
   };
 
   placeholders: {
@@ -122,5 +129,7 @@ export type TransportRequestContent = {
   validation: {
     requiredFields: string;
     privacyRequired: string;
+    fileType: string;
+    fileSize: string;
   };
 };

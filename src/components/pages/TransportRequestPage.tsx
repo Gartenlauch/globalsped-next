@@ -1,6 +1,6 @@
 "use client";
 import { httpsCallable } from "firebase/functions";
-import { functions } from "@/lib/firebase/client";
+import { functions, storage } from "@/lib/firebase/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -15,7 +15,7 @@ import {
   Truck,
   X,
 } from "lucide-react";
-
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getTransportRequestContent } from "@/content/forms/transport";
 
 
@@ -46,6 +46,16 @@ const initialContact = {
   privacy: false,
 };
 
+const allowedUploadTypes = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "image/jpeg",
+  "image/png",
+];
+
+const maxUploadSize = 10 * 1024 * 1024;
+
 
 
 type Props = {
@@ -62,6 +72,16 @@ type Unit = {
   height: number;
   weight: number;
 };
+
+type UploadedFileMeta = {
+  name: string;
+  path: string;
+  downloadUrl: string;
+  contentType: string;
+  size: number;
+};
+
+type UploadKind = "standardDocs" | "adrDocs";
 
 export function TransportRequestPage({ locale }: Props) {
   const t = getTransportRequestContent(locale);
@@ -97,12 +117,11 @@ export function TransportRequestPage({ locale }: Props) {
   const [shipmentType, setShipmentType] = useState<ShipmentType>("ltl");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const [transport, setTransport] = useState(initialTransport);
-
   const [contact, setContact] = useState(initialContact);
-
   const [units, setUnits] = useState<Unit[]>(createInitialUnits);
+  const [standardDocs, setStandardDocs] = useState<File[]>([]);
+  const [adrDocs, setAdrDocs] = useState<File[]>([]);
 
   const selectedAdrClass = useMemo(
     () => t.adrClasses.find((item) => item.value === transport.adrClass),
@@ -220,6 +239,9 @@ export function TransportRequestPage({ locale }: Props) {
       adrPoints: value ? current.adrPoints : "",
       limitedQuantity: value ? current.limitedQuantity : "",
     }));
+    if (!value) {
+      setAdrDocs([]);
+    }
   };
 
   const updateAdrPoints = (value: string) => {
@@ -278,6 +300,84 @@ export function TransportRequestPage({ locale }: Props) {
           : unit
       )
     );
+  };
+
+  const getTotalFileSize = (files: File[]) => {
+    return files.reduce((sum, file) => sum + file.size, 0);
+  };
+
+  const updateFiles = (kind: UploadKind, selectedFiles: FileList | null) => {
+    if (!selectedFiles) return;
+
+    const newFiles = Array.from(selectedFiles);
+    const currentFiles = kind === "standardDocs" ? standardDocs : adrDocs;
+    const nextFiles = [...currentFiles, ...newFiles];
+
+    const hasInvalidType = nextFiles.some(
+      (file) => !allowedUploadTypes.includes(file.type)
+    );
+
+    if (hasInvalidType) {
+      setValidationMessage(t.validation.fileType);
+      return;
+    }
+
+    if (getTotalFileSize(nextFiles) > maxUploadSize) {
+      setValidationMessage(t.validation.fileSize);
+      return;
+    }
+
+    setValidationMessage("");
+
+    if (kind === "standardDocs") {
+      setStandardDocs(nextFiles);
+      return;
+    }
+
+    setAdrDocs(nextFiles);
+  };
+
+  const removeFile = (kind: UploadKind, fileIndex: number) => {
+    if (kind === "standardDocs") {
+      setStandardDocs((current) =>
+        current.filter((_, index) => index !== fileIndex)
+      );
+      return;
+    }
+
+    setAdrDocs((current) => current.filter((_, index) => index !== fileIndex));
+  };
+
+  const sanitizeFileName = (fileName: string) => {
+    return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
+  };
+
+  const uploadTransportFiles = async (
+    requestId: string,
+    kind: UploadKind,
+    files: File[]
+  ): Promise<UploadedFileMeta[]> => {
+    const uploads = files.map(async (file) => {
+      const cleanFileName = sanitizeFileName(file.name);
+      const filePath = `transportRequest/${requestId}/${kind}/${cleanFileName}`;
+      const fileRef = ref(storage, filePath);
+
+      await uploadBytes(fileRef, file, {
+        contentType: file.type,
+      });
+
+      const downloadUrl = await getDownloadURL(fileRef);
+
+      return {
+        name: file.name,
+        path: filePath,
+        downloadUrl,
+        contentType: file.type,
+        size: file.size,
+      };
+    });
+
+    return Promise.all(uploads);
   };
 
   const addUnit = () => {
@@ -405,7 +505,9 @@ export function TransportRequestPage({ locale }: Props) {
     setTransport(initialTransport);
     setContact(initialContact);
     setUnits(createInitialUnits());
-
+    setStandardDocs([]);
+    setAdrDocs([]);
+    setIsSubmitting(false);
     window.setTimeout(() => {
       formTopRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -419,15 +521,24 @@ export function TransportRequestPage({ locale }: Props) {
       setStep(2);
       return;
     }
+    if (isSubmitting) return;
     setIsSubmitting(true);
     setValidationMessage("");
 
     try {
+      const requestId = crypto.randomUUID();
+
+      const [uploadedStandardDocs, uploadedAdrDocs] = await Promise.all([
+        uploadTransportFiles(requestId, "standardDocs", standardDocs),
+        selectedAdrClass
+          ? uploadTransportFiles(requestId, "adrDocs", adrDocs)
+          : Promise.resolve([]),
+      ]);
+
       const submitTransportLead = httpsCallable(
         functions,
         "submitTransportLead"
       );
-
       await submitTransportLead({
         locale,
         pagePath: `/${locale}/transport-anfrage`,
@@ -452,6 +563,10 @@ export function TransportRequestPage({ locale }: Props) {
           totalWeight: totals.totalWeight,
           totalVolume: showVolume ? totals.totalVolume : null,
           pieces: totals.pieces,
+        },
+        documents: {
+          standardDocs: uploadedStandardDocs,
+          adrDocs: uploadedAdrDocs,
         },
       });
 
@@ -920,11 +1035,32 @@ export function TransportRequestPage({ locale }: Props) {
                           </strong>
                           <span>{selectedAdrClass.description}</span>
                         </div>
+                        <div className="md:col-span-2">
+                          <FileUploadField
+                            label={t.labels.adrDocs}
+                            hint={t.hints.adrDocs}
+                            removeLabel={t.labels.removeFile}
+                            formatsHint={t.hints.uploadFormats}
+                            files={adrDocs}
+                            onChange={(files) => updateFiles("adrDocs", files)}
+                            onRemove={(index) => removeFile("adrDocs", index)}
+                          />
+                        </div>
                       </>
                     )}
 
                   </div>
-
+                  <div className="mt-6">
+                    <FileUploadField
+                      label={t.labels.standardDocs}
+                      removeLabel={t.labels.removeFile}
+                      hint={t.hints.standardDocs}
+                      formatsHint={t.hints.uploadFormats}
+                      files={standardDocs}
+                      onChange={(files) => updateFiles("standardDocs", files)}
+                      onRemove={(index) => removeFile("standardDocs", index)}
+                    />
+                  </div>
                   <div className="mt-6">
                     <Field label={t.labels.notes}>
                       <textarea
@@ -1027,8 +1163,8 @@ export function TransportRequestPage({ locale }: Props) {
 
                   <label
                     className={`mt-5 flex items-start gap-3 rounded-2xl border p-4 text-sm leading-6 text-white/78 transition ${hasFieldError("privacy")
-                        ? "border-red-300/60 bg-red-500/10"
-                        : "border-white/10 bg-white/5"
+                      ? "border-red-300/60 bg-red-500/10"
+                      : "border-white/10 bg-white/5"
                       }`}
                   >
                     <input
@@ -1106,6 +1242,11 @@ export function TransportRequestPage({ locale }: Props) {
                       label={t.labels.goodsDescription}
                       value={transport.goodsDescription || "-"}
                     />
+
+                    <SummaryLine
+                      label={t.labels.standardDocs}
+                      value={standardDocs.length ? `${standardDocs.length}` : "-"}
+                    />
                     <SummaryLine
                       label={t.labels.dangerousGoods}
                       value={
@@ -1131,6 +1272,10 @@ export function TransportRequestPage({ locale }: Props) {
                         <SummaryLine
                           label={t.labels.limitedQuantity}
                           value={transport.limitedQuantity || "-"}
+                        />
+                        <SummaryLine
+                          label={t.labels.adrDocs}
+                          value={adrDocs.length ? `${adrDocs.length}` : "-"}
                         />
                       </>
                     )}
@@ -1240,14 +1385,21 @@ export function TransportRequestPage({ locale }: Props) {
                     })} m³`}
                   />
                 )}
-                {selectedAdrClass && (
-                  <SummaryLine
-                    label={t.labels.dangerousGoods}
-                    value={`${selectedAdrClass.label}: ${selectedAdrClass.description}`}
-                  />
-                )}
+                <SummaryLine
+                  label={t.labels.goodsDescription}
+                  value={transport.goodsDescription || "-"}
+                />
+                <SummaryLine
+                  label={t.labels.standardDocs}
+                  value={standardDocs.length ? `${standardDocs.length}` : "-"}
+                />
                 {selectedAdrClass && (
                   <>
+                    <SummaryLine
+                      label={t.labels.dangerousGoods}
+                      value={`${selectedAdrClass.label}: ${selectedAdrClass.description}`}
+                    />
+
                     <SummaryLine
                       label={t.labels.unNumber}
                       value={transport.unNumber || "-"}
@@ -1263,6 +1415,10 @@ export function TransportRequestPage({ locale }: Props) {
                     <SummaryLine
                       label={t.labels.limitedQuantity}
                       value={transport.limitedQuantity || "-"}
+                    />
+                    <SummaryLine
+                      label={t.labels.adrDocs}
+                      value={adrDocs.length ? `${adrDocs.length}` : "-"}
                     />
                   </>
                 )}
@@ -1409,6 +1565,74 @@ function AdrDetailsFields({
           </select>
         </Field>
       </div>
+    </div>
+  );
+}
+
+function FileUploadField({
+  label,
+  hint,
+  formatsHint,
+  files,
+  removeLabel,
+  onChange,
+  onRemove,
+}: {
+  label: string;
+  hint: string;
+  formatsHint: string;
+  files: File[];
+  removeLabel: string;
+  onChange: (files: FileList | null) => void;
+  onRemove: (index: number) => void;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p className="text-sm font-black uppercase tracking-wide text-white/74">
+            {label}
+          </p>
+
+          <p className="mt-2 text-sm leading-6 text-white/58">{hint}</p>
+          <p className="mt-1 text-xs leading-5 text-white/42">{formatsHint}</p>
+        </div>
+
+        <input
+          type="file"
+          multiple
+          accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+          onChange={(event) => {
+            onChange(event.target.files);
+            event.currentTarget.value = "";
+          }}
+          className="block w-full max-w-full text-sm text-white/70 file:mr-4 file:rounded-full file:border-0 file:bg-lime-300 file:px-5 file:py-3 file:text-sm file:font-black file:uppercase file:text-[var(--color-global-dark)] hover:file:bg-lime-200 md:max-w-[320px]"
+        />
+      </div>
+
+      {files.length > 0 && (
+        <div className="mt-4 grid gap-2">
+          {files.map((file, index) => (
+            <div
+              key={`${file.name}-${file.size}-${index}`}
+              className="flex items-center justify-between gap-4 rounded-xl border border-lime-300/20 bg-lime-300/10 px-4 py-3 text-sm text-white/82"
+            >
+              <span className="min-w-0 truncate">
+                {file.name} · {(file.size / 1024 / 1024).toFixed(2)} MB
+              </span>
+
+              <button
+                type="button"
+                aria-label={`${removeLabel}: ${file.name}`}
+                onClick={() => onRemove(index)}
+                className="shrink-0 rounded-full p-1 text-white/60 transition hover:bg-white/10 hover:text-white"
+              >
+                <X size={17} />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

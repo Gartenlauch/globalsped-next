@@ -28,7 +28,11 @@ export const submitTransportLead = onCall(
   async (request) => {
     const data = request.data as TransportLeadPayload;
 
-    if (!data?.contact?.email || !data?.contact?.company || !data?.contact?.contactPerson) {
+    if (
+      !data?.contact?.email ||
+      !data?.contact?.company ||
+      !data?.contact?.contactPerson
+    ) {
       throw new HttpsError("invalid-argument", "Pflichtfelder fehlen.");
     }
 
@@ -63,6 +67,10 @@ export const submitTransportLead = onCall(
         internalQueued: true,
         customerQueued: true,
       },
+      documents: data.documents ?? {
+        standardDocs: [],
+        adrDocs: [],
+      },
     };
 
     await leadRef.set(leadData);
@@ -96,7 +104,7 @@ export const submitTransportLead = onCall(
       success: true,
       leadId: leadRef.id,
     };
-  }
+  },
 );
 
 function buildInternalMailHtml(leadId: string, lead: any) {
@@ -127,13 +135,13 @@ function buildCustomerMailHtml(lead: any) {
 }
 
 function escapeHtml(value: unknown) {
-    return String(value ?? "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 // Bewerbungs Formluar Application
 
@@ -199,7 +207,7 @@ export const submitApplication = onCall(
         subject: `Neue Bewerbung von ${data.applicant.firstName} ${data.applicant.lastName}`,
         html: buildInternalApplicationMailHtml(
           applicationRef.id,
-          applicationData
+          applicationData,
         ),
       },
       applicationId: applicationRef.id,
@@ -222,7 +230,7 @@ export const submitApplication = onCall(
       success: true,
       applicationId: applicationRef.id,
     };
-  }
+  },
 );
 
 function buildInternalApplicationMailHtml(applicationId: string, data: any) {
@@ -231,8 +239,8 @@ function buildInternalApplicationMailHtml(applicationId: string, data: any) {
         .map(
           (file: any) =>
             `<li><a href="${escapeHtml(file.downloadUrl)}">${escapeHtml(
-              file.name
-            )}</a></li>`
+              file.name,
+            )}</a></li>`,
         )
         .join("")
     : "";
@@ -243,7 +251,7 @@ function buildInternalApplicationMailHtml(applicationId: string, data: any) {
 
     <h3>Bewerber</h3>
     <p><strong>Name:</strong> ${escapeHtml(data.applicant.firstName)} ${escapeHtml(
-      data.applicant.lastName
+      data.applicant.lastName,
     )}</p>
     <p><strong>E-Mail:</strong> ${escapeHtml(data.applicant.email)}</p>
     <p><strong>Telefon:</strong> ${escapeHtml(data.applicant.phone)}</p>
@@ -251,20 +259,20 @@ function buildInternalApplicationMailHtml(applicationId: string, data: any) {
 
     <h3>Bewerbung</h3>
     <p><strong>Gewünschte Position:</strong> ${escapeHtml(
-      data.application.desiredPosition
+      data.application.desiredPosition,
     )}</p>
     <p><strong>Berufserfahrung:</strong> ${escapeHtml(
-      data.application.experience
+      data.application.experience,
     )}</p>
     <p><strong>Eintrittstermin:</strong> ${escapeHtml(
-      data.application.earliestStart
+      data.application.earliestStart,
     )}</p>
     <p><strong>Gehaltsvorstellung:</strong> ${escapeHtml(
-      data.application.salaryExpectation
+      data.application.salaryExpectation,
     )}</p>
     <p><strong>Sprachen:</strong> ${escapeHtml(data.application.languages)}</p>
     <p><strong>Führerschein:</strong> ${escapeHtml(
-      data.application.hasDrivingLicense
+      data.application.hasDrivingLicense,
     )}</p>
 
     <h3>Nachricht</h3>
@@ -279,7 +287,7 @@ function buildApplicantConfirmationMailHtml(data: any) {
   return `
     <h2>Vielen Dank für Ihre Bewerbung</h2>
     <p>Sehr geehrte/r ${escapeHtml(data.applicant.firstName)} ${escapeHtml(
-      data.applicant.lastName
+      data.applicant.lastName,
     )},</p>
     <p>wir haben Ihre Bewerbung erhalten. Das GLOBALSPED Team prüft Ihre Unterlagen und meldet sich schnellstmöglich bei Ihnen.</p>
     <p>Mit freundlichen Grüßen<br/>GLOBALSPED Internationale Logistik</p>
