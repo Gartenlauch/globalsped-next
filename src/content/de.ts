@@ -22,12 +22,12 @@ export const de = {
 
     headline: {
       line1: "Internationale Transporte",
-      highlight: "für anspruchsvolle Märkte",
-      line2: "in Zentralasien & Kaukasus",
+      highlight: "nach Zentralasien in den Kaukasus",
+      line2: "und den Mittleren Osten",
     },
 
     subline:
-      "GLOBALSPED organisiert FTL, LTL, Sammelgut, Thermotransporte, Gefahrgut und Projektlogistik für Unternehmen mit anspruchsvollen Zielmärkten – inklusive Routenplanung, Zollabwicklung und persönlicher Betreuung",
+      "GLOBALSPED organisiert FTL-Komplettladungen, LTL-Teilladungen, Thermotransporte, Gefahrgut, Projektlogistik und Zollabwicklung für Unternehmen mit anspruchsvollen Export- und Importzielen.",
 
     ctaPrimary: {
       label: "Transport unverbindlich anfragen",

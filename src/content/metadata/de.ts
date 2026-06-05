@@ -5,7 +5,7 @@ import type { LocaleMetadata } from "./types";
 export const metadataDe: LocaleMetadata = {
   pages: {
     home: {
-      title: "Internationale Transporte nach Zentralasien | GLOBALSPED",
+      title: "Internationale Transporte nach Zentralasien und den Kaukasus | GLOBALSPED",
       description:
         "GLOBALSPED organisiert FTL, LTL, Thermo- und Projekttransporte zwischen Europa, Zentralasien, Kaukasus und Mittlerem Osten – inklusive Zollabwicklung.",
       path: "/de",
