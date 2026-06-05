@@ -10,6 +10,7 @@ export type ServicePageContent = {
     highlight: string;
     intro: string;
   };
+  expertSection?: ServiceExpertSection;
   trust: ServiceContentBlock;
   services: ServiceContentBlock;
   regions: ServiceContentBlock;
