@@ -2,6 +2,10 @@ import { de } from "./de";
 //import { en } from "./en";
 //import { az } from "./az";
 
+
+export const supportedLocales = ["de", "en", "az"];
+export const defaultLocale = "de"
+
 export const content = {
   de,
 
