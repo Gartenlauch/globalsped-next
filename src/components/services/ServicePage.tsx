@@ -8,6 +8,8 @@ import {
   Route,
   ShieldCheck,
   Truck,
+  Thermometer,
+  PackageCheck,
 } from "lucide-react";
 import type { ServicePageContent } from "@/content/services/de/types";
 
@@ -64,6 +66,12 @@ export function ServicePage({ locale, service }: Props) {
               items={service.trust.items}
             />
 
+            {service.temperature && (
+              <ServiceTemperatureSection section={service.temperature} />
+            )}
+
+            {service.useCases && <ServiceUseCasesSection section={service.useCases} />}
+
             <ServiceBlock
               icon={<Truck />}
               title={service.services.title}
@@ -91,6 +99,9 @@ export function ServicePage({ locale, service }: Props) {
               text={service.solutions.text}
               items={service.solutions.items}
             />
+
+            {service.gdp && <ServiceDetailNotice section={service.gdp} />}
+
             {service.expertSection && (
               <ServiceExpertSection section={service.expertSection} />
             )}
@@ -159,6 +170,121 @@ function ServiceBlock({
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2 md:mt-6">
         {items.map((item) => (
+          <div
+            key={item}
+            className="min-w-0 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-white/82"
+          >
+            <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-lime-300" />
+            <span className="min-w-0 break-words">{item}</span>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function ServiceTemperatureSection({
+  section,
+}: {
+  section: NonNullable<ServicePageContent["temperature"]>;
+}) {
+  return (
+    <article className="min-w-0 rounded-3xl border border-lime-300/20 bg-lime-300/10 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-7">
+      <div className="mb-5 flex flex-col gap-3 text-lime-300 sm:flex-row sm:items-center sm:gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-lime-300/30 bg-lime-300/10 md:h-12 md:w-12">
+          <Thermometer />
+        </div>
+
+        <div>
+          <p className="mb-1 text-xs font-black uppercase tracking-[0.22em] text-lime-300">
+            {section.eyebrow}
+          </p>
+          <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+            {section.title}
+          </h2>
+        </div>
+      </div>
+
+      <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
+        {section.text}
+      </p>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        {section.facts.map((fact) => (
+          <div
+            key={fact.value}
+            className="rounded-2xl border border-white/10 bg-[rgba(0,40,31,0.58)] p-5"
+          >
+            <p className="text-2xl font-black text-lime-300">{fact.value}</p>
+            <p className="mt-2 text-sm leading-6 text-white/72">{fact.label}</p>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function ServiceUseCasesSection({
+  section,
+}: {
+  section: NonNullable<ServicePageContent["useCases"]>;
+}) {
+  return (
+    <article className="min-w-0 rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.72)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-7">
+      <div className="mb-5 flex flex-col gap-3 text-lime-300 sm:flex-row sm:items-center sm:gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-lime-300/30 bg-lime-300/10 md:h-12 md:w-12">
+          <PackageCheck />
+        </div>
+
+        <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+          {section.title}
+        </h2>
+      </div>
+
+      <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
+        {section.text}
+      </p>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        {section.items.map((item) => (
+          <div
+            key={item.title}
+            className="rounded-2xl border border-white/10 bg-white/5 p-5"
+          >
+            <h3 className="text-base font-black uppercase text-lime-300">
+              {item.title}
+            </h3>
+            <p className="mt-3 text-sm leading-7 text-white/76">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function ServiceDetailNotice({
+  section,
+}: {
+  section: NonNullable<ServicePageContent["gdp"]>;
+}) {
+  return (
+    <article className="rounded-3xl border border-lime-300/20 bg-[rgba(163,230,53,0.1)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-7">
+      <div className="mb-5 flex flex-col gap-3 text-lime-300 sm:flex-row sm:items-center sm:gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-lime-300/30 bg-lime-300/10 md:h-12 md:w-12">
+          <ShieldCheck />
+        </div>
+
+        <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+          {section.title}
+        </h2>
+      </div>
+
+      <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
+        {section.text}
+      </p>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 md:mt-6">
+        {section.items.map((item) => (
           <div
             key={item}
             className="min-w-0 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-white/82"
@@ -246,3 +372,4 @@ function ServiceExpertSection({
     </article>
   );
 }
+
