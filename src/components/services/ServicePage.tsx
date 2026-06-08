@@ -19,9 +19,8 @@ type Props = {
 };
 
 export function ServicePage({ locale, service }: Props) {
-
   return (
-    <main className="overflow-x-hidden bg-[var(--color-global-deep)] text-white">
+    <main className="bg-[var(--color-global-deep)] text-white [overflow-x:clip]">
       <section className="relative overflow-hidden px-0 pb-16 pt-28 md:pb-24 md:pt-36">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(163,230,53,0.14),transparent_32%)]" />
 
@@ -57,7 +56,7 @@ export function ServicePage({ locale, service }: Props) {
       </section>
 
       <section className="relative pb-24">
-        <div className="container grid min-w-0 gap-6 md:gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+        <div className="container grid min-w-0 items-start gap-6 md:gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="grid gap-8">
             <ServiceBlock
               icon={<ShieldCheck />}
@@ -70,7 +69,9 @@ export function ServicePage({ locale, service }: Props) {
               <ServiceTemperatureSection section={service.temperature} />
             )}
 
-            {service.useCases && <ServiceUseCasesSection section={service.useCases} />}
+            {service.useCases && (
+              <ServiceUseCasesSection section={service.useCases} />
+            )}
 
             <ServiceBlock
               icon={<Truck />}
@@ -107,34 +108,36 @@ export function ServicePage({ locale, service }: Props) {
             )}
           </div>
 
-          <aside className="min-w-0 h-fit rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.76)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-6 lg:sticky lg:top-28">
-            <h2 className="break-words text-lg font-black uppercase text-lime-300 md:text-xl">
-              {service.sidebar.title}
-            </h2>
+          <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
+            <aside className="min-w-0 rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.76)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-6">
+              <h2 className="break-words text-lg font-black uppercase text-lime-300 md:text-xl">
+                {service.sidebar.title}
+              </h2>
 
-            <div className="mt-6 grid gap-4">
-              {service.sidebar.items.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 border-b border-white/10 pb-4 text-sm leading-6 text-white/82 last:border-b-0"
-                >
-                  <CheckCircle2
-                    size={18}
-                    className="mt-0.5 shrink-0 text-lime-300"
-                  />
-                  {item}
-                </div>
-              ))}
-            </div>
+              <div className="mt-6 grid gap-4">
+                {service.sidebar.items.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 border-b border-white/10 pb-4 text-sm leading-6 text-white/82 last:border-b-0"
+                  >
+                    <CheckCircle2
+                      size={18}
+                      className="mt-0.5 shrink-0 text-lime-300"
+                    />
+                    <span className="min-w-0 break-words">{item}</span>
+                  </div>
+                ))}
+              </div>
 
-            <Link
-              href={`/${locale}/transport-anfrage`}
-              className="btn-primary mt-7 w-full justify-center"
-            >
-              {service.cta.primary}
-              <ArrowRight size={17} />
-            </Link>
-          </aside>
+              <Link
+                href={`/${locale}/transport-anfrage`}
+                className="btn-primary mt-7 w-full justify-center"
+              >
+                {service.cta.primary}
+                <ArrowRight size={17} />
+              </Link>
+            </aside>
+          </div>
         </div>
       </section>
     </main>
@@ -215,7 +218,9 @@ function ServiceTemperatureSection({
             key={fact.value}
             className="rounded-2xl border border-white/10 bg-[rgba(0,40,31,0.58)] p-5"
           >
-            <p className="text-2xl font-black text-lime-300">{fact.value}</p>
+            <p className="break-words text-xl font-black leading-tight text-lime-300 md:text-[20px]">
+              {fact.value}
+            </p>
             <p className="mt-2 text-sm leading-6 text-white/72">{fact.label}</p>
           </div>
         ))}
@@ -372,4 +377,3 @@ function ServiceExpertSection({
     </article>
   );
 }
-
