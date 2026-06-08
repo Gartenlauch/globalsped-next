@@ -16,7 +16,7 @@ export const metadataDe: LocaleMetadata = {
     },
 
     faq: {
-      title: "FAQ zu Transport, Zoll & Zentralasien | GLOBALSPED",
+      title: "FAQ zu Transport, Zoll nach Zentralasien und den Kaukasus | GLOBALSPED",
       description:
         "Antworten zu internationalen Transporten, Zoll, FTL, LTL, Thermo, Gefahrgut und Transporten nach Zentralasien, Kaukasus und Mittleren Osten.",
       path: "/de/faq",

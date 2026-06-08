@@ -67,15 +67,6 @@ h3,
   transform: translateY(-1px);
 }
 
-@keyframes spinCube {
-  0% {
-    transform: rotateX(-16deg) rotateY(20deg);
-  }
-
-  100% {
-    transform: rotateX(-16deg) rotateY(380deg);
-  }
-}
 
 @keyframes marquee {
   0% {
@@ -86,16 +77,132 @@ h3,
     transform: translateX(-50%);
   }
 }
+/* =========================================
+   GLOBALSPED PREMIUM 3D LOGO CUBE
+========================================= */
 
-.cube-spin {
-  animation: spinCube 12s linear infinite;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transform: translateZ(0);
+.logo-cube-wrap {
+  perspective-origin: 50% 46%;
 }
 
-.logo-cube-wrap .cube-spin > div {
+.logo-cube-stage {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-18deg) rotateY(28deg);
+  animation: logoCubePremiumSpin 16s linear infinite;
+}
+
+.logo-cube-stage::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  transform: translateZ(-42px) rotateX(90deg);
+  background: rgba(0, 0, 0, 0.22);
+  filter: blur(12px);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.logo-cube-face {
+  inset: 0;
+  transform-style: preserve-3d;
   backface-visibility: hidden;
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 40, 31, 0.42);
+  outline: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.75),
+    inset -1px -1px 0 rgba(0, 40, 31, 0.28),
+    0 8px 18px rgba(0, 0, 0, 0.18);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.logo-cube-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.14) 28%,
+      rgba(255, 255, 255, 0) 46%
+    ),
+    linear-gradient(
+      315deg,
+      rgba(0, 40, 31, 0.18),
+      transparent 52%
+    );
+}
+
+.logo-cube-face::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  z-index: 2;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-cube-face-edge {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.logo-cube-face-edge--top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.logo-cube-face-edge--right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(0, 40, 31, 0.42);
+}
+
+.logo-cube-face-edge--bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: rgba(0, 40, 31, 0.38);
+}
+
+.logo-cube-face-edge--left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes logoCubePremiumSpin {
+  0% {
+    transform: rotateX(-18deg) rotateY(28deg);
+  }
+
+  100% {
+    transform: rotateX(-18deg) rotateY(388deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-cube-stage {
+    animation: none;
+    transform: rotateX(-18deg) rotateY(32deg);
+  }
 }
 
 .marquee-track {

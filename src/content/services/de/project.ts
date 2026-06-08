@@ -71,6 +71,60 @@ export const projectService: ServicePageContent = {
       "Persönliche Betreuung bei komplexen Projekten",
     ],
   },
+  expertSection: {
+    badge: "Projektlogistik-Fachinformationen",
+    title: "Wichtige Angaben für Projektlogistik und Sondertransporte",
+    authorityTitle: "Offizielle Informationen",
+    externalLinkLabel: "externer Link",
+    intro:
+      "Bei Projektlogistik reicht eine allgemeine Transportbeschreibung in der Praxis nicht aus. Entscheidend sind exakte Abmessungen, Gewicht, Schwerpunkt, Lade- und Entladebedingungen, Unteilbarkeit der Ware, Genehmigungspflichten, Routenfähigkeit und die Abstimmung mehrerer Beteiligter. Diese Angaben beeinflussen Fahrzeugauswahl, Genehmigungsdauer, Routenprüfung, Begleitmaßnahmen, Zollabwicklung und die operative Planung entlang der gesamten Transportkette.",
+    cards: [
+      {
+        title: "Abmessungen, Gewicht & Schwerpunkt",
+        text:
+          "Für Projekttransporte sind Länge, Breite, Höhe, Gesamtgewicht und Schwerpunkt der Ladung zentrale Prüfparameter. Schon geringe Abweichungen können Auswirkungen auf Fahrzeugkombination, Achslasten, Ladungssicherung, Kurvenradien, Brückenprüfung und Genehmigungsfähigkeit haben. Für eine belastbare Transportplanung sollten technische Zeichnungen, Packmaße, Kollilisten und Angaben zu Anschlagpunkten möglichst früh vorliegen.",
+      },
+      {
+        title: "Unteilbare Ladung & Genehmigungspflicht",
+        text:
+          "Viele Projektlogistik-Transporte betreffen Maschinen, Anlagenteile oder Konstruktionen, die aufgrund ihrer Beschaffenheit nicht ohne unverhältnismäßigen Aufwand zerlegt werden können. Sobald zulässige Maße oder Gewichte überschritten werden, können Ausnahmegenehmigungen, Sondererlaubnisse oder nationale Verfahren erforderlich sein. In Deutschland erfolgt die digitale Abwicklung von Großraum- und Schwertransporten regelmäßig über VEMAGS.",
+      },
+      {
+        title: "Routenprüfung & Infrastruktur",
+        text:
+          "Die Route ist bei Projektlogistik kein Standardweg von A nach B. Brücken, Tunnel, Kreisverkehre, Baustellen, Steigungen, Grenzübergänge, Fahrverbote und regionale Auflagen müssen vorab geprüft werden. Bei internationalen Transporten kommen unterschiedliche nationale Verfahren hinzu. Eine frühe Routenklärung reduziert Verzögerungen, vermeidet ungeeignete Streckenabschnitte und verbessert die Kalkulierbarkeit von Laufzeit und Kosten.",
+      },
+      {
+        title: "Ladungssicherung, Begleitung & Schnittstellen",
+        text:
+          "Projekttransporte benötigen eine saubere Abstimmung zwischen Verlader, Empfänger, Fahrer, Genehmigungsstellen, Begleitfahrzeugen, Zollbeteiligten und gegebenenfalls Kran- oder Montageteams. Kritisch sind Ladefenster, Standzeiten, Anschlagpunkte, Sicherungsmittel, Markierung, Beleuchtung, Begleitauflagen und Dokumentation. Je komplexer die Ware und Route, desto wichtiger ist eine zentrale operative Koordination.",
+      },
+    ],
+    authorityLinks: [
+      {
+        label: "EU-Kommission zu Ladungssicherung und außergewöhnlichen Transporten",
+        href: "https://road-safety.transport.ec.europa.eu/eu-road-safety-policy/priorities/safe-vehicles/cargo-securing-and-abnormal-loads_en",
+        source: "European Commission",
+      },
+      {
+        label: "European Best Practice Guidelines for Abnormal Road Transports",
+        href: "https://road-safety.transport.ec.europa.eu/document/download/48aefd4b-5454-4491-8651-25591bb5d860_en?filename=abnormal_transport_guidelines_en.pdf",
+        source: "European Commission",
+      },
+      {
+        label: "VEMAGS für Großraum- und Schwertransporte in Deutschland",
+        href: "https://www.vemags.de/",
+        source: "VEMAGS",
+      },
+      {
+        label: "EU-Richtlinie 96/53/EG zu höchstzulässigen Abmessungen und Gewichten",
+        href: "https://eur-lex.europa.eu/eli/dir/1996/53/oj/eng",
+        source: "EUR-Lex / Europäische Union",
+      },
+    ],
+    note:
+      "Die Angaben unterstützen die erste fachliche Einschätzung. In der Transportanfrage können Maße, Gewicht, Warenbeschreibung, Dokumente, Fotos und besondere Hinweise direkt übermittelt werden, damit GLOBALSPED Fahrzeugauswahl, Genehmigungspflichten, Route und operative Schnittstellen schneller prüfen kann.",
+  },
   sidebar: {
     title: "Projektlogistik auf einen Blick",
     items: [

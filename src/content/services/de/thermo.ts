@@ -81,6 +81,60 @@ export const thermoService: ServicePageContent = {
       "Persönliche Betreuung bei Abweichungen oder Verzögerungen",
     ],
   },
+  expertSection: {
+    badge: "Thermo-Fachinformationen",
+    title: "Wichtige Angaben für temperaturgeführte Transporte",
+    authorityTitle: "Offizielle Informationen",
+    externalLinkLabel: "externer Link",
+    intro:
+      "Bei temperaturgeführten Transporten entscheidet nicht nur die Frage, ob Ware gekühlt oder beheizt werden muss. Entscheidend sind der konkrete Temperaturbereich, die zulässigen Abweichungen, die Eignung des Fahrzeugs, die Dauer der Route und die Nachweisbarkeit der Temperaturführung. Diese Angaben beeinflussen Fahrzeugauswahl, Routenplanung, Grenzabwicklung, Dokumentation und die operative Reaktion bei Verzögerungen.",
+    cards: [
+      {
+        title: "Temperaturbereich & Produktspezifikation",
+        text:
+          "Der konkrete Temperaturbereich ist die wichtigste Grundlage für die Transportprüfung. Angaben wie +2 bis +8 °C, +15 bis +25 °C, Tiefkühlbereich oder frostfreie Beförderung beeinflussen Fahrzeugauswahl, Vorkonditionierung, Beladung, Transitplanung und Risikobewertung. Besonders bei langen internationalen Routen sollte zusätzlich klar sein, ob kurzfristige Temperaturabweichungen zulässig sind oder die Ware durchgehend im definierten Bereich bleiben muss.",
+      },
+      {
+        title: "Kühlkette & Temperaturabweichungen",
+        text:
+          "Die Kühlkette darf bei sensiblen Waren nicht als reine Fahrzeugleistung verstanden werden. Kritisch sind auch Ladezeitfenster, Standzeiten, Grenzwartezeiten, Umladungen, Türöffnungen und die Abstimmung mit Absender und Empfänger. Für eine belastbare Planung sollte vor Transportbeginn feststehen, wie mit Temperaturabweichungen umzugehen ist, wer informiert wird und welche Dokumentation im Fall einer Abweichung benötigt wird.",
+      },
+      {
+        title: "ATP-Fahrzeugstandard für verderbliche Waren",
+        text:
+          "Für bestimmte internationale Transporte verderblicher Lebensmittel ist die Eignung der eingesetzten Transportausrüstung besonders relevant. Das ATP-Abkommen beschreibt technische Anforderungen an Spezialausrüstung für die Beförderung verderblicher Lebensmittel. In der Praxis sollte deshalb früh geprüft werden, ob die Ware ATP-relevant ist, welche Fahrzeugklasse benötigt wird und ob die geplante Route, Laufzeit und Außentemperatur zur Ausrüstung passen.",
+      },
+      {
+        title: "Temperaturmonitoring & Nachweise",
+        text:
+          "Temperaturgeführte Transporte benötigen nachvollziehbare Angaben zur Temperaturführung. Je nach Ware können Temperaturaufzeichnung, Datenlogger, Fahrzeugtelematik, Übergabeprotokolle oder qualifizierte Transportdokumentation erforderlich sein. Bei Pharma-, Lebensmittel- und Industriegütern ist entscheidend, dass Temperaturdaten und Transportereignisse so dokumentiert werden, dass Abweichungen, Standzeiten und Verantwortlichkeiten später nachvollziehbar bleiben.",
+      },
+    ],
+    authorityLinks: [
+      {
+        label: "UNECE ATP-Abkommen für verderbliche Lebensmittel und Spezialausrüstung",
+        href: "https://unece.org/transport/publications/agreement-international-carriage-perishable-foodstuffs-and-special-6",
+        source: "United Nations Economic Commission for Europe",
+      },
+      {
+        label: "EU-Verordnung 852/2004 zur Lebensmittelhygiene und Kühlkette",
+        href: "https://eur-lex.europa.eu/eli/reg/2004/852/oj/eng",
+        source: "EUR-Lex / Europäische Union",
+      },
+      {
+        label: "EMA-Informationen zu Good Distribution Practice für Arzneimittel",
+        href: "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/compliance-post-authorisation/good-distribution-practice",
+        source: "European Medicines Agency",
+      },
+      {
+        label: "EU-Verordnung 853/2004 mit spezifischen Hygienevorschriften für Lebensmittel tierischen Ursprungs",
+        href: "https://eur-lex.europa.eu/eli/reg/2004/853/oj/eng",
+        source: "EUR-Lex / Europäische Union",
+      },
+    ],
+    note:
+      "Die Angaben unterstützen die erste fachliche Einschätzung. In der Transportanfrage können Temperaturführung, Warenbeschreibung, Laufzeit, Dokumente und besondere Hinweise direkt übermittelt werden, damit GLOBALSPED Fahrzeugauswahl, Route und operative Risiken schneller prüfen kann.",
+  },
   sidebar: {
     title: "Thermo auf einen Blick",
     items: [

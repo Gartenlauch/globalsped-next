@@ -132,12 +132,14 @@ export function DestinationsSection({ locale }: Props) {
                 />
 
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,40,31,0.85)_100%)] transition group-hover:bg-[rgba(0,40,31,0.55)]" />
-
+              {console.log(country.name)}
                 <div className="absolute inset-x-0 bottom-0 p-5">
                   <div className="mb-2 flex items-center gap-2 text-lime-300">
                     <MapPin size={16} />
                     <span className="text-xs font-bold uppercase tracking-wide">
-                      {country.region}
+                      {country.name==="Ukraine"
+                      ? "Osteuropa"
+                      : country.region}
                     </span>
                   </div>
 
