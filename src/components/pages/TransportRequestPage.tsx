@@ -66,11 +66,11 @@ type ShipmentType = "ltl" | "loadingMeters" | "ftl";
 
 type Unit = {
   packagingType: string;
-  quantity: number;
-  length: number;
-  width: number;
-  height: number;
-  weight: number;
+  quantity: number | "";
+  length: number | "";
+  width: number | "";
+  height: number | "";
+  weight: number | "";
 };
 
 type UploadedFileMeta = {
@@ -85,14 +85,15 @@ type UploadKind = "standardDocs" | "adrDocs";
 
 export function TransportRequestPage({ locale }: Props) {
   const t = getTransportRequestContent(locale);
-  const createInitialUnits = () => [
+
+  const createInitialUnits = (): Unit[] => [
     {
       packagingType: t.packagingTypes[0],
       quantity: 1,
       length: 120,
       width: 80,
       height: 120,
-      weight: 0,
+      weight: "",
     },
   ];
   const formTopRef = useRef<HTMLDivElement>(null);
@@ -139,6 +140,7 @@ export function TransportRequestPage({ locale }: Props) {
   const destinationCityOptions = useMemo(() => {
     return t.destinationCities[transport.deliveryCountry] ?? [];
   }, [t.destinationCities, transport.deliveryCountry]);
+
 
   const totals = useMemo(() => {
     const totalWeight = units.reduce(
@@ -286,6 +288,18 @@ export function TransportRequestPage({ locale }: Props) {
     setInvalidFields((current) => current.filter((field) => field !== key));
   };
 
+  const parseUnitNumberInput = (value: string): number | "" => {
+    if (value.trim() === "") {
+      return "";
+    }
+
+    const normalizedValue = value.replace(",", ".");
+    const parsedValue = Number(normalizedValue);
+
+    return Number.isFinite(parsedValue) ? parsedValue : "";
+  };
+
+
   const updateUnit = (index: number, key: keyof Unit, value: string) => {
     setUnits((current) =>
       current.map((unit, unitIndex) =>
@@ -295,7 +309,7 @@ export function TransportRequestPage({ locale }: Props) {
             [key]:
               key === "packagingType"
                 ? value
-                : Number(value.replace(",", ".")),
+                : parseUnitNumberInput(value),
           }
           : unit
       )
@@ -389,7 +403,7 @@ export function TransportRequestPage({ locale }: Props) {
         length: 120,
         width: 80,
         height: 120,
-        weight: 0,
+        weight: "",
       },
     ]);
   };
@@ -687,6 +701,8 @@ export function TransportRequestPage({ locale }: Props) {
                           }
                           className={getInputClassName("deliveryCountry", "pr-11")}
                         >
+                          <option value="">{t.labels.pleaseSelect}</option>
+
                           {t.destinationCountries.map((country) => (
                             <option key={country} value={country}>
                               {country}
@@ -711,34 +727,27 @@ export function TransportRequestPage({ locale }: Props) {
 
                     <Field label={t.labels.destinationCity}>
                       <div className="relative">
-                        <input
-                          list="destination-cities"
+                        <select
+                          key={transport.deliveryCountry || "no-destination-country"}
                           value={transport.destinationCity}
                           onChange={(event) =>
                             updateTransport("destinationCity", event.target.value)
                           }
-                          placeholder={t.placeholders.destinationCity}
-                          disabled={!transport.deliveryCountry}
-                          className="input-premium pr-11 disabled:cursor-not-allowed disabled:opacity-45"
-                        />
+                          className="input-premium min-w-0 max-w-full pr-11"
+                        >
+                          <option value="">
+                            {transport.deliveryCountry
+                              ? t.labels.destinationCitySelectPlaceholder
+                              : t.labels.destinationCitySelectCountryFirst}
+                          </option>
 
-                        {transport.destinationCity && (
-                          <button
-                            type="button"
-                            onClick={() => updateTransport("destinationCity", "")}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 text-emerald-950/50 transition hover:bg-emerald-950/10 hover:text-emerald-950"
-                            aria-label="Zielstadt löschen"
-                          >
-                            <X size={18} strokeWidth={2.75} />
-                          </button>
-                        )}
+                          {destinationCityOptions.map((city) => (
+                            <option key={city} value={city}>
+                              {city}
+                            </option>
+                          ))}
+                        </select>
                       </div>
-
-                      <datalist id="destination-cities">
-                        {destinationCityOptions.map((city) => (
-                          <option key={city} value={city} />
-                        ))}
-                      </datalist>
 
                       <FieldHint>
                         {transport.deliveryCountry
@@ -917,7 +926,7 @@ export function TransportRequestPage({ locale }: Props) {
                       <Field label={t.labels.weight}>
                         <input
                           type="number"
-                          value={units[0]?.weight ?? 0}
+                          value={units[0]?.weight ?? ""}
                           onChange={(event) =>
                             updateUnit(0, "weight", event.target.value)
                           }
@@ -938,7 +947,7 @@ export function TransportRequestPage({ locale }: Props) {
                           }
                           className={getInputClassName("vehicleType")}
                         >
-                          <option value="">Bitte wählen</option>
+                          <option value="">{t.labels.pleaseSelect}</option>
                           {t.vehicleTypes.map((type) => (
                             <option key={type} value={type}>
                               {type}
@@ -950,7 +959,7 @@ export function TransportRequestPage({ locale }: Props) {
                       <Field label={t.labels.weight}>
                         <input
                           type="number"
-                          value={units[0]?.weight ?? 0}
+                          value={units[0]?.weight ?? ""}
                           onChange={(event) =>
                             updateUnit(0, "weight", event.target.value)
                           }

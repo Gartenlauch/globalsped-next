@@ -29,7 +29,6 @@ export const transportRequestDe: TransportRequestContent = {
   ],
 
   destinationCountries: [
-    "Bitte wählen",
     "Kasachstan",
     "Usbekistan",
     "Kirgisistan",
@@ -362,6 +361,9 @@ export const transportRequestDe: TransportRequestContent = {
     pickupLocation: "Abholort in Europa",
     deliveryCountry: "Zustellland",
     destinationCity: "Zielstadt",
+    pleaseSelect: "Auswahl treffen",
+    destinationCitySelectPlaceholder: "Zielstadt auswählen",
+    destinationCitySelectCountryFirst: "Zuerst Zielland auswählen",
     shipmentType: "Wie wird die Ware versendet?",
     packagingType: "Verpackungsart",
     quantity: "Anzahl",
@@ -392,7 +394,6 @@ export const transportRequestDe: TransportRequestContent = {
     no: "Nein",
     noneADR: "Kein Gefahrgut",
     noneThermo: "Kein Thermotransport",
-    pleaseSelect: "Bitte wählen",
     next: "Weiter",
     back: "Zurück",
     submit: "Anfrage absenden",

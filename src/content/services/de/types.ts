@@ -97,4 +97,5 @@ export type ServicePageContent = {
   temperature?: ServiceTemperatureSection;
   useCases?: ServiceUseCasesSection;
   gdp?: ServiceDetailSection;
+  expertSection?: ServiceExpertSection;
 };

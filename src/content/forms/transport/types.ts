@@ -57,6 +57,8 @@ export type TransportRequestContent = {
     packingGroup: string;
     adrPoints: string;
     pleaseSelect: string;
+    destinationCitySelectPlaceholder: string;
+    destinationCitySelectCountryFirst: string;
     limitedQuantity: string;
     temperatureControlled: string;
     notes: string;
@@ -79,7 +81,8 @@ export type TransportRequestContent = {
     standardDocs: string;
     adrDocs: string;
     removeFile: string;
-    
+
+
   };
 
   hints: {

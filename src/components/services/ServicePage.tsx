@@ -72,7 +72,6 @@ export function ServicePage({ locale, service }: Props) {
             {service.useCases && (
               <ServiceUseCasesSection section={service.useCases} />
             )}
-
             <ServiceBlock
               icon={<Truck />}
               title={service.services.title}
@@ -100,7 +99,6 @@ export function ServicePage({ locale, service }: Props) {
               text={service.solutions.text}
               items={service.solutions.items}
             />
-
             {service.gdp && <ServiceDetailNotice section={service.gdp} />}
 
             {service.expertSection && (
@@ -287,18 +285,19 @@ function ServiceDetailNotice({
       <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
         {section.text}
       </p>
-
-      <div className="mt-5 grid gap-3 sm:grid-cols-2 md:mt-6">
-        {section.items.map((item) => (
-          <div
-            key={item}
-            className="min-w-0 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-white/82"
-          >
-            <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-lime-300" />
-            <span className="min-w-0 break-words">{item}</span>
-          </div>
-        ))}
-      </div>
+      {section.items?.length ? (
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 md:mt-6">
+          {section.items.map((item) => (
+            <div
+              key={item}
+              className="min-w-0 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-white/82"
+            >
+              <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-lime-300" />
+              <span className="min-w-0 break-words">{item}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
     </article>
   );
 }

@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", // oder "react" bei älteren Versionen
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "jsx": "react-jsx", // Next.js braucht zwingend "preserve"
+    "jsxImportSource": "react", // Falls du React 17+ nutzt
     "moduleResolution": "bundler",
     "strict": true,
     "noEmit": true,
