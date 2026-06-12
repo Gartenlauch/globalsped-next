@@ -6,7 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "fb": "firebase",
+    "fb:version": "firebase --version",
+    "fb:login": "firebase login",
+    "fb:use": "firebase use",
+    "fb:projects": "firebase projects:list",
+    "fb:deploy:functions": "firebase deploy --only functions",
+    "fb:deploy:contact": "firebase deploy --only functions:submitContactInquiry",
+    "fb:emulators": "firebase emulators:start"
   },
   "dependencies": {
     "firebase": "^12.13.0",
@@ -24,6 +32,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "firebase-tools": "15.19.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -2541,7 +2541,7 @@ export const de = {
     highlight: "für Ihre Transportanfrage",
     intro:
       "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
-
+  
     form: {
       nameLabel: "Name",
       companyLabel: "Firma",
@@ -2560,6 +2560,7 @@ export const de = {
 
       submitLabel: "Nachricht senden",
       sendingLabel: "Nachricht wird gesendet ...",
+      submittedLabel: "Nachricht versendet",
 
       validationRequired: "Bitte füllen Sie Name, E-Mail und Nachricht aus.",
       validationEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
