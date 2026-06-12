@@ -1,74 +1,106 @@
 import type { ServicePageContent } from "./types";
 
 export const customsService: ServicePageContent = {
-  slug: "zoll-dokumente",
-  badge: "Zoll & Dokumente",
+  slug: "zollabwicklung",
+  badge: "Zollabwicklung",
   seo: {
-    title: "Zoll & Dokumente für internationale Transporte | GLOBALSPED",
+    title: "Zollabwicklung für Drittstaaten | GLOBALSPED",
     description:
-      "GLOBALSPED unterstützt bei Zollabwicklung, Exportdokumenten, Transitunterlagen, T1, CMR und Ausfuhrprozessen für Transporte nach Zentralasien, Kaukasus und Osteuropa.",
+      "GLOBALSPED unterstützt bei Zollabwicklung, Ausfuhr, Import, Transit, T1, ABD, CMR und Dokumentenprüfung für Transporte nach Zentralasien, Kaukasus und Osteuropa.",
   },
   hero: {
-    title: "Zoll & Dokumente",
-    highlight: "für internationale Transporte in anspruchsvolle Zielmärkte",
+    title: "Zollabwicklung",
+    highlight: "für Transporte in Drittstaaten",
     intro:
-      "Internationale Transporte nach Zentralasien, Kaukasus und Osteuropa stehen und fallen mit vollständigen Unterlagen. GLOBALSPED unterstützt Unternehmen bei Export-, Transit- und Transportdokumenten für komplexe Routen.",
+      "GLOBALSPED unterstützt Unternehmen bei der professionellen Zollabwicklung für internationale Transporte nach Zentralasien, in den Kaukasus, nach Osteuropa und in den Mittleren Osten. Wir begleiten Export-, Import- und Transitprozesse, prüfen transportrelevante Angaben und koordinieren die Abstimmung zwischen Versendern, Empfängern, Fahrern, Zollpartnern und internationalen Netzwerkpartnern.",
   },
   trust: {
-    title: "Dokumentenkompetenz für schwierige Märkte",
+    title: "Zoll- und Dokumentenkompetenz für anspruchsvolle Zielmärkte",
     text:
-      "Fehlende Angaben, unklare Warenbeschreibungen oder fehlerhafte Zollunterlagen können Transporte erheblich verzögern. Besonders bei Drittlandtransporten ist eine saubere Vorbereitung entscheidend.",
+      "Bei Drittlandtransporten entscheiden vollständige und widerspruchsfreie Unterlagen oft darüber, ob ein Transport planbar läuft oder an Zollstellen, Grenzen oder beim Empfänger verzögert wird. Besonders auf Routen nach Zentralasien, in den Kaukasus und in weitere komplexe Märkte ist eine saubere Vorbereitung vor Transportstart entscheidend.",
     items: [
-      "Unterstützung bei Export- und Transitdokumenten",
-      "Abstimmung von Empfänger-, Waren- und Packstückdaten",
-      "Erfahrung mit Drittlandtransporten",
-      "Fokus auf Zentralasien, Kaukasus und Osteuropa",
+      "Unterstützung bei Export-, Import- und Transitprozessen",
+      "Prüfung von Waren-, Packstück-, Gewichts- und Empfängerdaten",
+      "Abstimmung zwischen Versender, Empfänger, Fahrer und Zollpartnern",
+      "Erfahrung mit Drittlandtransporten nach Zentralasien, Kaukasus, Osteuropa und Mittlerem Osten",
+    ],
+  },
+  useCases: {
+    title: "Unsere Unterstützung bei Export, Import und Transit",
+    text:
+      "GLOBALSPED begleitet die operative Vorbereitung und Koordination der Zollabwicklung entlang internationaler Transportketten. Der Fokus liegt auf vollständigen Daten, klarer Kommunikation und einer möglichst reibungslosen Abwicklung vor, während und nach dem Transport.",
+    items: [
+      {
+        title: "Export & Ausfuhr",
+        text:
+          "Unterstützung bei Ausfuhrbegleitdokumenten, Handelsrechnung, Packliste, Warendaten und allen transportrelevanten Informationen für die Ausfuhr aus der EU in Drittstaaten.",
+      },
+      {
+        title: "Transitverfahren",
+        text:
+          "Koordination von Transitdokumenten wie T1 sowie Abstimmung mit Zollstellen und Zollpartnern entlang der Route – insbesondere bei Transporten nach Zentralasien, in den Kaukasus und in weitere Drittstaaten.",
+      },
+      {
+        title: "Import & Zielland",
+        text:
+          "Vorbereitung der notwendigen Informationen für Empfänger, Zollpartner und Behörden im Zielland, damit die Importabwicklung möglichst reibungslos vorbereitet werden kann.",
+      },
+      {
+        title: "Dokumentenprüfung",
+        text:
+          "Prüfung wichtiger Angaben wie Warenbeschreibung, Empfängeradresse, Kontaktperson, Packstücke, Gewichte, Maße, Rechnungsdaten und Transportdokumente vor Transportstart.",
+      },
     ],
   },
   services: {
-    title: "Leistungen im Bereich Zoll & Dokumente",
+    title: "Welche Unterlagen werden für die Zollabwicklung benötigt?",
     text:
-      "GLOBALSPED begleitet die operative Vorbereitung transportrelevanter Unterlagen und unterstützt bei der Abstimmung mit Kunden, Empfängern und Zollpartnern.",
+      "Je nach Ware, Route, Versandart und Zielland können unterschiedliche Dokumente erforderlich sein. Häufig relevant sind insbesondere folgende Unterlagen und Angaben:",
     items: [
-      "Ausfuhrbegleitdokumente und Exportangaben",
-      "T1 und Transitunterlagen",
-      "CMR-Frachtbrief und Transportdokumente",
-      "Prüfung von Packstück-, Gewichts- und Empfängerdaten",
+      "Handelsrechnung oder Proforma-Rechnung",
+      "Packliste mit Packstücken, Gewichten und Maßen",
+      "Ausfuhrbegleitdokument / ABD",
+      "T1 / Transitdokumente",
+      "CMR-Frachtbrief",
+      "Ursprungszeugnis oder Präferenznachweis, falls erforderlich",
+      "Zertifikate, Genehmigungen oder Lizenzen je nach Ware",
+      "Vollständige Empfängeradresse und Kontaktdaten im Zielland",
     ],
   },
   regions: {
-    title: "Relevante Zielregionen",
+    title: "Zollabwicklung für internationale Zielregionen",
     text:
-      "Bei Transporten in Drittstaaten unterscheiden sich Dokumentenanforderungen je nach Zielland, Route und Ware deutlich.",
+      "Die Anforderungen an Dokumente, Transitverfahren und Importvorbereitung unterscheiden sich je nach Zielland, Route und Warenart. GLOBALSPED unterstützt insbesondere bei Transporten in anspruchsvolle Drittstaaten und Transitmärkte.",
     items: [
       "Kasachstan und Usbekistan",
-      "Kirgisistan und Tadschikistan",
+      "Kirgisistan, Tadschikistan und Turkmenistan",
       "Georgien, Armenien und Aserbaidschan",
-      "Turkmenistan",
       "Mongolei",
-      "Irak und Ukraine",
+      "Irak und Mittlerer Osten",
+      "Ukraine und Osteuropa",
     ],
   },
   challenges: {
-    title: "Typische Dokumentenprobleme",
+    title: "Typische Risiken bei Zoll- und Transportdokumenten",
     text:
-      "Viele Verzögerungen entstehen nicht auf der Straße, sondern durch fehlende oder widersprüchliche Informationen vor Transportbeginn.",
+      "Viele Verzögerungen entstehen nicht durch die reine Fahrstrecke, sondern durch fehlende, unklare oder widersprüchliche Informationen vor Transportbeginn.",
     items: [
-      "Unvollständige Empfängerangaben",
-      "Fehlende Zolltarifnummern oder Warenbeschreibungen",
-      "Abweichende Gewichte und Packstückdaten",
-      "Unklare Zuständigkeiten bei Export- und Importprozessen",
+      "Unvollständige Empfängerangaben oder fehlende Kontaktpersonen",
+      "Unklare Warenbeschreibungen oder fehlende Warentarifnummern",
+      "Abweichende Packstückzahlen, Gewichte oder Maße in Rechnung, Packliste und CMR",
+      "Fehlende Ausfuhr-, Transit- oder Ursprungsdokumente",
+      "Unklare Zuständigkeiten zwischen Exporteur, Empfänger, Fahrer und Zollpartnern",
     ],
   },
   solutions: {
-    title: "Praktische Lösungen",
+    title: "Praktische Lösungen durch strukturierte Vorbereitung",
     text:
-      "GLOBALSPED legt Wert auf klare Daten, frühzeitige Abstimmung und vollständige Transportinformationen, bevor die Ware unterwegs ist.",
+      "GLOBALSPED legt Wert auf klare Daten, frühzeitige Abstimmung und vollständige Transportinformationen, bevor die Ware unterwegs ist. Dadurch lassen sich Rückfragen, Standzeiten und unnötige Verzögerungen deutlich reduzieren.",
     items: [
-      "Strukturierte Prüfung transportrelevanter Angaben",
-      "Abstimmung mit Versender und Empfänger",
-      "Unterstützung bei notwendigen Transportdokumenten",
-      "Reduzierung von Verzögerungen durch Vorbereitung",
+      "Strukturierte Prüfung transportrelevanter Angaben vor Abholung",
+      "Abgleich von Handelsrechnung, Packliste, CMR, ABD und Transitunterlagen",
+      "Frühzeitige Abstimmung mit Versender, Empfänger und Zollpartnern",
+      "Unterstützung bei FTL, LTL, Thermotransporten, Gefahrgut und Projektlogistik",
     ],
   },
   expertSection: {
@@ -87,22 +119,22 @@ export const customsService: ServicePageContent = {
       {
         title: "Warentarifnummer & Warenbeschreibung",
         text:
-          "Die Warentarifnummer ist eine zentrale Grundlage für Zollanmeldung, Exportkontrolle, Einfuhrabgaben, Verbote, Beschränkungen und statistische Erfassung. Eine allgemeine Warenbeschreibung wie „Maschinenteile“ reicht häufig nicht aus. Für die Prüfung werden präzise Angaben zu Material, Funktion, Verwendung, Menge, Gewicht, Ursprung und Warenwert benötigt. Fehlerhafte oder ungenaue Angaben können zu Nachfragen, Korrekturen oder Verzögerungen an Zollstellen führen.",
+          "Die Warentarifnummer ist eine zentrale Grundlage für Zollanmeldung, Exportkontrolle, Einfuhrabgaben, Verbote, Beschränkungen und statistische Erfassung. Eine allgemeine Warenbeschreibung wie „Maschinenteile“ reicht häufig nicht aus. Für die Prüfung werden präzise Angaben zu Material, Funktion, Verwendung, Menge, Gewicht, Ursprung und Warenwert benötigt.",
       },
       {
         title: "Ausfuhranmeldung, ABD & MRN",
         text:
-          "Bei Ausfuhren aus der EU in einen Nicht-EU-Staat ist je nach Warenwert, Verfahren und Beteiligten eine elektronische Ausfuhranmeldung erforderlich. Das Ausfuhrbegleitdokument und die MRN dienen der Identifikation und Nachverfolgung des Ausfuhrvorgangs. Für den Transport ist wichtig, dass die Daten aus Rechnung, Packliste, Ausfuhranmeldung und Transportdokumenten widerspruchsfrei zusammenpassen.",
+          "Bei Ausfuhren aus der EU in einen Nicht-EU-Staat ist je nach Warenwert, Verfahren und Beteiligten eine elektronische Ausfuhranmeldung erforderlich. Das Ausfuhrbegleitdokument und die MRN dienen der Identifikation und Nachverfolgung des Ausfuhrvorgangs. Wichtig ist, dass die Daten aus Rechnung, Packliste, Ausfuhranmeldung und Transportdokumenten widerspruchsfrei zusammenpassen.",
       },
       {
         title: "Ursprung, Präferenz & Nachweise",
         text:
-          "Ursprungsangaben und Präferenznachweise können für Einfuhrabgaben, Handelsabkommen, Importvorschriften und Empfängerdokumentation relevant sein. Ob ein Ursprungsnachweis, eine Ursprungserklärung, ein Präferenznachweis oder ein nichtpräferenzielles Ursprungszeugnis benötigt wird, hängt von Ware, Zielland, Handelsbeziehung und Importanforderungen ab. Eine frühe Klärung reduziert Rückfragen beim Empfänger und erleichtert die Importvorbereitung.",
+          "Ursprungsangaben und Präferenznachweise können für Einfuhrabgaben, Handelsabkommen, Importvorschriften und Empfängerdokumentation relevant sein. Ob ein Ursprungsnachweis, eine Ursprungserklärung, ein Präferenznachweis oder ein nichtpräferenzielles Ursprungszeugnis benötigt wird, hängt von Ware, Zielland, Handelsbeziehung und Importanforderungen ab.",
       },
       {
         title: "T1, NCTS & Transitverfahren",
         text:
-          "Bei bestimmten Transporten ist ein Versandverfahren erforderlich, damit Waren unter zollamtlicher Überwachung befördert werden können, ohne dass Abgaben an jeder Grenze erhoben werden. T1- und andere Transitverfahren werden heute digital über Systeme wie NCTS abgewickelt. Für die operative Planung sind Start- und Bestimmungszollstelle, Warenstatus, Sicherheiten, Route und vollständige Dokumentendaten entscheidend.",
+          "Bei bestimmten Transporten ist ein Versandverfahren erforderlich, damit Waren unter zollamtlicher Überwachung befördert werden können, ohne dass Abgaben an jeder Grenze erhoben werden. T1- und andere Transitverfahren werden digital über Systeme wie NCTS abgewickelt. Für die operative Planung sind Start- und Bestimmungszollstelle, Warenstatus, Sicherheiten, Route und vollständige Dokumentendaten entscheidend.",
       },
       {
         title: "Dokumentenabgleich vor Transportstart",
@@ -146,16 +178,17 @@ export const customsService: ServicePageContent = {
       "Die Angaben unterstützen die erste fachliche Einschätzung. In der Transportanfrage können Warenbeschreibung, Packstückdaten, Dokumente, Empfängerangaben und besondere Hinweise direkt übermittelt werden, damit GLOBALSPED Export-, Transit- und Transportdokumente frühzeitig auf Plausibilität prüfen kann.",
   },
   sidebar: {
-    title: "Zoll & Dokumente auf einen Blick",
+    title: "Zollabwicklung auf einen Blick",
     items: [
       "Export-, Import- und Transitunterstützung",
-      "T1, CMR und Ausfuhrdokumente",
+      "ABD, T1, CMR und transportrelevante Dokumente",
       "Dokumentenprüfung vor Transportstart",
-      "Wichtig für Zentralasien, Kaukasus und Drittstaaten",
+      "Zentralasien, Kaukasus, Osteuropa und Drittstaaten",
+      "Persönliche Abstimmung statt anonymer Standardabwicklung",
     ],
   },
   cta: {
-    primary: "Zollanforderungen prüfen",
+    primary: "Zollabwicklung anfragen",
     secondary: "Zurück zu Leistungen",
   },
 };

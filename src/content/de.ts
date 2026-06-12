@@ -5,7 +5,7 @@ export const de = {
       { label: "Start", href: "/{locale}" },
       { label: "Leistungen", href: "/{locale}#leistungen" },
       { label: "Destinationen", href: "/{locale}#destinationen" },
-      { label: "Zollabwicklung", href: "/{locale}#zollabwicklung" },
+      { label: "Zollabwicklung", href: "/{locale}/leistungen/zollabwicklung" },
       { label: "Über uns", href: "/{locale}#ueber-uns" },
       { label: "Jobs", href: "/{locale}#jobs" },
       { label: "Kontakt", href: "/{locale}#kontakt" },
@@ -350,7 +350,7 @@ export const de = {
           },
           {
             label: "Zoll & Dokumente für Exporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die interne Relevanz für Exportdokumente und Zollabwicklung.",
           },
@@ -503,7 +503,7 @@ export const de = {
         internalLinks: [
           {
             label: "Zoll & Dokumente für internationale Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die interne Themenverknüpfung zwischen Kasachstan-Transporten, Zollabwicklung und Exportdokumenten.",
           },
@@ -829,7 +829,7 @@ export const de = {
         internalLinks: [
           {
             label: "Zoll & Dokumente für internationale Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Thematisch passend für Transporte mit erhöhtem Dokumentationsbedarf.",
           },
@@ -1002,7 +1002,7 @@ export const de = {
         internalLinks: [
           {
             label: "Zoll & Dokumente für Transporte nach Zentralasien",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die semantische Verbindung zwischen Tadschikistan-Transporten und Zollkompetenz.",
           },
@@ -1342,7 +1342,7 @@ export const de = {
           },
           {
             label: "Zoll & Dokumente für Aserbaidschan-Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die interne Themenautorität für Zollabwicklung und Dokumente.",
           },
@@ -1509,7 +1509,7 @@ export const de = {
           },
           {
             label: "Zoll & Dokumente für internationale Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die semantische Verbindung zu Zoll- und Dokumentenkompetenz.",
           },
@@ -1676,7 +1676,7 @@ export const de = {
           },
           {
             label: "Zoll & Dokumente für Armenien-Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die thematische Verknüpfung mit Exportdokumenten und Zollabwicklung.",
           },
@@ -1839,7 +1839,7 @@ export const de = {
         internalLinks: [
           {
             label: "Zoll & Dokumente für Irak-Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Sehr relevant wegen erhöhter Anforderungen an Dokumente, Zollwerte und Compliance.",
           },
@@ -2184,7 +2184,7 @@ export const de = {
         internalLinks: [
           {
             label: "Zoll & Dokumente für Ukraine-Transporte",
-            href: "/de/leistungen/zoll-dokumente",
+            href: "/de/leistungen/zollabwicklung",
             reason:
               "Stärkt die interne Verbindung zu Exportdokumenten, Compliance und Zollabwicklung.",
           },
@@ -2202,62 +2202,6 @@ export const de = {
       },
     },
   ],
-  customs: {
-    badge: "Zollabwicklung",
-    title: "Zollabwicklung für Transporte in Drittstaaten",
-    highlight:
-      "nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
-    intro:
-      "GLOBALSPED unterstützt Unternehmen bei der professionellen Zollabwicklung für internationale Transporte in Drittstaaten. Wir begleiten Export-, Import- und Transitprozesse für Transporte nach Zentralasien, in den Kaukasus, nach Osteuropa und in den Mittleren Osten. Dazu gehören die Vorbereitung wichtiger Transport- und Zolldokumente, die Abstimmung mit Versendern, Empfängern, Fahrern und Zollpartnern sowie die Koordination entlang komplexer internationaler Routen.",
-    cta: {
-      href: "/de/transport-anfrage",
-      label: "Zollabwicklung anfragen",
-    },
-    processTitle: "Unsere Unterstützung bei Export, Import und Transit",
-    processItems: [
-      {
-        title: "Export & Ausfuhr",
-        text: "Unterstützung bei Ausfuhrbegleitdokumenten, Handelsrechnung, Packliste, Warendaten und allen relevanten Informationen für die Ausfuhr in Drittstaaten.",
-      },
-      {
-        title: "Transitverfahren",
-        text: "Koordination von Transitdokumenten wie T1 sowie Abstimmung mit Zollstellen entlang der Route – insbesondere bei Transporten nach Zentralasien und in den Kaukasus.",
-      },
-      {
-        title: "Import & Zielland",
-        text: "Vorbereitung der notwendigen Informationen für Empfänger, Zollpartner und Behörden im Zielland, damit die Importabwicklung möglichst reibungslos erfolgen kann.",
-      },
-      {
-        title: "Dokumentenprüfung",
-        text: "Prüfung wichtiger Angaben wie Warenbeschreibung, Empfängeradresse, Kontaktperson, Packstücke, Gewichte, Maße, Rechnungsdaten und Transportdokumente.",
-      },
-    ],
-
-    requiredTitle: "Welche Unterlagen werden für die Zollabwicklung benötigt?",
-    requiredIntro:
-      "Für internationale Transporte in Drittstaaten sind je nach Ware, Route und Zielland unterschiedliche Dokumente erforderlich. Häufig benötigt werden:",
-
-    requiredDocuments: [
-      "Handelsrechnung oder Proforma-Rechnung",
-      "Packliste mit Packstücken, Gewichten und Maßen",
-      "Ausfuhrbegleitdokument / ABD",
-      "T1 / Transitdokumente",
-      "CMR-Frachtbrief",
-      "Ursprungszeugnis oder Präferenznachweis, falls erforderlich",
-      "Zertifikate, Genehmigungen oder Lizenzen je nach Ware",
-      "Empfängeradresse und Kontaktdaten im Zielland",
-    ],
-
-    benefitTitle: "Warum GLOBALSPED für die Zollabwicklung?",
-    benefits: [
-      "Erfahrung mit Zollprozessen für Transporte nach Zentralasien, Kaukasus, Osteuropa und Mittlerer Osten",
-      "Persönliche Betreuung statt anonymer Standardabwicklung",
-      "Klare Abstimmung zwischen Versender, Empfänger, Fahrer und Zollpartnern",
-      "Reduzierung von Verzögerungen durch vollständige Dokumentenvorbereitung",
-      "Unterstützung bei Export-, Import- und Transitprozessen",
-      "Praktische Erfahrung mit FTL, LTL, Thermotransporten und Gefahrguttransporten",
-    ],
-  },
   services: {
     badge: "Unsere Leistungen",
     title: "Logistiklösungen für komplexe Märkte.",
@@ -2298,9 +2242,9 @@ export const de = {
       },
       {
         icon: "fileShield",
-        title: "Zoll & Dokumente",
-        text: "Komplette Zollabwicklung und Unterstützung bei allen erforderlichen Dokumenten für Export, Import und Transit.",
-        href: "/de/leistungen/zoll-dokumente",
+        title: "Zollabwicklung",
+        text: "Zollabwicklung, Export-, Import- und Transitunterstützung für internationale Transporte in Drittstaaten.",
+        href: "/de/leistungen/zollabwicklung",
       },
       {
         icon: "crane",
