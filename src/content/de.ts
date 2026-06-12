@@ -4,7 +4,7 @@ export const de = {
     nav: [
       { label: "Start", href: "/{locale}" },
       { label: "Leistungen", href: "/{locale}#leistungen" },
-      { label: "Destinationen", href: "/{locale}#destinationen" },
+      { label: "Zielländer", href: "/{locale}#ziellaender" },
       { label: "Zollabwicklung", href: "/{locale}/leistungen/zollabwicklung" },
       { label: "Über uns", href: "/{locale}#ueber-uns" },
       { label: "Jobs", href: "/{locale}#jobs" },
@@ -35,11 +35,11 @@ export const de = {
     },
 
     ctaSecondary: {
-      label: "Destinationen ansehen",
-      href: "/de/destinationen",
+      label: "Zielländer ansehen",
+      href: "/de/ziellaender",
     },
 
-    destinationsLabel: "Destinationen",
+    destinationsLabel: "Unsere Zielländer",
 
     destinations: [
       "Kasachstan",
@@ -105,7 +105,7 @@ export const de = {
     ],
   },
   destinations: {
-    badge: "Destinationen",
+    badge: "Unsere Zielländer",
     title: "Transporte nach Zentralasien,",
     highlight: "Kaukasus und Mittleren Osten",
     intro:
@@ -381,7 +381,7 @@ export const de = {
       ],
       cities: ["Astana", "Almaty", "Atyrau", "Aktau"],
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -705,7 +705,7 @@ export const de = {
       cities: ["Aschgabat", "Türkmenbaşy", "Mary"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -873,7 +873,7 @@ export const de = {
       cities: ["Duschanbe", "Chudschand", "Kulob"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -1045,7 +1045,7 @@ export const de = {
       cities: ["Ulaanbaatar", "Darkhan", "Erdenet"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in die",
         citiesTitle: "Wichtige Zielorte",
@@ -1213,7 +1213,7 @@ export const de = {
       cities: ["Baku", "Sumqayit", "Ganja"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -1379,7 +1379,7 @@ export const de = {
       cities: ["Tiflis", "Batumi", "Kutaissi"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -1546,7 +1546,7 @@ export const de = {
       cities: ["Jerewan", "Gjumri", "Vanadsor"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -1713,7 +1713,7 @@ export const de = {
       cities: ["Bagdad", "Erbil", "Basra"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in den",
         citiesTitle: "Wichtige Zielorte",
@@ -1881,7 +1881,7 @@ export const de = {
       cities: ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana", "Antalya"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in den",
         citiesTitle: "Wichtige Zielorte",
@@ -2054,7 +2054,7 @@ export const de = {
       cities: ["Kiew", "Lwiw", "Odessa", "Dnipro"],
 
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte in die",
         citiesTitle: "Wichtige Zielorte",
@@ -2541,7 +2541,7 @@ export const de = {
     highlight: "für Ihre Transportanfrage",
     intro:
       "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
-  
+
     form: {
       nameLabel: "Name",
       companyLabel: "Firma",
