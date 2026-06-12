@@ -64,9 +64,9 @@ export const metadataDe: LocaleMetadata = {
     },
 
     destinations: {
-      title: "Transportziele Zentralasien & Kaukasus | GLOBALSPED",
+      title: "Zielländer für internationale Transporte | GLOBALSPED",
       description:
-        "Übersicht der wichtigsten Zielregionen für internationale Transporte: Zentralasien, Kaukasus, Mittlerer Osten und Osteuropa.",
+        "Übersicht der wichtigsten Zielländer für internationale Transporte nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten.",
       path: "/de/ziellaender",
     },
 

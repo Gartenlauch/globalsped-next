@@ -20,15 +20,6 @@ function getCountryPath(locale: string, slug: string) {
   return `/${locale}/ziellaender/${slug}`;
 }
 
-export async function generateStaticParams() {
-  const countryPages = getContent("de").countryPages ?? [];
-
-  return countryPages.map((page) => ({
-    locale: "de",
-    slug: page.slug,
-  }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const metadata = getMetadataContent(locale);
@@ -56,9 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DynamicTargetCountryPage({ params }: Props) {
   const { locale, slug } = await params;
-  const page = getContent(locale).countryPages?.find(
-    (countryPage) => countryPage.slug === slug
-  );
+  const page = getContent(locale).countryPages?.find((p) => p.slug === slug);
   const metadata = getMetadataContent(locale);
   const countryMeta = metadata.countries[slug];
   const path = getCountryPath(locale, slug);

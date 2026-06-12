@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function DestinationsPage({ params }: Props) {
+export default async function TargetCountriesPage({ params }: Props) {
   const { locale } = await params;
   const metadata = getMetadataContent(locale);
   const pageMeta = metadata.pages.destinations;
@@ -30,7 +30,7 @@ export default async function DestinationsPage({ params }: Props) {
     <>
       <WebPageJsonLd
         locale={locale}
-        path={pageMeta.path}
+        path={`/${locale}/ziellaender`}
         name={pageMeta.title}
         description={pageMeta.description}
       />
@@ -38,7 +38,7 @@ export default async function DestinationsPage({ params }: Props) {
       <BreadcrumbJsonLd
         items={[
           { name: "Start", href: `/${locale}` },
-          { name: "Destinationen", href: pageMeta.path },
+          { name: "Zielländer", href: `/${locale}/ziellaender` },
         ]}
       />
 

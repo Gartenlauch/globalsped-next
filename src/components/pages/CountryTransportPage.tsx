@@ -65,7 +65,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               </Link>
 
               <Link
-                href={`/${locale}#destinationen`}
+                href={`/${locale}/ziellaender`}
                 className="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-white hover:text-[var(--color-global-dark)]"
               >
                 {page.labels.backToDestinations}

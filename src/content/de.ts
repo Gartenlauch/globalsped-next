@@ -39,7 +39,7 @@ export const de = {
       href: "/de/ziellaender",
     },
 
-    destinationsLabel: "Unsere Zielländer",
+    destinationsLabel: "Zielländer",
 
     destinations: [
       "Kasachstan",
@@ -104,12 +104,97 @@ export const de = {
       },
     ],
   },
-  destinations: {
-    badge: "Unsere Zielländer",
-    title: "Transporte nach Zentralasien,",
-    highlight: "Kaukasus und Mittleren Osten",
+  homeTeasers: {
+    badge: "Schnelle Orientierung",
+    title: "Internationale Logistik",
+    highlight: "gezielt finden",
     intro:
-      "Globalsped organisiert internationale Transporte von Europa in anspruchsvolle Zielmärkte. Wir verbinden Erfahrung, zuverlässige Partnernetzwerke und professionelle Zollabwicklung für FTL, LTL, Thermotransporte und Projekttransporte.",
+      "Die Startseite gibt Ihnen einen kompakten Überblick. Für detaillierte Informationen führen die folgenden Einstiege direkt zu den wichtigsten GLOBALSPED Bereichen: Leistungen, Zielländer und Karriere.",
+
+    items: [
+      {
+        id: "leistungen",
+        anchorId: "leistungen",
+        icon: "truck",
+        eyebrow: "Leistungen",
+        title:
+          "Transportlösungen für Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten",
+        text:
+          "GLOBALSPED organisiert FTL-Komplettladungen, LTL-Teilladungen, Thermotransporte, Gefahrguttransporte, Projektlogistik und Zollabwicklung für Unternehmen mit anspruchsvollen Export- und Importzielen.",
+        bullets: [
+          "FTL, LTL, Thermo, ADR und Projektlogistik",
+          "Zollabwicklung, Export, Import und Transit",
+          "Persönliche Betreuung statt anonymer Plattformabwicklung",
+        ],
+        cta: {
+          label: "Leistungen ansehen",
+          href: "/{locale}/leistungen",
+        },
+        image: {
+          src: "/images/home-teasers/globalsped-teaser-leistungen-internationale-transporte-1600x1000.webp",
+          alt: "GLOBALSPED LKW auf internationaler Transportroute nach Zentralasien",
+        },
+        imageLabel: "FTL · LTL · Zoll · Projektlogistik",
+      },
+      {
+        id: "ziellaender",
+        anchorId: "ziellaender",
+        icon: "globe",
+        eyebrow: "Zielländer",
+        title:
+          "Transporte nach Kasachstan, Usbekistan, Kaukasus und weitere Drittstaaten",
+        text:
+          "Unsere Zielländer umfassen Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten. GLOBALSPED unterstützt Unternehmen bei internationalen Transporten in komplexe Märkte inklusive Routenplanung, Dokumentenprüfung, Transitabwicklung und Zollkoordination.",
+        bullets: [
+          "Kasachstan, Usbekistan, Kirgisistan, Tadschikistan und Turkmenistan",
+          "Georgien, Armenien und Aserbaidschan",
+          "Irak, Mongolei, Ukraine und weitere Zielmärkte",
+        ],
+        cta: {
+          label: "Zielländer ansehen",
+          href: "/{locale}/ziellaender",
+        },
+        image: {
+          src: "/images/home-teasers/globalsped-teaser-ziellaender-zentralasien-kaukasus-1600x1000.webp",
+          alt: "Internationale Transportrouten von Europa nach Zentralasien und in den Kaukasus",
+        },
+        imageLabel: "Europa → Zentralasien & Kaukasus",
+      },
+      {
+        id: "jobs",
+        anchorId: "jobs",
+        icon: "briefcase",
+        eyebrow: "Karriere",
+        title:
+          "Jobs in der internationalen Spedition für Menschen, die Verantwortung übernehmen",
+        text:
+          "Bei GLOBALSPED arbeiten Sie an echten internationalen Transportlösungen. Unsere Aufgaben verbinden Kundenkontakt, Exportabwicklung, Zollunterlagen, Organisationstalent und Teamarbeit in einem spezialisierten Logistikunternehmen.",
+        bullets: [
+          "Internationale Spedition mit persönlicher Zusammenarbeit",
+          "Aufgaben in Export, Import, Zoll und Transportkoordination",
+          "Direkter Kundenkontakt und Entwicklungsmöglichkeiten",
+        ],
+        cta: {
+          label: "Jobs ansehen",
+          href: "/{locale}/jobs",
+        },
+        image: {
+          src: "/images/home-teasers/globalsped-teaser-jobs-spedition-logistik-team-1600x1000.webp",
+          alt: "GLOBALSPED Team bei der Planung internationaler Transporte",
+        },
+        imageLabel: "Karriere bei GLOBALSPED",
+      },
+    ],
+  },
+  destinations: {
+    badge: "Zielländer",
+    title: "Zielländer für internationale Transporte",
+    highlight: "nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
+    intro:
+      "GLOBALSPED organisiert internationale Transporte von Europa in anspruchsvolle Zielländer. Unsere Schwerpunkte liegen auf Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Routenplanung, Zollabwicklung, Dokumentenprüfung und persönlicher Transportkoordination.",
+
+    countryRouteBase: "/{locale}/ziellaender",
+    countrySlugPrefix: "transport-",
 
     regions: [
       {
@@ -189,10 +274,9 @@ export const de = {
       },
     ],
 
-    countryGridTitle: "Ausgewählte Zielländer",
+    countryGridTitle: "Wichtige Zielländer für internationale Transporte",
     countryGridIntro:
-      "Unsere wichtigsten Zielmärkte für internationale Transporte, FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung.",
-
+      "Unsere wichtigsten Transportziele für FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung – mit Fokus auf Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten.",
     cta: {
       label: "Transport anfragen",
       href: "/de/transport-anfrage",
@@ -219,7 +303,7 @@ export const de = {
       ],
       cities: ["Taschkent", "Samarkand", "Kokand", "Navoi"],
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -540,7 +624,7 @@ export const de = {
       ],
       cities: ["Bischkek", "Osch", "Dschalalabat"],
       labels: {
-        backToDestinations: "Zurück zu Destinationen",
+        backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
         logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
         citiesTitle: "Wichtige Zielorte",
@@ -2620,17 +2704,17 @@ export const de = {
 
     transportsTitle: "Main Transporte",
     transports: [
-      { label: "Transport Usbekistan", href: "/de/transport-usbekistan" },
-      { label: "Transport Kasachstan", href: "/de/transport-kasachstan" },
-      { label: "Transport Kirgisistan", href: "/de/transport-kirgisistan" },
-      { label: "Transport Turkmenistan", href: "/de/transport-turkmenistan" },
-      { label: "Transport Tadschikistan", href: "/de/transport-tadschikistan" },
-      { label: "Transport Mongolei", href: "/de/transport-mongolei" },
-      { label: "Transport Aserbaidschan", href: "/de/transport-aserbaidschan" },
-      { label: "Transport Georgien", href: "/de/transport-georgien" },
-      { label: "Transport Armenien", href: "/de/transport-armenien" },
-      { label: "Transport Irak", href: "/de/transport-irak" },
-      { label: "Transport Ukraine", href: "/de/transport-ukraine" },
+      { label: "Transport Usbekistan", href: "/de/ziellaender/transport-usbekistan" },
+      { label: "Transport Kasachstan", href: "/de/ziellaender/transport-kasachstan" },
+      { label: "Transport Kirgisistan", href: "/de/ziellaender/transport-kirgisistan" },
+      { label: "Transport Turkmenistan", href: "/de/ziellaender/transport-turkmenistan" },
+      { label: "Transport Tadschikistan", href: "/de/ziellaender/transport-tadschikistan" },
+      { label: "Transport Mongolei", href: "/de/ziellaender/transport-mongolei" },
+      { label: "Transport Aserbaidschan", href: "/de/ziellaender/transport-aserbaidschan" },
+      { label: "Transport Georgien", href: "/de/ziellaender/transport-georgien" },
+      { label: "Transport Armenien", href: "/de/ziellaender/transport-armenien" },
+      { label: "Transport Irak", href: "/de/ziellaender/transport-irak" },
+      { label: "Transport Ukraine", href: "/de/ziellaender/transport-ukraine" },
     ],
 
     membershipsTitle: "Mitgliedschaften & Standards",

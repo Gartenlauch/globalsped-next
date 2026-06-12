@@ -1,14 +1,11 @@
 import { HeroSection } from "@/components/sections/HeroSection";
-import { DestinationsSection } from "@/components/sections/DestinationsSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
+import { HomeTeaserSection } from "@/components/sections/HomeTeaserSection";
 import { AboutUsSection } from "@/components/sections/AboutUsSection";
-import { JobsSection } from "@/components/sections/JobsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { absoluteUrl } from "@/lib/seo/urls";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { getMetadataContent } from "@/content/metadata";
-
 
 
 type Props = {
@@ -40,10 +37,8 @@ export default async function HomePage({ params }: Props) {
         ]}
       />
       <HeroSection locale={locale} />
-      <DestinationsSection locale={locale} />
-      <ServicesSection locale={locale} />
+      <HomeTeaserSection locale={locale} />
       <AboutUsSection locale={locale} />
-      <JobsSection locale={locale} />
       <ContactSection locale={locale} />
 
     </>

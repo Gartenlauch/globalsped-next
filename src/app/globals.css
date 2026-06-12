@@ -298,3 +298,62 @@ h3,
   --cc-cookie-category-block-hover-bg: rgba(255, 255, 255, 0.1);
 
 }
+@keyframes homeTeaserSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes homeTeaserFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes homeTeaserShimmer {
+  0% {
+    background-position: 180% 0;
+  }
+
+  100% {
+    background-position: -180% 0;
+  }
+}
+
+.home-teaser-card {
+  animation: homeTeaserSlideIn 0.7s ease-out both;
+}
+
+.home-teaser-float {
+  animation: homeTeaserFloat 7s ease-in-out infinite;
+}
+
+.home-teaser-shimmer {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.75) 42%,
+    rgba(255, 255, 255, 0.25) 78%
+  );
+  background-size: 220% 100%;
+  animation: homeTeaserShimmer 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-teaser-card,
+  .home-teaser-float,
+  .home-teaser-shimmer {
+    animation: none;
+  }
+}

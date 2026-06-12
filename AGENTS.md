@@ -35,12 +35,16 @@ Homepage:
 Separate pages:
 - /de/anfrage
 - /de/faq
-- /de/destinationen
+- /de/ziellaender
 - /de/leistungen
 - /de/zollabwicklung
-- /de/ueber-uns
-- /de/kontakt
-- /de/transport-[country] dynamic page for contries
+- /de/leistungen/ftl-komplettladungen
+- /de/leistungen/ltl-teilladungen
+- /de/leistungen/thermotransporte
+- /de/leistungen/gefahrguttransporte
+- /de/leistungen/zollabwicklung
+- /de/leistungen/projektlogistik
+- /de/ziellaender/transport-[country] dynamic page for contries
 
 countries = kasachstan, ksbekistan, kirgisistan, turkmenistan, tadschikistan, aserbaidschan, georgien, armenien, mongolei, irak
 

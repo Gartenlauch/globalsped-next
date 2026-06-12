@@ -15,6 +15,10 @@ const regionIcons = {
 
 export function DestinationsSection({ locale }: Props) {
   const t = getContent(locale).destinations;
+
+  const countryRouteBase = t.countryRouteBase.replace("{locale}", locale);
+  const countrySlugPrefix = t.countrySlugPrefix;
+
   const allCountries = t.regions.flatMap((region) =>
     region.countries.map((country) => ({
       ...country,
@@ -24,7 +28,7 @@ export function DestinationsSection({ locale }: Props) {
 
   return (
     <section
-      id="destinationen"
+      id="ziellaender"
       className="relative overflow-hidden bg-[var(--color-global-deep)] py-24 text-white"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(163,230,53,0.14),transparent_32%),linear-gradient(135deg,rgba(0,40,31,1),rgba(0,59,47,0.94))]" />
@@ -84,14 +88,15 @@ export function DestinationsSection({ locale }: Props) {
 
                   <ul className="mt-5 grid gap-2 text-sm font-semibold text-white/90">
                     {region.countries.map((country) => {
-                      if(country.slug==='ukraine')
+                      if (country.slug === 'ukraine')
                         return null
                       return (
-                      <li key={country.slug} className="flex items-center gap-3">
-                        <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_12px_rgba(163,230,53,0.85)]" />
-                        {country.name}
-                      </li>
-                    )})}
+                        <li key={country.slug} className="flex items-center gap-3">
+                          <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_12px_rgba(163,230,53,0.85)]" />
+                          {country.name}
+                        </li>
+                      )
+                    })}
                   </ul>
                 </div>
               </article>
@@ -119,10 +124,10 @@ export function DestinationsSection({ locale }: Props) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {allCountries.map((country) => (
               <Link
-              href={`/${locale}/transport-${country.slug}`}
-              key={country.slug}
-              className="group relative h-[210px] overflow-hidden rounded-2xl border border-white/12 bg-white/8 shadow-[0_20px_60px_rgba(0,0,0,0.30)]"
-            >
+                href={`${countryRouteBase}/${countrySlugPrefix}${country.slug}`}
+                key={country.slug}
+                className="group relative h-[210px] overflow-hidden rounded-2xl border border-white/12 bg-white/8 shadow-[0_20px_60px_rgba(0,0,0,0.30)]"
+              >
                 <Image
                   src={`/images/countries/${country.slug}.jpg`}
                   alt={`Transport nach ${country.name}`}
@@ -136,9 +141,9 @@ export function DestinationsSection({ locale }: Props) {
                   <div className="mb-2 flex items-center gap-2 text-lime-300">
                     <MapPin size={16} />
                     <span className="text-xs font-bold uppercase tracking-wide">
-                      {country.name==="Ukraine"
-                      ? "Osteuropa"
-                      : country.region}
+                      {country.name === "Ukraine"
+                        ? "Osteuropa"
+                        : country.region}
                     </span>
                   </div>
 
