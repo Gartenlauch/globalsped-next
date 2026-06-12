@@ -2544,14 +2544,30 @@ export const de = {
 
     form: {
       nameLabel: "Name",
+      companyLabel: "Firma",
       emailLabel: "E-Mail",
+      phoneLabel: "Telefon",
       messageLabel: "Nachricht",
+
       namePlaceholder: "Ihr Name",
+      companyPlaceholder: "Ihre Firma",
       emailPlaceholder: "Ihre E-Mail-Adresse",
+      phonePlaceholder: "Ihre Telefonnummer",
       messagePlaceholder: "Ihre Nachricht",
+
+      privacyLabel:
+        "Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Kontaktanfrage verarbeitet werden.",
+
       submitLabel: "Nachricht senden",
-      validationRequired: "Bitte füllen Sie alle Felder aus.",
-      successMessage: "Vielen Dank. Ihre Nachricht wurde versendet.",
+      sendingLabel: "Nachricht wird gesendet ...",
+
+      validationRequired: "Bitte füllen Sie Name, E-Mail und Nachricht aus.",
+      validationEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      privacyRequired: "Bitte bestätigen Sie die Datenschutz-Hinweise.",
+      submitError:
+        "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.",
+      successMessage:
+        "Vielen Dank. Ihre Nachricht wurde versendet.",
     },
 
     locationsTitle: "Unsere Standorte",

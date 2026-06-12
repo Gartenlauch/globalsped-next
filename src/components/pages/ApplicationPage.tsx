@@ -150,24 +150,17 @@ export function ApplicationPage({ locale }: Props) {
       const filePath = `applications/${applicationId}/${cleanFileName}`;
       const fileRef = ref(storage, filePath);
   
-      console.log("Uploading file:", filePath);
-  
       await uploadBytes(fileRef, file, {
         contentType: file.type,
       });
-  
-      console.log("File uploaded");
-  
+
       const downloadUrl = await getDownloadURL(fileRef);
-  
-      console.log("Download URL created");
   
       const submitApplicationCallable = httpsCallable(
         functions,
         "submitApplication"
       );
   
-      console.log("Calling submitApplication function");
   
       await submitApplicationCallable({
         applicationId,

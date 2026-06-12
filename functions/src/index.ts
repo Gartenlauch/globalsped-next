@@ -91,7 +91,7 @@ export const submitTransportLead = onCall(
     const customerHtml = buildCustomerMailHtml(leadData);
 
     await db.collection("mail").add({
-      to: ["logistik@globalsped.de"],
+      to: ["transport@globalsped.de"],
       message: {
         subject: `Neue Transportanfrage von ${data.contact.company}`,
         html: internalHtml,
@@ -214,7 +214,7 @@ export const submitApplication = onCall(
     await applicationRef.set(applicationData);
 
     await db.collection("mail").add({
-      to: ["logistik@globalsped.de"],
+      to: ["transport@globalsped.de"],
       message: {
         subject: `Neue Bewerbung von ${data.applicant.firstName} ${data.applicant.lastName}`,
         html: buildInternalApplicationMailHtml(
@@ -304,4 +304,156 @@ function buildApplicantConfirmationMailHtml(data: any) {
     <p>wir haben Ihre Bewerbung erhalten. Das GLOBALSPED Team prüft Ihre Unterlagen und meldet sich schnellstmöglich bei Ihnen.</p>
     <p>Mit freundlichen Grüßen<br/>GLOBALSPED Internationale Logistik</p>
   `;
+}
+
+// Contact Form ------------------------------------------------
+
+
+type ContactInquiryPayload = {
+  locale?: string;
+  pagePath?: string;
+  contact?: {
+    name?: string;
+    company?: string;
+    email?: string;
+    phone?: string;
+    message?: string;
+  };
+  meta?: {
+    honeypot?: string;
+    userAgent?: string;
+  };
+};
+
+export const submitContactInquiry = onCall(
+  {
+    region: "europe-west3",
+    maxInstances: 10,
+  },
+  async (request) => {
+    const data = request.data as ContactInquiryPayload;
+    const contact = data.contact ?? {};
+
+    // Einfacher Honeypot gegen primitive Bots.
+    // Wenn das versteckte Feld gefüllt ist, tun wir nach außen so,
+    // als wäre alles erfolgreich, speichern aber nichts.
+    if (data.meta?.honeypot) {
+      return {
+        success: true,
+        ignored: true,
+      };
+    }
+
+    if (!contact.name || !contact.email || !contact.message) {
+      throw new HttpsError("invalid-argument", "Pflichtfelder fehlen.");
+    }
+
+    if (!isValidEmail(contact.email)) {
+      throw new HttpsError("invalid-argument", "Ungültige E-Mail-Adresse.");
+    }
+
+    const now = admin.firestore.FieldValue.serverTimestamp();
+    const contactRef = db.collection("leads").doc();
+
+    const contactData = {
+      source: "homepage",
+      leadTag: "homepage",
+      type: "contact_inquiry",
+      status: "new",
+      priority: "normal",
+      createdAt: now,
+      updatedAt: now,
+      locale: data.locale || "de",
+      pagePath: data.pagePath || "/de#kontakt",
+      contact: {
+        name: contact.name,
+        company: contact.company || "",
+        email: contact.email,
+        phone: contact.phone || "",
+        message: contact.message,
+      },
+      meta: {
+        channel: "website",
+        formName: "contact_form",
+        sourceSystem: "globalsped-next",
+        userAgent: data.meta?.userAgent || "",
+      },
+      emailStatus: {
+        internalQueued: true,
+        customerQueued: true,
+      },
+    };
+
+    await contactRef.set(contactData);
+
+    await db.collection("mail").add({
+      to: ["transport@globalsped.de"],
+      message: {
+        subject: `Neue Kontaktanfrage von ${contact.name}`,
+        html: buildInternalContactMailHtml(contactRef.id, contactData),
+      },
+      leadId: contactRef.id,
+      type: "internal_contact_inquiry",
+      createdAt: now,
+    });
+
+    await db.collection("mail").add({
+      to: [contact.email],
+      message: {
+        subject: "Ihre Kontaktanfrage bei GLOBALSPED",
+        html: buildContactConfirmationMailHtml(contactData),
+      },
+      leadId: contactRef.id,
+      type: "customer_contact_confirmation",
+      createdAt: now,
+    });
+
+    return {
+      success: true,
+      leadId: contactRef.id,
+    };
+  }
+);
+
+function buildInternalContactMailHtml(leadId: string, data: any) {
+  return `
+    <h2>Neue Kontaktanfrage über die Webseite</h2>
+
+    <p><strong>Lead-ID:</strong> ${escapeHtml(leadId)}</p>
+
+    <h3>Kontaktdaten</h3>
+    <p><strong>Name:</strong> ${escapeHtml(data.contact.name)}</p>
+    <p><strong>Firma:</strong> ${escapeHtml(data.contact.company)}</p>
+    <p><strong>E-Mail:</strong> ${escapeHtml(data.contact.email)}</p>
+    <p><strong>Telefon:</strong> ${escapeHtml(data.contact.phone)}</p>
+
+    <h3>Nachricht</h3>
+    <p>${escapeHtml(data.contact.message).replace(/\n/g, "<br />")}</p>
+
+    <h3>Meta</h3>
+    <p><strong>Sprache:</strong> ${escapeHtml(data.locale)}</p>
+    <p><strong>Seite:</strong> ${escapeHtml(data.pagePath)}</p>
+  `;
+}
+
+function buildContactConfirmationMailHtml(data: any) {
+  return `
+    <h2>Vielen Dank für Ihre Kontaktanfrage</h2>
+
+    <p>Sehr geehrte/r ${escapeHtml(data.contact.name)},</p>
+
+    <p>
+      wir haben Ihre Nachricht erhalten. Das GLOBALSPED Team prüft Ihre Anfrage
+      und meldet sich schnellstmöglich bei Ihnen.
+    </p>
+
+    <p><strong>Ihre Nachricht:</strong></p>
+    <p>${escapeHtml(data.contact.message).replace(/\n/g, "<br />")}</p>
+
+    <p>Mit freundlichen Grüßen<br />GLOBALSPED Internationale Logistik</p>
+  `;
+}
+
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
