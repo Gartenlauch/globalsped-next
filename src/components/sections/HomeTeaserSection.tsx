@@ -70,29 +70,39 @@ export function HomeTeaserSection({ locale }: Props) {
                 style={{ animationDelay: `${index * 120}ms` }}
                 className="home-teaser-card scroll-mt-28 overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-[0_28px_90px_rgba(0,40,31,0.12)]"
               >
-                <div className="grid lg:grid-cols-2">
+                <div className="grid lg:grid-cols-2 lg:items-stretch">
                   <div
-                    className={`group relative min-h-[330px] overflow-hidden bg-slate-200 md:min-h-[430px] ${
-                      isReverse ? "lg:order-2" : ""
-                    }`}
+                    className={`group relative min-h-[380px] overflow-hidden bg-[var(--color-global-dark)] md:min-h-[520px] lg:h-full ${isReverse ? "lg:order-2" : ""
+                      }`}
                   >
-                    {!isLoaded && (
-                      <div className="home-teaser-shimmer absolute inset-0" />
-                    )}
+                    {!isLoaded && <div className="home-teaser-shimmer absolute inset-0" />}
+
+                    <Image
+                      src={item.image.src}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      quality={45}
+                      className="scale-110 object-cover opacity-55 blur-2xl"
+                      priority={index === 0}
+                    />
+
+                    <div className="absolute inset-0 bg-[rgba(0,40,31,0.28)]" />
 
                     <Image
                       src={item.image.src}
                       alt={item.image.alt}
-                      quality={72}
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"
-                      className={`object-cover transition duration-700 group-hover:scale-105 ${
-                        isLoaded ? "opacity-100" : "opacity-0"
-                      }`}
+                      quality={72}
+                      className={`object-contain transition duration-700 group-hover:scale-[1.015] ${isLoaded ? "opacity-100" : "opacity-0"
+                        }`}
                       onLoad={() => markLoaded(item.id)}
+                      priority={index === 0}
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/28 via-transparent to-black/10" />
 
                     <div className="home-teaser-float absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/14 p-5 text-white shadow-[0_20px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl">
                       <div className="flex items-center gap-3">
