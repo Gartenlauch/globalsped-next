@@ -1,6 +1,4 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { HomeTeaserSection } from "@/components/sections/HomeTeaserSection";
-import { AboutUsSection } from "@/components/sections/AboutUsSection";
+import { PremiumHomePage } from "@/components/home-premium/PremiumHomePage";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { absoluteUrl } from "@/lib/seo/urls";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
@@ -36,9 +34,7 @@ export default async function HomePage({ params }: Props) {
           },
         ]}
       />
-      <HeroSection locale={locale} />
-      <HomeTeaserSection locale={locale} />
-      <AboutUsSection locale={locale} />
+      <PremiumHomePage locale={locale} />
       <ContactSection locale={locale} />
 
     </>
