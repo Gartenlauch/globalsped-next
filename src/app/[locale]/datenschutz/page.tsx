@@ -63,7 +63,7 @@ export default async function DatenschutzPage({ params }: Props) {
                 {content.badge}
               </p>
 
-              <h1 className="mt-4 text-4xl font-black uppercase leading-tight md:text-6xl">
+              <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
                 {content.title}
               </h1>
 
@@ -83,7 +83,7 @@ export default async function DatenschutzPage({ params }: Props) {
                   id={section.id}
                   className="rounded-[28px] border border-white/12 bg-white/[0.04] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-xl md:p-7"
                 >
-                  <h2 className="text-xl font-black uppercase text-lime-300 md:text-2xl">
+                  <h2 className="text-xl font-black text-lime-300 md:text-2xl">
                     {section.title}
                   </h2>
 

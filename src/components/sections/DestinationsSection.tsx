@@ -39,7 +39,7 @@ export function DestinationsSection({ locale }: Props) {
             {t.badge}
           </p>
 
-          <h2 className="text-[30px] font-black uppercase leading-[1.05] md:text-[38px]">
+          <h2 className="text-[30px] font-black leading-[1.05] md:text-[38px]">
             {t.title}
             <span className="block text-lime-300">{t.highlight}</span>
           </h2>
@@ -85,19 +85,6 @@ export function DestinationsSection({ locale }: Props) {
                   <p className="text-sm leading-6 text-white/84">
                     {region.subtitle}
                   </p>
-
-                  <ul className="mt-5 grid gap-2 text-sm font-semibold text-white/90">
-                    {region.countries.map((country) => {
-                      if (country.slug === 'ukraine')
-                        return null
-                      return (
-                        <li key={country.slug} className="flex items-center gap-3">
-                          <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_12px_rgba(163,230,53,0.85)]" />
-                          {country.name}
-                        </li>
-                      )
-                    })}
-                  </ul>
                 </div>
               </article>
             );

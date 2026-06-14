@@ -130,7 +130,7 @@ export function ContactSection({ locale }: Props) {
                         {t.badge}
                     </span>
 
-                    <h2 className="mt-4 text-4xl font-black uppercase tracking-tight md:text-5xl">
+                    <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
                         {t.title}{" "}
                         <span className="text-lime-300">{t.highlight}</span>
                     </h2>

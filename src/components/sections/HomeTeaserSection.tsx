@@ -46,7 +46,7 @@ export function HomeTeaserSection({ locale }: Props) {
             {t.badge}
           </span>
 
-          <h2 className="mt-4 text-4xl font-black uppercase tracking-tight text-[var(--color-global-dark)] md:text-5xl">
+          <h2 className="mt-4 text-4xl font-black tracking-tight text-[var(--color-global-dark)] md:text-5xl">
             {t.title}{" "}
             <span className="text-[var(--color-global-green)]">
               {t.highlight}

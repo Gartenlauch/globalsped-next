@@ -9,7 +9,34 @@ type Props = {
   locale: string;
 };
 
+type ProofCard = PremiumHomeContent["about"]["proofCards"][number];
+
+function CompactProofCard({ card }: { card: ProofCard }) {
+  const Icon = premiumIconMap[card.icon];
+
+  return (
+    <article className="rounded-[1.5rem] border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.065] p-5 text-[#f7f7f2] shadow-[0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+      <div className="flex items-start gap-4">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[#6b9f12]/25 bg-[#6b9f12]/10 text-[#9bc43a]">
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold leading-snug tracking-[-0.03em] text-white">
+            {card.title}
+          </h3>
+
+          <p className="mt-2 text-sm leading-6 text-[#f7f7f2]/64">
+            {card.text}
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function PremiumAboutSection({ content, locale }: Props) {
+  const [languageCard, generationCard, networkCard] = content.proofCards;
   return (
     <section
       id={content.id}
@@ -19,7 +46,7 @@ export function PremiumAboutSection({ content, locale }: Props) {
         <div className="max-w-xl">
           <PremiumEyebrow variant="light">{content.eyebrow}</PremiumEyebrow>
 
-          <h2 className="text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl">
+          <h2 className="text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
             {content.title}
           </h2>
 
@@ -59,68 +86,58 @@ export function PremiumAboutSection({ content, locale }: Props) {
         </div>
       </div>
 
-      <div className="relative min-h-[540px] overflow-hidden bg-[#00281f] lg:min-h-[620px]">
+      <div className="relative min-h-[500px] overflow-hidden bg-[#00281f] lg:min-h-[580px]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_42%,rgba(107,159,18,0.22),transparent_34%),linear-gradient(135deg,#00281f_0%,#003b2f_52%,#001b15_100%)]" />
 
         <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(247,247,242,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(247,247,242,0.18)_1px,transparent_1px)] [background-size:38px_38px]" />
 
-        <div className="relative z-10 flex min-h-[540px] items-center px-5 py-16 sm:px-8 lg:min-h-[620px] lg:px-12">
-          <div className="mx-auto grid w-full max-w-2xl gap-5">
-            {content.proofCards.map((card, index) => {
-              const Icon = premiumIconMap[card.icon];
-
-              return (
-                <article
-                  key={card.title}
-                  className={[
-                    "rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.08] p-6 text-[#f7f7f2] shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl",
-                    index === 1 ? "lg:ml-16" : "",
-                    index === 2 ? "lg:ml-8" : "",
-                  ].join(" ")}
-                >
-                  <div className="flex items-start gap-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#6b9f12]/30 bg-[#6b9f12]/10 text-[#9bc43a]">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
-                    </div>
-
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2
-                          className="h-4 w-4 text-[#9bc43a]"
-                          aria-hidden="true"
-                        />
-
-                        <h3 className="text-xl font-semibold leading-snug tracking-[-0.03em] text-white">
-                          {card.title}
-                        </h3>
-                      </div>
-
-                      <p className="mt-3 text-sm leading-6 text-[#f7f7f2]/68">
-                        {card.text}
-                      </p>
-
-                      {card.languages ? (
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {card.languages.map((language) => (
-                            <span
-                              key={language.name}
-                              title={language.name}
-                              className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-[#f7f7f2]/15 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
-                            >
-                              <span
-                                className={`fi fi-${language.flagCode} fis h-full w-full rounded-full bg-cover bg-center`}
-                                aria-hidden="true"
-                              />
-                              <span className="sr-only">{language.name}</span>
-                            </span>
-                          ))}
-                        </div>
-                      ) : null}
-                    </div>
+        <div className="relative z-10 flex min-h-[500px] items-center px-5 py-14 sm:px-8 lg:min-h-[580px] lg:px-12">
+          <div className="mx-auto grid w-full max-w-xl gap-4">
+            {languageCard ? (
+              <article className="rounded-[1.5rem] border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.075] p-5 text-[#f7f7f2] shadow-[0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[#6b9f12]/25 bg-[#6b9f12]/10 text-[#9bc43a]">
+                    {(() => {
+                      const Icon = premiumIconMap[languageCard.icon];
+                      return <Icon className="h-5 w-5" aria-hidden="true" />;
+                    })()}
                   </div>
-                </article>
-              );
-            })}
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg font-semibold leading-snug tracking-[-0.03em] text-white">
+                      {languageCard.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-6 text-[#f7f7f2]/64">
+                      {languageCard.text}
+                    </p>
+
+                    {languageCard.languages ? (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {languageCard.languages.map((language) => (
+                          <span
+                            key={language.name}
+                            title={language.name}
+                            className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-[#f7f7f2]/15 bg-white/10 shadow-[0_8px_22px_rgba(0,0,0,0.18)]"
+                          >
+                            <span
+                              className={`fi fi-${language.flagCode} fis h-full w-full rounded-full bg-cover bg-center`}
+                              aria-hidden="true"
+                            />
+                            <span className="sr-only">{language.name}</span>
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              </article>
+            ) : null}
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {generationCard ? <CompactProofCard card={generationCard} /> : null}
+              {networkCard ? <CompactProofCard card={networkCard} /> : null}
+            </div>
           </div>
         </div>
 

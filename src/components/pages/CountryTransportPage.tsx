@@ -50,7 +50,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.region}
             </p>
 
-            <h1 className="text-[34px] font-black uppercase leading-[1.05] md:text-[48px]">
+            <h1 className="text-[34px] font-black leading-[1.05] md:text-[48px]">
               {page.title}
               <span className="block text-lime-300">{page.highlight}</span>
             </h1>
@@ -87,7 +87,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.labels.introBadge}
             </p>
 
-            <h2 className="text-[28px] font-black uppercase leading-tight md:text-[38px]">
+            <h2 className="text-[28px] font-black leading-tight md:text-[38px]">
               {page.labels.logisticsTitlePrefix} {page.country}
             </h2>
 
@@ -249,7 +249,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.labels.authorityBadge}
             </p>
 
-            <h2 className="mt-3 text-[28px] font-black uppercase md:text-[36px]">
+            <h2 className="mt-3 text-[28px] font-black md:text-[36px]">
               {page.countryAuthorityContent.title}
             </h2>
 

@@ -226,7 +226,7 @@ export function ApplicationPage({ locale }: Props) {
               {t.badge}
             </p>
 
-            <h1 className="mt-4 text-4xl font-black uppercase leading-tight md:text-6xl">
+            <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
               {t.title}{" "}
               <span className="text-lime-300">{t.highlight}</span>
             </h1>
@@ -471,7 +471,7 @@ export function ApplicationPage({ locale }: Props) {
           <div className="max-w-[520px] rounded-[32px] border border-lime-300/25 bg-[var(--color-global-deep)] p-8 text-center shadow-[0_35px_120px_rgba(0,0,0,0.55)]">
             <CheckCircle2 className="mx-auto text-lime-300" size={54} />
 
-            <h2 className="mt-5 text-3xl font-black uppercase text-white">
+            <h2 className="mt-5 text-3xl font-black text-white">
               {t.success.title}
             </h2>
 

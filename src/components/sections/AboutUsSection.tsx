@@ -39,7 +39,7 @@ export function AboutUsSection({ locale }: Props) {
                             {t.badge}
                         </p>
 
-                        <h2 className="text-[30px] font-black uppercase leading-[1.05] md:text-[40px]">
+                        <h2 className="text-[30px] font-black leading-[1.05] md:text-[40px]">
                             {t.title}
                             <span className="block text-lime-300">{t.highlight}</span>
                         </h2>

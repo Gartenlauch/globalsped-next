@@ -35,14 +35,14 @@ export function PremiumFaqSection({ content, locale }: Props) {
           <PremiumCta cta={content.overviewCta} locale={locale} variant="secondary" />
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:auto-rows-fr xl:grid-cols-4">
           {content.items.map((item, index) => (
             <Link
-              key={item.href}
-              href={resolveHref(item.href, locale)}
-              className="group"
-            >
-              <article className="flex min-h-[290px] flex-col rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45">
+            key={item.href}
+            href={resolveHref(item.href, locale)}
+            className="group block h-full"
+          >
+             <article className="flex h-full flex-col rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45 lg:min-h-[290px]">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6b9f12]/30 bg-[#6b9f12]/10 text-[#9bc43a]">
                     {index === 0 ? (

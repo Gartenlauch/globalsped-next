@@ -29,7 +29,7 @@ export function ServicePage({ locale, service }: Props) {
             {service.badge}
           </p>
 
-          <h1 className="max-w-[980px] break-words text-[30px] font-black uppercase leading-[1.08] tracking-tight md:text-[54px]">
+          <h1 className="max-w-[980px] break-words text-[30px] font-black leading-[1.08] tracking-tight md:text-[54px]">
             {service.hero.title}
             <span className="block text-lime-300">
               {service.hero.highlight}
@@ -108,7 +108,7 @@ export function ServicePage({ locale, service }: Props) {
 
           <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
             <aside className="min-w-0 rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.76)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-6">
-              <h2 className="break-words text-lg font-black uppercase text-lime-300 md:text-xl">
+              <h2 className="break-words text-lg font-black text-lime-300 md:text-xl">
                 {service.sidebar.title}
               </h2>
 
@@ -200,7 +200,7 @@ function ServiceTemperatureSection({
           <p className="mb-1 text-xs font-black uppercase tracking-[0.22em] text-lime-300">
             {section.eyebrow}
           </p>
-          <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+          <h2 className="break-words text-[21px] font-black leading-tight text-white md:text-2xl">
             {section.title}
           </h2>
         </div>
@@ -277,7 +277,7 @@ function ServiceDetailNotice({
           <ShieldCheck />
         </div>
 
-        <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+        <h2 className="break-words text-[21px] font-black leading-tight text-white md:text-2xl">
           {section.title}
         </h2>
       </div>
@@ -313,7 +313,7 @@ function ServiceExpertSection({
         {section.badge}
       </p>
 
-      <h2 className="text-2xl font-black uppercase text-white">
+      <h2 className="text-2xl font-black text-white">
         {section.title}
       </h2>
 

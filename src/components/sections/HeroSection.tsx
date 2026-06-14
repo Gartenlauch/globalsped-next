@@ -34,7 +34,7 @@ export function HeroSection({ locale = "de" }) {
             {t.hero.badge}
           </p>
 
-          <h1 className="mx-auto max-w-[980px] text-[34px] font-black uppercase leading-[0.98] tracking-[-0.04em] sm:text-[44px] md:text-[56px] lg:text-[64px]">
+          <h1 className="mx-auto max-w-[980px] text-[34px] font-black leading-[0.98] tracking-[-0.04em] sm:text-[44px] md:text-[56px] lg:text-[64px]">
             {t.hero.headline.line1}
             <span className="block text-lime-300">
               {t.hero.headline.highlight}

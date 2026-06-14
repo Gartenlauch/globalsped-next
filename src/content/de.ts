@@ -5,10 +5,10 @@ export const de = {
       { label: "Start", href: "/{locale}" },
       { label: "Leistungen", href: "/{locale}#leistungen" },
       { label: "Zielländer", href: "/{locale}#ziellaender" },
-      { label: "Zollabwicklung", href: "/{locale}/leistungen/zollabwicklung" },
       { label: "Über uns", href: "/{locale}#ueber-uns" },
       { label: "Jobs", href: "/{locale}#jobs" },
       { label: "Kontakt", href: "/{locale}#kontakt" },
+      { label: "FAQ", href: "/{locale}#faq" },
     ],
     cta: {
       label: "Anfrage",
