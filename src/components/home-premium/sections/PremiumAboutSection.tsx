@@ -1,8 +1,8 @@
-import { CheckCircle2 } from "lucide-react";
 import type { PremiumHomeContent } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { premiumIconMap } from "../icons/premiumIcons";
+import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
 
 type Props = {
   content: PremiumHomeContent["about"];
@@ -46,9 +46,9 @@ export function PremiumAboutSection({ content, locale }: Props) {
         <div className="max-w-xl">
           <PremiumEyebrow variant="light">{content.eyebrow}</PremiumEyebrow>
 
-          <h2 className="text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+          <PremiumSectionHeading variant="dark">
             {content.title}
-          </h2>
+          </PremiumSectionHeading>
 
           <p className="mt-6 text-base leading-8 text-[#00281f]/75">
             {content.intro}

@@ -7,6 +7,8 @@ import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { PremiumGlassCard } from "../ui/PremiumGlassCard";
 import { PremiumIconBubble } from "../ui/PremiumIconBubble";
 import { resolveHref } from "../helpers/resolveHref";
+import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
+
 
 type Props = {
   content: PremiumHomeContent["services"];
@@ -33,9 +35,9 @@ export function PremiumServicesSection({ content, locale }: Props) {
         <div>
           <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
-          <h2 className="text-4xl font-semibold leading-tight tracking-[-0.045em] text-white sm:text-5xl">
+          <PremiumSectionHeading>
             {content.title}
-          </h2>
+          </PremiumSectionHeading>
 
           <p className="mt-6 max-w-xl text-base leading-8 text-[#f7f7f2]/72">
             {content.intro}
@@ -53,7 +55,7 @@ export function PremiumServicesSection({ content, locale }: Props) {
               href={resolveHref(item.href, locale)}
               className="group block h-full"
             >
-             <PremiumGlassCard className="flex h-full flex-col transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45 lg:min-h-[285px] xl:min-h-[300px]">
+              <PremiumGlassCard className="flex h-full flex-col transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45 lg:min-h-[285px] xl:min-h-[300px]">
                 <PremiumIconBubble icon={item.icon} />
 
                 <h3 className="text-lg font-semibold tracking-[-0.025em] text-white">

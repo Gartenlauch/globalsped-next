@@ -5,7 +5,7 @@ import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { premiumIconMap } from "../icons/premiumIcons";
 import { resolveHref } from "../helpers/resolveHref";
-
+import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
 type Props = {
   content: PremiumHomeContent["jobs"];
   locale: string;
@@ -25,9 +25,9 @@ export function PremiumJobsSection({ content, locale }: Props) {
         <div>
           <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
-          <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+          <PremiumSectionHeading variant="light">
             {content.title}
-          </h2>
+          </PremiumSectionHeading>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#f7f7f2]/72">
             {content.intro}

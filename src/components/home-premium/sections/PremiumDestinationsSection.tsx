@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import type { PremiumHomeContent } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { resolveHref } from "../helpers/resolveHref";
+import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
 
 type Props = {
   content: PremiumHomeContent["destinations"];
@@ -25,9 +25,9 @@ export function PremiumDestinationsSection({ content, locale }: Props) {
         <div className="relative z-10">
           <PremiumEyebrow variant="light">{content.eyebrow}</PremiumEyebrow>
 
-          <h2 className="max-w-xl text-4xl font-semibold leading-tight tracking-[-0.045em] text-[#00281f] sm:text-5xl lg:text-6xl">
+          <PremiumSectionHeading variant="light" className="max-w-xl">
             {content.title}
-          </h2>
+          </PremiumSectionHeading>
 
           <p className="mt-6 max-w-xl text-base leading-8 text-[#00281f]/72">
             {content.intro}
