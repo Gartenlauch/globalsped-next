@@ -24,6 +24,7 @@ export const premiumHomeDe: PremiumHomeContent = {
         value: "30+",
         label: "Jahre Erfahrung",
         text: "Internationale Transportabwicklung mit Spezialisierung auf anspruchsvolle Zielmärkte.",
+        href: "/{locale}/ueber-uns",
       },
       {
         icon: "truck",
@@ -32,16 +33,17 @@ export const premiumHomeDe: PremiumHomeContent = {
         text: "Teil- und Komplettladungen für Industrie, Handel und Projektlogistik.",
       },
       {
-        icon: "customs",
-        value: "Zoll",
-        label: "Komplette Abwicklung",
-        text: "Unterstützung bei Dokumenten, Zollprozessen und internationaler Kommunikation.",
+        icon: "communication",
+        value: "Persönlich",
+        label: "Direkte Betreuung",
+        text: "Klare Kommunikation, kurze Wege und persönliche Ansprechpartner für internationale Transporte.",
+        href: "/de#kontakt",
       },
     ],
     routeCard: {
-      eyebrow: "GLOBALSPED Route Network",
-      title: "Europa, Zentralasien und Kaukasus zuverlässig verbinden",
-      text: "Internationale Transportlösungen mit persönlicher Betreuung, Zollkompetenz und klarer Kommunikation.",
+      eyebrow: "Zielländer",
+      title: "Zentralasien & Kaukasus",
+      text: "Routen und Zielmärkte für internationale Transporte im Überblick.",
       href: "/{locale}/ziellaender",
       ctaLabel: "Zielländer ansehen",
     },
@@ -110,9 +112,9 @@ export const premiumHomeDe: PremiumHomeContent = {
   destinations: {
     id: "ziellaender",
     eyebrow: "Weltweit unterwegs",
-    title: "Ihre Waren in besten Händen",
+    title: "Internationale Transporte in anspruchsvolle Zielmärkte",
     intro:
-      "GLOBALSPED verbindet Unternehmen mit wichtigen Zielmärkten in Zentralasien, im Kaukasus, in Osteuropa und im Mittleren Osten.",
+      "GLOBALSPED verbindet Unternehmen mit wichtigen Zielmärkten in Zentralasien, im Kaukasus, in Osteuropa und im Mittleren Osten – mit Erfahrung, Partnernetzwerk, Zollkoordination und persönlicher Betreuung.",
     cta: {
       label: "Alle Zielländer ansehen",
       href: "/{locale}/ziellaender",
@@ -124,17 +126,72 @@ export const premiumHomeDe: PremiumHomeContent = {
     statValue: "11",
     statLabel: "Zielländer im Fokus",
     countries: [
-      { name: "Kasachstan", slug: "kasachstan", flag: "🇰🇿", href: "/{locale}/ziellaender/transport-kasachstan" },
-      { name: "Usbekistan", slug: "usbekistan", flag: "🇺🇿", href: "/{locale}/ziellaender/transport-usbekistan" },
-      { name: "Kirgisistan", slug: "kirgisistan", flag: "🇰🇬", href: "/{locale}/ziellaender/transport-kirgisistan" },
-      { name: "Turkmenistan", slug: "turkmenistan", flag: "🇹🇲", href: "/{locale}/ziellaender/transport-turkmenistan" },
-      { name: "Tadschikistan", slug: "tadschikistan", flag: "🇹🇯", href: "/{locale}/ziellaender/transport-tadschikistan" },
-      { name: "Aserbaidschan", slug: "aserbaidschan", flag: "🇦🇿", href: "/{locale}/ziellaender/transport-aserbaidschan" },
-      { name: "Georgien", slug: "georgien", flag: "🇬🇪", href: "/{locale}/ziellaender/transport-georgien" },
-      { name: "Armenien", slug: "armenien", flag: "🇦🇲", href: "/{locale}/ziellaender/transport-armenien" },
-      { name: "Mongolei", slug: "mongolei", flag: "🇲🇳", href: "/{locale}/ziellaender/transport-mongolei" },
-      { name: "Irak", slug: "irak", flag: "🇮🇶", href: "/{locale}/ziellaender/transport-irak" },
-      { name: "Ukraine", slug: "ukraine", flag: "🇺🇦", href: "/{locale}/ziellaender/transport-ukraine" },
+      {
+        name: "Kasachstan",
+        slug: "kasachstan",
+        flagCode: "kz",
+        href: "/{locale}/ziellaender/transport-kasachstan",
+      },
+      {
+        name: "Usbekistan",
+        slug: "usbekistan",
+        flagCode: "uz",
+        href: "/{locale}/ziellaender/transport-usbekistan",
+      },
+      {
+        name: "Kirgisistan",
+        slug: "kirgisistan",
+        flagCode: "kg",
+        href: "/{locale}/ziellaender/transport-kirgisistan",
+      },
+      {
+        name: "Turkmenistan",
+        slug: "turkmenistan",
+        flagCode: "tm",
+        href: "/{locale}/ziellaender/transport-turkmenistan",
+      },
+      {
+        name: "Tadschikistan",
+        slug: "tadschikistan",
+        flagCode: "tj",
+        href: "/{locale}/ziellaender/transport-tadschikistan",
+      },
+      {
+        name: "Aserbaidschan",
+        slug: "aserbaidschan",
+        flagCode: "az",
+        href: "/{locale}/ziellaender/transport-aserbaidschan",
+      },
+      {
+        name: "Georgien",
+        slug: "georgien",
+        flagCode: "ge",
+        href: "/{locale}/ziellaender/transport-georgien",
+      },
+      {
+        name: "Armenien",
+        slug: "armenien",
+        flagCode: "am",
+        href: "/{locale}/ziellaender/transport-armenien",
+      },
+      {
+        name: "Mongolei",
+        slug: "mongolei",
+        flagCode: "mn",
+        href: "/{locale}/ziellaender/transport-mongolei",
+      },
+      {
+        name: "Irak",
+        slug: "irak",
+        flagCode: "iq",
+        href: "/{locale}/ziellaender/transport-irak",
+      },
+      {
+        name: "Ukraine",
+        slug: "ukraine",
+        flagCode: "ua",
+        href: "/{locale}/ziellaender/transport-ukraine",
+      },
     ],
   },
 
@@ -156,19 +213,62 @@ export const premiumHomeDe: PremiumHomeContent = {
     },
     values: [
       {
-        icon: "experience",
-        title: "Erfahren",
-        text: "Langjährige Erfahrung in internationalen Transport- und Zollprozessen.",
-      },
-      {
-        icon: "network",
-        title: "Vernetzt",
-        text: "Verlässliche Kontakte entlang anspruchsvoller internationaler Routen.",
+        icon: "globe",
+        title: "Spezialisierte Zielmärkte",
+        text: "Internationale Transporte mit Fokus auf Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten.",
       },
       {
         icon: "communication",
-        title: "Persönlich",
-        text: "Direkte Ansprechpartner und klare operative Kommunikation.",
+        title: "Direkte Ansprechpartner",
+        text: "Persönliche Betreuung, schnelle Rückmeldungen und klare Abstimmung während der gesamten Transportabwicklung.",
+      },
+      {
+        icon: "route",
+        title: "Verlässliche Koordination",
+        text: "Strukturierte Planung von Routen, Dokumenten, Kommunikation und operativen Abläufen.",
+      },
+    ],
+    proofCards: [
+      {
+        icon: "communication",
+        title: "Multilingual",
+        text: "Mehrsprachige Kommunikation erleichtert internationale Abstimmungen mit Kunden, Partnern und Schnittstellen entlang der Route.",
+        languages: [
+          {
+            name: "Deutsch",
+            flagCode: "de",
+          },
+          {
+            name: "Englisch",
+            flagCode: "gb",
+          },
+          {
+            name: "Türkisch",
+            flagCode: "tr",
+          },
+          {
+            name: "Russisch",
+            flagCode: "ru",
+          },
+          {
+            name: "Turkmenisch",
+            flagCode: "tm",
+          },
+          {
+            name: "Aserbaidschanisch",
+            flagCode: "az",
+          },
+        ],
+      },
+      {
+        icon: "experience",
+        title: "Bereits 2. Generation",
+        text: "Seit über 30 Jahren auf internationale Transportmärkte spezialisiert – mit gewachsener Erfahrung in anspruchsvollen Zielregionen.",
+      },
+      {
+        icon: "network",
+        title: "Gewachsenes Netzwerk",
+        text: "Verlässliche Kontakte, regionale Erfahrung und eingespielte Kommunikation für komplexe internationale Transportwege.",
       },
     ],
   },

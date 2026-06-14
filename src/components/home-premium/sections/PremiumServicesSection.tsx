@@ -46,10 +46,14 @@ export function PremiumServicesSection({ content, locale }: Props) {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:auto-rows-fr xl:grid-cols-3">
           {content.cards.map((item) => (
-            <Link key={item.href} href={resolveHref(item.href, locale)} className="group">
-              <PremiumGlassCard className="flex min-h-[250px] flex-col transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45">
+            <Link
+              key={item.href}
+              href={resolveHref(item.href, locale)}
+              className="group block h-full"
+            >
+             <PremiumGlassCard className="flex h-full flex-col transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45 lg:min-h-[285px] xl:min-h-[300px]">
                 <PremiumIconBubble icon={item.icon} />
 
                 <h3 className="text-lg font-semibold tracking-[-0.025em] text-white">

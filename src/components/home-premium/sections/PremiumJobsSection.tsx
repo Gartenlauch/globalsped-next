@@ -11,7 +11,7 @@ type Props = {
   locale: string;
 };
 
-export function PremiumJobsTeaserSection({ content, locale }: Props) {
+export function PremiumJobsSection({ content, locale }: Props) {
   return (
     <section
       id={content.id}

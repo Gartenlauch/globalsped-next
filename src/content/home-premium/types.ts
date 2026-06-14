@@ -30,6 +30,7 @@ export type PremiumStat = {
   value: string;
   label: string;
   text: string;
+  href?: string;
 };
 
 export type PremiumServiceCard = {
@@ -43,7 +44,7 @@ export type PremiumServiceCard = {
 export type PremiumCountry = {
   name: string;
   slug: string;
-  flag: string;
+  flagCode: string;
   href: string;
 };
 
@@ -51,6 +52,18 @@ export type PremiumValueItem = {
   icon: PremiumIcon;
   title: string;
   text: string;
+};
+
+export type PremiumLanguage = {
+  name: string;
+  flagCode: string;
+};
+
+export type PremiumProofCard = {
+  icon: PremiumIcon;
+  title: string;
+  text: string;
+  languages?: PremiumLanguage[];
 };
 
 export type PremiumFaqItem = {
@@ -114,6 +127,7 @@ export type PremiumHomeContent = {
     cta: PremiumCta;
     image: PremiumImage;
     values: PremiumValueItem[];
+    proofCards: PremiumProofCard[];
   };
 
   jobs: {

@@ -2,9 +2,9 @@ import { getPremiumHomeContent } from "@/content/home-premium";
 import { PremiumHeroSection } from "./sections/PremiumHeroSection";
 import { PremiumServicesSection } from "./sections/PremiumServicesSection";
 import { PremiumDestinationsSection } from "./sections/PremiumDestinationsSection";
-import { PremiumAboutTeaserSection } from "./sections/PremiumAboutTeaserSection";
-import { PremiumJobsTeaserSection } from "./sections/PremiumJobsTeaserSection";
-import { PremiumFaqTeaserSection } from "./sections/PremiumFaqTeaserSection";
+import { PremiumAboutSection } from "./sections/PremiumAboutSection";
+import { PremiumJobsSection } from "./sections/PremiumJobsSection";
+import { PremiumFaqSection } from "./sections/PremiumFaqSection";
 
 type Props = {
   locale: string;
@@ -18,10 +18,10 @@ export function PremiumHomePage({ locale }: Props) {
       <PremiumHeroSection content={content.hero} locale={locale} />
       <PremiumServicesSection content={content.services} locale={locale} />
       <PremiumDestinationsSection content={content.destinations} locale={locale} />
-      <PremiumAboutTeaserSection content={content.about} locale={locale} />
-      <PremiumJobsTeaserSection content={content.jobs} locale={locale} />
+      <PremiumAboutSection content={content.about} locale={locale} />
+      <PremiumJobsSection content={content.jobs} locale={locale} />
       {content.faq.enabled ? (
-        <PremiumFaqTeaserSection content={content.faq} locale={locale} />
+        <PremiumFaqSection content={content.faq} locale={locale} />
       ) : null}
     </main>
   );

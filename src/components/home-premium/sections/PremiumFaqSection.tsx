@@ -10,7 +10,7 @@ type Props = {
   locale: string;
 };
 
-export function PremiumFaqTeaserSection({ content, locale }: Props) {
+export function PremiumFaqSection({ content, locale }: Props) {
   return (
     <section
       id={content.id}
