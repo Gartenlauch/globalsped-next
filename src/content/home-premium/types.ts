@@ -26,11 +26,11 @@ export type PremiumCta = {
 };
 
 export type PremiumStat = {
-  icon: PremiumIcon;
-  value: string;
-  label: string;
+  eyebrow: string;
+  title: string;
   text: string;
-  href?: string;
+  href: string;
+  ctaLabel: string;
 };
 
 export type PremiumServiceCard = {

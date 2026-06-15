@@ -46,7 +46,7 @@ export function PremiumAboutSection({ content, locale }: Props) {
         <div className="max-w-xl">
           <PremiumEyebrow variant="light">{content.eyebrow}</PremiumEyebrow>
 
-          <PremiumSectionHeading variant="dark">
+          <PremiumSectionHeading variant="light">
             {content.title}
           </PremiumSectionHeading>
 
