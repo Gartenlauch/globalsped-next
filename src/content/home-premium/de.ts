@@ -70,6 +70,9 @@ export const premiumHomeDe: PremiumHomeContent = {
       src: "/images/home-premium/globalsped-premium-services-ftl-ltl-zollabwicklung-thermo-gefahrgut-projektlogistik-2880x1200.webp",
       width: 2880,
       height: 1200,
+      mobileSrc: "/images/home-premium/globalsped-premium-services-zollabwicklung-logistikterminal-mobile-862x1824.webp",
+      mobileWidth: 862,
+      mobileHeight: 1824,
       alt: "GLOBALSPED Logistiklösungen für FTL, LTL, Zollabwicklung, Thermotransporte, Gefahrgut und Projektlogistik",
     },
     cards: [

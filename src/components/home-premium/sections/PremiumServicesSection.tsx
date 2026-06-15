@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { PremiumHomeContent } from "@/content/home-premium/types";
@@ -14,25 +13,45 @@ type Props = {
   content: PremiumHomeContent["services"];
   locale: string;
 };
+function ServicesBackground({
+  image,
+}: {
+  image: PremiumHomeContent["services"]["backgroundImage"];
+}) {
+  return (
+    <>
+      <picture className="absolute inset-0 z-0 block" aria-hidden="true">
+        {image.mobileSrc ? (
+          <source media="(max-width: 767.98px)" srcSet={image.mobileSrc} />
+        ) : null}
 
+        <source media="(min-width: 768px)" srcSet={image.src} />
+
+        <img
+          src={image.src}
+          alt=""
+          width={image.width ?? 2880}
+          height={image.height ?? 1200}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover object-[50%_48%] opacity-85 md:object-[50%_50%]"
+        />
+      </picture>
+
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(0,40,31,0.30)_0%,rgba(0,40,31,0.18)_34%,rgba(0,40,31,0.08)_68%,rgba(0,40,31,0.03)_100%)]" />
+
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.16)_0%,rgba(0,0,0,0.24)_100%)] md:hidden" />
+    </>
+  );
+}
 
 export function PremiumServicesSection({ content, locale }: Props) {
   return (
     <section id={content.id} className="relative isolate overflow-hidden py-20 lg:py-24">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={content.backgroundImage.src}
-          alt={content.backgroundImage.alt}
-          fill
-          quality={80}
-          sizes="100vw"
-          className="object-cover opacity-80"
-        />
-      </div>
-
-      <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(0,40,31,0.42)_0%,rgba(0,40,31,0.26)_34%,rgba(0,40,31,0.12)_68%,rgba(0,40,31,0.06)_100%)]" />
+      <ServicesBackground image={content.backgroundImage} />
 
       <div className="relative z-20 mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.6fr] lg:items-start">
+
         <div>
           <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
