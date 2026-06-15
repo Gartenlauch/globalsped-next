@@ -20,7 +20,7 @@ type HeroStatCardProps = {
 function HeroStatCard({ item, locale }: HeroStatCardProps) {
   return (
     <Link href={resolveHref(item.href, locale)} className="group block">
-      <PremiumGlassCard className="flex h-full min-h-[170px] flex-col justify-between transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45">
+      <PremiumGlassCard className="flex h-full min-h-[165px] flex-col justify-between p-6 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#6b9f12]/45">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9fca42]">
             {item.eyebrow}
@@ -75,7 +75,7 @@ function HeroRouteCard({
 
 export function PremiumHeroSection({ content, locale }: Props) {
   return (
-    <section className="relative min-h-[620px] overflow-hidden border-b border-[#6b9f12]/30 lg:min-h-[650px]">
+    <section className="relative min-h-[660px] overflow-hidden border-b border-[#6b9f12]/25 lg:min-h-[700px]">
       <Image
         src={content.image.src}
         alt={content.image.alt}
@@ -85,18 +85,17 @@ export function PremiumHeroSection({ content, locale }: Props) {
         sizes="100vw"
         className="object-cover object-[70%_50%]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,40,31,0.88)_0%,rgba(0,40,31,0.70)_30%,rgba(0,40,31,0.14)_52%,rgba(0,40,31,0.00)_74%,rgba(0,0,0,0.04)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,0,0,0.08)_100%)]" />
-      <div className="container relative flex min-h-[620px] flex-col justify-center py-20 lg:min-h-[650px]">
+  
+  <div className="container relative flex min-h-[660px] flex-col justify-center py-20 lg:min-h-[700px]">
         <div className="max-w-3xl">
           <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
-
-          <h1 className="max-w-[560px] text-[42px] font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-[50px] lg:text-[56px]">
+    
+          <h1 className="max-w-[620px] text-[42px] font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-[50px] lg:text-[58px]">
             {content.headline.line1}{" "}
             <span className="text-[#9bc43a]">{content.headline.highlight}</span>{" "}
             {content.headline.line2}
           </h1>
-
+    
           <p className="mt-6 max-w-[540px] text-[16px] leading-7 text-[#f7f7f2]/84">
             {content.intro}
           </p>

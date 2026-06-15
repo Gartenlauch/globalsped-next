@@ -36,7 +36,7 @@ export const premiumHomeDe: PremiumHomeContent = {
       {
         eyebrow: "Kontakt",
         title: "Persönliche Beratung",
-        text: "Direkte Ansprechpartner, kurze Kommunikationswege und individuelle Abstimmung für Ihre Transportanfrage.",
+        text: "Direkte Ansprechpartner, kurze Wege und individuelle Abstimmung für Ihre Transportanfrage.",
         href: "/{locale}/transport-anfrage",
         ctaLabel: "Anfrage starten",
       },
