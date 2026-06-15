@@ -25,7 +25,10 @@ export function PremiumDestinationsSection({ content, locale }: Props) {
         <div className="relative z-10">
           <PremiumEyebrow variant="light">{content.eyebrow}</PremiumEyebrow>
 
-          <PremiumSectionHeading variant="light" className="max-w-xl">
+          <PremiumSectionHeading
+            highlight={content.titleHighlight}
+            variant="light"
+          >
             {content.title}
           </PremiumSectionHeading>
 

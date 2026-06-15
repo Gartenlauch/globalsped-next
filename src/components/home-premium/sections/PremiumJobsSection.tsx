@@ -25,7 +25,7 @@ export function PremiumJobsSection({ content, locale }: Props) {
         <div>
           <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
-          <PremiumSectionHeading variant="light">
+          <PremiumSectionHeading highlight={content.titleHighlight}>
             {content.title}
           </PremiumSectionHeading>
 

@@ -24,7 +24,7 @@ export function PremiumFaqSection({ content, locale }: Props) {
           <div className="max-w-3xl">
             <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
-            <PremiumSectionHeading variant="light">
+            <PremiumSectionHeading highlight={content.titleHighlight}>
               {content.title}
             </PremiumSectionHeading>
 

@@ -15,7 +15,7 @@ export const premiumHomeDe: PremiumHomeContent = {
       href: "/{locale}/leistungen",
     },
     image: {
-      src: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-desktop-1165x928.webp",
+      src: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-desktop-1665x928.webp",
       width: 1665,
       height: 928,
       mobileSrc: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-mobile-1024x1536.webp",
@@ -25,11 +25,11 @@ export const premiumHomeDe: PremiumHomeContent = {
     },
     stats: [
       {
-        eyebrow: "Spezialisiert",
-        title: "Zentralasien & Kaukasus",
-        text: "Internationale Transporte in anspruchsvolle Zielmärkte mit Erfahrung, Routenkenntnis und persönlicher Koordination.",
-        href: "/{locale}/ziellaender",
-        ctaLabel: "Zielländer ansehen",
+        eyebrow: "Zollkompetenz",
+        title: "Zollabwicklung für Drittstaaten",
+        text: "Export, Import und Transit mit Dokumenten- und Zollkoordination für internationale Transporte.",
+        href: "/{locale}/leistungen/zollabwicklung",
+        ctaLabel: "Zollabwicklung ansehen",
       },
       {
         eyebrow: "Unser Service",
@@ -59,6 +59,7 @@ export const premiumHomeDe: PremiumHomeContent = {
     id: "leistungen",
     eyebrow: "Unsere Leistungen",
     title: "End-to-End Logistiklösungen für anspruchsvolle Zielmärkte",
+    titleHighlight: "anspruchsvolle Zielmärkte",
     intro:
       "GLOBALSPED organisiert FTL-Komplettladungen, LTL-Teilladungen, Thermotransporte, Gefahrguttransporte, Projektlogistik und Zollabwicklung.",
     overviewCta: {
@@ -66,8 +67,10 @@ export const premiumHomeDe: PremiumHomeContent = {
       href: "/{locale}/leistungen",
     },
     backgroundImage: {
-      src: "/images/home-premium/globalsped-premium-services-ftl-ltl-zoll-thermo-gefahrgut-1800x1000.webp",
-      alt: "GLOBALSPED Logistiklösungen für FTL, LTL, Zollabwicklung, Thermotransporte und Gefahrgut",
+      src: "/images/home-premium/globalsped-premium-services-ftl-ltl-zollabwicklung-thermo-gefahrgut-projektlogistik-2880x1200.webp",
+      width: 2880,
+      height: 1200,
+      alt: "GLOBALSPED Logistiklösungen für FTL, LTL, Zollabwicklung, Thermotransporte, Gefahrgut und Projektlogistik",
     },
     cards: [
       {
@@ -119,6 +122,7 @@ export const premiumHomeDe: PremiumHomeContent = {
     id: "ziellaender",
     eyebrow: "Weltweit unterwegs",
     title: "Internationale Transporte in anspruchsvolle Zielmärkte",
+    titleHighlight: "anspruchsvolle Zielmärkte",
     intro:
       "GLOBALSPED verbindet Unternehmen mit wichtigen Zielmärkten in Zentralasien, im Kaukasus, in Osteuropa und im Mittleren Osten – mit Erfahrung, Partnernetzwerk, Zollkoordination und persönlicher Betreuung.",
     cta: {
@@ -205,6 +209,8 @@ export const premiumHomeDe: PremiumHomeContent = {
     id: "ueber-uns",
     eyebrow: "Über GLOBALSPED",
     title: "Ihr Partner für internationale Logistik",
+    titleHighlight: "internationale Logistik",
+
     intro:
       "GLOBALSPED ist eine internationale Spedition mit Fokus auf Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten.",
     text:
@@ -283,6 +289,7 @@ export const premiumHomeDe: PremiumHomeContent = {
     id: "jobs",
     eyebrow: "Karriere",
     title: "Gemeinsam bewegen wir mehr",
+    titleHighlight: "mehr",
     intro:
       "Bei GLOBALSPED arbeiten Sie an echten internationalen Transportlösungen mit Kundenkontakt, Organisationstalent und Teamarbeit.",
     cta: {
@@ -317,6 +324,7 @@ export const premiumHomeDe: PremiumHomeContent = {
     id: "faq",
     eyebrow: "FAQ & Expertenwissen",
     title: "Schnelle Antworten für internationale Transporte",
+    titleHighlight: "internationale Transporte",
     intro:
       "Kurze Einstiege in häufige Fragen zu Laufzeiten, Zoll, Zentralasien und Kaukasus.",
     overviewCta: {

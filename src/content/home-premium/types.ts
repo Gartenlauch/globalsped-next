@@ -105,6 +105,7 @@ export type PremiumHomeContent = {
     id: string;
     eyebrow: string;
     title: string;
+    titleHighlight?: string;
     intro: string;
     overviewCta: PremiumCta;
     backgroundImage: PremiumImage;
@@ -115,6 +116,7 @@ export type PremiumHomeContent = {
     id: string;
     eyebrow: string;
     title: string;
+    titleHighlight?: string;
     intro: string;
     cta: PremiumCta;
     mapImage: PremiumImage;
@@ -127,6 +129,7 @@ export type PremiumHomeContent = {
     id: string;
     eyebrow: string;
     title: string;
+    titleHighlight?: string;
     intro: string;
     text: string;
     cta: PremiumCta;
@@ -139,6 +142,7 @@ export type PremiumHomeContent = {
     id: string;
     eyebrow: string;
     title: string;
+    titleHighlight?: string;
     intro: string;
     cta: PremiumCta;
     image: PremiumImage;
@@ -150,6 +154,7 @@ export type PremiumHomeContent = {
     id: string;
     eyebrow: string;
     title: string;
+    titleHighlight?: string;
     intro: string;
     overviewCta: PremiumCta;
     items: PremiumFaqItem[];
