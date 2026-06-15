@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { PremiumHomeContent, PremiumStat } from "@/content/home-premium/types";
@@ -73,18 +73,52 @@ function HeroRouteCard({
   );
 }
 
+function HeroBackground({
+  image,
+}: {
+  image: PremiumHomeContent["hero"]["image"];
+}) {
+  const {
+    props: { srcSet: desktopSrcSet, ...desktopProps },
+  } = getImageProps({
+    src: image.src,
+    alt: image.alt,
+    width: image.width ?? 2880,
+    height: image.height ?? 1320,
+    quality: 80,
+    sizes: "100vw",
+  });
+
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({
+    src: image.mobileSrc ?? image.src,
+    alt: image.alt,
+    width: image.mobileWidth ?? 1200,
+    height: image.mobileHeight ?? 1800,
+    quality: 80,
+    sizes: "100vw",
+  });
+
+  return (
+    <picture className="absolute inset-0 block">
+      <source media="(max-width: 767px)" srcSet={mobileSrcSet} />
+      <source media="(min-width: 768px)" srcSet={desktopSrcSet} />
+
+      <img
+        {...desktopProps}
+        alt={image.alt}
+        fetchPriority="high"
+        className="h-full w-full object-cover object-[54%_50%] md:object-[66%_50%]"
+      />
+    </picture>
+  );
+}
+
 export function PremiumHeroSection({ content, locale }: Props) {
   return (
     <section className="relative min-h-[660px] overflow-hidden border-b border-[#6b9f12]/25 lg:min-h-[700px]">
-      <Image
-        src={content.image.src}
-        alt={content.image.alt}
-        fill
-        priority
-        quality={90}
-        sizes="100vw"
-        className="object-cover object-[70%_50%]"
-      />
+     <HeroBackground image={content.image} />
   
   <div className="container relative flex min-h-[660px] flex-col justify-center py-20 lg:min-h-[700px]">
         <div className="max-w-3xl">

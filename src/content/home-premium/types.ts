@@ -15,10 +15,15 @@ export type PremiumIcon =
   | "growth"
   | "security";
 
-export type PremiumImage = {
-  src: string;
-  alt: string;
-};
+  export type PremiumImage = {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    mobileSrc?: string;
+    mobileWidth?: number;
+    mobileHeight?: number;
+  };
 
 export type PremiumCta = {
   label: string;

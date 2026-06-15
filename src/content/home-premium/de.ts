@@ -15,8 +15,13 @@ export const premiumHomeDe: PremiumHomeContent = {
       href: "/{locale}/leistungen",
     },
     image: {
-      src: "/images/home-premium/globalsped-premium-hero-internationale-transporte-zentralasien-kaukasus-2400x1350.webp",
-      alt: "GLOBALSPED LKW auf internationaler Transportroute nach Zentralasien und in den Kaukasus",
+      src: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-desktop-1165x928.webp",
+      width: 1665,
+      height: 928,
+      mobileSrc: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-mobile-1024x1536.webp",
+      mobileWidth: 1024,
+      mobileHeight: 1536,
+      alt: "GLOBALSPED Mercedes LKW auf internationaler Route nach Zentralasien und in den Kaukasus",
     },
     stats: [
       {
