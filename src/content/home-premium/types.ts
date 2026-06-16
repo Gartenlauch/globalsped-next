@@ -34,8 +34,6 @@ export type PremiumStat = {
   eyebrow: string;
   title: string;
   text: string;
-  href: string;
-  ctaLabel: string;
 };
 
 export type PremiumServiceCard = {
@@ -47,8 +45,6 @@ export type PremiumServiceCard = {
 };
 
 export type PremiumDestinationSignal = {
-  originLabel: string;
-  originFlagCode: string;
   targetLabel: string;
   ariaLabel: string;
 };
@@ -99,13 +95,6 @@ export type PremiumHomeContent = {
     secondaryCta: PremiumCta;
     image: PremiumImage;
     stats: PremiumStat[];
-    routeCard: {
-      eyebrow: string;
-      title: string;
-      text: string;
-      href: string;
-      ctaLabel: string;
-    };
   };
 
   services: {
@@ -152,21 +141,18 @@ export type PremiumHomeContent = {
     intro: string;
     cta: PremiumCta;
     image: PremiumImage;
-    imageOverlay: {
-      title: string;
-      text: string;
-    };
     values: PremiumValueItem[];
   };
 
-  faq: {
-    enabled: boolean;
-    id: string;
-    eyebrow: string;
-    title: string;
-    titleHighlight?: string;
-    intro: string;
-    overviewCta: PremiumCta;
-    items: PremiumFaqItem[];
-  };
+faq: {
+  enabled: boolean;
+  id: string;
+  eyebrow: string;
+  title: string;
+  titleHighlight?: string;
+  intro: string;
+  overviewCta: PremiumCta;
+  backgroundImage: PremiumImage;
+  items: PremiumFaqItem[];
+};
 };

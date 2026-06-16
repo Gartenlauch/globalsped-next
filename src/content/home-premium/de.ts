@@ -25,34 +25,26 @@ export const premiumHomeDe: PremiumHomeContent = {
     },
     stats: [
       {
-        eyebrow: "Zollkompetenz",
-        title: "Zollabwicklung für Drittstaaten",
-        text: "Export, Import und Transit mit Dokumenten- und Zollkoordination für internationale Transporte.",
-        href: "/{locale}/leistungen/zollabwicklung",
-        ctaLabel: "Zollabwicklung ansehen",
+        eyebrow: "Branchenkompetenz",
+        title: "Industrie & Maschinenbau",
+        text: "Transporte für Maschinen, Anlagen, Ersatzteile und technische Komponenten – koordiniert für internationale Zielmärkte, Zollprozesse und anspruchsvolle Routen.",
       },
       {
-        eyebrow: "Unser Service",
-        title: "FTL, LTL & Spezialtransporte",
-        text: "Komplettladungen, Teilladungen, Thermotransporte, Gefahrgut und Projektlogistik aus einer Hand.",
-        href: "/{locale}/leistungen",
-        ctaLabel: "Leistungen ansehen",
+        eyebrow: "Sensible Waren",
+        title: "Pharma, Medizin & Temperatur",
+        text: "Logistik für sensible Waren mit erhöhten Anforderungen an Planung, Dokumentation, Laufzeit und temperaturgeführte Transportprozesse.",
       },
       {
-        eyebrow: "Kontakt",
-        title: "Persönliche Beratung",
-        text: "Direkte Ansprechpartner, kurze Wege und individuelle Abstimmung für Ihre Transportanfrage.",
-        href: "/{locale}/transport-anfrage",
-        ctaLabel: "Anfrage starten",
+        eyebrow: "Handel & FMCG",
+        title: "Lebensmittel & Konsumgüter",
+        text: "Internationale Transporte für FMCG, Food und Handelswaren – mit verlässlicher Abstimmung zwischen Verlader, Empfänger, Zoll und Transportpartnern.",
+      },
+      {
+        eyebrow: "Spezialgüter",
+        title: "Chemie, ADR & Spezialgüter",
+        text: "Erfahrung mit regulierten Waren, Gefahrgut, Dokumentationspflichten und besonderen Anforderungen bei Transporten in Drittstaaten und Zielregionen.",
       },
     ],
-    routeCard: {
-      eyebrow: "Zielländer",
-      title: "Zentralasien & Kaukasus",
-      text: "Routen und Zielmärkte für internationale Transporte im Überblick.",
-      href: "/{locale}/ziellaender",
-      ctaLabel: "Zielländer ansehen",
-    },
   },
 
   services: {
@@ -128,13 +120,11 @@ export const premiumHomeDe: PremiumHomeContent = {
     titleHighlight: "anspruchsvolle Zielmärkte",
     intro:
       "GLOBALSPED verbindet Unternehmen mit wichtigen Zielmärkten in Zentralasien, im Kaukasus, in Osteuropa und im Mittleren Osten – mit Erfahrung, Partnernetzwerk, Zollkoordination und persönlicher Betreuung.",
-      routeSignal: {
-        originLabel: "Europa",
-        originFlagCode: "eu",
-        targetLabel: "Zielländer im Fokus",
-        ariaLabel: "Von Europa zu den Zielländern im Fokus",
-      },
-      cta: {
+    routeSignal: {
+      targetLabel: "Zielländer im Fokus",
+      ariaLabel: "Von Europa zu den Zielländern im Fokus",
+    },
+    cta: {
       label: "Alle Zielländer ansehen",
       href: "/{locale}/ziellaender",
     },
@@ -316,10 +306,6 @@ export const premiumHomeDe: PremiumHomeContent = {
       src: "/images/home-premium/globalsped-premium-jobs-spedition-logistik-team-620x560.webp",
       alt: "GLOBALSPED Team bei der Planung internationaler Transporte in Spedition und Logistik",
     },
-    imageOverlay: {
-      title: "Jobs bei GLOBALSPED",
-      text: "Positiver Teamspirit und Büro im Grünen.",
-    },
     values: [
       {
         icon: "security",
@@ -350,6 +336,15 @@ export const premiumHomeDe: PremiumHomeContent = {
     overviewCta: {
       label: "Alle FAQ ansehen",
       href: "/{locale}/faq",
+    },
+    backgroundImage: {
+      src: "/images/home-premium/globalsped-premium-faq-transport-zollabwicklung-zentralasien-kaukasus-background-1942x809.webp",
+      width: 1942,
+      height: 809,
+      mobileSrc: "/images/home-premium/globalsped-premium-faq-transport-zollabwicklung-zentralasien-kaukasus-mobile-1440x2400.webp",
+      mobileWidth: 1440,
+      mobileHeight: 2400,
+      alt: "GLOBALSPED FAQ Hintergrund zu Transport, Zollabwicklung, Zentralasien und Kaukasus",
     },
     items: [
       {

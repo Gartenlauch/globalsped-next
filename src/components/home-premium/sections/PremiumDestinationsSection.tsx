@@ -41,14 +41,6 @@ export function PremiumDestinationsSection({ content, locale }: Props) {
             className="mt-10 flex items-center gap-3"
             aria-label={content.routeSignal.ariaLabel}
           >
-            <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/18 bg-white shadow-[0_10px_28px_rgba(0,0,0,0.20)]">
-              <span
-                className={`fi fi-${content.routeSignal.originFlagCode} fis h-8 w-8 rounded-full bg-cover bg-center`}
-                aria-hidden="true"
-              />
-              <span className="sr-only">{content.routeSignal.originLabel}</span>
-            </span>
-
             <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9bc43a]">
               {content.routeSignal.targetLabel}
             </span>

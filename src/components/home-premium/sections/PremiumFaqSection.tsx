@@ -11,15 +11,47 @@ type Props = {
   locale: string;
 };
 
+function FaqBackground({
+  image,
+}: {
+  image: PremiumHomeContent["faq"]["backgroundImage"];
+}) {
+  return (
+    <>
+      <picture className="absolute inset-0 z-0 block" aria-hidden="true">
+        {image.mobileSrc ? (
+          <source media="(max-width: 767.98px)" srcSet={image.mobileSrc} />
+        ) : null}
+
+        <source media="(min-width: 768px)" srcSet={image.src} />
+
+        <img
+          src={image.src}
+          alt=""
+          width={image.width ?? 2880}
+          height={image.height ?? 1200}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover object-[50%_50%] opacity-70 md:object-[50%_48%]"
+        />
+      </picture>
+
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,40,31,0.86)_0%,rgba(0,59,47,0.72)_42%,rgba(0,40,31,0.92)_100%)]" />
+
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(107,159,18,0.16),transparent_30%),radial-gradient(circle_at_84%_76%,rgba(0,0,0,0.24),transparent_38%)]" />
+    </>
+  );
+}
+
 export function PremiumFaqSection({ content, locale }: Props) {
   return (
     <section
       id={content.id}
-      className="relative overflow-hidden bg-[#003b2f] py-20 text-[#f7f7f2] lg:py-28"
+      className="relative isolate overflow-hidden bg-[#00281f] py-20 text-[#f7f7f2] lg:py-28"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(107,159,18,0.18),transparent_30%),radial-gradient(circle_at_84%_76%,rgba(247,247,242,0.08),transparent_34%)]" />
+      <FaqBackground image={content.backgroundImage} />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="relative z-20 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="max-w-3xl">
             <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import type { PremiumHomeContent, PremiumStat } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
@@ -13,68 +12,23 @@ type Props = {
 
 type HeroStatCardProps = {
   item: PremiumStat;
-  locale: string;
 };
 
-function HeroStatCard({ item, locale }: HeroStatCardProps) {
+function HeroStatCard({ item }: HeroStatCardProps) {
   return (
-    <Link href={resolveHref(item.href, locale)} className="group block">
-      <PremiumGlassCard
-        padding="compact"
-        className="flex h-full min-h-[165px] flex-col justify-between border-white/18 bg-white/[0.095] shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-2xl transition duration-300 group-hover:-translate-y-1 group-hover:border-[#9bc43a]/45 group-hover:bg-white/[0.13]"
-      >
-        <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9fca42]">
-            {item.eyebrow}
-          </p>
+    <PremiumGlassCard className="flex h-full min-h-[150px] flex-col p-5 transition duration-300 hover:-translate-y-1 hover:border-[#6b9f12]/45 lg:min-h-[160px]">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9fca42]">
+        {item.eyebrow}
+      </p>
 
-          <h2 className="mt-4 text-lg font-semibold leading-tight tracking-[-0.03em] text-white">
-            {item.title}
-          </h2>
+      <h2 className="mt-5 text-lg font-semibold leading-tight tracking-[-0.03em] text-white">
+        {item.title}
+      </h2>
 
-          <p className="mt-3 text-sm leading-6 text-[#f7f7f2]/70">
-            {item.text}
-          </p>
-        </div>
-
-        <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#9fca42]">
-          {item.ctaLabel}
-          <ArrowRight className="h-4 w-4" />
-        </span>
-      </PremiumGlassCard>
-    </Link>
-  );
-}
-
-function HeroRouteCard({
-  content,
-  locale,
-}: {
-  content: PremiumHomeContent["hero"]["routeCard"];
-  locale: string;
-}) {
-  return (
-    <Link href={resolveHref(content.href, locale)} className="group block h-full">
-      <PremiumGlassCard
-        padding="compact"
-        className="flex h-full min-h-[165px] flex-col justify-between border-white/18 bg-white/[0.095] shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-2xl transition duration-300 group-hover:-translate-y-1 group-hover:border-[#9bc43a]/45 group-hover:bg-white/[0.13]"
-      >
-        <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
-
-        <h2 className="text-xl font-semibold tracking-[-0.03em] text-white">
-          {content.title}
-        </h2>
-
-        <p className="mt-4 flex-1 text-sm leading-6 text-[#f7f7f2]/70">
-          {content.text}
-        </p>
-
-        <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#9bc43a]">
-          {content.ctaLabel}
-          <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden="true" />
-        </span>
-      </PremiumGlassCard>
-    </Link>
+      <p className="mt-3 text-sm leading-6 text-[#f7f7f2]/70">
+        {item.text}
+      </p>
+    </PremiumGlassCard>
   );
 }
 
@@ -143,10 +97,8 @@ export function PremiumHeroSection({ content, locale }: Props) {
 
         <div className="mt-16 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {content.stats.map((item) => (
-            <HeroStatCard key={item.href} item={item} locale={locale} />
+            <HeroStatCard key={item.title} item={item} />
           ))}
-
-          <HeroRouteCard content={content.routeCard} locale={locale} />
         </div>
       </div>
     </section>

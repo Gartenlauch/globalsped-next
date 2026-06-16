@@ -73,21 +73,6 @@ export function PremiumJobsSection({ content, locale }: Props) {
 
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,40,31,0.18)_0%,rgba(0,40,31,0.10)_42%,rgba(0,0,0,0.16)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(107,159,18,0.10),transparent_34%)]" />
-
-          <div className="absolute -left-px -right-px -top-px z-20 overflow-hidden rounded-t-[2rem]">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,59,47,0.94)_0%,rgba(0,40,31,0.88)_100%)] backdrop-blur-2xl" />
-            <div className="absolute inset-x-0 bottom-0 h-px bg-[#6b9f12]/20" />
-
-            <div className="relative min-h-[120px] px-6 py-4 sm:px-8 lg:px-10">
-              <p className="text-[15px] font-semibold uppercase tracking-[0.24em] text-[#9bc43a] sm:text-base">
-                {content.imageOverlay.title}
-              </p>
-
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-[#f7f7f2]/78 sm:text-[15px]">
-                {content.imageOverlay.text}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
