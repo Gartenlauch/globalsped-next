@@ -274,9 +274,18 @@ export const premiumHomeDe: PremiumHomeContent = {
             flagCode: "tm",
           },
           {
-            name: "Aserbaidschanisch",
-            flagCode: "az",
+            name: "Polnisch",
+            flagCode: "pl",
           },
+          {
+            name: "Albanisch",
+            flagCode: "al",
+          },
+          {
+            name: "Spanisch",
+            flagCode: "es",
+          },
+
         ],
       },
       {
@@ -306,6 +315,10 @@ export const premiumHomeDe: PremiumHomeContent = {
     image: {
       src: "/images/home-premium/globalsped-premium-jobs-spedition-logistik-team-620x560.webp",
       alt: "GLOBALSPED Team bei der Planung internationaler Transporte in Spedition und Logistik",
+    },
+    imageOverlay: {
+      title: "Jobs bei GLOBALSPED",
+      text: "Positiver Teamspirit und Büro im Grünen.",
     },
     values: [
       {

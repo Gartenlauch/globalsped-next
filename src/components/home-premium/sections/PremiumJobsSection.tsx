@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { ArrowRight, BriefcaseBusiness, CheckCircle2, Users } from "lucide-react";
 import Image from "next/image";
-import type { PremiumHomeContent } from "@/content/home-premium/types";
+import type { PremiumHomeContent, PremiumValueItem, } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { premiumIconMap } from "../icons/premiumIcons";
@@ -38,15 +36,15 @@ export function PremiumJobsSection({ content, locale }: Props) {
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {content.values.map((item) => {
+            {content.values.map((item: PremiumValueItem) => {
               const Icon = premiumIconMap[item.icon];
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+                  className="rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] p-5 shadow-[0_20px_55px_rgba(0,0,0,0.2)] backdrop-blur-xl"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#6b9f12]/30 bg-[#6b9f12]/10 text-[#9bc43a]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#9bc43a]/25 bg-[#6b9f12]/10 text-[#9bc43a]">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
 
@@ -63,7 +61,7 @@ export function PremiumJobsSection({ content, locale }: Props) {
           </div>
         </div>
 
-        <div className="relative min-h-[480px] overflow-hidden rounded-[2rem] border border-transparent bg-[#00281f] shadow-[0_34px_100px_rgba(0,0,0,0.36)] lg:min-h-[560px]">
+        <div className="relative min-h-[480px] overflow-hidden rounded-[2rem] border-0 bg-[#00281f] shadow-[0_34px_100px_rgba(0,0,0,0.36)] outline-none ring-0 lg:min-h-[560px]">
           <Image
             src={content.image.src}
             alt={content.image.alt}
@@ -73,19 +71,22 @@ export function PremiumJobsSection({ content, locale }: Props) {
             className="object-cover object-[50%_50%]"
           />
 
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,40,31,0.22)_52%,rgba(0,40,31,0.62)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(107,159,18,0.12),transparent_34%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,40,31,0.18)_0%,rgba(0,40,31,0.10)_42%,rgba(0,0,0,0.16)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(107,159,18,0.10),transparent_34%)]" />
 
-          <div className="absolute -inset-x-px -top-px z-10">
-            <article className="min-h-[120px] rounded-t-[2rem] rounded-b-none border-b border-[#9bc43a]/18 bg-[#003b2f]/82 px-6 py-5 text-[#f7f7f2] shadow-[0_28px_80px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:px-8 lg:px-10">
+          <div className="absolute -left-px -right-px -top-px z-20 overflow-hidden rounded-t-[2rem]">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,59,47,0.94)_0%,rgba(0,40,31,0.88)_100%)] backdrop-blur-2xl" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-[#6b9f12]/20" />
+
+            <div className="relative min-h-[120px] px-6 py-4 sm:px-8 lg:px-10">
               <p className="text-[15px] font-semibold uppercase tracking-[0.24em] text-[#9bc43a] sm:text-base">
-                {content.values[0]?.title}
+                {content.imageOverlay.title}
               </p>
 
-              <p className="mt-4 max-w-2xl text-base leading-7 text-[#f7f7f2]/78">
-                {content.values[0]?.text}
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-[#f7f7f2]/78 sm:text-[15px]">
+                {content.imageOverlay.text}
               </p>
-            </article>
+            </div>
           </div>
         </div>
       </div>

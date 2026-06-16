@@ -152,6 +152,10 @@ export type PremiumHomeContent = {
     intro: string;
     cta: PremiumCta;
     image: PremiumImage;
+    imageOverlay: {
+      title: string;
+      text: string;
+    };
     values: PremiumValueItem[];
   };
 
