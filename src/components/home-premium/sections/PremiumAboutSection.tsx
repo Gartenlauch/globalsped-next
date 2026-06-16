@@ -3,6 +3,7 @@ import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { premiumIconMap } from "../icons/premiumIcons";
 import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
+import Image from "next/image";
 
 type Props = {
   content: PremiumHomeContent["about"];
@@ -40,64 +41,70 @@ export function PremiumAboutSection({ content, locale }: Props) {
   return (
     <section
       id={content.id}
-      className="grid overflow-hidden bg-[#f7f7f2] text-[#00281f] lg:grid-cols-2"
+      className="grid overflow-hidden bg-[#00281f] text-[#f7f7f2] lg:grid-cols-2"
     >
-      <div className="flex min-h-[560px] items-center px-5 py-16 sm:px-8 lg:px-[max(2rem,calc((100vw-80rem)/2))] lg:pr-12">
-        <div className="max-w-xl">
-          <PremiumEyebrow variant="light">{content.eyebrow}</PremiumEyebrow>
+      <div className="relative flex min-h-[560px] items-center overflow-hidden bg-[linear-gradient(135deg,#0f493d_0%,#0b382f_46%,#132a24_100%)] px-5 py-16 sm:px-8 lg:px-[max(2rem,calc((100vw-80rem)/2))] lg:pr-12">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(107,159,18,0.22),transparent_34%),radial-gradient(circle_at_88%_82%,rgba(247,247,242,0.08),transparent_38%)]" />
+        <div className="relative z-10 max-w-xl">
+          <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
-          <PremiumSectionHeading
-            highlight={content.titleHighlight}
-            variant="light"
-          >
+          <PremiumSectionHeading highlight={content.titleHighlight}>
             {content.title}
           </PremiumSectionHeading>
 
-          <p className="mt-6 text-base leading-8 text-[#00281f]/75">
+          <p className="mt-6 text-base leading-8 text-[#f7f7f2]/76">
             {content.intro}
           </p>
 
-          <p className="mt-4 text-base leading-8 text-[#00281f]/68">
+          <p className="mt-4 text-base leading-8 text-[#f7f7f2]/68">
             {content.text}
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-3">
-            {content.values.map((item) => {
-              const Icon = premiumIconMap[item.icon];
+  {content.values.map((item) => {
+    const Icon = premiumIconMap[item.icon];
 
-              return (
-                <div key={item.title}>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#00281f]/10 bg-white text-[#6b9f12] shadow-sm">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
+    return (
+      <div key={item.title}>
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#9bc43a]/25 bg-white/[0.08] text-[#9bc43a] shadow-[0_12px_34px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </div>
 
-                  <h3 className="mt-4 text-sm font-semibold text-[#00281f]">
-                    {item.title}
-                  </h3>
+        <h3 className="mt-4 text-sm font-semibold text-white">
+          {item.title}
+        </h3>
 
-                  <p className="mt-2 text-xs leading-5 text-[#00281f]/62">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+        <p className="mt-2 text-xs leading-5 text-[#f7f7f2]/62">
+          {item.text}
+        </p>
+      </div>
+    );
+  })}
+</div>
 
           <div className="mt-9">
-            <PremiumCta cta={content.cta} locale={locale} variant="dark" />
+          <PremiumCta cta={content.cta} locale={locale} />
           </div>
         </div>
       </div>
 
-      <div className="relative min-h-[500px] overflow-hidden bg-[#00281f] lg:min-h-[580px]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_42%,rgba(107,159,18,0.22),transparent_34%),linear-gradient(135deg,#00281f_0%,#003b2f_52%,#001b15_100%)]" />
+      <div className="relative min-h-[540px] overflow-hidden bg-[#00281f] lg:min-h-[620px]">
+        <Image
+          src={content.image.src}
+          alt={content.image.alt}
+          fill
+          quality={80}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover object-[50%_50%]"
+        />
 
-        <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(247,247,242,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(247,247,242,0.18)_1px,transparent_1px)] [background-size:38px_38px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,40,31,0.66)_0%,rgba(0,40,31,0.38)_44%,rgba(0,40,31,0.14)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_24%,rgba(107,159,18,0.12),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0.05)_0%,rgba(0,0,0,0.30)_100%)]" />
 
-        <div className="relative z-10 flex min-h-[500px] items-center px-5 py-14 sm:px-8 lg:min-h-[580px] lg:px-12">
-          <div className="mx-auto grid w-full max-w-xl gap-4">
+        <div className="relative z-10 min-h-[540px] px-5 py-12 sm:px-8 lg:min-h-[620px] lg:px-12">
+          <div className="relative min-h-[540px] lg:min-h-[620px]">
             {languageCard ? (
-              <article className="rounded-[1.5rem] border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.075] p-5 text-[#f7f7f2] shadow-[0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+              <article className="mx-auto w-full max-w-[575px] rounded-3xl border border-white/16 bg-white/[0.095] p-5 text-[#f7f7f2] shadow-[0_28px_80px_rgba(0,0,0,0.38)] backdrop-blur-2xl lg:absolute lg:left-1/2 lg:top-0 lg:-translate-x-1/2">
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[#6b9f12]/25 bg-[#6b9f12]/10 text-[#9bc43a]">
                     {(() => {
@@ -137,15 +144,13 @@ export function PremiumAboutSection({ content, locale }: Props) {
               </article>
             ) : null}
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="mt-14 grid w-full gap-5 sm:grid-cols-2 lg:absolute lg:bottom-[-80px] lg:left-1/2 lg:mt-0 lg:w-[575px] lg:-translate-x-1/2">
               {generationCard ? <CompactProofCard card={generationCard} /> : null}
               {networkCard ? <CompactProofCard card={networkCard} /> : null}
             </div>
           </div>
         </div>
 
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6b9f12]/20" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6b9f12]/10" />
       </div>
     </section>
   );

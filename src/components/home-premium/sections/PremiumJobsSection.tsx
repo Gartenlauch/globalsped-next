@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, BriefcaseBusiness, CheckCircle2, Users } from "lucide-react";
+import Image from "next/image";
 import type { PremiumHomeContent } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { premiumIconMap } from "../icons/premiumIcons";
-import { resolveHref } from "../helpers/resolveHref";
 import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
 type Props = {
   content: PremiumHomeContent["jobs"];
@@ -63,43 +63,30 @@ export function PremiumJobsSection({ content, locale }: Props) {
           </div>
         </div>
 
-        <div className="relative min-h-[480px] overflow-hidden rounded-[2rem] border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] shadow-[0_30px_90px_rgba(0,0,0,0.3)] backdrop-blur-xl lg:min-h-[560px]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,rgba(107,159,18,0.22),transparent_34%),linear-gradient(135deg,rgba(247,247,242,0.08)_0%,rgba(247,247,242,0.03)_100%)]" />
+        <div className="relative min-h-[480px] overflow-hidden rounded-[2rem] border border-transparent bg-[#00281f] shadow-[0_34px_100px_rgba(0,0,0,0.36)] lg:min-h-[560px]">
+          <Image
+            src={content.image.src}
+            alt={content.image.alt}
+            fill
+            quality={80}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-[50%_50%]"
+          />
 
-          <div className="absolute left-1/2 top-[42%] flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[2rem] border border-[#6b9f12]/30 bg-[#00281f]/80 text-[#9bc43a] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
-            <Users className="h-14 w-14" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,40,31,0.22)_52%,rgba(0,40,31,0.62)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(107,159,18,0.12),transparent_34%)]" />
+
+          <div className="absolute -inset-x-px -top-px z-10">
+            <article className="min-h-[120px] rounded-t-[2rem] rounded-b-none border-b border-[#9bc43a]/18 bg-[#003b2f]/82 px-6 py-5 text-[#f7f7f2] shadow-[0_28px_80px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:px-8 lg:px-10">
+              <p className="text-[15px] font-semibold uppercase tracking-[0.24em] text-[#9bc43a] sm:text-base">
+                {content.values[0]?.title}
+              </p>
+
+              <p className="mt-4 max-w-2xl text-base leading-7 text-[#f7f7f2]/78">
+                {content.values[0]?.text}
+              </p>
+            </article>
           </div>
-
-          <div className="absolute left-1/2 top-[42%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6b9f12]/20" />
-          <div className="absolute left-1/2 top-[42%] h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6b9f12]/10" />
-
-          <div className="absolute left-6 top-6 rounded-3xl border border-[#f7f7f2]/10 bg-[#00281f]/72 p-6 text-[#f7f7f2] shadow-[0_24px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-            <BriefcaseBusiness className="h-7 w-7 text-[#9bc43a]" aria-hidden="true" />
-            <p className="mt-5 max-w-[240px] text-lg font-semibold leading-snug tracking-[-0.03em]">
-              {content.values[0]?.title}
-            </p>
-            <p className="mt-3 max-w-[260px] text-sm leading-6 text-[#f7f7f2]/68">
-              {content.values[0]?.text}
-            </p>
-          </div>
-
-          <div className="absolute bottom-6 right-6 rounded-3xl border border-[#f7f7f2]/10 bg-[#00281f]/72 p-6 text-[#f7f7f2] shadow-[0_24px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-            <CheckCircle2 className="h-7 w-7 text-[#9bc43a]" aria-hidden="true" />
-            <p className="mt-5 max-w-[240px] text-lg font-semibold leading-snug tracking-[-0.03em]">
-              {content.values[1]?.title}
-            </p>
-            <p className="mt-3 max-w-[260px] text-sm leading-6 text-[#f7f7f2]/68">
-              {content.values[1]?.text}
-            </p>
-          </div>
-
-          <Link
-            href={resolveHref(content.cta.href, locale)}
-            className="absolute bottom-6 left-6 inline-flex items-center gap-3 rounded-2xl border border-[#6b9f12]/30 bg-[#6b9f12]/12 px-5 py-4 text-sm font-semibold text-[#9bc43a] transition hover:bg-[#6b9f12] hover:text-white"
-          >
-            {content.cta.label}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
         </div>
       </div>
     </section>

@@ -227,7 +227,7 @@ export const premiumHomeDe: PremiumHomeContent = {
       href: "/{locale}/ueber-uns",
     },
     image: {
-      src: "/images/home-premium/globalsped-premium-unternehmen-internationale-spedition-1600x1000.webp",
+      src: "/images/home-premium/globalsped-premium-unternehmen-internationale-spedition-1586x992.webp",
       alt: "GLOBALSPED als internationale Spedition mit persönlicher Betreuung und erfahrenem Logistikteam",
     },
     values: [
@@ -250,7 +250,7 @@ export const premiumHomeDe: PremiumHomeContent = {
     proofCards: [
       {
         icon: "communication",
-        title: "Multilingual",
+        title: "Mehrsprachiges Team",
         text: "Mehrsprachige Kommunikation erleichtert internationale Abstimmungen mit Kunden, Partnern und Schnittstellen entlang der Route.",
         languages: [
           {
@@ -304,14 +304,14 @@ export const premiumHomeDe: PremiumHomeContent = {
       href: "/{locale}/jobs",
     },
     image: {
-      src: "/images/home-premium/globalsped-premium-jobs-spedition-logistik-team-1600x1000.webp",
+      src: "/images/home-premium/globalsped-premium-jobs-spedition-logistik-team-620x560.webp",
       alt: "GLOBALSPED Team bei der Planung internationaler Transporte in Spedition und Logistik",
     },
     values: [
       {
         icon: "security",
         title: "Sichere Zukunft",
-        text: "Mitarbeit in einem spezialisierten internationalen Logistikunternehmen.",
+        text: "Mitarbeit in einem spezialisierten internationalen Logistikteam.",
       },
       {
         icon: "growth",
