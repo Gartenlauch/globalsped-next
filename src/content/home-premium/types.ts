@@ -15,15 +15,15 @@ export type PremiumIcon =
   | "growth"
   | "security";
 
-  export type PremiumImage = {
-    src: string;
-    alt: string;
-    width?: number;
-    height?: number;
-    mobileSrc?: string;
-    mobileWidth?: number;
-    mobileHeight?: number;
-  };
+export type PremiumImage = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  mobileSrc?: string;
+  mobileWidth?: number;
+  mobileHeight?: number;
+};
 
 export type PremiumCta = {
   label: string;
@@ -44,6 +44,13 @@ export type PremiumServiceCard = {
   text: string;
   href: string;
   ctaLabel: string;
+};
+
+export type PremiumDestinationSignal = {
+  originLabel: string;
+  originFlagCode: string;
+  targetLabel: string;
+  ariaLabel: string;
 };
 
 export type PremiumCountry = {
@@ -120,8 +127,7 @@ export type PremiumHomeContent = {
     intro: string;
     cta: PremiumCta;
     mapImage: PremiumImage;
-    statValue: string;
-    statLabel: string;
+    routeSignal: PremiumDestinationSignal;
     countries: PremiumCountry[];
   };
 

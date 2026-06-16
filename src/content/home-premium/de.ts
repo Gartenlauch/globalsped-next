@@ -128,16 +128,20 @@ export const premiumHomeDe: PremiumHomeContent = {
     titleHighlight: "anspruchsvolle Zielmärkte",
     intro:
       "GLOBALSPED verbindet Unternehmen mit wichtigen Zielmärkten in Zentralasien, im Kaukasus, in Osteuropa und im Mittleren Osten – mit Erfahrung, Partnernetzwerk, Zollkoordination und persönlicher Betreuung.",
-    cta: {
+      routeSignal: {
+        originLabel: "Europa",
+        originFlagCode: "eu",
+        targetLabel: "Zielländer im Fokus",
+        ariaLabel: "Von Europa zu den Zielländern im Fokus",
+      },
+      cta: {
       label: "Alle Zielländer ansehen",
       href: "/{locale}/ziellaender",
     },
     mapImage: {
-      src: "/images/home-premium/globalsped-premium-routenkarte-europa-zentralasien-kaukasus-2200x1100.webp",
+      src: "/images/home-premium/globalsped-premium-services-ftl-ltl-zollabwicklung-thermo-gefahrgut-projektlogistik-1586x992.webp",
       alt: "Routenkarte für internationale GLOBALSPED Transporte von Europa nach Zentralasien und in den Kaukasus",
     },
-    statValue: "11",
-    statLabel: "Zielländer im Fokus",
     countries: [
       {
         name: "Kasachstan",
