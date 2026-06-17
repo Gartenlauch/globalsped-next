@@ -29,12 +29,12 @@ export function ServicePage({ locale, service }: Props) {
             {service.badge}
           </p>
 
-          <h1 className="max-w-[980px] break-words text-[30px] font-black leading-[1.08] tracking-tight md:text-[54px]">
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
             {service.hero.title}
             <span className="block text-lime-300">
               {service.hero.highlight}
             </span>
-          </h1>
+          </h2>
 
           <p className="mt-5 max-w-[760px] text-base leading-7 text-white/82 md:mt-6 md:text-lg md:leading-8">
             {service.hero.intro}
@@ -108,9 +108,9 @@ export function ServicePage({ locale, service }: Props) {
 
           <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
             <aside className="min-w-0 rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.76)] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-6">
-              <h2 className="break-words text-lg font-black text-lime-300 md:text-xl">
+              <h3 className="break-words text-lg font-black  text-lime-300 md:text-xl">
                 {service.sidebar.title}
-              </h2>
+              </h3>
 
               <div className="mt-6 grid gap-4">
                 {service.sidebar.items.map((item) => (
@@ -160,9 +160,9 @@ function ServiceBlock({
           {icon}
         </div>
 
-        <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+        <h3 className="break-words text-[21px] leading-tight text-white md:text-2xl">
           {title}
-        </h2>
+        </h3>
       </div>
 
       <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
@@ -200,9 +200,9 @@ function ServiceTemperatureSection({
           <p className="mb-1 text-xs font-black uppercase tracking-[0.22em] text-lime-300">
             {section.eyebrow}
           </p>
-          <h2 className="break-words text-[21px] font-black leading-tight text-white md:text-2xl">
+          <h3 className="break-words text-[21px] leading-tight text-white md:text-2xl">
             {section.title}
-          </h2>
+          </h3>
         </div>
       </div>
 
@@ -239,9 +239,9 @@ function ServiceUseCasesSection({
           <PackageCheck />
         </div>
 
-        <h2 className="break-words text-[21px] font-black uppercase leading-tight text-white md:text-2xl">
+        <h3 className="break-words text-[21px] leading-tight text-white md:text-2xl">
           {section.title}
-        </h2>
+        </h3>
       </div>
 
       <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
@@ -277,9 +277,9 @@ function ServiceDetailNotice({
           <ShieldCheck />
         </div>
 
-        <h2 className="break-words text-[21px] font-black leading-tight text-white md:text-2xl">
+        <h3 className="break-words text-[21px] leading-tight text-white md:text-2xl">
           {section.title}
-        </h2>
+        </h3>
       </div>
 
       <p className="text-[15px] leading-7 text-white/78 md:text-base md:leading-8">
@@ -313,9 +313,9 @@ function ServiceExpertSection({
         {section.badge}
       </p>
 
-      <h2 className="text-2xl font-black text-white">
+      <h3 className="text-2xl text-white">
         {section.title}
-      </h2>
+      </h3>
 
       <p className="mt-4 text-base leading-8 text-white/78">
         {section.intro}
@@ -327,9 +327,9 @@ function ServiceExpertSection({
             key={card.title}
             className="rounded-2xl border border-white/10 bg-white/7 p-5"
           >
-            <h3 className="text-lg font-black uppercase text-lime-300">
+            <h4 className="text-lg uppercase text-lime-300">
               {card.title}
-            </h3>
+            </h4>
 
             <p className="mt-3 text-sm leading-7 text-white/78">
               {card.text}
@@ -339,7 +339,7 @@ function ServiceExpertSection({
       </div>
 
       <div className="mt-7 rounded-2xl border border-white/10 bg-[rgba(0,40,31,0.58)] p-5">
-        <h3 className="font-black uppercase text-white">
+        <h3 className=" uppercase text-white">
           {section.authorityTitle}
         </h3>
 

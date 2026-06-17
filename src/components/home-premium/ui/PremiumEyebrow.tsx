@@ -7,7 +7,7 @@ type Props = {
     return (
       <p
         className={[
-          "mb-4 text-xs font-semibold uppercase tracking-[0.22em]",
+          "mb-4 text-xs font-extrabold uppercase tracking-[0.28em]",
           variant === "dark" ? "text-[#9bc43a]" : "text-[#6b9f12]",
         ].join(" ")}
       >

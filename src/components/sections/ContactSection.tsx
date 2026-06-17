@@ -130,7 +130,7 @@ export function ContactSection({ locale }: Props) {
                         {t.badge}
                     </span>
 
-                    <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
+                    <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
                         {t.title}{" "}
                         <span className="text-lime-300">{t.highlight}</span>
                     </h2>
@@ -250,7 +250,7 @@ export function ContactSection({ locale }: Props) {
                     </div>
 
                     <aside className="rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.76)] p-7 shadow-[0_30px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-                        <h3 className="text-2xl font-black uppercase text-lime-300">
+                        <h3 className="text-2xl font-semibold leading-tight tracking-[-0.025em] text-lime-300">
                             {t.locationsTitle}
                         </h3>
 

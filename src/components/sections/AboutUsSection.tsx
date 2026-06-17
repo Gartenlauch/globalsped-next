@@ -39,7 +39,7 @@ export function AboutUsSection({ locale }: Props) {
                             {t.badge}
                         </p>
 
-                        <h2 className="text-[30px] font-black leading-[1.05] md:text-[40px]">
+                        <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
                             {t.title}
                             <span className="block text-lime-300">{t.highlight}</span>
                         </h2>
@@ -97,7 +97,7 @@ export function AboutUsSection({ locale }: Props) {
                                     <Icon size={24} strokeWidth={1.8} />
                                 </div>
 
-                                <h3 className="text-lg font-black uppercase leading-tight text-white">
+                                <h3 className="text-lg font-semibold leading-tight tracking-[-0.025em] text-white">
                                     {item.title}
                                 </h3>
 
@@ -115,7 +115,7 @@ export function AboutUsSection({ locale }: Props) {
                         </div>
 
                         <div>
-                            <h3 className="text-[24px] font-black uppercase leading-tight text-white md:text-[32px]">
+                            <h3 className="text-[24px] leading-tight text-white md:text-[32px]">
                                 {t.teamIntroBox.title}
                             </h3>
 
@@ -132,7 +132,7 @@ export function AboutUsSection({ locale }: Props) {
                             {t.badge}
                         </p>
 
-                        <h3 className="text-[28px] font-black uppercase leading-tight md:text-[36px]">
+                        <h3 className="text-[28px] leading-tight md:text-[36px]">
                             {t.teamListTitle}
                         </h3>
 
@@ -159,11 +159,11 @@ export function AboutUsSection({ locale }: Props) {
                                 </div>
 
                                 <div className="p-5">
-                                    <h4 className="text-lg font-black uppercase leading-tight text-white">
+                                    <h4 className="text-lg leading-tight text-white">
                                         {member.name}
                                     </h4>
 
-                                    <p className="mt-1 text-sm font-bold uppercase tracking-wide text-lime-300">
+                                    <p className="mt-1 text-sm tracking-wide text-lime-300">
                                         {member.job}
                                     </p>
 

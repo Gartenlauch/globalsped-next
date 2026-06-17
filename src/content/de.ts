@@ -106,8 +106,8 @@ export const de = {
   },
   destinations: {
     badge: "Zielländer",
-    title: "Zielländer für internationale Transporte",
-    highlight: "nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
+    title: "Zielländer für internationale Transporte nach",
+    highlight: "Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten",
     intro:
       "GLOBALSPED organisiert internationale Transporte von Europa in anspruchsvolle Zielländer. Unsere Schwerpunkte liegen auf Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Routenplanung, Zollabwicklung, Dokumentenprüfung und persönlicher Transportkoordination.",
 
@@ -206,8 +206,8 @@ export const de = {
       country: "Usbekistan",
       region: "Zentralasien",
       heroImage: "/images/country-hero/usbekistan.jpg",
-      title: "Transport von Europa nach",
-      highlight: "Usbekistan",
+      title: "Transport von Europa",
+      highlight: "nach Usbekistan",
       intro:
         "Globalsped organisiert zuverlässige Transporte von ganz Europa nach Usbekistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
       seoText:
@@ -368,8 +368,8 @@ export const de = {
       country: "Kasachstan",
       region: "Zentralasien",
       heroImage: "/images/country-hero/kasachstan.jpg",
-      title: "Transport nach",
-      highlight: "Kasachstan",
+      title: "Transport von Europa",
+      highlight: "nach Kasachstan",
       intro:
         "Globalsped organisiert zuverlässige Transporte von ganz Europa nach Kasachstan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
       seoText:
@@ -527,8 +527,8 @@ export const de = {
       country: "Kirgisistan",
       region: "Zentralasien",
       heroImage: "/images/country-hero/kirgisistan.jpg",
-      title: "Transport nach",
-      highlight: "Kirgisistan",
+      title: "Transport von Europa",
+      highlight: "nach Kirgisistan",
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Kirgisistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Zentralasien.",
       seoText:
@@ -687,8 +687,8 @@ export const de = {
       region: "Zentralasien",
       heroImage: "/images/country-hero/turkmenistan.jpg",
 
-      title: "Transport nach",
-      highlight: "Turkmenistan",
+      title: "Transport von Europa",
+      highlight: "nach Turkmenistan",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Turkmenistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Zentralasien.",
@@ -855,8 +855,8 @@ export const de = {
       region: "Zentralasien",
       heroImage: "/images/country-hero/tadschikistan.jpg",
 
-      title: "Transport nach",
-      highlight: "Tadschikistan",
+      title: "Transport von Europa",
+      highlight: "nach Tadschikistan",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Tadschikistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Zentralasien.",
@@ -1027,8 +1027,8 @@ export const de = {
       region: "Zentralasien",
       heroImage: "/images/country-hero/mongolei.jpg",
 
-      title: "Transport in die",
-      highlight: "Mongolei",
+      title: "Transport von Europa",
+      highlight: "in die Mongolei",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte in die Mongolei – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Zentralasien.",
@@ -1195,8 +1195,8 @@ export const de = {
       region: "Kaukasus",
       heroImage: "/images/country-hero/aserbaidschan.jpg",
 
-      title: "Transport nach",
-      highlight: "Aserbaidschan",
+      title: "Transport von Europa",
+      highlight: "nach Aserbaidschan",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Aserbaidschan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Kaukasus.",
@@ -1361,8 +1361,8 @@ export const de = {
       region: "Kaukasus",
       heroImage: "/images/country-hero/georgien.jpg",
 
-      title: "Transport nach",
-      highlight: "Georgien",
+      title: "Transport von Europa",
+      highlight: "nach Georgien",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Georgien – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Kaukasus.",
@@ -1528,8 +1528,8 @@ export const de = {
       region: "Kaukasus",
       heroImage: "/images/country-hero/armenien.jpg",
 
-      title: "Transport nach",
-      highlight: "Armenien",
+      title: "Transport von Europa",
+      highlight: "nach Armenien",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Armenien – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Kaukasus.",
@@ -1695,8 +1695,8 @@ export const de = {
       region: "Naher Osten",
       heroImage: "/images/country-hero/irak.jpg",
 
-      title: "Transport in den",
-      highlight: "Irak",
+      title: "Transport von Europa",
+      highlight: "in den Irak",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte in den Irak – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Nahen Osten.",
@@ -1863,8 +1863,8 @@ export const de = {
       region: "Mittlerer Osten",
       heroImage: "/images/country-hero/tuerkei.jpg",
 
-      title: "Transport in die",
-      highlight: "Türkei",
+      title: "Transport von Europa",
+      highlight: "in die Türkei",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte in die Türkei – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten in den Mittleren Osten.",
@@ -2036,8 +2036,8 @@ export const de = {
       region: "Osteuropa",
       heroImage: "/images/country-hero/ukraine.jpg",
 
-      title: "Transport in die",
-      highlight: "Ukraine",
+      title: "Transport von Europa",
+      highlight: "in die Ukraine",
 
       intro:
         "Globalsped organisiert zuverlässige Transporte in die Ukraine – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten nach Osteuropa.",
@@ -2348,7 +2348,7 @@ export const de = {
     },
     teamListTitle: "Ihr persönliches GLOBALSPED Team",
     teamListIntro:
-      "Unsere Account Agents und Ansprechpartner unterstützen Sie persönlich bei Transportanfragen, Zollthemen und der operativen Abwicklung Ihrer Sendungen.",
+      "Unsere Transport Manager und Ansprechpartner unterstützen Sie persönlich bei Transportanfragen, Zollthemen und der operativen Abwicklung Ihrer Sendungen.",
 
     teamMembers: [
       {
@@ -2372,7 +2372,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-no-image.gif",
         name: "Adisa Metolli",
-        job: "Account Agent",
+        job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 51",
           email: "am@globalsped.de",
@@ -2381,7 +2381,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-jahan.jpg",
         name: "Jahan Ilgeldyyeva",
-        job: "Account Agent",
+        job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 34",
           email: "ji@globalsped.de",
@@ -2390,7 +2390,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-thomas.jpg",
         name: "Thomas Höllmüller",
-        job: "Account Agent",
+        job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 28",
           email: "th@globalsped.de",
@@ -2399,7 +2399,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-manfred.jpg",
         name: "Manfred Steidl",
-        job: "Account Agent",
+        job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 23",
           email: "ms@globalsped.de",
@@ -2417,7 +2417,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-no-image.gif",
         name: "Elias Schuhböck",
-        job: "Account Agent",
+        job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 25",
           email: "es@globalsped.de",
@@ -2426,7 +2426,7 @@ export const de = {
       {
         imgURL: "/images/team/globalsped-no-image.gif",
         name: "Ida Tosun Kaiymova",
-        job: "Account Agent",
+        job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 33",
           email: "itk@globalsped.de",

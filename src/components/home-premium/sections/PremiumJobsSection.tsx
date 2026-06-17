@@ -15,9 +15,8 @@ export function PremiumJobsSection({ content, locale }: Props) {
       id={content.id}
       className="relative overflow-hidden bg-[#00281f] py-20 text-[#f7f7f2] lg:py-28"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_24%,rgba(107,159,18,0.22),transparent_32%),radial-gradient(circle_at_16%_72%,rgba(247,247,242,0.08),transparent_34%)]" />
-
-      <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(247,247,242,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(247,247,242,0.14)_1px,transparent_1px)] [background-size:38px_38px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_24%,rgba(107,159,18,0.28),transparent_34%),radial-gradient(circle_at_18%_74%,rgba(0,59,47,0.38),transparent_42%),linear-gradient(135deg,rgba(0,40,31,0.52),rgba(0,59,47,0.18)_48%,rgba(0,0,0,0.28))]" />
+      <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(247,247,242,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(247,247,242,0.10)_1px,transparent_1px)] [background-size:38px_38px]" />
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>

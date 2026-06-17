@@ -41,7 +41,7 @@ export function ServicesSection({ locale }: Props) {
               {t.badge}
             </p>
 
-            <h2 className="text-[30px] font-black leading-[1.05] md:text-[40px]">
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
               {t.title}
               <span className="block text-lime-300">{t.highlight}</span>
             </h2>
@@ -81,12 +81,12 @@ export function ServicesSection({ locale }: Props) {
               >
                 <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-lime-300/10 blur-3xl transition group-hover:bg-lime-300/20" />
 
-                <div className="relative mb-4 flex items-start gap-3">
+                <div className="relative mb-4 flex items-center gap-3">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-lime-300/30 bg-lime-300/10 text-lime-300 shadow-[0_0_24px_rgba(163,230,53,0.16)]">
                     <Icon size={26} strokeWidth={1.8} />
                   </div>
 
-                  <h3 className="max-w-[320px] text-[19px] font-black uppercase leading-[1.12] tracking-[-0.02em] text-white md:text-[22px]">
+                  <h3 className="max-w-[320px] text-center text-lg font-semibold leading-tight tracking-[-0.025em] text-white">
                     {item.title}
                   </h3>
                 </div>
@@ -126,7 +126,7 @@ export function ServicesSection({ locale }: Props) {
               {t.strengthsBadge}
             </p>
 
-            <h3 className="text-[28px] font-black uppercase leading-tight md:text-[38px]">
+            <h3 className="text-[28px] leading-tight md:text-[38px]">
               {t.strengthsTitle}
             </h3>
 

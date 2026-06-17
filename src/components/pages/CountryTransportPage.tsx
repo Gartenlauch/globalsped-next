@@ -50,7 +50,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.region}
             </p>
 
-            <h1 className="text-[34px] font-black leading-[1.05] md:text-[48px]">
+            <h1 className="max-w-[620px] text-[42px] font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-[50px] lg:text-[52px]">
               {page.title}
               <span className="block text-lime-300">{page.highlight}</span>
             </h1>
@@ -87,7 +87,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.labels.introBadge}
             </p>
 
-            <h2 className="text-[28px] font-black leading-tight md:text-[38px]">
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] ${textColor} sm:text-4xl lg:text-[42px]">
               {page.labels.logisticsTitlePrefix} {page.country}
             </h2>
 
@@ -115,7 +115,7 @@ export function CountryTransportPage({ locale, page }: Props) {
           <article className="mt-14 rounded-3xl border border-white/15 bg-white/8 p-7 shadow-xl backdrop-blur-xl">
             <div className="mb-5 flex items-center gap-3 text-lime-300">
               <Route size={24} />
-              <h3 className="text-xl font-black uppercase">
+              <h3 className="text-xl font-semibold leading-tight tracking-[-0.025em]">
                 {page.transportDetails.route.label}
               </h3>
             </div>
@@ -123,7 +123,7 @@ export function CountryTransportPage({ locale, page }: Props) {
             <div className="grid gap-6 md:grid-cols-2">
               {page.transportDetails.route.routes.map((route) => (
                 <div key={route.title}>
-                  <h4 className="font-black uppercase text-white">{route.title}</h4>
+                  <h4 className="font-black leading-tight tracking-[-0.025em] text-white">{route.title}</h4>
                   <p className="mt-2 text-sm leading-7 text-white/78">
                     {route.description}
                   </p>
@@ -138,13 +138,13 @@ export function CountryTransportPage({ locale, page }: Props) {
             <article className="rounded-3xl border border-white/15 bg-white/8 p-6 shadow-xl backdrop-blur-xl">
               <div className="mb-4 flex items-center gap-3 text-lime-300">
                 <Clock size={22} />
-                <h3 className="text-lg font-black uppercase">
+                <h3 className="text-lg font-semibold leading-tight tracking-[-0.025em]">
                   {page.transportDetails.runtime.label}
                 </h3>
               </div>
 
               <div>
-                <p className="text-[28px] font-black leading-tight text-white md:text-[32px]">
+                <p className="text-[28px] leading-tight text-white md:text-[32px]">
                   {runtime.main}
                 </p>
 
@@ -160,7 +160,7 @@ export function CountryTransportPage({ locale, page }: Props) {
             <article className="rounded-3xl border border-white/15 bg-white/8 p-6 shadow-xl backdrop-blur-xl">
               <div className="mb-4 flex items-center gap-3 text-lime-300">
                 <MapPin size={22} />
-                <h3 className="text-lg font-black uppercase">{page.labels.citiesTitle}
+                <h3 className="text-lg font-semibold leading-tight tracking-[-0.025em]">{page.labels.citiesTitle}
                 </h3></div>
               <ul className="grid gap-2">
                 {page.cities.map((city) => (
@@ -176,7 +176,7 @@ export function CountryTransportPage({ locale, page }: Props) {
             <article className="rounded-3xl border border-white/15 bg-white/8 p-6 shadow-xl backdrop-blur-xl">
               <div className="mb-4 flex items-center gap-3 text-lime-300">
                 <ShieldCheck size={22} />
-                <h3 className="text-lg font-black uppercase">
+                <h3 className="text-lg font-semibold leading-tight tracking-[-0.025em]">
                   {page.transportDetails.customsOffice.label}
                 </h3>
               </div>
@@ -195,7 +195,7 @@ export function CountryTransportPage({ locale, page }: Props) {
             <article className="rounded-3xl border border-white/15 bg-white/8 p-6 shadow-xl backdrop-blur-xl">
               <div className="mb-4 flex items-center gap-3 text-lime-300">
                 <FileText size={22} />
-                <h3 className="text-lg font-black uppercase">
+                <h3 className="text-lg font-semibold leading-tight tracking-[-0.025em]">
                   {page.transportDetails.documents.label}
                 </h3>
               </div>
@@ -220,7 +220,7 @@ export function CountryTransportPage({ locale, page }: Props) {
           <article className="mt-6 rounded-3xl border border-white/15 bg-white/8 p-7 shadow-xl backdrop-blur-xl">
             <div className="mb-4 flex items-center gap-3 text-lime-300">
               <Truck size={24} />
-              <h3 className="text-xl font-black uppercase">
+              <h3 className="text-xl font-semibold leading-tight tracking-[-0.025em]">
                 {page.transportDetails.requiredInformation.label}
               </h3>
             </div>
@@ -249,7 +249,7 @@ export function CountryTransportPage({ locale, page }: Props) {
               {page.labels.authorityBadge}
             </p>
 
-            <h2 className="mt-3 text-[28px] font-black md:text-[36px]">
+            <h2 className="mt-3 text-[28px] md:text-[36px]">
               {page.countryAuthorityContent.title}
             </h2>
 
