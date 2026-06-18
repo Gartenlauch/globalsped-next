@@ -14,7 +14,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const metadata = getMetadataContent(locale);
-    console.log(metadata)
+
   return buildPageMetadata({
     locale,
     meta: metadata.pages.about,

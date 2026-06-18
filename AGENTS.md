@@ -37,7 +37,7 @@ Separate pages:
 - /de/faq
 - /de/ziellaender
 - /de/leistungen
-- /de/zollabwicklung
+- /de/leistungen/zollabwicklung
 - /de/leistungen/ftl-komplettladungen
 - /de/leistungen/ltl-teilladungen
 - /de/leistungen/thermotransporte

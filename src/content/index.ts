@@ -3,7 +3,7 @@ import { de } from "./de";
 //import { az } from "./az";
 
 
-export const supportedLocales = ["de", "en", "az"];
+export const supportedLocales = ["de"];
 export const defaultLocale = "de"
 
 export const content = {

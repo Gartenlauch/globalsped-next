@@ -88,7 +88,7 @@ export const impressumDe: ImpressumContent = {
       title: "Niederlassung Österreich",
       lines: [
         {
-          value: "Globalsped GmbH Internationale Spedition - Filiale Salzburg",
+          value: "Globalsped Internationale Spedition GmbH - Filiale Salzburg",
         },
         {
           value: "Metzgerstraße 54",

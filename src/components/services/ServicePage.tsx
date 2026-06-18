@@ -29,12 +29,12 @@ export function ServicePage({ locale, service }: Props) {
             {service.badge}
           </p>
 
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
             {service.hero.title}
             <span className="block text-lime-300">
               {service.hero.highlight}
             </span>
-          </h2>
+          </h1>
 
           <p className="mt-5 max-w-[760px] text-base leading-7 text-white/82 md:mt-6 md:text-lg md:leading-8">
             {service.hero.intro}

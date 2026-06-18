@@ -1,9 +1,8 @@
 # Content Structure
 Navigation Items:
 - Hero (Landingpage)
-- Destinationen
+- Zielländer
 - Leistungen
-- Zollabwicklung
 - Über Uns
 - Kontakt
 - Anfrage
@@ -13,18 +12,18 @@ Navigation Items:
 Homepage sections:
 - Hero
 - Leistungen
-- Destinationen
-- Zollabwicklung
+- Zielländer
 - Über uns
+- Jobs
 - Kontakt CTA
 
 Separate pages:
-- Anfrage
+- Transport-Anfrage
 - FAQ
-- Destinationen
+- Ziellaender
 - Leistungen
-- Zollabwicklung
 - Über uns
+- Jobs
 - Kontakt
 
 Languages:

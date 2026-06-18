@@ -75,7 +75,7 @@ export const globalspedOrganization = {
       email: "info@globalsped.de",
       contactType: "customer service",
       areaServed: ["DE", "AT", "EU"],
-      availableLanguage: ["de", "en", "ru", "tr"],
+      availableLanguage: ["de"],
     },
   ],
 };

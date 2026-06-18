@@ -39,10 +39,10 @@ export function AboutUsSection({ locale }: Props) {
                             {t.badge}
                         </p>
 
-                        <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
+                        <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
                             {t.title}
                             <span className="block text-lime-300">{t.highlight}</span>
-                        </h2>
+                        </h1>
 
                         <p className="mt-6 max-w-[780px] text-base leading-8 text-white/86 md:text-lg">
                             {t.intro}
@@ -132,9 +132,9 @@ export function AboutUsSection({ locale }: Props) {
                             {t.badge}
                         </p>
 
-                        <h3 className="text-[28px] font-semibold leading-tight md:text-[36px]">
+                        <h2 className="text-[28px] font-semibold leading-tight md:text-[36px]">
                             {t.teamListTitle}
-                        </h3>
+                        </h2>
 
                         <p className="mt-5 text-base leading-8 text-white/78">
                             {t.teamListIntro}

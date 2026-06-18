@@ -37,10 +37,10 @@ export function JobsSection({ locale }: Props) {
                         {t.badge}
                     </p>
 
-                    <h2 className="text-[30px] font-semibold leading-[1.05] md:text-[46px]">
+                    <h1 className="text-[30px] font-semibold leading-[1.05] md:text-[46px]">
                         {t.title}
                         <span className="block text-lime-300">{t.highlight}</span>
-                    </h2>
+                    </h1>
 
                     <p className="mx-auto mt-6 max-w-[760px] text-base leading-8 text-white/82 md:text-lg">
                         {t.intro}

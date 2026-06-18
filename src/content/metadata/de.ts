@@ -37,7 +37,7 @@ export const metadataDe: LocaleMetadata = {
       title: "Kontakt für internationale Transporte | GLOBALSPED",
       description:
         "Kontaktieren Sie GLOBALSPED für internationale Transporte, Zollabwicklung, FTL, LTL, Thermotransporte und Projektlogistik.",
-      path: "/de/kontakt",
+      path: "/de#kontakt",
     },
 
     about: {

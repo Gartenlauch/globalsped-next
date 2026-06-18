@@ -3,12 +3,12 @@ export const de = {
     logoLabel: "GLOBALSPED",
     nav: [
       { label: "Start", href: "/{locale}" },
-      { label: "Leistungen", href: "/{locale}#leistungen" },
-      { label: "Zielländer", href: "/{locale}#ziellaender" },
-      { label: "Über uns", href: "/{locale}#ueber-uns" },
-      { label: "Jobs", href: "/{locale}#jobs" },
+      { label: "Leistungen", href: "/{locale}/leistungen" },
+      { label: "Zielländer", href: "/{locale}/ziellaender" },
+      { label: "Über uns", href: "/{locale}/ueber-uns" },
+      { label: "Jobs", href: "/{locale}/jobs" },
       { label: "Kontakt", href: "/{locale}#kontakt" },
-      { label: "FAQ", href: "/{locale}#faq" },
+      { label: "FAQ", href: "/{locale}/faq" },
     ],
     cta: {
       label: "Anfrage",
@@ -2206,7 +2206,7 @@ export const de = {
   ],
   services: {
     badge: "Unsere Leistungen",
-    title: "Logistiklösungen für komplexe Märkte.",
+    title: "Logistiklösungen für komplexe Märkte. ",
     highlight: "Zuverlässig. Persönlich. International.",
     intro:
       "GLOBALSPED bietet maßgeschneiderte Transport- und Logistiklösungen für anspruchsvolle Verbindungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten. Mit über 30 Jahren Erfahrung, persönlicher Betreuung und einem starken Partnernetzwerk sorgen wir für eine sichere, effiziente und transparente Abwicklung Ihrer Transporte.",
@@ -2257,12 +2257,12 @@ export const de = {
     ],
 
     imageOne: {
-      src: "/images/services/globalsped-service-truck.png",
+      src: "/images/services/globalsped-service-truck.webp",
       alt: "LKW auf internationaler Route Richtung Zentralasien",
     },
 
     imageTwo: {
-      src: "/images/services/globalsped-project-logistics.png",
+      src: "/images/services/globalsped-project-logistics.webp",
       alt: "Projektlogistik mit Containerumschlag und LKW",
     },
 
@@ -2539,8 +2539,8 @@ export const de = {
   },
   contact: {
     badge: "Kontakt",
-    title: "Kontaktieren Sie uns",
-    highlight: "für Ihre Transportanfrage",
+    title: "Wenn sie Fragen haben, ",
+    highlight: "kontaktieren sie uns",
     intro:
       "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
 
@@ -2655,6 +2655,6 @@ export const de = {
     ],
 
     copyright:
-      "© GLOBALSPED International Transport GmbH. Alle Rechte vorbehalten.",
+      "© GLOBALSPED International Spedtion GmbH. Alle Rechte vorbehalten.",
   },
 };
