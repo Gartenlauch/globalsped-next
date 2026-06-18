@@ -8,7 +8,7 @@ type Props = {
   path: string;
   name: string;
   description: string;
-  type?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage";
+  type?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage" | "CollectionPage";
   mainEntityId?: string;
 };
 

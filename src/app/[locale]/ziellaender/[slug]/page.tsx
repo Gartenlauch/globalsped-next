@@ -6,8 +6,8 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { absoluteUrl } from "@/lib/seo/urls";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
-import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
+import { CountryTransportJsonLd } from "@/components/seo/CountryTransportJsonLd";
 
 type Props = {
   params: Promise<{
@@ -63,7 +63,7 @@ export default async function DynamicTargetCountryPage({ params }: Props) {
         path={path}
         name={countryMeta?.title ?? `Transport nach ${page.country}`}
         description={countryMeta?.description ?? page.intro}
-        mainEntityId={`${absoluteUrl(path)}#service`}
+        mainEntityId={`${absoluteUrl(path)}#transport-service`}
       />
 
       <BreadcrumbJsonLd
@@ -76,13 +76,11 @@ export default async function DynamicTargetCountryPage({ params }: Props) {
           },
         ]}
       />
-
-      <ServiceJsonLd
+      <CountryTransportJsonLd
         path={path}
-        name={`Transport nach ${page.country}`}
+        countryName={page.country}
+        title={countryMeta?.title ?? page.title}
         description={countryMeta?.description ?? page.intro}
-        serviceType={`Internationale Transporte nach ${page.country}`}
-        areaServed={[page.country, page.region]}
       />
 
       <CountryTransportPage locale={locale} page={page} />

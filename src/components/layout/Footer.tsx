@@ -33,7 +33,7 @@ export function Footer({ locale }: Props) {
         {/* LOGO */}
         <div className="mx-6 flex h-16 w-16 items-center justify-center rounded-full border border-lime-300/30 bg-[rgba(3,26,21,0.95)] shadow-[0_0_35px_rgba(163,230,53,0.18)] backdrop-blur-xl">
           <img
-            src="/images/globalsped_logo.jpg"
+            src="/images/logo/globalsped-logo.png"
             alt="GLOBALSPED Logo"
             className="h-8 w-8 object-contain"
           />
@@ -86,13 +86,26 @@ export function Footer({ locale }: Props) {
                 <MapPin size={17} className="mt-0.5 text-lime-300" />
                 <span>{t.contact.address}</span>
               </div>
+              {t.contact.openingHours && (
+
+                <div className="mt-4">
+                  <p className="text-sm text-semibold text-lime-300 uppercase">
+                    {t.contact.openingHoursLabel}
+                  </p>
+                  <p className="text-sm text-neutral-300">
+                    {t.contact.openingDays} {t.contact.openingHours}
+                    </p>
+  
+                </div>
+
+              )}
             </div>
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.18em] text-lime-300">
+            <p className="text-sm strong font-black uppercase tracking-[0.18em] text-lime-300">
               {t.pageLinksTitle}
-            </h3>
+            </p>
 
             <ul className="mt-5 grid gap-3">
               {t.pageLinks.map((link) => (
@@ -115,9 +128,9 @@ export function Footer({ locale }: Props) {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.18em] text-lime-300">
+            <p className="text-sm strong font-black uppercase tracking-[0.18em] text-lime-300">
               {t.transportsTitle}
-            </h3>
+            </p>
 
             <ul className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
               {t.transports.map((link) => (
@@ -134,9 +147,9 @@ export function Footer({ locale }: Props) {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.18em] text-lime-300">
+            <p className="text-sm strong font-black uppercase tracking-[0.18em] text-lime-300">
               {t.membershipsTitle}
-            </h3>
+            </p>
 
             <div className="mt-5 grid gap-4">
               {t.memberships.map((item) => {

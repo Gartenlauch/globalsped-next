@@ -21,9 +21,9 @@ function HeroStatCard({ item }: HeroStatCardProps) {
         {item.eyebrow}
       </p>
 
-      <h2 className="mt-5 text-lg font-semibold leading-tight tracking-[-0.03em] text-white">
+      <h3 className="mt-5 text-lg font-semibold leading-tight tracking-[-0.03em] text-white">
         {item.title}
-      </h2>
+      </h3>
 
       <p className="mt-3 text-sm leading-6 text-[#f7f7f2]/70">
         {item.text}

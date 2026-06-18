@@ -37,9 +37,9 @@ export default async function BewerbungPage({ params }: Props) {
 
       <BreadcrumbJsonLd
         items={[
-          { name: "Start", href: `/${locale}` },
+          { name: "Startseite", href: `/${locale}` },
           { name: "Jobs", href: `/${locale}/jobs` },
-          { name: "Bewerbung", href: pageMeta.path },
+          { name: "Bewerbung", href: `/${locale}/jobs/bewerbung` },
         ]}
       />
 

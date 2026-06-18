@@ -9,6 +9,7 @@ type Props = {
   description: string;
   serviceType: string;
   areaServed?: string[];
+  additionalType?: string;
 };
 
 export function ServiceJsonLd({
@@ -23,19 +24,25 @@ export function ServiceJsonLd({
     "Osteuropa",
     "Mittlerer Osten",
   ],
+  additionalType = "https://schema.org/Service",
 }: Props) {
   const pageUrl = absoluteUrl(path);
+  const serviceId = `${pageUrl}#service`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${pageUrl}#service`,
+    "@id": serviceId,
     name,
     description,
     serviceType,
+    additionalType,
     url: pageUrl,
     provider: {
       "@id": `${absoluteUrl()}/#organization`,
+    },
+    isPartOf: {
+      "@id": `${absoluteUrl()}/#website`,
     },
     areaServed: areaServed.map((area) => ({
       "@type": "Place",
@@ -45,6 +52,15 @@ export function ServiceJsonLd({
       "@type": "BusinessAudience",
       audienceType:
         "Industrieunternehmen, Exporteure, Importeure, Logistikleiter und Supply-Chain-Manager",
+    },
+    offers: {
+      "@type": "Offer",
+      url: pageUrl,
+      availability: "https://schema.org/InStock",
+      businessFunction: "https://schema.org/ProvideService",
+      itemOffered: {
+        "@id": serviceId,
+      },
     },
   };
 

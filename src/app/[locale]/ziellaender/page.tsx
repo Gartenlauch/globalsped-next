@@ -31,8 +31,9 @@ export default async function TargetCountriesPage({ params }: Props) {
       <WebPageJsonLd
         locale={locale}
         path={`/${locale}/ziellaender`}
-        name={pageMeta.title}
-        description={pageMeta.description}
+        name={metadata.pages.destinations.title}
+        description={metadata.pages.destinations.description}
+        type="CollectionPage"
       />
 
       <BreadcrumbJsonLd

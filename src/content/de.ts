@@ -2610,6 +2610,9 @@ export const de = {
       email: "info@globalsped.de",
       phone: "+49 (0) 8654 5762 0",
       address: "Pendel­hagen 1, D-83416 Saaldorf-Surheim",
+      openingHoursLabel: "Öffnungszeiten",
+      openingDays: "Montag - Freitag",
+      openingHours: "von 08:00–17:00 Uhr",
     },
 
     pageLinksTitle: "Seiten",

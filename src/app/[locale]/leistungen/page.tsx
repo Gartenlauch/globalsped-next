@@ -4,6 +4,9 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { ServiceCatalogJsonLd } from "@/components/seo/ServiceCatalogJsonLd";
+import { getServicesCatalogSchema } from "@/content/schema/services";
+import { absoluteUrl } from "@/lib/seo/urls";
 
 type Props = {
   params: Promise<{
@@ -25,14 +28,17 @@ export default async function ServicesPage({ params }: Props) {
   const { locale } = await params;
   const metadata = getMetadataContent(locale);
   const pageMeta = metadata.pages.services;
-
+  const servicesCatalogSchema = getServicesCatalogSchema(locale);
+  
   return (
     <>
       <WebPageJsonLd
         locale={locale}
-        path={pageMeta.path}
-        name={pageMeta.title}
-        description={pageMeta.description}
+        path={`/${locale}/leistungen`}
+        name={metadata.pages.services.title}
+        description={metadata.pages.services.description}
+        type="CollectionPage"
+        mainEntityId={`${absoluteUrl(`/${locale}/leistungen`)}#service-catalog`}
       />
 
       <BreadcrumbJsonLd
@@ -43,6 +49,12 @@ export default async function ServicesPage({ params }: Props) {
       />
 
       <ServicesSection locale={locale} />
+      <ServiceCatalogJsonLd
+        path={`/${locale}/leistungen`}
+        name={servicesCatalogSchema.name}
+        description={servicesCatalogSchema.description}
+        services={servicesCatalogSchema.services}
+      />
     </>
   );
 }
