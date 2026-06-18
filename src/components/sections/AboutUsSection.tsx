@@ -132,7 +132,7 @@ export function AboutUsSection({ locale }: Props) {
                             {t.badge}
                         </p>
 
-                        <h3 className="text-[28px] leading-tight md:text-[36px]">
+                        <h3 className="text-[28px] font-semibold leading-tight md:text-[36px]">
                             {t.teamListTitle}
                         </h3>
 

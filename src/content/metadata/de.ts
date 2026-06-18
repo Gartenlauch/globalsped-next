@@ -17,22 +17,20 @@ export const metadataDe: LocaleMetadata = {
 
     faq: {
       title: "FAQ zu Transport, Zoll nach Zentralasien und den Kaukasus | GLOBALSPED",
-      description:
-        "Antworten zu internationalen Transporten, Zoll, FTL, LTL, Thermo, Gefahrgut und Transporten nach Zentralasien, Kaukasus und Mittleren Osten.",
+      description: "Antworten zu internationalen Transporten, Zoll, FTL, LTL, Thermo, Gefahrgut und Transporten nach Zentralasien, Kaukasus und Mittleren Osten.",
       path: "/de/faq",
       ogTitle: "FAQ zu internationalen Transporten und Zoll",
-      ogDescription:
-        "Häufige Fragen zu Transporten nach Zentralasien, Kaukasus, Zollabwicklung, FTL, LTL und Spezialtransporten.",
+      ogDescription: "Antworten zu Transport, Zollabwicklung, FTL, LTL und Spezialtransporten.",
+      ogImage: "/images/og/globalsped-faq.jpg",
     },
 
     transportRequest: {
       title: "Transportanfrage international | GLOBALSPED",
-      description:
-        "Stellen Sie Ihre internationale Transportanfrage für FTL, LTL, Palettenware, Thermo, Gefahrgut oder Projektlogistik direkt online.",
+      description: "Stellen Sie Ihre internationale Transportanfrage für FTL, LTL, Palettenware, Thermo, Gefahrgut oder Projektlogistik direkt online.",
       path: "/de/transport-anfrage",
       ogTitle: "Internationale Transportanfrage stellen",
-      ogDescription:
-        "Senden Sie Ihre Transportdaten an GLOBALSPED für FTL, LTL, Thermo, Gefahrgut oder Projektlogistik.",
+      ogDescription: "Transportdaten senden und persönliche Rückmeldung von GLOBALSPED erhalten.",
+      ogImage: "/images/og/globalsped-transport-anfrage.jpg",
     },
 
     contact: {
@@ -51,23 +49,29 @@ export const metadataDe: LocaleMetadata = {
 
     jobs: {
       title: "Jobs in der internationalen Spedition | GLOBALSPED",
-      description:
-        "Karriere bei GLOBALSPED: Arbeiten Sie in der internationalen Spedition mit Fokus auf Transport, Export, Zoll und Logistik.",
+      description: "Karriere bei GLOBALSPED: Arbeiten Sie in der internationalen Spedition mit Fokus auf Transport, Export, Zoll und Logistik.",
       path: "/de/jobs",
+      ogTitle: "Karriere bei GLOBALSPED",
+      ogDescription: "Jobs in internationaler Spedition, Export, Zollabwicklung und Logistik.",
+      ogImage: "/images/og/globalsped-jobs.jpg",
     },
 
     application: {
       title: "Bewerbung bei GLOBALSPED | Karriere",
-      description:
-        "Bewerben Sie sich bei GLOBALSPED für Aufgaben in internationaler Spedition, Export, Zollabwicklung und Logistik.",
-      path: "/de/bewerbung",
+      description: "Bewerben Sie sich bei GLOBALSPED für Aufgaben in internationaler Spedition, Export, Zollabwicklung und Logistik.",
+      path: "/de/jobs/bewerbung",
+      ogTitle: "Bewerbung bei GLOBALSPED",
+      ogDescription: "Jetzt bei GLOBALSPED bewerben und Teil der internationalen Spedition werden.",
+      ogImage: "/images/og/globalsped-jobs.jpg",
     },
 
     destinations: {
-      title: "Zielländer für internationale Transporte | GLOBALSPED",
-      description:
-        "Übersicht der wichtigsten Zielländer für internationale Transporte nach Zentralasien, Kaukasus, Osteuropa und in den Mittleren Osten.",
+      title: "Transportziele Zentralasien & Kaukasus | GLOBALSPED",
+      description: "Übersicht der wichtigsten Zielregionen für internationale Transporte: Zentralasien, Kaukasus, Mittlerer Osten und Osteuropa.",
       path: "/de/ziellaender",
+      ogTitle: "Transportziele Zentralasien & Kaukasus",
+      ogDescription: "Internationale Transporte nach Kasachstan, Usbekistan, Kaukasus, Irak, Ukraine und Mongolei.",
+      ogImage: "/images/og/globalsped-ziellaender.jpg",
     },
 
     services: {
@@ -75,13 +79,18 @@ export const metadataDe: LocaleMetadata = {
       description:
         "GLOBALSPED organisiert FTL-Komplettladungen, LTL-Teilladungen, Thermotransporte, Gefahrgut, Projektlogistik und Zollabwicklung.",
       path: "/de/leistungen",
+      ogTitle: "FTL, LTL, Thermo & Projektlogistik",
+      ogDescription: "Internationale Logistiklösungen für Zentralasien, Kaukasus und Mittleren Osten.",
+      ogImage: "/images/og/globalsped-leistungen.jpg",
     },
 
     customs: {
       title: "Zollabwicklung für internationale Transporte | GLOBALSPED",
-      description:
-        "GLOBALSPED unterstützt bei Export, Import, Transit, ABD, T1, CMR und transportrelevanten Dokumenten für internationale Transporte.",
-      path: "/de/zollabwicklung",
+      description: "GLOBALSPED unterstützt bei Export, Import, Transit, ABD, T1, CMR und transportrelevanten Dokumenten für internationale Transporte.",
+      path: "/de/leistungen/zollabwicklung",
+      ogTitle: "Zollabwicklung für internationale Transporte",
+      ogDescription: "Export, Import, Transit und Transportdokumente für internationale Lieferketten.",
+      ogImage: "/images/og/globalsped-zollabwicklung.jpg",
     },
 
     privacy: {

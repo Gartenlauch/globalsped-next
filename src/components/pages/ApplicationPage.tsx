@@ -165,7 +165,7 @@ export function ApplicationPage({ locale }: Props) {
       await submitApplicationCallable({
         applicationId,
         locale,
-        pagePath: `/${locale}/bewerbung`,
+        pagePath: `/${locale}/jobs/bewerbung`,
         source: "homepage",
         applicant: {
           firstName: form.firstName,
@@ -226,7 +226,7 @@ export function ApplicationPage({ locale }: Props) {
               {t.badge}
             </p>
 
-            <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
+            <h1 className="mt-4 text-4xl leading-tight md:text-6xl">
               {t.title}{" "}
               <span className="text-lime-300">{t.highlight}</span>
             </h1>

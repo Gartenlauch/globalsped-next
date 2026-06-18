@@ -193,7 +193,7 @@ export const submitApplication = onCall(
       updatedAt: now,
 
       locale: data.locale || "de",
-      pagePath: data.pagePath || "/de/bewerbung",
+      pagePath: data.pagePath || "/de/jobs/bewerbung",
 
       applicant: data.applicant,
       application: data.application,

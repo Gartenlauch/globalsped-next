@@ -37,7 +37,7 @@ export function JobsSection({ locale }: Props) {
                         {t.badge}
                     </p>
 
-                    <h2 className="text-[30px] font-black leading-[1.05] md:text-[40px]">
+                    <h2 className="text-[30px] font-semibold leading-[1.05] md:text-[46px]">
                         {t.title}
                         <span className="block text-lime-300">{t.highlight}</span>
                     </h2>
@@ -51,8 +51,8 @@ export function JobsSection({ locale }: Props) {
                     <Image
                         src={t.image.src}
                         alt={t.image.alt}
-                        width={1600}
-                        height={520}
+                        width={1200}
+                        height={400}
                         className="h-[260px] w-full object-cover md:h-[360px] lg:h-[390px]"
                         priority
                     />
@@ -75,7 +75,7 @@ export function JobsSection({ locale }: Props) {
                                         </div>
 
                                         <div>
-                                            <h3 className="text-base font-black uppercase text-white">
+                                            <h3 className="text-base font-semibold uppercase  text-white">
                                                 {card.title}
                                             </h3>
                                             <p className="mt-2 text-sm leading-6 text-white/82">
@@ -95,7 +95,7 @@ export function JobsSection({ locale }: Props) {
                             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-lime-300/40 bg-lime-300/10 text-lime-300">
                                 <BriefcaseBusiness size={24} />
                             </div>
-                            <h3 className="text-2xl font-black uppercase">
+                            <h3 className="text-2xl uppercase">
                                 {t.openPositionsTitle}
                             </h3>
                             <div className="h-px flex-1 bg-lime-300/25" />
@@ -111,7 +111,7 @@ export function JobsSection({ locale }: Props) {
                                     <summary className="cursor-pointer list-none bg-lime-300/8 px-6 py-5 [&::-webkit-details-marker]:hidden">
                                         <div className="flex items-center justify-between gap-5">
                                             <div>
-                                                <h4 className="text-xl font-black uppercase text-white">
+                                                <h4 className="text-xl font-semibold  text-white">
                                                     {position.title}
                                                 </h4>
                                                 <p className="mt-1 text-sm font-semibold text-lime-300/90">
@@ -145,7 +145,7 @@ export function JobsSection({ locale }: Props) {
                                         </ul>
 
                                         <Link
-                                            href="/de/bewerbung"
+                                            href="/de/jobs/bewerbung"
                                             className="mt-7 inline-flex items-center gap-3 rounded-full bg-lime-300 px-6 py-3 text-sm font-black uppercase tracking-wide text-[var(--color-global-dark)] transition hover:bg-lime-200"
                                         >
                                             <Mail size={17} />
@@ -162,7 +162,7 @@ export function JobsSection({ locale }: Props) {
                             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-lime-300/40 bg-lime-300/10 text-lime-300">
                                 <Building2 size={24} />
                             </div>
-                            <h3 className="text-2xl font-black uppercase">
+                            <h3 className="text-2xl  uppercase">
                                 {t.companyTitle}
                             </h3>
                             <div className="h-px flex-1 bg-lime-300/25" />
@@ -194,7 +194,7 @@ export function JobsSection({ locale }: Props) {
                                 <div className="flex gap-4">
                                     <Send className="mt-1 shrink-0 text-lime-300" size={24} />
                                     <div>
-                                        <h4 className="font-black uppercase text-lime-300">
+                                        <h4 className="font-semibold uppercase text-lime-300">
                                             {t.initiative.title}
                                         </h4>
                                         <p className="mt-2 text-sm leading-6 text-white/78">
@@ -217,7 +217,7 @@ export function JobsSection({ locale }: Props) {
                         {t.closing}
 
                     </div>
-                    <Link href="/de/bewerbung" className="btn-primary">
+                    <Link href="/de/jobs/bewerbung" className="btn-primary">
                         {t.applyLabel}
                     </Link>
 

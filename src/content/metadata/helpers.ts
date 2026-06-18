@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { siteConfig } from "./config";
 import type { Locale, PageMeta } from "./types";
 
+const { activeLocales } = siteConfig
+
 type BuildMetaOptions = {
   locale: string;
   meta: PageMeta;
@@ -36,22 +38,30 @@ function replaceLocaleInPath(path: string, targetLocale: Locale) {
   return `/${targetLocale}${normalized}`;
 }
 
+
+
 export function buildPageMetadata({
   locale,
   meta,
-  useProductionUrl = false,
+  useProductionUrl = true,
 }: BuildMetaOptions): Metadata {
   const baseUrl = getBaseUrl(useProductionUrl);
   const path = normalizePath(meta.path);
   const canonicalUrl = `${baseUrl}${path}`;
 
   const languages = Object.fromEntries(
-    siteConfig.locales.map((targetLocale) => [
-      targetLocale,
-      `${baseUrl}${replaceLocaleInPath(path, targetLocale)}`,
-    ])
+    activeLocales.map((targetLocale) => {
+      const locale = targetLocale as Locale;
+  
+      return [
+        locale,
+        `${baseUrl}${replaceLocaleInPath(path, locale)}`,
+      ];
+    })
   );
-
+  const ogImage = meta.ogImage ?? siteConfig.defaultOgImage;
+  const ogImageUrl = `${baseUrl}${ogImage}`;
+  const ogImageAlt = meta.ogImageAlt ?? meta.ogTitle ?? meta.title;
   return {
     title: meta.title,
     description: meta.description,
@@ -73,19 +83,19 @@ export function buildPageMetadata({
       type: "website",
       images: [
         {
-          url: `${baseUrl}${meta.ogImage ?? siteConfig.defaultOgImage}`,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: meta.ogTitle ?? meta.title,
+          alt: ogImageAlt,
         },
       ],
     },
-
+    
     twitter: {
       card: siteConfig.twitterCard,
       title: meta.ogTitle ?? meta.title,
       description: meta.ogDescription ?? meta.description,
-      images: [`${baseUrl}${meta.ogImage ?? siteConfig.defaultOgImage}`],
+      images: [ogImageUrl],
     },
 
     robots: meta.noIndex
