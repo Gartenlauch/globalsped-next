@@ -191,7 +191,6 @@ export const de = {
         ],
       },
     ],
-
     countryGridTitle: "Wichtige Zielländer für internationale Transporte",
     countryGridIntro:
       "Unsere wichtigsten Transportziele für FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung – mit Fokus auf Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten.",
