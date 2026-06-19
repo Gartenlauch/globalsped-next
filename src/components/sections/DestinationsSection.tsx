@@ -96,7 +96,7 @@ export function DestinationsSection({ locale }: Props) {
           <div className="mb-8 max-w-[820px]">
             <p className="mb-3 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.25em] text-lime-300">
               <Truck size={16} />
-              Zielländer
+              {t.countryGridEyebrow}
             </p>
 
             <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[46px]">
@@ -109,15 +109,18 @@ export function DestinationsSection({ locale }: Props) {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {allCountries.map((country) => (
+            {allCountries.map((country) => {
+              console.log(`/images/country-grid/globalsped-transport-${country.slug}.webp`)
+              return (
+              
               <Link
                 href={`${countryRouteBase}/${countrySlugPrefix}${country.slug}`}
                 key={country.slug}
                 className="group relative h-[210px] overflow-hidden rounded-2xl border border-white/12 bg-white/8 shadow-[0_20px_60px_rgba(0,0,0,0.30)]"
               >
                 <Image
-                  src={`/images/countries/${country.slug}.jpg`}
-                  alt={`Transport nach ${country.name}`}
+                  src={`/images/country-grid/globalsped-transport-${country.slug}.webp`}
+                  alt={` Globalsped Transport nach ${country.name}`}
                   fill
                   className="object-cover transition duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -145,7 +148,7 @@ export function DestinationsSection({ locale }: Props) {
                   )}
                 </div>
               </Link>
-            ))}
+            )})}
           </div>
         </div>
 

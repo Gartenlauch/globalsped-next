@@ -86,11 +86,17 @@ export type CountryTransportRequiredInfo = {
   items: string[];
 };
 
+export type CountryHeroImage = {
+  desktop: string;
+  mobile: string;
+  alt: string;
+};
+
 export type CountryTransportPage = {
   slug: string;
   country: string;
   region: string;
-  heroImage: string;
+  heroImage: CountryHeroImage;
   title: string;
   highlight: string;
   intro: string;

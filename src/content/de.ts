@@ -191,6 +191,7 @@ export const de = {
         ],
       },
     ],
+    countryGridEyebrow: "Zieländer",
     countryGridTitle: "Wichtige Zielländer für internationale Transporte",
     countryGridIntro:
       "Unsere wichtigsten Transportziele für FTL, LTL, Thermotransporte, Projektlogistik und Zollabwicklung – mit Fokus auf Zentralasien, Kaukasus, Osteuropa und den Mittleren Osten.",
@@ -204,7 +205,12 @@ export const de = {
       slug: "transport-usbekistan",
       country: "Usbekistan",
       region: "Zentralasien",
-      heroImage: "/images/country-hero/usbekistan.jpg",
+      heroImage: {
+        desktop: "/images/country-hero/globalsped-transport-usbekistan-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-usbekistan-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Usbekistan",
+      },
+
       title: "Transport von Europa",
       highlight: "nach Usbekistan",
       intro:
@@ -366,7 +372,11 @@ export const de = {
       slug: "transport-kasachstan",
       country: "Kasachstan",
       region: "Zentralasien",
-      heroImage: "/images/country-hero/kasachstan.jpg",
+      heroImage: {
+        desktop: "/images/country-hero/globalsped-transport-kasachstan-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-kasachstan-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Kasachstan",
+      },
       title: "Transport von Europa",
       highlight: "nach Kasachstan",
       intro:
@@ -525,7 +535,11 @@ export const de = {
       slug: "transport-kirgisistan",
       country: "Kirgisistan",
       region: "Zentralasien",
-      heroImage: "/images/country-hero/kirgisistan.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-kirgisistan-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-kirgisistan-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Kirgistan",
+     },
       title: "Transport von Europa",
       highlight: "nach Kirgisistan",
       intro:
@@ -684,7 +698,11 @@ export const de = {
       slug: "transport-turkmenistan",
       country: "Turkmenistan",
       region: "Zentralasien",
-      heroImage: "/images/country-hero/turkmenistan.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-turkmenistan-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-turkmenistan-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Turkmenistan",
+     },
 
       title: "Transport von Europa",
       highlight: "nach Turkmenistan",
@@ -852,7 +870,11 @@ export const de = {
       slug: "transport-tadschikistan",
       country: "Tadschikistan",
       region: "Zentralasien",
-      heroImage: "/images/country-hero/tadschikistan.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-tadschikistan-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-tadschikistan-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Tadschikistan",
+     },
 
       title: "Transport von Europa",
       highlight: "nach Tadschikistan",
@@ -1024,7 +1046,11 @@ export const de = {
       slug: "transport-mongolei",
       country: "Mongolei",
       region: "Zentralasien",
-      heroImage: "/images/country-hero/mongolei.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-mongolei-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-mongolei-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte in die Mongolei",
+     },
 
       title: "Transport von Europa",
       highlight: "in die Mongolei",
@@ -1192,7 +1218,11 @@ export const de = {
       slug: "transport-aserbaidschan",
       country: "Aserbaidschan",
       region: "Kaukasus",
-      heroImage: "/images/country-hero/aserbaidschan.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-aserbaidschan-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-aserbaidschan-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Aserbaidschan",
+     },
 
       title: "Transport von Europa",
       highlight: "nach Aserbaidschan",
@@ -1358,7 +1388,11 @@ export const de = {
       slug: "transport-georgien",
       country: "Georgien",
       region: "Kaukasus",
-      heroImage: "/images/country-hero/georgien.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-georgien-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-georgien-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Gerorgien",
+     },
 
       title: "Transport von Europa",
       highlight: "nach Georgien",
@@ -1525,7 +1559,11 @@ export const de = {
       slug: "transport-armenien",
       country: "Armenien",
       region: "Kaukasus",
-      heroImage: "/images/country-hero/armenien.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-armenien-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-armenien-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte nach Armenien",
+     },
 
       title: "Transport von Europa",
       highlight: "nach Armenien",
@@ -1692,7 +1730,11 @@ export const de = {
       slug: "transport-irak",
       country: "Irak",
       region: "Naher Osten",
-      heroImage: "/images/country-hero/irak.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-irak-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-irak-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte in den Irak",
+     },
 
       title: "Transport von Europa",
       highlight: "in den Irak",
@@ -1860,7 +1902,11 @@ export const de = {
       slug: "transport-tuerkei",
       country: "Türkei",
       region: "Mittlerer Osten",
-      heroImage: "/images/country-hero/tuerkei.jpg",
+      heroImage:{
+        desktop: "/images/country-heroglobalsped-transport-tuerkei-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-tuerkei-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte in die Türkei",
+     },
 
       title: "Transport von Europa",
       highlight: "in die Türkei",
@@ -2033,7 +2079,11 @@ export const de = {
       slug: "transport-ukraine",
       country: "Ukraine",
       region: "Osteuropa",
-      heroImage: "/images/country-hero/ukraine.jpg",
+      heroImage:{
+        desktop: "/images/country-hero/globalsped-transport-ukraine-hero-desktop-2560x960.webp",
+        mobile: "/images/country-hero/globalsped-transport-ukraine-hero-mobile-1200x1600.webp",
+        alt:"GLOBALSPED Transporte in die Ukraine",
+     },
 
       title: "Transport von Europa",
       highlight: "in die Ukraine",

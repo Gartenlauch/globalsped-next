@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -26,6 +26,76 @@ function splitRuntime(value: string) {
   };
 }
 
+type CountryHeroImageSource =
+  | string
+  | {
+    desktop: string;
+    mobile: string;
+    alt: string;
+  };
+
+function resolveHeroImage(image: CountryHeroImageSource, country: string) {
+  if (typeof image === "string") {
+    return {
+      desktop: image,
+      mobile: image,
+      alt: `Transport nach ${country}`,
+    };
+  }
+
+  return image;
+}
+
+function CountryHeroPicture({
+  image,
+}: {
+  image: {
+    desktop: string;
+    mobile: string;
+    alt: string;
+  };
+}) {
+  const common = {
+    alt: image.alt,
+    sizes: "100vw",
+  };
+
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({
+    ...common,
+    src: image.desktop,
+    width: 2560,
+    height: 960,
+    quality: 300,
+  });
+
+  const {
+    props: { srcSet: mobileSrcSet, ...mobileProps },
+  } = getImageProps({
+    ...common,
+    src: image.mobile,
+    width: 1200,
+    height: 1600,
+    quality: 300,
+  });
+
+  return (
+    <picture className="absolute inset-0 block">
+      <source media="(min-width: 768px)" srcSet={desktopSrcSet} />
+      <source media="(max-width: 767px)" srcSet={mobileSrcSet} />
+
+      <img
+        {...mobileProps}
+        alt={image.alt}
+        loading="eager"
+        fetchPriority="high"
+        className="h-full w-full object-cover"
+      />
+    </picture>
+  );
+}
+
 export function CountryTransportPage({ locale, page }: Props) {
   const runtime = splitRuntime(page.transportDetails.runtime.value);
 
@@ -34,12 +104,8 @@ export function CountryTransportPage({ locale, page }: Props) {
 
       {/* HERO */}
       <section className="relative min-h-[620px] overflow-hidden">
-        <Image
-          src={page.heroImage}
-          alt={`Transport nach ${page.country}`}
-          fill
-          priority
-          className="object-cover"
+        <CountryHeroPicture
+          image={resolveHeroImage(page.heroImage, page.country)}
         />
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,40,31,0.9)_0%,rgba(0,59,47,0.7)_50%,rgba(0,40,31,0.3)_100%)]" />
