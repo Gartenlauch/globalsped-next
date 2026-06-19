@@ -1903,7 +1903,7 @@ export const de = {
       country: "Türkei",
       region: "Mittlerer Osten",
       heroImage:{
-        desktop: "/images/country-heroglobalsped-transport-tuerkei-hero-desktop-2560x960.webp",
+        desktop: "/images/country-hero/globalsped-transport-tuerkei-hero-desktop-2560x960.webp",
         mobile: "/images/country-hero/globalsped-transport-tuerkei-hero-mobile-1200x1600.webp",
         alt:"GLOBALSPED Transporte in die Türkei",
      },

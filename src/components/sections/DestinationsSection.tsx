@@ -110,7 +110,7 @@ export function DestinationsSection({ locale }: Props) {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {allCountries.map((country) => {
-              console.log(`/images/country-grid/globalsped-transport-${country.slug}.webp`)
+             
               return (
               
               <Link

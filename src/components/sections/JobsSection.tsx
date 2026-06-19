@@ -66,19 +66,20 @@ export function JobsSection({ locale }: Props) {
                             return (
                                 <article
                                     key={card.title}
-                                    className={`rounded-3xl border border-lime-300/35 bg-[rgba(0,40,31,0.78)] p-5 shadow-[0_20px_70px_rgba(0,0,0,0.38)] backdrop-blur-xl ${index === 1 ? "md:ml-auto md:max-w-[420px]" : "md:max-w-[420px]"
+                                    className={`rounded-3xl border border-white/15 bg-[rgba(0,40,31,0.58)] p-4 text-left shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-5 ${index === 1 ? "md:ml-auto md:max-w-[420px]" : "md:max-w-[420px]"
                                         }`}
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-lime-300/40 bg-lime-300/15 text-lime-300">
-                                            <Icon size={28} />
+                                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-lime-300/30 bg-lime-300/10 text-lime-300">
+                                            <Icon size={22} />
                                         </div>
 
                                         <div>
-                                            <h3 className="text-base font-semibold uppercase  text-white">
+                                            <h3 className="text-sm font-black uppercase text-white">
                                                 {card.title}
                                             </h3>
-                                            <p className="mt-2 text-sm leading-6 text-white/82">
+
+                                            <p className="mt-2 text-sm leading-6 text-white/76">
                                                 {card.text}
                                             </p>
                                         </div>

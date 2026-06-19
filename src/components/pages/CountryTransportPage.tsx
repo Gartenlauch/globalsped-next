@@ -67,7 +67,6 @@ function CountryHeroPicture({
     src: image.desktop,
     width: 2560,
     height: 960,
-    quality: 300,
   });
 
   const {
@@ -77,7 +76,6 @@ function CountryHeroPicture({
     src: image.mobile,
     width: 1200,
     height: 1600,
-    quality: 300,
   });
 
   return (
