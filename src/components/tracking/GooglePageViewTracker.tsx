@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { trackPageView } from "@/lib/tracking/google";
 
-export function GooglePageViewTracker() {
+function GooglePageViewTrackerInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -16,4 +16,12 @@ export function GooglePageViewTracker() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export function GooglePageViewTracker() {
+  return (
+    <Suspense fallback={null}>
+      <GooglePageViewTrackerInner />
+    </Suspense>
+  );
 }
