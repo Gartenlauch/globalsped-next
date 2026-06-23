@@ -108,7 +108,6 @@ export const metadataDe: LocaleMetadata = {
       path: "/de/impressum",
       noIndex: true,
     },
-
     notFound: {
       title: "Seite nicht gefunden | GLOBALSPED",
       description:

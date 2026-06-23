@@ -11,6 +11,8 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { siteConfig, siteUrl } from "@/content/metadata/config";
+import { GoogleConsentMode } from "@/components/tracking/GoogleConsentMode";
+import { GooglePageViewTracker } from "@/components/tracking/GooglePageViewTracker";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -66,6 +68,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${montserrat.variable} ${openSans.variable}`}
     >
       <body>
+        <GoogleConsentMode />
+        <GooglePageViewTracker />
         <Header locale={locale} />
         <ScrollHandler />
         <GlobalJsonLd />
