@@ -18,7 +18,7 @@ export const premiumHomeDe: PremiumHomeContent = {
       src: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-desktop-1665x928.webp",
       width: 1665,
       height: 928,
-      mobileSrc: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-mobile-1024x1536.webp",
+      mobileSrc: "/images/home-premium/globalsped-premium-hero-mercedes-lkw-zentralasien-kaukasus-mobile-1200x1600.webp",
       mobileWidth: 1024,
       mobileHeight: 1536,
       alt: "GLOBALSPED Mercedes LKW auf internationaler Route nach Zentralasien und in den Kaukasus",

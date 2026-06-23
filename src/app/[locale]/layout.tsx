@@ -1,5 +1,5 @@
 import "../globals.css";
-
+import { SmartBackButton } from "@/components/navigation/SmartBackButton";
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import { supportedLocales } from "@/content/index";
@@ -11,7 +11,6 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { siteConfig, siteUrl } from "@/content/metadata/config";
-import { RouteTransition } from "@/components/layout/RouteTransition";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -70,7 +69,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Header locale={locale} />
         <ScrollHandler />
         <GlobalJsonLd />
-        <RouteTransition>{children}</RouteTransition>
+        {children}
+        <SmartBackButton locale={locale} />
         <CookieConsentBanner locale={locale} />
         <Footer locale={locale} />
       </body>

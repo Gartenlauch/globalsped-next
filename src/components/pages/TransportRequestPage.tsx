@@ -1,7 +1,7 @@
 "use client";
 import { httpsCallable } from "firebase/functions";
 import { functions, storage } from "@/lib/firebase/client";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -83,8 +83,23 @@ type UploadedFileMeta = {
 
 type UploadKind = "standardDocs" | "adrDocs";
 
+function getDateInputValueFromOffset(daysFromToday: number) {
+  const date = new Date();
+
+  date.setHours(0, 0, 0, 0);
+  date.setDate(date.getDate() + daysFromToday);
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 export function TransportRequestPage({ locale }: Props) {
   const t = getTransportRequestContent(locale);
+  const destinationCityListId = useId();
+  const minPickupDate = useMemo(() => getDateInputValueFromOffset(2), []);
 
   const createInitialUnits = (): Unit[] => [
     {
@@ -727,26 +742,38 @@ export function TransportRequestPage({ locale }: Props) {
 
                     <Field label={t.labels.destinationCity}>
                       <div className="relative">
-                        <select
-                          key={transport.deliveryCountry || "no-destination-country"}
+                        <input
+                          type="text"
+                          list={transport.deliveryCountry ? destinationCityListId : undefined}
                           value={transport.destinationCity}
                           onChange={(event) =>
                             updateTransport("destinationCity", event.target.value)
                           }
-                          className="input-premium min-w-0 max-w-full pr-11"
-                        >
-                          <option value="">
-                            {transport.deliveryCountry
-                              ? t.labels.destinationCitySelectPlaceholder
-                              : t.labels.destinationCitySelectCountryFirst}
-                          </option>
+                          placeholder={
+                            transport.deliveryCountry
+                              ? t.placeholders.destinationCity
+                              : t.labels.destinationCitySelectCountryFirst
+                          }
+                          disabled={!transport.deliveryCountry}
+                          autoComplete="off"
+                          className="input-premium min-w-0 max-w-full pr-11 disabled:cursor-not-allowed disabled:opacity-60"
+                        />
 
+                        <datalist id={destinationCityListId}>
                           {destinationCityOptions.map((city) => (
-                            <option key={city} value={city}>
-                              {city}
-                            </option>
+                            <option key={city} value={city} />
                           ))}
-                        </select>
+                        </datalist>
+                        {transport.destinationCity && (
+                          <button
+                            type="button"
+                            onClick={() => updateTransport("destinationCity", "")}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 text-emerald-950/50 transition hover:bg-emerald-950/10 hover:text-emerald-950"
+                            aria-label="Zielstadt löschen"
+                          >
+                            <X size={18} />
+                          </button>
+                        )}
                       </div>
 
                       <FieldHint>
@@ -974,9 +1001,15 @@ export function TransportRequestPage({ locale }: Props) {
                       <input
                         type="date"
                         value={transport.pickupDate}
-                        onChange={(event) =>
-                          updateTransport("pickupDate", event.target.value)
-                        }
+                        min={minPickupDate}
+                        onChange={(event) => {
+                          const nextValue = event.target.value;
+
+                          updateTransport(
+                            "pickupDate",
+                            nextValue && nextValue < minPickupDate ? minPickupDate : nextValue
+                          );
+                        }}
                         className="input-premium min-w-0 max-w-full appearance-none"
                       />
                     </Field>

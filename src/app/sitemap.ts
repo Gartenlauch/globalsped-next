@@ -78,16 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.75,
     },
-    {
-      path: metadataDe.pages.privacy.path,
-      changeFrequency: "yearly",
-      priority: 0.25,
-    },
-    {
-      path: metadataDe.pages.imprint.path,
-      changeFrequency: "yearly",
-      priority: 0.25,
-    },
   ];
 
   const serviceRoutes: SitemapEntryInput[] = Object.keys(metadataDe.services).map(

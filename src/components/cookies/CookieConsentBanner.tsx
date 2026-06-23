@@ -3,41 +3,14 @@
 import { useEffect, useRef } from "react";
 import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
-
+import { updateGoogleConsent } from "@/lib/tracking/google";
 import { getCookieConsentContent } from "@/content/cookies";
 
 type Props = {
     locale: string;
 };
 
-declare global {
-    interface Window {
-        dataLayer?: unknown[];
-        gtag?: (...args: unknown[]) => void;
-    }
-}
 
-function updateGoogleConsent(consent: {
-    analytics: boolean;
-    marketing: boolean;
-}) {
-    if (typeof window === "undefined") return;
-
-    window.dataLayer = window.dataLayer || [];
-
-    window.gtag =
-        window.gtag ||
-        function gtag() {
-            window.dataLayer?.push(arguments);
-        };
-
-    window.gtag("consent", "update", {
-        analytics_storage: consent.analytics ? "granted" : "denied",
-        ad_storage: consent.marketing ? "granted" : "denied",
-        ad_user_data: consent.marketing ? "granted" : "denied",
-        ad_personalization: consent.marketing ? "granted" : "denied",
-    });
-}
 
 export function CookieConsentBanner({ locale }: Props) {
     const t = getCookieConsentContent(locale);

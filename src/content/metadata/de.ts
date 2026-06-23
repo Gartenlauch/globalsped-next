@@ -98,7 +98,7 @@ export const metadataDe: LocaleMetadata = {
       description:
         "Datenschutzerklärung der GLOBALSPED Internationale Spedition GmbH für Webseite, Kontaktformulare, Tracking und Kommunikation.",
       path: "/de/datenschutz",
-      noIndex: false,
+      noIndex: true,
     },
 
     imprint: {
@@ -106,7 +106,7 @@ export const metadataDe: LocaleMetadata = {
       description:
         "Impressum der GLOBALSPED Internationale Spedition GmbH mit Anschrift, Kontakt, Geschäftsführung und rechtlichen Angaben.",
       path: "/de/impressum",
-      noIndex: false,
+      noIndex: true,
     },
 
     notFound: {
@@ -180,6 +180,14 @@ export const metadataDe: LocaleMetadata = {
       title: "Transport in den Irak | GLOBALSPED",
       description:
         "GLOBALSPED organisiert internationale Transporte in den Irak inklusive Routenplanung, Zollkoordination, FTL, LTL und Projektlogistik.",
+    },
+    "transport-tuerkei": {
+      title: "Transport in die Türkei | GLOBALSPED",
+      description:
+        "GLOBALSPED organisiert internationale Transporte in die Türkei per FTL, LTL, Sammelgut, Thermotransporte und Projektlogistik – inklusive Routenplanung, Zollabwicklung und persönlicher Betreuung.",
+      ogTitle: "Transport in die Türkei",
+      ogDescription:
+        "Internationale Transporte von Europa in die Türkei mit GLOBALSPED – inklusive Zoll- und Dokumentenkoordination.",
     },
 
     "transport-ukraine": {

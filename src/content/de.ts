@@ -17,6 +17,12 @@ export const de = {
     menuOpenLabel: "Menü öffnen",
     menuCloseLabel: "Menü schließen",
   },
+  navigationActions: {
+    backLabel: "Zurück",
+    homeLabel: "Startseite",
+    backHint: "Zur vorherigen Seite",
+    homeHint: "Zur GLOBALSPED Startseite",
+  },
   hero: {
     badge: "Globalsped International Logistics Solutions",
 
@@ -1977,7 +1983,7 @@ export const de = {
             "Zolldokumente: (ABD) bei EU-Exporten oder T1-Transitdokument bei Drittlandsware",
             "Weitere warenbezogene Dokumente, z. B. Ursprungszeugnis,",
           ],
-          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für den Irak.",
+          note: "Sprechen Sie uns an – wir unterstützen Sie bei der vollständigen Erstellung aller notwendigen Transport- und Zolldokumente für die Türkei.",
         },
 
         requiredInformation: {
