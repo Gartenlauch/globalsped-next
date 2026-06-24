@@ -49,9 +49,17 @@ export function Header({ locale }: Props) {
 
   const isActiveLink = (href: string) => activeHref === resolveHref(href);
 
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   const handleNavClick = (href: string) => {
     setActiveHref(href);
-    setIsOpen(false); // ✅ Menü zuverlässig schließen
+    closeMobileMenu();
   };
 
   return (
@@ -104,19 +112,22 @@ export function Header({ locale }: Props) {
 
       {/* Mobile Toggle Button */}
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        onTouchStart={()=>setIsOpen((prev) => !prev )}
-
+        type="button"
+        aria-label={isOpen ? "Navigation schließen" : "Navigation öffnen"}
+        aria-expanded={isOpen}
+        aria-controls="mobile-navigation"
+        onClick={toggleMobileMenu}
         className="absolute right-4 top-1/2 z-[100000] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl transition lg:hidden"
       >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
+        {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
       </button>
 
       {/* Mobile Menu */}
       <div
+        id="mobile-navigation"
         className={`fixed left-0 right-0 top-[76px] z-[99998] bg-white text-[var(--color-global-dark)] shadow-[0_30px_80px_rgba(0,0,0,0.18)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden overflow-hidden ${isOpen
-            ? "max-h-[calc(100vh-76px)] opacity-100 pointer-events-auto"
-            : "max-h-0 opacity-0 pointer-events-none"
+          ? "max-h-[calc(100vh-76px)] opacity-100 pointer-events-auto"
+          : "max-h-0 opacity-0 pointer-events-none"
           }`}
       >
 
@@ -148,7 +159,7 @@ export function Header({ locale }: Props) {
           <Link
             href={resolveHref(t.cta.href)}
             onClick={() => handleNavClick(resolveHref(t.cta.href))}
-            className="btn-primary mt-6 text-center"
+            className="btn-primary"
           >
             {t.cta.label}
           </Link>

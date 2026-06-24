@@ -1,7 +1,7 @@
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://globalsped-next--globalsped-next.europe-west4.hosted.app";
+  "https://www.globalsped.de";
 
 export function absoluteUrl(path = "") {
   if (!path) return siteUrl;

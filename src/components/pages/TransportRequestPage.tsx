@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getTransportRequestContent } from "@/content/forms/transport";
-
+import { trackTransportRequestSubmit } from "@/lib/tracking/google";
 
 const initialTransport = {
   pickupLocation: "",
@@ -599,6 +599,8 @@ export function TransportRequestPage({ locale }: Props) {
           adrDocs: uploadedAdrDocs,
         },
       });
+      
+      trackTransportRequestSubmit(`/${locale}/transport-anfrage`);
 
       setSubmitted(true);
     } catch (error) {

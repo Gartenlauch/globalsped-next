@@ -13,7 +13,7 @@ import {
   UserRound,
   X,
 } from "lucide-react";
-
+import { trackApplicationSubmit } from "@/lib/tracking/google";
 import { functions, storage } from "@/lib/firebase/client";
 import { getApplicationFormContent } from "@/content/forms/application";
 
@@ -193,9 +193,11 @@ export function ApplicationPage({ locale }: Props) {
           },
         ],
       });
-  
+
+
+      trackApplicationSubmit(`/${locale}/jobs/bewerbung`);
       console.log("Application submitted successfully");
-  
+      
       setSubmitted(true);
       setForm(initialForm);
       setFile(null);

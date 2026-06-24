@@ -6,6 +6,7 @@ import { httpsCallable } from "firebase/functions";
 import { Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
 import { getContent } from "@/content";
 import { functions } from "@/lib/firebase/client";
+import { trackContactFormSubmit } from "@/lib/tracking/google";
 
 type Props = {
     locale: string;
@@ -102,7 +103,7 @@ export function ContactSection({ locale }: Props) {
                         typeof window !== "undefined" ? window.navigator.userAgent : "",
                 },
             });
-
+            trackContactFormSubmit(`/${locale}#kontakt`);
             formRef.current?.reset();
             setHasSubmitted(true);
             setIsSuccess(true);

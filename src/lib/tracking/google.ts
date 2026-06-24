@@ -174,3 +174,69 @@ export function trackTransportRequestConversion() {
     send_to: GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO,
   });
 }
+
+type LeadFormName =
+  | "transport_request"
+  | "contact_form"
+  | "application_form";
+
+type TrackLeadSubmitParams = {
+  formName: LeadFormName;
+  leadType: string;
+  pagePath?: string;
+};
+
+export function trackLeadSubmit({
+  formName,
+  leadType,
+  pagePath,
+}: TrackLeadSubmitParams) {
+  if (typeof window === "undefined" || !GA_MEASUREMENT_ID) {
+    return;
+  }
+
+  if (!hasAnalyticsConsent()) {
+    return;
+  }
+
+  configureGoogleTags({
+    analytics: true,
+    marketing: hasMarketingConsent(),
+  });
+
+  const currentPagePath =
+    pagePath || `${window.location.pathname}${window.location.search}`;
+
+  window.gtag?.("event", "generate_lead", {
+    send_to: GA_MEASUREMENT_ID,
+    form_name: formName,
+    lead_type: leadType,
+    page_path: currentPagePath,
+  });
+}
+
+export function trackTransportRequestSubmit(pagePath?: string) {
+  trackLeadSubmit({
+    formName: "transport_request",
+    leadType: "transport_request",
+    pagePath,
+  });
+
+  trackTransportRequestConversion();
+}
+
+export function trackContactFormSubmit(pagePath?: string) {
+  trackLeadSubmit({
+    formName: "contact_form",
+    leadType: "contact_inquiry",
+    pagePath,
+  });
+}
+
+export function trackApplicationSubmit(pagePath?: string) {
+  trackLeadSubmit({
+    formName: "application_form",
+    leadType: "job_application",
+    pagePath,
+  });
+}

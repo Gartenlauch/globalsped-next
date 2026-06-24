@@ -2600,11 +2600,11 @@ export const de = {
       "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
 
     form: {
-      nameLabel: "Name",
-      companyLabel: "Firma",
-      emailLabel: "E-Mail",
-      phoneLabel: "Telefon",
-      messageLabel: "Nachricht",
+      nameLabel: "Name *",
+      companyLabel: "Firma *",
+      emailLabel: "E-Mail *",
+      phoneLabel: "Telefon *",
+      messageLabel: "Nachricht *",
 
       namePlaceholder: "Ihr Name",
       companyPlaceholder: "Ihre Firma",
