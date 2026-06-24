@@ -1,7 +1,25 @@
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+
 const GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO;
+
+function getValidGoogleAdsTransportConversionSendTo() {
+  const sendTo = GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO?.trim();
+
+  if (!sendTo || sendTo === "DISABLED") {
+    return null;
+  }
+
+  if (!sendTo.startsWith("AW-") || !sendTo.includes("/")) {
+    return null;
+  }
+
+  return sendTo;
+}
+
+
+
 
 type GoogleConsentState = {
   analytics: boolean;
@@ -157,11 +175,13 @@ export function trackPageView(path?: string) {
 }
 
 export function trackTransportRequestConversion() {
-  if (
-    typeof window === "undefined" ||
-    !GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO ||
-    !hasMarketingConsent()
-  ) {
+  if (typeof window === "undefined" || !hasMarketingConsent()) {
+    return;
+  }
+
+  const sendTo = getValidGoogleAdsTransportConversionSendTo();
+
+  if (!sendTo) {
     return;
   }
 
@@ -171,7 +191,7 @@ export function trackTransportRequestConversion() {
   });
 
   window.gtag?.("event", "conversion", {
-    send_to: GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO,
+    send_to: sendTo,
   });
 }
 
