@@ -25,16 +25,38 @@ function shouldSkipProxy(pathname: string) {
   );
 }
 
+function normalizeHostname(value: string | null) {
+  if (!value) return null;
+
+  return value
+    .split(",")[0]
+    .trim()
+    .replace(/^https?:\/\//, "")
+    .split("/")[0]
+    .split(":")[0]
+    .toLowerCase();
+}
+
+function getRequestHostname(request: NextRequest) {
+  return (
+    normalizeHostname(request.headers.get("x-forwarded-host")) ??
+    normalizeHostname(request.headers.get("host")) ??
+    request.nextUrl.hostname.toLowerCase()
+  );
+}
+
 function addNoIndexHeaderForNonProduction(
   response: NextResponse,
   request: NextRequest
 ) {
-  const hostname = request.nextUrl.hostname.toLowerCase();
+  const hostname = getRequestHostname(request);
 
   if (!productionHosts.has(hostname)) {
     response.headers.set("x-robots-tag", "noindex, nofollow");
+    return response;
   }
 
+  response.headers.delete("x-robots-tag");
   return response;
 }
 

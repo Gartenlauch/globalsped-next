@@ -16,6 +16,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const metadata = getMetadataContent(locale);
   const pageMeta = metadata.pages.home;
+
   return (
     <>
       <WebPageJsonLd

@@ -1,5 +1,5 @@
 // src/content/metadata/config.ts
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://globalsped-next--globalsped-next.europe-west4.hosted.app";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.globalsped.de"
 
 
 export const siteConfig = {
