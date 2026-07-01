@@ -1,16 +1,21 @@
 import { de } from "./de";
-//import { en } from "./en";
-//import { az } from "./az";
+import { en } from "./en";
 
+export const supportedLocales = ["de", "en"] as const;
 
-export const supportedLocales = ["de"];
-export const defaultLocale = "de"
+export type Locale = (typeof supportedLocales)[number];
+
+export const defaultLocale: Locale = "de";
 
 export const content = {
   de,
+  en,
+} satisfies Record<Locale, typeof de>;
 
-};
+export function isSupportedLocale(locale: string): locale is Locale {
+  return supportedLocales.includes(locale as Locale);
+}
 
 export function getContent(locale: string) {
-  return content[locale as keyof typeof content] || content.de;
+  return isSupportedLocale(locale) ? content[locale] : content.de;
 }

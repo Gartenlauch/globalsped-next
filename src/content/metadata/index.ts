@@ -1,18 +1,14 @@
-// src/content/metadata/index.ts
-
 import { metadataDe } from "./de";
-import type { Locale, LocaleMetadata } from "./types";
 import { metadataEn } from "./en";
+import type { Locale, LocaleMetadata } from "./types";
 
 const metadataByLocale: Record<Locale, LocaleMetadata> = {
   de: metadataDe,
   en: metadataEn,
-    // Vorläufig Fallbacks, bis echte Übersetzungen vorliegen:
-  az: metadataDe,
 };
 
 export function getMetadataContent(locale: string): LocaleMetadata {
-  if (locale === "en" || locale === "de") {
+  if (locale === "de" || locale === "en") {
     return metadataByLocale[locale];
   }
 

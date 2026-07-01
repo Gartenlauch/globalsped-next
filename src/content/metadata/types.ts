@@ -1,6 +1,6 @@
 // src/content/metadata/types.ts
 
-export type Locale = "de" | "en" | "az";
+export type Locale = "de" | "en";
 
 export type MetaRouteKey =
   | "home"

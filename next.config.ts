@@ -115,13 +115,6 @@ const nextConfig: NextConfig = {
         destination: "/de/transport-anfrage",
         permanent: true,
       },
-
-      // EN ist später geplant, deshalb nicht permanent cachen
-      {
-        source: "/en",
-        destination: "/de",
-        permanent: false,
-      },
     ];
   },
 };
