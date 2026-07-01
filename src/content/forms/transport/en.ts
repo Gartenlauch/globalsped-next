@@ -7,6 +7,24 @@ export const transportRequestEn: TransportRequestContent = {
   intro:
     "Send us your transport data for international transports, LTL, FTL, palletized goods, project logistics or special transports.\nOur team will personally review the route, transport type, documents and special requirements and get back to you with a suitable assessment.",
 
+  routes: {
+    pagePath: "/en/transport-request",
+  },
+
+  tracking: {
+    source: "homepage",
+  },
+
+  structuredData: {
+    pageName: "Transport Request",
+    pageDescription:
+      "Transport request for international transports with GLOBALSPED.",
+    serviceName: "International transport request",
+    serviceDescription:
+      "Request FTL, LTL, temperature-controlled transport, dangerous goods transport, project logistics or customs-related transport handling.",
+  },
+
+
   steps: {
     transport: "Transport data",
     contact: "Contact details",

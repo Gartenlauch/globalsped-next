@@ -14,6 +14,8 @@ type Props = {
 
 export function CookieConsentBanner({ locale }: Props) {
     const t = getCookieConsentContent(locale);
+    const consentLocale = locale === "en" ? "en" : "de";
+
     const initializedRef = useRef(false);
     useEffect(() => {
         if (initializedRef.current) return;
@@ -52,10 +54,9 @@ export function CookieConsentBanner({ locale }: Props) {
             },
 
             language: {
-                default: "de",
-                autoDetect: "browser",
+                default: consentLocale,
                 translations: {
-                    de: {
+                    [consentLocale]: {
                         consentModal: {
                             title: t.modal.title,
                             description: t.modal.description,

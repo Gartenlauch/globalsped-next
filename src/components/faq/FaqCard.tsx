@@ -4,9 +4,10 @@ import type { FaqItem, FaqPageContent } from "@/content/faq";
 type Props = {
   faq: FaqItem;
   content: FaqPageContent["cards"];
+  locale: string;
 };
 
-export function FaqCard({ faq, content }: Props) {
+export function FaqCard({ faq, content, locale }: Props) {
   return (
     <article className="group relative rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#6b9f12]/40 hover:shadow-md">
       <div className="mb-4 inline-flex rounded-full bg-[#6b9f12]/10 px-3 py-1 text-xs font-semibold text-[#003b2f]">
@@ -14,7 +15,7 @@ export function FaqCard({ faq, content }: Props) {
       </div>
 
       <h3 className="font-montserrat text-xl font-semibold text-[#003b2f]">
-        <Link href={`/de/faq/${faq.slug}`} className="focus:outline-none">
+        <Link href={`/${locale}/faq/${faq.slug}`} className="focus:outline-none">
           <span className="absolute inset-0" aria-hidden="true" />
           {faq.question}
         </Link>

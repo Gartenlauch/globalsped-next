@@ -11,7 +11,7 @@ import {
   Thermometer,
   PackageCheck,
 } from "lucide-react";
-import type { ServicePageContent } from "@/content/services/de/types";
+import type { ServicePageContent } from "@/content/services";
 
 type Props = {
   locale: string;

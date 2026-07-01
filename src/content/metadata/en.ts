@@ -17,7 +17,7 @@ export const metadataEn: LocaleMetadata = {
     },
 
     faq: {
-      title: "FAQ: Freight Transport, Customs & Central Asia | GLOBALSPED",
+      title: "FAQ: International Freight Transport, Customs & Logistics | GLOBALSPED",
       description:
         "Answers to common questions about international freight transport, customs clearance, FTL, LTL, dangerous goods, temperature-controlled transport and Central Asia.",
       path: "/en/faq",

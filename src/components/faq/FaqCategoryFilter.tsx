@@ -8,9 +8,10 @@ type Props = {
   categories: string[];
   faqs: FaqItem[];
   content: FaqPageContent;
+  locale: string;
 };
 
-export function FaqCategoryFilter({ categories, faqs, content }: Props) {
+export function FaqCategoryFilter({ categories, faqs, content, locale }: Props) {
   const [activeCategory, setActiveCategory] = useState(
     content.search.allCategoriesLabel,
   );
@@ -84,6 +85,7 @@ export function FaqCategoryFilter({ categories, faqs, content }: Props) {
               key={faq.slug}
               faq={faq}
               content={content.cards}
+              locale={locale}
             />
           ))}
         </div>

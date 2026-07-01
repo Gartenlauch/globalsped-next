@@ -569,8 +569,8 @@ export function TransportRequestPage({ locale }: Props) {
       await submitTransportLead({
         requestId,
         locale,
-        pagePath: `/${locale}/transport-anfrage`,
-        source: "homepage",
+        pagePath: t.routes.pagePath,
+        source: t.tracking.source,
 
         contact,
 
@@ -599,8 +599,8 @@ export function TransportRequestPage({ locale }: Props) {
           adrDocs: uploadedAdrDocs,
         },
       });
-      
-      trackTransportRequestSubmit(`/${locale}/transport-anfrage`);
+
+      trackTransportRequestSubmit(t.routes.pagePath);
 
       setSubmitted(true);
     } catch (error) {

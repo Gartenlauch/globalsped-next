@@ -5,6 +5,7 @@ import {
   getFaqBySlug,
   getFaqPageContent,
   getRelatedFaqs,
+  isSupportedFaqLocale,
 } from "@/lib/faq";
 import { FaqBreadcrumbs } from "@/components/faq/FaqBreadcrumbs";
 import { FaqDetailContent } from "@/components/faq/FaqDetailContent";
@@ -13,9 +14,11 @@ import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { FaqBackLink } from "@/components/faq/FaqBackLink";
 import { siteUrl } from "@/content/metadata/config"
+
+
 type Props = {
   params: Promise<{
-    locale: "de";
+    locale: string;
     slug: string;
   }>;
 };
@@ -23,14 +26,21 @@ type Props = {
 const baseUrl = siteUrl
 
 export function generateStaticParams() {
-  return getAllFaqs("de").map((faq) => ({
-    locale: "de",
-    slug: faq.slug,
-  }));
+  const locales = ["de", "en"] as const;
+
+  return locales.flatMap((locale) =>
+    getAllFaqs(locale).map((faq) => ({
+      locale,
+      slug: faq.slug,
+    }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (!isSupportedFaqLocale(locale)) {
+    return {};
+  }
   const faq = getFaqBySlug(slug, locale);
 
   if (!faq) {
@@ -50,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: faq.metaDescription,
       url,
       siteName: "GLOBALSPED",
-      locale: "de_DE",
+      locale: locale === "en" ? "en_US" : "de_DE",
       type: "article",
     },
     robots: {
@@ -62,6 +72,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function FaqDetailPage({ params }: Props) {
   const { locale, slug } = await params;
+  if (!isSupportedFaqLocale(locale)) {
+    notFound();
+  }
 
   const faq = getFaqBySlug(slug, locale);
 

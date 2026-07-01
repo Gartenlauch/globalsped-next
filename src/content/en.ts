@@ -2716,7 +2716,7 @@ export const en = {
     pageLinksTitle: "Pages",
     pageLinks: [
       { label: "Start", href: "/en" },
-      { label: "Impress", href: "/en/imprint" },
+      { label: "Legal Notice", href: "/en/legal-notice" },
       { label: "Privacy Policy", href: "/en/privacy-policy" },
       { label: "FAQ", href: "/en/faq" },
     ],

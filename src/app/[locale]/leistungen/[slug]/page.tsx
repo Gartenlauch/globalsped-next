@@ -1,14 +1,17 @@
 import { notFound } from "next/navigation";
-import { ServicePage } from "@/components/services/ServicePage";
-import { getServiceBySlug, getServiceSlugs } from "@/content/services/de/";
 import type { Metadata } from "next";
+
+import { ServicePage } from "@/components/services/ServicePage";
+import {
+  getServiceBySlug,
+  getServiceStaticParams,
+  isSupportedServiceLocale,
+} from "@/content/services";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
-import { absoluteUrl } from "@/lib/seo/urls";
-
 
 type Props = {
   params: Promise<{
@@ -17,10 +20,41 @@ type Props = {
   }>;
 };
 
+function getServicesOverviewPath(locale: string) {
+  return locale === "en" ? "/en/services" : `/${locale}/leistungen`;
+}
+
+function getServiceDetailPath(locale: string, slug: string) {
+  return locale === "en"
+    ? `/en/services/${slug}`
+    : `/${locale}/leistungen/${slug}`;
+}
+
+function getBreadcrumbLabels(locale: string) {
+  return locale === "en"
+    ? {
+      home: "Home",
+      services: "Services",
+    }
+    : {
+      home: "Startseite",
+      services: "Leistungen",
+    };
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+
   const metadata = getMetadataContent(locale);
-  const service = getServiceBySlug(slug);
+
+  if (!isSupportedServiceLocale(locale)) {
+    return buildPageMetadata({
+      locale,
+      meta: metadata.pages.services,
+    });
+  }
+
+  const service = getServiceBySlug(slug, locale);
 
   if (!service) {
     return buildPageMetadata({
@@ -34,53 +68,66 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     meta: {
       title: service.seo.title,
       description: service.seo.description,
-      path: `/${locale}/leistungen/${slug}`,
+      path: getServiceDetailPath(locale, slug),
     },
   });
 }
 
 export function generateStaticParams() {
-  return getServiceSlugs().map((slug) => ({
-    locale: "de",
-    slug,
-  }));
+  return getServiceStaticParams();
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { locale, slug } = await params;
-  const service = getServiceBySlug(slug);
+
+  if (!isSupportedServiceLocale(locale)) {
+    notFound();
+  }
+
+  const service = getServiceBySlug(slug, locale);
 
   if (!service) {
     notFound();
   }
 
+  const breadcrumbs = getBreadcrumbLabels(locale);
+  const servicePath = getServiceDetailPath(locale, slug);
+  const servicesOverviewPath = getServicesOverviewPath(locale);
+
   return (
     <>
       <WebPageJsonLd
         locale={locale}
-        path={`/${locale}/leistungen/${slug}`}
+        path={servicePath}
         name={service.seo.title}
         description={service.seo.description}
-        mainEntityId={`${absoluteUrl(`/${locale}/leistungen/${slug}`)}#service`}
+      />
+
+      <ServiceJsonLd
+        path={servicePath}
+        name={service.hero.title}
+        description={service.seo.description}
+        serviceType={service.hero.title}
       />
 
       <BreadcrumbJsonLd
         items={[
-          { name: "Start", href: `/${locale}` },
-          { name: "Leistungen", href: `/${locale}/leistungen` },
-          { name: service.hero.title, href: `/${locale}/leistungen/${slug}` },
+          {
+            name: breadcrumbs.home,
+            href: `/${locale}`,
+          },
+          {
+            name: breadcrumbs.services,
+            href: servicesOverviewPath,
+          },
+          {
+            name: service.hero.title,
+            href: servicePath,
+          },
         ]}
       />
 
-      <ServiceJsonLd
-        path={`/${locale}/leistungen/${slug}`}
-        name={service.hero.title}
-        description={service.seo.description}
-        serviceType={service.badge}
-        areaServed={service.regions?.items}
-      />
       <ServicePage locale={locale} service={service} />
-
     </>
   );
 }

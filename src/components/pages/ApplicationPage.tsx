@@ -129,44 +129,44 @@ export function ApplicationPage({ locale }: Props) {
 
   const submitApplication = async () => {
     console.log("submitApplication clicked");
-  
+
     if (!validate()) {
       console.log("Validation failed");
       return;
     }
-  
+
     if (!file) {
       console.log("No file selected");
       return;
     }
-  
+
     setIsSubmitting(true);
     setValidationMessage("");
-  
+
     try {
       const applicationId = crypto.randomUUID();
-  
+
       const cleanFileName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
       const filePath = `applications/${applicationId}/${cleanFileName}`;
       const fileRef = ref(storage, filePath);
-  
+
       await uploadBytes(fileRef, file, {
         contentType: file.type,
       });
 
       const downloadUrl = await getDownloadURL(fileRef);
-  
+
       const submitApplicationCallable = httpsCallable(
         functions,
         "submitApplication"
       );
-  
-  
+
+
       await submitApplicationCallable({
         applicationId,
         locale,
-        pagePath: `/${locale}/jobs/bewerbung`,
-        source: "homepage",
+        pagePath: t.routes.pagePath,
+        source: t.tracking.source,
         applicant: {
           firstName: form.firstName,
           lastName: form.lastName,
@@ -195,9 +195,9 @@ export function ApplicationPage({ locale }: Props) {
       });
 
 
-      trackApplicationSubmit(`/${locale}/jobs/bewerbung`);
+      trackApplicationSubmit(t.routes.pagePath);
       console.log("Application submitted successfully");
-      
+
       setSubmitted(true);
       setForm(initialForm);
       setFile(null);

@@ -10,6 +10,23 @@ export type AdrClassOption = {
 };
 
 export type TransportRequestContent = {
+
+  routes: {
+    pagePath: string;
+  };
+
+  tracking: {
+    source: string;
+  };
+
+  structuredData: {
+    pageName: string;
+    pageDescription: string;
+    serviceName: string;
+    serviceDescription: string;
+  };
+
+
   badge: string;
   title: string;
   highlight: string;

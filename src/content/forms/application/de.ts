@@ -8,6 +8,27 @@ export const applicationFormDe: ApplicationFormContent = {
   intro:
     "Senden Sie uns Ihre Bewerbung direkt online. Wir prüfen Ihre Unterlagen persönlich und melden uns schnellstmöglich bei Ihnen.",
 
+  routes: {
+    pagePath: "/de/jobs/bewerbung",
+    homePath: "/de",
+    careersPath: "/de/jobs",
+  },
+
+  tracking: {
+    source: "homepage",
+  },
+
+  structuredData: {
+    pageName: "Bewerbung",
+    pageDescription:
+      "Online-Bewerbung bei GLOBALSPED für Karriere, Logistik, Disposition und Verwaltung.",
+  },
+
+  breadcrumbs: {
+    home: "Startseite",
+    careers: "Jobs",
+    application: "Bewerbung",
+  },
   sectionTitle: "Bewerbungsdaten",
 
   labels: {

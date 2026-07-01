@@ -5,6 +5,7 @@ import {
   getFaqCategories,
   getFaqPageContent,
   getFeaturedFaqs,
+  isSupportedFaqLocale,
 } from "@/lib/faq";
 import { FaqHero } from "@/components/faq/FaqHero";
 import { FaqCategoryFilter } from "@/components/faq/FaqCategoryFilter";
@@ -13,13 +14,6 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
-const activeFaqLocales = ["de"] as const;
-
-type ActiveFaqLocale = (typeof activeFaqLocales)[number];
-
-function isActiveFaqLocale(locale: string): locale is ActiveFaqLocale {
-  return activeFaqLocales.includes(locale as ActiveFaqLocale);
-}
 
 type Props = {
   params: Promise<{
@@ -30,7 +24,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
-  if (!isActiveFaqLocale(locale)) {
+  if (!isSupportedFaqLocale(locale)) {
     notFound();
   }
 
@@ -45,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function FaqPage({ params }: Props) {
   const { locale } = await params;
 
-  if (!isActiveFaqLocale(locale)) {
+  if (!isSupportedFaqLocale(locale)) {
     notFound();
   }
 
@@ -84,9 +78,10 @@ export default async function FaqPage({ params }: Props) {
           </div>
 
           <FaqCategoryFilter
-            categories={categories}
             faqs={faqs}
+            categories={categories}
             content={pageContent}
+            locale={locale}
           />
         </section>
       </main>

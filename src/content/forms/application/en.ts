@@ -8,6 +8,29 @@ export const applicationFormEn: ApplicationFormContent = {
   intro:
     "Send us your application directly online. We will personally review your documents and get back to you as soon as possible.",
 
+  routes: {
+  pagePath: "/en/careers/application",
+  homePath: "/en",
+  careersPath: "/en/careers",
+},
+
+tracking: {
+  source: "homepage",
+},
+
+structuredData: {
+  pageName: "Application",
+  pageDescription:
+    "Online application at GLOBALSPED for careers, logistics, dispatch and administration.",
+},
+
+breadcrumbs: {
+  home: "Home",
+  careers: "Careers",
+  application: "Application",
+},
+
+
   sectionTitle: "Application details",
 
   labels: {
