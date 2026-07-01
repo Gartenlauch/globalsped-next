@@ -1,12 +1,11 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
-import { TransportRequestPage } from "@/components/pages/TransportRequestPage";
+import { ImpressumPageContent } from "@/components/pages/ImpressumPageContent";
 import { getContent } from "@/content";
-import { getTransportRequestContent } from "@/content/forms/transport";
+import { getImpressumContent } from "@/content/legal/impressum";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
-import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { getLocalizedRoute } from "@/lib/i18n/routes";
@@ -23,34 +22,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildPageMetadata({
     locale,
-    meta: metadata.pages.transportRequest,
+    meta: metadata.pages.imprint,
   });
 }
 
-export default async function TransportRequestAliasPage({ params }: Props) {
+export default async function LegalNoticeAliasPage({ params }: Props) {
   const { locale } = await params;
 
   if (locale !== "en") {
-    redirect(getLocalizedRoute(locale, "transportRequest"));
+    redirect(getLocalizedRoute(locale, "legalNotice"));
   }
 
   const siteContent = getContent(locale);
-  const formContent = getTransportRequestContent(locale);
+  const content = getImpressumContent(locale);
+  const metadata = getMetadataContent(locale);
+  const pageMeta = metadata.pages.imprint;
 
   return (
     <>
       <WebPageJsonLd
         locale={locale}
-        path={formContent.routes.pagePath}
-        name={formContent.structuredData.pageName}
-        description={formContent.structuredData.pageDescription}
-      />
-
-      <ServiceJsonLd
-        path={formContent.routes.pagePath}
-        name={formContent.structuredData.serviceName}
-        description={formContent.structuredData.serviceDescription}
-        serviceType={formContent.structuredData.serviceName}
+        path={pageMeta.path}
+        name={pageMeta.title}
+        description={pageMeta.description}
       />
 
       <BreadcrumbJsonLd
@@ -60,13 +54,13 @@ export default async function TransportRequestAliasPage({ params }: Props) {
             href: getLocalizedRoute(locale, "home"),
           },
           {
-            name: formContent.structuredData.pageName,
-            href: formContent.routes.pagePath,
+            name: content.title,
+            href: pageMeta.path,
           },
         ]}
       />
 
-      <TransportRequestPage locale={locale} />
+      <ImpressumPageContent content={content} locale={locale} />
     </>
   );
 }

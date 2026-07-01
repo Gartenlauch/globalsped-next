@@ -2,9 +2,10 @@ import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 import { ServicePage } from "@/components/services/ServicePage";
+import { getContent } from "@/content";
 import {
   getServiceBySlug,
-  getServiceStaticParams,
+  getServiceSlugs,
   isSupportedServiceLocale,
 } from "@/content/services";
 import { getMetadataContent } from "@/content/metadata";
@@ -12,7 +13,8 @@ import { buildPageMetadata } from "@/content/metadata/helpers";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
-import { getServicePath } from "@/lib/i18n/routes";
+import { getLocalizedRoute, getServicePath } from "@/lib/i18n/routes";
+
 type Props = {
   params: Promise<{
     locale: string;
@@ -20,34 +22,19 @@ type Props = {
   }>;
 };
 
-function getServicesOverviewPath(locale: string) {
-  return locale === "en" ? "/en/services" : `/${locale}/leistungen`;
-}
-
-function getServiceDetailPath(locale: string, slug: string) {
-  return locale === "en"
-    ? `/en/services/${slug}`
-    : `/${locale}/leistungen/${slug}`;
-}
-
-function getBreadcrumbLabels(locale: string) {
-  return locale === "en"
-    ? {
-      home: "Home",
-      services: "Services",
-    }
-    : {
-      home: "Startseite",
-      services: "Leistungen",
-    };
+export function generateStaticParams() {
+  return getServiceSlugs("en").map((slug) => ({
+    locale: "en",
+    slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
 
-  const metadata = getMetadataContent(locale);
+  if (locale !== "en" || !isSupportedServiceLocale(locale)) {
+    const metadata = getMetadataContent(locale);
 
-  if (!isSupportedServiceLocale(locale)) {
     return buildPageMetadata({
       locale,
       meta: metadata.pages.services,
@@ -57,9 +44,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(slug, locale);
 
   if (!service) {
+    const metadata = getMetadataContent(locale);
+
     return buildPageMetadata({
       locale,
-      meta: metadata.pages.services,
+      meta: metadata.pages.notFound,
     });
   }
 
@@ -68,20 +57,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     meta: {
       title: service.seo.title,
       description: service.seo.description,
-      path: getServiceDetailPath(locale, slug),
+      path: getServicePath(locale, slug),
     },
   });
 }
 
-export function generateStaticParams() {
-  return getServiceStaticParams();
-}
-
-export default async function ServiceDetailPage({ params }: Props) {
+export default async function ServiceAliasDetailPage({ params }: Props) {
   const { locale, slug } = await params;
-  if (locale === "en") {
-    redirect(getServicePath(locale, slug));
+
+  if (locale !== "en") {
+    redirect(getLocalizedRoute(locale, "services"));
   }
+
   if (!isSupportedServiceLocale(locale)) {
     notFound();
   }
@@ -92,9 +79,8 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  const breadcrumbs = getBreadcrumbLabels(locale);
-  const servicePath = getServiceDetailPath(locale, slug);
-  const servicesOverviewPath = getServicesOverviewPath(locale);
+  const siteContent = getContent(locale);
+  const servicePath = getServicePath(locale, slug);
 
   return (
     <>
@@ -115,12 +101,12 @@ export default async function ServiceDetailPage({ params }: Props) {
       <BreadcrumbJsonLd
         items={[
           {
-            name: breadcrumbs.home,
-            href: `/${locale}`,
+            name: siteContent.navigationActions.homeLabel,
+            href: getLocalizedRoute(locale, "home"),
           },
           {
-            name: breadcrumbs.services,
-            href: servicesOverviewPath,
+            name: siteContent.services.badge,
+            href: getLocalizedRoute(locale, "services"),
           },
           {
             name: service.hero.title,

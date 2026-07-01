@@ -5,8 +5,8 @@ Navigation Items:
 - Leistungen
 - Über Uns
 - Kontakt
-- Anfrage
 - FAQ
+- Anfrage
 
 
 Homepage sections:
@@ -29,4 +29,3 @@ Separate pages:
 Languages:
 - /de
 - /en
-- /az

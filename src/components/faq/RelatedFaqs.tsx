@@ -5,7 +5,7 @@ import type { FaqItem, FaqPageContent } from "@/content/faq";
 type Props = {
   faqs: FaqItem[];
   content: FaqPageContent["detail"];
-  locale: "de";
+  locale: string;
 };
 
 export function RelatedFaqs({ faqs, content, locale }: Props) {

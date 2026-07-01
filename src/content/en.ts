@@ -9,7 +9,7 @@ export const en = {
       { label: "Destinations", href: "/{locale}/destinations" },
       { label: "About us", href: "/{locale}/about-us" },
       { label: "Careers", href: "/{locale}/careers" },
-      { label: "Contact", href: "/{locale}#contact" },
+      { label: "Contact", href: "/{locale}#kontakt" },
       { label: "FAQ", href: "/{locale}/faq" },
     ],
     cta: {

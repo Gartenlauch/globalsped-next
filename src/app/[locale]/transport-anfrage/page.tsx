@@ -4,6 +4,8 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
+import { redirect } from "next/navigation";
+import { getLocalizedRoute } from "@/lib/i18n/routes";
 
 type Props = {
   params: Promise<{
@@ -13,6 +15,9 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    redirect(getLocalizedRoute(locale, "transportRequest"));
+  }
   const metadata = getMetadataContent(locale);
 
   return buildPageMetadata({

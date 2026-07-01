@@ -5,7 +5,7 @@ import type { FaqPageContent } from "@/content/faq";
 type Props = {
   currentLabel: string;
   content: FaqPageContent["breadcrumbs"];
-  locale: "de";
+  locale: string;
 };
 
 export function FaqBreadcrumbs({ currentLabel, content, locale }: Props) {
