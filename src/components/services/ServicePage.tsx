@@ -16,9 +16,11 @@ import type { ServicePageContent } from "@/content/services";
 type Props = {
   locale: string;
   service: ServicePageContent;
+  servicesOverviewHref: string;
+  transportRequestHref: string;
 };
 
-export function ServicePage({ locale, service }: Props) {
+export function ServicePage({ locale, service, servicesOverviewHref, transportRequestHref }: Props) {
   return (
     <main className="bg-[var(--color-global-deep)] text-white [overflow-x:clip]">
       <section className="relative overflow-hidden px-0 pb-16 pt-28 md:pb-24 md:pt-36">
@@ -41,12 +43,12 @@ export function ServicePage({ locale, service }: Props) {
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-8 md:gap-4">
-            <Link href={`/${locale}/transport-anfrage`} className="btn-primary">
+            <Link href={transportRequestHref} className="btn-primary">
               {service.cta.primary}
             </Link>
 
             <Link
-              href={`/${locale}#leistungen`}
+              href={servicesOverviewHref}
               className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/25 px-5 py-3 text-center text-sm font-black uppercase tracking-wide text-white transition hover:bg-white hover:text-[var(--color-global-dark)] sm:px-7 sm:py-4"
             >
               {service.cta.secondary}

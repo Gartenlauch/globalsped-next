@@ -71,9 +71,8 @@ export function ServicesSection({ locale }: Props) {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {t.serviceItems.map((item) => {
-            const Icon =
-              serviceIcons[item.icon as keyof typeof serviceIcons] ?? Truck;
-
+            const Icon = serviceIcons[item.icon as keyof typeof serviceIcons] ?? Truck;
+      
             return (
               <article
                 key={item.title}
@@ -94,7 +93,7 @@ export function ServicesSection({ locale }: Props) {
                 <p className="relative flex-1 text-sm leading-6 text-white/78">
                   {item.text}
                 </p>
-
+        
                 <Link
                   href={item.href}
                   className="relative mt-4 inline-flex items-center text-sm font-black uppercase tracking-wide text-lime-300 transition hover:text-lime-200"

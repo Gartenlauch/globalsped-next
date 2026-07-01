@@ -115,7 +115,12 @@ export default async function ServiceAliasDetailPage({ params }: Props) {
         ]}
       />
 
-      <ServicePage locale={locale} service={service} />
+      <ServicePage
+        locale={locale}
+        service={service}
+        servicesOverviewHref={`/${locale}/services`}
+        transportRequestHref={`/${locale}/transport-request`}
+      />
     </>
   );
 }

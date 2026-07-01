@@ -4,17 +4,17 @@ export const en = {
   header: {
     logoLabel: "GLOBALSPED",
     nav: [
-      { label: "Home", href: "/{locale}" },
-      { label: "Services", href: "/{locale}/services" },
-      { label: "Destinations", href: "/{locale}/destinations" },
-      { label: "About us", href: "/{locale}/about-us" },
-      { label: "Careers", href: "/{locale}/careers" },
-      { label: "Contact", href: "/{locale}#kontakt" },
-      { label: "FAQ", href: "/{locale}/faq" },
+      { label: "Home", href: "/en" },
+      { label: "Services", href: "/en/services" },
+      { label: "Destinations", href: "/en/destinations" },
+      { label: "About us", href: "/en/about-us" },
+      { label: "Careers", href: "/en/careers" },
+      { label: "Contact", href: "/en#kontakt" },
+      { label: "FAQ", href: "/en/faq" },
     ],
     cta: {
       label: "Request quote",
-      href: "/{locale}/transport-request",
+      href: "/en/transport-request",
     },
     menuOpenLabel: "Open menu",
     menuCloseLabel: "Close menu",
@@ -39,12 +39,12 @@ export const en = {
 
     ctaPrimary: {
       label: "Request a transport quote",
-      href: "/{locale}/transport-request",
+      href: "/en/transport-request",
     },
 
     ctaSecondary: {
       label: "View destinations",
-      href: "/{locale}/destinations",
+      href: "/en/destinations",
     },
 
     destinationsLabel: "Destinations",
@@ -119,7 +119,7 @@ export const en = {
     intro:
       "GLOBALSPED organizes international freight transport from Europe to demanding destination markets. Our focus is on Central Asia, the Caucasus, Eastern Europe and the Middle East – including route planning, customs clearance, document checks and personal transport coordination.",
 
-    countryRouteBase: "/{locale}/destinations",
+    countryRouteBase: "/en/destinations",
     countrySlugPrefix: "freight-transport-",
 
     regions: [
@@ -219,7 +219,7 @@ export const en = {
 
     cta: {
       label: "Request a transport quote",
-      href: "/{locale}/transport-request",
+      href: "/en/transport-request",
     },
   },
   countryPages: [
@@ -375,20 +375,20 @@ export const en = {
         internalLinks: [
           {
             label: "FTL full truck loads to Central Asia",
-            href: "/{locale}/services/ftl-full-truck-loads",
+            href: "/en/services/ftl-full-truck-loads",
             reason:
               "Connects Uzbekistan transport with the relevant service page for direct transports.",
           },
           {
             label: "Customs clearance and export documents",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens internal relevance for export documents and customs clearance.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Uzbekistan",
       },
     },
@@ -541,20 +541,20 @@ export const en = {
         internalLinks: [
           {
             label: "Customs clearance for international transport",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens the connection between Kazakhstan transport, customs clearance and export documents.",
           },
           {
             label: "Request transport to Kazakhstan",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason:
               "Guides users with a concrete transport requirement directly to the conversion page.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Kazakhstan",
       },
     },
@@ -706,20 +706,20 @@ export const en = {
         internalLinks: [
           {
             label: "LTL partial loads to Central Asia",
-            href: "/{locale}/services/ltl-part-loads",
+            href: "/en/services/ltl-part-loads",
             reason:
               "Matches groupage and partial-load transports to Kyrgyzstan.",
           },
           {
             label: "Request transport to Kyrgyzstan",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason:
               "Guides users with a concrete requirement directly into the request process.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Kyrgyzstan",
       },
     },
@@ -879,20 +879,20 @@ export const en = {
         internalLinks: [
           {
             label: "Customs clearance for international transport",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Thematically relevant for transports with increased documentation requirements.",
           },
           {
             label: "Project logistics for complex transports",
-            href: "/{locale}/services/project-logistics",
+            href: "/en/services/project-logistics",
             reason:
               "Suitable for industrial deliveries and more complex transports to Turkmenistan.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Turkmenistan",
       },
     },
@@ -1057,20 +1057,20 @@ export const en = {
         internalLinks: [
           {
             label: "Customs clearance for Central Asia transports",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens the semantic connection between Tajikistan transport and customs expertise.",
           },
           {
             label: "Request transport to Tajikistan",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason:
               "Leads directly to conversion for concrete transport requests.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Tajikistan",
       },
     },
@@ -1231,19 +1231,19 @@ export const en = {
         internalLinks: [
           {
             label: "Project logistics for international special transports",
-            href: "/{locale}/services/project-logistics",
+            href: "/en/services/project-logistics",
             reason:
               "Mongolia transports often require increased planning around route, lead time and handling.",
           },
           {
             label: "Request transport to Mongolia",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason: "Guides users directly to a concrete request.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Mongolia",
       },
     },
@@ -1403,20 +1403,20 @@ export const en = {
         internalLinks: [
           {
             label: "FTL full truck loads to the Caucasus",
-            href: "/{locale}/services/ftl-full-truck-loads",
+            href: "/en/services/ftl-full-truck-loads",
             reason:
               "Connects Azerbaijan transport with an important service page.",
           },
           {
             label: "Customs clearance for Azerbaijan transports",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens internal topical authority for customs clearance and documents.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Azerbaijan",
       },
     },
@@ -1576,20 +1576,20 @@ export const en = {
         internalLinks: [
           {
             label: "Request transport to the Caucasus",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason:
               "Supports conversion for concrete Georgia and Caucasus transports.",
           },
           {
             label: "Customs clearance for international transport",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens the semantic connection to customs and document expertise.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Georgia",
       },
     },
@@ -1749,20 +1749,20 @@ export const en = {
         internalLinks: [
           {
             label: "Project logistics for complex transports",
-            href: "/{locale}/services/project-logistics",
+            href: "/en/services/project-logistics",
             reason:
               "Matches demanding deliveries with increased route and documentation planning.",
           },
           {
             label: "Customs clearance for Armenia transports",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens the topical connection with export documents and customs clearance.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Armenia",
       },
     },
@@ -1923,19 +1923,19 @@ export const en = {
         internalLinks: [
           {
             label: "Customs clearance for Iraq transports",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Highly relevant due to increased requirements for documents, customs values and compliance.",
           },
           {
             label: "Request transport to Iraq",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason: "Guides qualified users directly to the request page.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Iraq",
       },
     },
@@ -2107,14 +2107,14 @@ export const en = {
         internalLinks: [
           {
             label: "FAQ on customs and export documents",
-            href: "/{locale}/faq",
+            href: "/en/faq",
             reason:
               "Useful internal deepening for export documents, customs processes and international transport requirements.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Turkey",
       },
     },
@@ -2280,20 +2280,20 @@ export const en = {
         internalLinks: [
           {
             label: "Customs clearance for Ukraine transports",
-            href: "/{locale}/services/customs-clearance",
+            href: "/en/services/customs-clearance",
             reason:
               "Strengthens the internal connection to export documents, compliance and customs clearance.",
           },
           {
             label: "Request transport to Ukraine",
-            href: "/{locale}/transport-request",
+            href: "/en/transport-request",
             reason:
               "Guides users with a concrete transport requirement directly to the request page.",
           },
         ],
       },
       cta: {
-        href: "/{locale}/transport-request",
+        href: "/en/transport-request",
         label: "Request transport to Ukraine",
       },
     },
@@ -2307,7 +2307,7 @@ export const en = {
 
     cta: {
       label: "Request a transport quote",
-      href: "/{locale}/transport-request",
+      href: "/en/transport-request",
     },
 
     learnMoreLabel: "Learn more",
@@ -2318,37 +2318,37 @@ export const en = {
         icon: "truck",
         title: "FTL – Full truck loads",
         text: "Direct transports with exclusive use of the vehicle for maximum security, efficiency and on-time delivery.",
-        href: "/{locale}/services/ftl-full-truck-loads",
+        href: "/en/services/ftl-full-truck-loads",
       },
       {
         icon: "boxes",
         title: "LTL – Partial loads",
         text: "Cost-efficient transport solutions through consolidated loads and regular connections to our destination regions.",
-        href: "/{locale}/services/ltl-part-loads",
+        href: "/en/services/ltl-part-loads",
       },
       {
         icon: "temperature",
         title: "Temperature-controlled transport",
         text: "Temperature-controlled transport for sensitive goods – with modern cooling technology and continuous monitoring.",
-        href: "/{locale}/services/temperature-controlled-transport",
+        href: "/en/services/temperature-controlled-transport",
       },
       {
         icon: "shield",
         title: "Dangerous goods transport",
         text: "Safe and compliant transport of sensitive dangerous goods, including ADR-compliant documentation and international handling.",
-        href: "/{locale}/services/dangerous-goods-transport",
+        href: "/en/services/dangerous-goods-transport",
       },
       {
         icon: "fileShield",
         title: "Customs clearance",
         text: "Customs clearance as well as export, import and transit support for international transports to third countries.",
-        href: "/{locale}/services/customs-clearance",
+        href: "/en/services/customs-clearance",
       },
       {
         icon: "crane",
         title: "Project logistics",
         text: "Individual solutions for complex projects, heavy transports and oversized cargo.",
-        href: "/{locale}/services/project-logistics",
+        href: "/en/services/project-logistics",
       },
     ],
 
@@ -2399,7 +2399,7 @@ export const en = {
 
     cta: {
       label: "Request a transport quote",
-      href: "/{locale}/transport-request",
+      href: "/en/transport-request",
     },
 
     images: [
