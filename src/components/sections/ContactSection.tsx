@@ -7,7 +7,7 @@ import { Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
 import { getContent } from "@/content";
 import { functions } from "@/lib/firebase/client";
 import { trackContactFormSubmit } from "@/lib/tracking/google";
-
+import { webMcpContent as webMcpDe } from "@/content/wmcp"
 type Props = {
     locale: string;
 };
@@ -141,7 +141,13 @@ export function ContactSection({ locale }: Props) {
 
                 <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
                     <div className="rounded-3xl border border-white/12 bg-white/8 p-7 shadow-[0_30px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-                        <form ref={formRef} onSubmit={handleSubmit} className="grid gap-5">
+                        <form 
+                            ref={formRef} 
+                            onSubmit={handleSubmit}
+                            className="grid gap-5"
+                            toolname={webMcpDe.contactInquiry.toolname}
+                            tooldescription={webMcpDe.contactInquiry.tooldescription}
+                        >
                             <input
                                 type="text"
                                 name="website"
@@ -161,6 +167,8 @@ export function ContactSection({ locale }: Props) {
                                         placeholder={t.form.namePlaceholder}
                                         className="input-premium"
                                         disabled={isSubmitting}
+                                        toolparamdescription={webMcpDe.contactInquiry.fields.name.description}
+                                        
                                     />
                                 </label>
 
@@ -173,6 +181,7 @@ export function ContactSection({ locale }: Props) {
                                         placeholder={t.form.companyPlaceholder}
                                         className="input-premium"
                                         disabled={isSubmitting}
+                                        toolparamdescription={webMcpDe.contactInquiry.fields.company.description}
                                     />
                                 </label>
                             </div>
@@ -187,6 +196,7 @@ export function ContactSection({ locale }: Props) {
                                         placeholder={t.form.emailPlaceholder}
                                         className="input-premium"
                                         disabled={isSubmitting}
+                                        toolparamdescription={webMcpDe.contactInquiry.fields.email.description}
                                     />
                                 </label>
 
@@ -199,6 +209,7 @@ export function ContactSection({ locale }: Props) {
                                         placeholder={t.form.phonePlaceholder}
                                         className="input-premium"
                                         disabled={isSubmitting}
+                                        toolparamdescription={webMcpDe.contactInquiry.fields.phone.description}
                                     />
                                 </label>
                             </div>
@@ -211,6 +222,7 @@ export function ContactSection({ locale }: Props) {
                                     rows={6}
                                     className="input-premium resize-none"
                                     disabled={isSubmitting}
+                                    toolparamdescription={webMcpDe.contactInquiry.fields.message.description}
                                 />
                             </label>
 

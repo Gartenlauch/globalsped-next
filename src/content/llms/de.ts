@@ -1,4 +1,3 @@
-const siteUrl = "https://www.globalsped.de";
 
 export const llmsTxtDe = `# GLOBALSPED Internationale Spedition
 

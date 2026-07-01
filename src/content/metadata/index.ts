@@ -2,16 +2,17 @@
 
 import { metadataDe } from "./de";
 import type { Locale, LocaleMetadata } from "./types";
+import { metadataEn } from "./en";
 
 const metadataByLocale: Record<Locale, LocaleMetadata> = {
   de: metadataDe,
-  // Vorläufig Fallbacks, bis echte Übersetzungen vorliegen:
-  en: metadataDe,
+  en: metadataEn,
+    // Vorläufig Fallbacks, bis echte Übersetzungen vorliegen:
   az: metadataDe,
 };
 
 export function getMetadataContent(locale: string): LocaleMetadata {
-  if (locale === "en" || locale === "az" || locale === "de") {
+  if (locale === "en" || locale === "de") {
     return metadataByLocale[locale];
   }
 
