@@ -9,26 +9,26 @@ export const applicationFormEn: ApplicationFormContent = {
     "Send us your application directly online. We will personally review your documents and get back to you as soon as possible.",
 
   routes: {
-  pagePath: "/en/careers/application",
-  homePath: "/en",
-  careersPath: "/en/careers",
-},
+    pagePath: "/en/careers/application",
+    homePath: "/en",
+    careersPath: "/en/careers",
+  },
 
-tracking: {
-  source: "homepage",
-},
+  tracking: {
+    source: "homepage",
+  },
 
-structuredData: {
-  pageName: "Application",
-  pageDescription:
-    "Online application at GLOBALSPED for careers, logistics, dispatch and administration.",
-},
+  structuredData: {
+    pageName: "Application",
+    pageDescription:
+      "Online application at GLOBALSPED for careers, logistics, dispatch and administration.",
+  },
 
-breadcrumbs: {
-  home: "Home",
-  careers: "Careers",
-  application: "Application",
-},
+  breadcrumbs: {
+    home: "Home",
+    careers: "Careers",
+    application: "Application",
+  },
 
 
   sectionTitle: "Application details",
@@ -75,6 +75,8 @@ breadcrumbs: {
 
   upload: {
     hint: "Allowed formats are PDF, DOC, DOCX, JPG and PNG up to a maximum of 10 MB.",
+    chooseLabel: "Choose file",
+    noFileSelected: "No file selected",
     removeLabel: "Remove file",
   },
 

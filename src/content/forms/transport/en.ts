@@ -420,6 +420,8 @@ export const transportRequestEn: TransportRequestContent = {
     removeUnit: "Remove",
     standardDocs: "Upload goods documents / images",
     adrDocs: "Upload ADR documents",
+    chooseFiles: "Choose files",
+    noFilesSelected: "No files selected",
     removeFile: "Remove file",
   },
 

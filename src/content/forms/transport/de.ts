@@ -417,6 +417,8 @@ export const transportRequestDe: TransportRequestContent = {
     removeUnit: "Entfernen",
     standardDocs: "Warendokumente / Bilder hochladen",
     adrDocs: "ADR-Dokumente hochladen",
+    chooseFiles: "Dateien auswählen",
+    noFilesSelected: "Keine Dateien ausgewählt",
     removeFile: "Datei entfernen",
   },
 

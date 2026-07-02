@@ -72,6 +72,8 @@ export const applicationFormDe: ApplicationFormContent = {
 
   upload: {
     hint: "Erlaubt sind PDF, DOC, DOCX, JPG und PNG bis maximal 10 MB.",
+    chooseLabel: "Datei auswählen",
+    noFileSelected: "Keine Datei ausgewählt",
     removeLabel: "Datei entfernen",
   },
 

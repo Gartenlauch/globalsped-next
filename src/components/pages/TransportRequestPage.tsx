@@ -1080,11 +1080,14 @@ export function TransportRequestPage({ locale }: Props) {
                         </div>
                         <div className="md:col-span-2">
                           <FileUploadField
+                            id="transport-adr-docs"
                             label={t.labels.adrDocs}
                             hint={t.hints.adrDocs}
-                            removeLabel={t.labels.removeFile}
                             formatsHint={t.hints.uploadFormats}
                             files={adrDocs}
+                            chooseLabel={t.labels.chooseFiles}
+                            emptyLabel={t.labels.noFilesSelected}
+                            removeLabel={t.labels.removeFile}
                             onChange={(files) => updateFiles("adrDocs", files)}
                             onRemove={(index) => removeFile("adrDocs", index)}
                           />
@@ -1095,11 +1098,14 @@ export function TransportRequestPage({ locale }: Props) {
                   </div>
                   <div className="mt-6">
                     <FileUploadField
+                      id="transport-standard-docs"
                       label={t.labels.standardDocs}
-                      removeLabel={t.labels.removeFile}
                       hint={t.hints.standardDocs}
                       formatsHint={t.hints.uploadFormats}
                       files={standardDocs}
+                      chooseLabel={t.labels.chooseFiles}
+                      emptyLabel={t.labels.noFilesSelected}
+                      removeLabel={t.labels.removeFile}
                       onChange={(files) => updateFiles("standardDocs", files)}
                       onRemove={(index) => removeFile("standardDocs", index)}
                     />
@@ -1613,26 +1619,37 @@ function AdrDetailsFields({
 }
 
 function FileUploadField({
+  id,
   label,
   hint,
   formatsHint,
   files,
+  chooseLabel,
+  emptyLabel,
   removeLabel,
   onChange,
   onRemove,
 }: {
+  id: string;
   label: string;
   hint: string;
   formatsHint: string;
   files: File[];
+  chooseLabel: string;
+  emptyLabel: string;
   removeLabel: string;
   onChange: (files: FileList | null) => void;
   onRemove: (index: number) => void;
 }) {
+  const selectedFileText =
+    files.length > 0
+      ? files.map((file) => file.name).join(", ")
+      : emptyLabel;
+
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-black uppercase tracking-wide text-white/74">
             {label}
           </p>
@@ -1641,16 +1658,32 @@ function FileUploadField({
           <p className="mt-1 text-xs leading-5 text-white/42">{formatsHint}</p>
         </div>
 
-        <input
-          type="file"
-          multiple
-          accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
-          onChange={(event) => {
-            onChange(event.target.files);
-            event.currentTarget.value = "";
-          }}
-          className="block w-full max-w-full text-sm text-white/70 file:mr-4 file:rounded-full file:border-0 file:bg-lime-300 file:px-5 file:py-3 file:text-sm file:font-black file:uppercase file:text-[var(--color-global-dark)] hover:file:bg-lime-200 md:max-w-[320px]"
-        />
+        <div className="w-full max-w-full md:max-w-[320px]">
+          <input
+            id={id}
+            type="file"
+            multiple
+            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+            onChange={(event) => {
+              onChange(event.target.files);
+              event.currentTarget.value = "";
+            }}
+            className="sr-only"
+          />
+
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor={id}
+              className="inline-flex min-h-[44px] cursor-pointer items-center justify-center rounded-full bg-lime-300 px-5 py-2 text-sm font-black uppercase tracking-wide text-[var(--color-global-dark)] transition hover:bg-lime-200"
+            >
+              {chooseLabel}
+            </label>
+
+            <span className="block truncate text-center text-sm font-semibold text-white/70 md:text-left">
+              {selectedFileText}
+            </span>
+          </div>
+        </div>
       </div>
 
       {files.length > 0 && (

@@ -404,14 +404,29 @@ export function ApplicationPage({ locale }: Props) {
                     {t.upload.hint}
                   </p>
 
-                  <input
-                    type="file"
-                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                    onChange={(event) =>
-                      handleFileChange(event.target.files?.[0])
-                    }
-                    className="mt-4 block w-full text-sm text-white/70 file:mr-4 file:rounded-full file:border-0 file:bg-lime-300 file:px-5 file:py-3 file:text-sm file:font-black file:uppercase file:text-[var(--color-global-dark)] hover:file:bg-lime-200"
-                  />
+                  <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                    <input
+                      id="application-file-upload"
+                      type="file"
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      onChange={(event) => {
+                        handleFileChange(event.target.files?.[0]);
+                        event.currentTarget.value = "";
+                      }}
+                      className="sr-only"
+                    />
+
+                    <label
+                      htmlFor="application-file-upload"
+                      className="inline-flex min-h-[44px] cursor-pointer items-center justify-center rounded-full bg-lime-300 px-5 py-2 text-sm font-black uppercase tracking-wide text-[var(--color-global-dark)] transition hover:bg-lime-200"
+                    >
+                      {t.upload.chooseLabel}
+                    </label>
+
+                    <span className="min-w-0 truncate text-sm font-semibold text-white/70">
+                      {file ? file.name : t.upload.noFileSelected}
+                    </span>
+                  </div>
 
                   {file && (
                     <div className="mt-4 flex items-center justify-between gap-4 rounded-xl border border-lime-300/20 bg-lime-300/10 px-4 py-3 text-sm">
@@ -419,9 +434,9 @@ export function ApplicationPage({ locale }: Props) {
 
                       <button
                         type="button"
-                        onClick={() => setFile(null)}
+                        onClick={() => handleFileChange(undefined)}
                         className="shrink-0 rounded-full p-1 text-white/60 transition hover:bg-white/10 hover:text-white"
-                        aria-label={t.upload.removeLabel}
+                        aria-label={`${t.upload.removeLabel}: ${file.name}`}
                       >
                         <X size={17} />
                       </button>

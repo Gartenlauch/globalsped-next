@@ -97,6 +97,8 @@ export type TransportRequestContent = {
     removeUnit: string;
     standardDocs: string;
     adrDocs: string;
+    chooseFiles: string;
+    noFilesSelected: string;
     removeFile: string;
 
 

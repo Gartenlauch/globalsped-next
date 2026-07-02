@@ -64,6 +64,8 @@ export type ApplicationFormContent = {
 
   upload: {
     hint: string;
+    chooseLabel: string;
+    noFileSelected: string;
     removeLabel: string;
   };
 
