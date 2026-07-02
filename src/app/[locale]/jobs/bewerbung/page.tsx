@@ -4,6 +4,8 @@ import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { redirect } from "next/navigation";
+import { getLocalizedRoute } from "@/lib/i18n/routes";
 
 type Props = {
   params: Promise<{
@@ -25,6 +27,9 @@ export default async function BewerbungPage({ params }: Props) {
   const { locale } = await params;
   const metadata = getMetadataContent(locale);
   const pageMeta = metadata.pages.application;
+  if (locale === "en") {
+    redirect(getLocalizedRoute(locale, "careersApplication"));
+  }
 
   return (
     <>

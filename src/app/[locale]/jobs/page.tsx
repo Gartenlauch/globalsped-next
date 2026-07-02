@@ -1,9 +1,8 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
-import { ApplicationPage } from "@/components/pages/ApplicationPage";
+import { JobsSection } from "@/components/sections/JobsSection";
 import { getContent } from "@/content";
-import { getApplicationFormContent } from "@/content/forms/application";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
@@ -22,21 +21,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildPageMetadata({
     locale,
-    meta: metadata.pages.application,
+    meta: metadata.pages.jobs,
   });
 }
 
-export default async function CareersApplicationAliasPage({ params }: Props) {
+export default async function JobsPage({ params }: Props) {
   const { locale } = await params;
 
-  if (locale !== "en") {
-    redirect(getLocalizedRoute(locale, "careersApplication"));
+  if (locale === "en") {
+    redirect(getLocalizedRoute(locale, "careers"));
   }
 
   const siteContent = getContent(locale);
-  const formContent = getApplicationFormContent(locale);
   const metadata = getMetadataContent(locale);
-  const pageMeta = metadata.pages.application;
+  const pageMeta = metadata.pages.jobs;
 
   return (
     <>
@@ -54,17 +52,15 @@ export default async function CareersApplicationAliasPage({ params }: Props) {
             href: getLocalizedRoute(locale, "home"),
           },
           {
-            name: formContent.breadcrumbs.careers,
+            name: siteContent.jobs.badge,
             href: getLocalizedRoute(locale, "careers"),
-          },
-          {
-            name: formContent.breadcrumbs.application,
-            href: getLocalizedRoute(locale, "careersApplication"),
           },
         ]}
       />
-
-      <ApplicationPage locale={locale} />
+      <JobsSection
+        locale={locale}
+        applicationHref={getLocalizedRoute(locale, "careersApplication")}
+      />
     </>
   );
 }
