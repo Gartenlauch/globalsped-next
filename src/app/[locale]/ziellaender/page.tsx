@@ -15,7 +15,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  
+
   if (locale === "en") {
     redirect(getLocalizedRoute(locale, "destinations"));
   }

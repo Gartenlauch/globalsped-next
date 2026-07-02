@@ -12,7 +12,7 @@ import { buildPageMetadata } from "@/content/metadata/helpers";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
-import { getServicePath } from "@/lib/i18n/routes";
+import { getLocalizedRoute, getServicePath } from "@/lib/i18n/routes";
 type Props = {
   params: Promise<{
     locale: string;
@@ -80,7 +80,7 @@ export function generateStaticParams() {
 export default async function ServiceDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   if (locale === "en") {
-    redirect(getServicePath(locale, slug));
+    redirect(getLocalizedRoute(locale, "services"));
   }
   if (!isSupportedServiceLocale(locale)) {
     notFound();

@@ -38,7 +38,6 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  console.log(process.env, '-------------------')
   if (!isSupportedFaqLocale(locale)) {
     return {};
   }

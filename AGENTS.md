@@ -49,7 +49,7 @@ Separate pages:
 countries = kasachstan, ksbekistan, kirgisistan, turkmenistan, tadschikistan, aserbaidschan, georgien, armenien, mongolei, irak
 
 Each Country has a one page
-Same structure for /en and /az.
+Same structure for /de /en 
 
 ## Forms
 Create a separate transport request form page.
