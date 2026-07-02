@@ -1,9 +1,8 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
-import { ApplicationPage } from "@/components/pages/ApplicationPage";
+import { AboutUsSection } from "@/components/sections/AboutUsSection";
 import { getContent } from "@/content";
-import { getApplicationFormContent } from "@/content/forms/application";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
@@ -22,21 +21,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildPageMetadata({
     locale,
-    meta: metadata.pages.application,
+    meta: metadata.pages.about,
   });
 }
 
-export default async function CareersApplicationAliasPage({ params }: Props) {
+export default async function AboutUsAliasPage({ params }: Props) {
   const { locale } = await params;
 
   if (locale !== "en") {
-    redirect(getLocalizedRoute(locale, "careersApplication"));
+    redirect(getLocalizedRoute(locale, "about"));
   }
 
   const siteContent = getContent(locale);
-  const formContent = getApplicationFormContent(locale);
   const metadata = getMetadataContent(locale);
-  const pageMeta = metadata.pages.application;
+  const pageMeta = metadata.pages.about;
 
   return (
     <>
@@ -45,6 +43,7 @@ export default async function CareersApplicationAliasPage({ params }: Props) {
         path={pageMeta.path}
         name={pageMeta.title}
         description={pageMeta.description}
+        type="AboutPage"
       />
 
       <BreadcrumbJsonLd
@@ -54,17 +53,13 @@ export default async function CareersApplicationAliasPage({ params }: Props) {
             href: getLocalizedRoute(locale, "home"),
           },
           {
-            name: formContent.breadcrumbs.careers,
-            href: getLocalizedRoute(locale, "careers"),
-          },
-          {
-            name: formContent.breadcrumbs.application,
-            href: getLocalizedRoute(locale, "careersApplication"),
+            name: siteContent.aboutUs.badge,
+            href: pageMeta.path,
           },
         ]}
       />
 
-      <ApplicationPage locale={locale} />
+      <AboutUsSection locale={locale} />
     </>
   );
 }

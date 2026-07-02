@@ -1,13 +1,16 @@
 import type { MetadataRoute } from "next";
 
-import { getAllFaqs } from "@/lib/faq";
 import { siteUrl } from "@/content/metadata/config";
-import { metadataDe } from "@/content/metadata/de";
+import { getAllAlternatePathGroups } from "@/content/metadata/alternates";
 
 type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
 
 type SitemapEntryInput = {
   path: string;
+  alternatePaths: {
+    de: string;
+    en: string;
+  };
   changeFrequency?: ChangeFrequency;
   priority?: number;
 };
@@ -23,6 +26,7 @@ function buildUrl(path: string) {
 
 function entry({
   path,
+  alternatePaths,
   changeFrequency = "monthly",
   priority = 0.7,
 }: SitemapEntryInput): MetadataRoute.Sitemap[number] {
@@ -31,84 +35,31 @@ function entry({
     lastModified: now,
     changeFrequency,
     priority,
+    alternates: {
+      languages: {
+        de: buildUrl(alternatePaths.de),
+        en: buildUrl(alternatePaths.en),
+        "x-default": buildUrl(alternatePaths.de),
+      },
+    },
   };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const faqs = getAllFaqs("de");
+  const groups = getAllAlternatePathGroups();
 
-  const staticRoutes: SitemapEntryInput[] = [
-    {
-      path: metadataDe.pages.home.path,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      path: metadataDe.pages.services.path,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      path: metadataDe.pages.destinations.path,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      path: metadataDe.pages.about.path,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      path: metadataDe.pages.jobs.path,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      path: metadataDe.pages.application.path,
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    {
-      path: metadataDe.pages.transportRequest.path,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      path: metadataDe.pages.faq.path,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-  ];
-
-  const serviceRoutes: SitemapEntryInput[] = Object.keys(metadataDe.services).map(
-    (slug) => ({
-      path:
-        slug === "zoll"
-          ? "/de/leistungen/zollabwicklung"
-          : `/de/leistungen/${slug}`,
-      changeFrequency: "monthly",
-      priority: slug === "zoll" ? 0.85 : 0.8,
+  return groups.flatMap((group) => [
+    entry({
+      path: group.paths.de,
+      alternatePaths: group.paths,
+      changeFrequency: group.changeFrequency,
+      priority: group.priority,
     }),
-  );
-
-  const countryRoutes: SitemapEntryInput[] = Object.keys(metadataDe.countries).map(
-    (slug) => ({
-      path: `/de/ziellaender/${slug}`,
-      changeFrequency: "monthly",
-      priority: 0.8,
+    entry({
+      path: group.paths.en,
+      alternatePaths: group.paths,
+      changeFrequency: group.changeFrequency,
+      priority: group.priority,
     }),
-  );
-
-  const faqRoutes: SitemapEntryInput[] = faqs.map((faq) => ({
-    path: `/de/faq/${faq.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.65,
-  }));
-
-  return [
-    ...staticRoutes.map(entry),
-    ...serviceRoutes.map(entry),
-    ...countryRoutes.map(entry),
-    ...faqRoutes.map(entry),
-  ];
+  ]);
 }

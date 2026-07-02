@@ -7,10 +7,10 @@ export const siteConfig = {
   companyName: "GLOBALSPED Internationale Spedition GmbH",
   stagingUrl: "https://globalsped-next--globalsped-next.europe-west4.hosted.app",
   productionUrl: "https://www.globalsped.de",
-  locales: ["de", "en", "az"],
-  activeLocales: ["de"] as const,
+  locales: ["de", "en"],
+  activeLocales: ["de", "en"] as const,
   defaultLocale: "de",
-  defaultOgImage: "/images/globalsped-og.png",
+  defaultOgImage: "/images/globalsped-og.jpg",
   twitterCard: "summary_large_image" as const,
 };
 

@@ -15,13 +15,15 @@ import { getContent } from "@/content";
 
 type Props = {
     locale: string;
+    applicationHref: string;
 };
+
 const imageCardIcons = {
     users: Users,
     star: Star,
 } as const;
 
-export function JobsSection({ locale }: Props) {
+export function JobsSection({ locale, applicationHref }: Props) {
     const t = getContent(locale).jobs;
 
     return (
@@ -146,7 +148,7 @@ export function JobsSection({ locale }: Props) {
                                         </ul>
 
                                         <Link
-                                            href="/de/jobs/bewerbung"
+                                            href={applicationHref}
                                             className="mt-7 inline-flex items-center gap-3 rounded-full bg-lime-300 px-6 py-3 text-sm font-black uppercase tracking-wide text-[var(--color-global-dark)] transition hover:bg-lime-200"
                                         >
                                             <Mail size={17} />
@@ -218,7 +220,7 @@ export function JobsSection({ locale }: Props) {
                         {t.closing}
 
                     </div>
-                    <Link href="/de/jobs/bewerbung" className="btn-primary">
+                    <Link href={applicationHref} className="btn-primary">
                         {t.applyLabel}
                     </Link>
 

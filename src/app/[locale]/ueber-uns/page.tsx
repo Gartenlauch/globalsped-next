@@ -1,9 +1,13 @@
-import { AboutUsSection } from "@/components/sections/AboutUsSection";
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+
+import { AboutUsSection } from "@/components/sections/AboutUsSection";
+import { getContent } from "@/content";
 import { getMetadataContent } from "@/content/metadata";
 import { buildPageMetadata } from "@/content/metadata/helpers";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { getLocalizedRoute } from "@/lib/i18n/routes";
 
 type Props = {
   params: Promise<{
@@ -21,10 +25,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function JobsPage({ params }: Props) {
+export default async function AboutUsPage({ params }: Props) {
   const { locale } = await params;
+
+  if (locale === "en") {
+    redirect(getLocalizedRoute(locale, "about"));
+  }
+
+  const siteContent = getContent(locale);
   const metadata = getMetadataContent(locale);
-  const pageMeta = metadata.pages.jobs;
+  const pageMeta = metadata.pages.about;
 
   return (
     <>
@@ -33,12 +43,19 @@ export default async function JobsPage({ params }: Props) {
         path={pageMeta.path}
         name={pageMeta.title}
         description={pageMeta.description}
+        type="AboutPage"
       />
 
       <BreadcrumbJsonLd
         items={[
-          { name: "Start", href: `/${locale}` },
-          { name: "Jobs", href: pageMeta.path },
+          {
+            name: siteContent.navigationActions.homeLabel,
+            href: getLocalizedRoute(locale, "home"),
+          },
+          {
+            name: siteContent.aboutUs.badge,
+            href: pageMeta.path,
+          },
         ]}
       />
 

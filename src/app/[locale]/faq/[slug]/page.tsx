@@ -14,7 +14,7 @@ import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { FaqBackLink } from "@/components/faq/FaqBackLink";
 import { siteUrl } from "@/content/metadata/config"
-
+import { getAlternatePathsForPath } from "@/content/metadata/alternates";
 
 type Props = {
   params: Promise<{
@@ -38,6 +38,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  console.log(process.env, '-------------------')
   if (!isSupportedFaqLocale(locale)) {
     return {};
   }
@@ -47,13 +48,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const url = `${baseUrl}/${locale}/faq/${faq.slug}`;
+  const path = `/${locale}/faq/${faq.slug}`;
+  const url = `${baseUrl}${path}`;
+  const alternatePaths = getAlternatePathsForPath(path);
+
+  const languages = alternatePaths
+    ? {
+      de: `${baseUrl}${alternatePaths.de}`,
+      en: `${baseUrl}${alternatePaths.en}`,
+      "x-default": `${baseUrl}${alternatePaths.de}`,
+    }
+    : undefined;
 
   return {
     title: faq.metaTitle,
     description: faq.metaDescription,
     alternates: {
       canonical: url,
+      ...(languages ? { languages } : {}),
     },
     openGraph: {
       title: faq.metaTitle,
