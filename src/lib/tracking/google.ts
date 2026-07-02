@@ -35,6 +35,7 @@ declare global {
       ga4?: boolean;
       ads?: boolean;
     };
+    __globalspedGoogleConsentDefaultSet?: boolean;
     __globalspedConsent?: GoogleConsentState;
     __globalspedLastPageView?: string;
   }
@@ -51,9 +52,34 @@ function ensureDataLayer() {
 
   window.gtag =
     window.gtag ||
-    function gtag() {
-      window.dataLayer?.push(arguments);
+    function gtag(...args: unknown[]) {
+      window.dataLayer?.push(args);
     };
+}
+
+export function initializeGoogleConsentMode() {
+  if (typeof window === "undefined") return;
+
+  ensureDataLayer();
+
+  if (window.__globalspedGoogleConsentDefaultSet) {
+    return;
+  }
+
+  window.__globalspedConsent = window.__globalspedConsent || {
+    analytics: false,
+    marketing: false,
+  };
+
+  window.gtag?.("consent", "default", {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    wait_for_update: 500,
+  });
+
+  window.__globalspedGoogleConsentDefaultSet = true;
 }
 
 function ensureGoogleTagLoaded() {
@@ -113,6 +139,7 @@ function configureGoogleTags(consent: GoogleConsentState) {
 export function updateGoogleConsent(consent: GoogleConsentState) {
   if (typeof window === "undefined") return;
 
+  initializeGoogleConsentMode();
   ensureDataLayer();
 
   window.__globalspedConsent = consent;

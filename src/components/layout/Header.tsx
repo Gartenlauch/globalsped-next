@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getContent } from "@/content";
 import { Menu, X } from "lucide-react";
+import { LanguageSwitcher } from "@/components/navigation/LanguageSwitcher";
 
 type Props = {
   locale: string;
@@ -104,6 +105,8 @@ export function Header({ locale }: Props) {
             );
           })}
 
+          <LanguageSwitcher />
+
           <Link href={resolveHref(t.cta.href)} className="btn-primary">
             {t.cta.label}
           </Link>
@@ -154,6 +157,10 @@ export function Header({ locale }: Props) {
               </Link>
             );
           })}
+
+          <div className="mb-4 mt-2 flex justify-center">
+            <LanguageSwitcher variant="light" />
+          </div>
 
           {/* CTA */}
           <Link

@@ -1,9 +1,7 @@
-import Link from "next/link";
 import type { PremiumHomeContent, PremiumStat } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { PremiumGlassCard } from "../ui/PremiumGlassCard";
-import { resolveHref } from "../helpers/resolveHref";
 
 type Props = {
   content: PremiumHomeContent["hero"];

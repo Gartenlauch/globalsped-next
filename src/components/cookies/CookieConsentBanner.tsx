@@ -132,7 +132,7 @@ export function CookieConsentBanner({ locale }: Props) {
         return () => {
             window.clearTimeout(showTimer);
         };
-    }, [locale, t]);
+    }, [consentLocale, locale, t]);
 
     return null;
 }

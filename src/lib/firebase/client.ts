@@ -20,4 +20,3 @@ export const storage = getStorage(
   firebaseApp,
   "gs://globalsped-next.firebasestorage.app"
 );
-//console.log("Firebase Project ID:", process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);

@@ -8,7 +8,6 @@ export const de = {
       { label: "Über uns", href: "/{locale}/ueber-uns" },
       { label: "Jobs", href: "/{locale}/jobs" },
       { label: "Kontakt", href: "/{locale}#kontakt" },
-      { label: "FAQ", href: "/{locale}/faq" },
     ],
     cta: {
       label: "Anfrage",

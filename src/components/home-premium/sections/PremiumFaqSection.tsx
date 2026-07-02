@@ -18,7 +18,7 @@ function FaqBackground({
 }) {
   return (
     <>
-      <picture className="absolute inset-0 z-0 block" aria-hidden="true">
+      <picture className="absolute inset-0 z-0 block">
         {image.mobileSrc ? (
           <source media="(max-width: 767.98px)" srcSet={image.mobileSrc} />
         ) : null}

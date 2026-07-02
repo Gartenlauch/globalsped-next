@@ -128,15 +128,11 @@ export function ApplicationPage({ locale }: Props) {
   };
 
   const submitApplication = async () => {
-    console.log("submitApplication clicked");
-
     if (!validate()) {
-      console.log("Validation failed");
       return;
     }
 
     if (!file) {
-      console.log("No file selected");
       return;
     }
 
@@ -196,7 +192,6 @@ export function ApplicationPage({ locale }: Props) {
 
 
       trackApplicationSubmit(t.routes.pagePath);
-      console.log("Application submitted successfully");
 
       setSubmitted(true);
       setForm(initialForm);

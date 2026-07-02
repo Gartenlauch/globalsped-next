@@ -14,6 +14,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { getLocalizedRoute, getServicePath } from "@/lib/i18n/routes";
+import { getLocalizedServiceSlug } from "@/lib/i18n/slug-pairs";
 
 type Props = {
   params: Promise<{
@@ -66,7 +67,8 @@ export default async function ServiceAliasDetailPage({ params }: Props) {
   const { locale, slug } = await params;
 
   if (locale !== "en") {
-    redirect(getLocalizedRoute(locale, "services"));
+    const localizedSlug = getLocalizedServiceSlug(slug, "de");
+    redirect(getServicePath(locale, localizedSlug));
   }
 
   if (!isSupportedServiceLocale(locale)) {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Globe2,
   Mail,
@@ -33,9 +34,11 @@ export function Footer({ locale }: Props) {
 
         {/* LOGO */}
         <div className="mx-6 flex h-16 w-16 items-center justify-center rounded-full border border-lime-300/30 bg-[rgba(3,26,21,0.95)] shadow-[0_0_35px_rgba(163,230,53,0.18)] backdrop-blur-xl">
-          <img
+          <Image
             src="/images/logo/globalsped-logo.png"
             alt="GLOBALSPED Logo"
+            width={32}
+            height={32}
             className="h-8 w-8 object-contain"
           />
         </div>

@@ -31,7 +31,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TargetCountriesPage({ params }: Props) {
   const { locale } = await params;
   const metadata = getMetadataContent(locale);
-  const pageMeta = metadata.pages.destinations;
 
   return (
     <>

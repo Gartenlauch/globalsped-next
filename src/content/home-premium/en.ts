@@ -74,7 +74,7 @@ export const premiumHomeEn: PremiumHomeContent = {
         icon: "truck",
         title: "FTL full truck loads",
         text: "Direct transports with exclusive vehicle use for secure and plannable supply chains.",
-        href: "/{locale}/services/ftl-full-truck-loads",
+        href: "//services/ftl-full-truck-loads",
         ctaLabel: "View FTL",
       },
       {

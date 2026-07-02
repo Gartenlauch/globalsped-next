@@ -36,6 +36,8 @@ type ContactInquiryResponse = {
 
 export function ContactSection({ locale }: Props) {
     const t = getContent(locale).contact;
+    const contactAnchor = locale === "en" ? "contact" : "kontakt";
+    const contactPagePath = `/${locale}#${contactAnchor}`;
 
     const [message, setMessage] = useState("");
     const [isSuccess, setIsSuccess] = useState(false);
@@ -89,7 +91,7 @@ export function ContactSection({ locale }: Props) {
 
             await submitContactInquiry({
                 locale,
-                pagePath: `/${locale}#kontakt`,
+                pagePath: contactPagePath,
                 contact: {
                     name,
                     company,
@@ -103,7 +105,7 @@ export function ContactSection({ locale }: Props) {
                         typeof window !== "undefined" ? window.navigator.userAgent : "",
                 },
             });
-            trackContactFormSubmit(`/${locale}#kontakt`);
+            trackContactFormSubmit(contactPagePath);
             formRef.current?.reset();
             setHasSubmitted(true);
             setIsSuccess(true);
@@ -120,7 +122,7 @@ export function ContactSection({ locale }: Props) {
 
     return (
         <section
-            id="kontakt"
+            id={contactAnchor}
             className="relative overflow-hidden bg-[var(--color-global-dark)] py-24 text-white"
         >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(107,159,18,0.18),transparent_34%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.08),transparent_34%)]" />

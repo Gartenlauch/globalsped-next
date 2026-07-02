@@ -54,23 +54,29 @@ export function SmartBackButton({ locale }: SmartBackButtonProps) {
     }, [pathname, homePath]);
 
     useEffect(() => {
-        const storedHistory = getStoredHistory();
+        const historyTimer = window.setTimeout(() => {
+            const storedHistory = getStoredHistory();
 
-        const nextPreviousPath =
-            storedHistory?.currentPath &&
+            const nextPreviousPath =
+                storedHistory?.currentPath &&
                 storedHistory.currentPath !== pathname &&
                 storedHistory.currentPath.startsWith(homePath)
-                ? storedHistory.currentPath
-                : null;
+                    ? storedHistory.currentPath
+                    : null;
 
-        setPreviousPath(nextPreviousPath);
+            setPreviousPath(nextPreviousPath);
 
-        setStoredHistory({
-            currentPath: pathname,
-            previousPath: nextPreviousPath,
-        });
+            setStoredHistory({
+                currentPath: pathname,
+                previousPath: nextPreviousPath,
+            });
 
-        setIsReady(true);
+            setIsReady(true);
+        }, 0);
+
+        return () => {
+            window.clearTimeout(historyTimer);
+        };
     }, [pathname, homePath]);
 
     if (!isReady || shouldHide) {
