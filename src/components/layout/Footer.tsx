@@ -20,6 +20,7 @@ const membershipIcons: Record<string, typeof ShieldCheck> = {
   globe: Globe2,
 };
 
+
 export function Footer({ locale }: Props) {
   const t = getContent(locale).footer;
 
@@ -120,7 +121,7 @@ export function Footer({ locale }: Props) {
               ))}
               <li>
                 <CookieSettingsButton
-                  label="Cookie-Einstellungen"
+                  label={t.cookieSettingsLabel || "Cookie Settings"}
                   className="text-sm font-semibold text-white/76 transition hover:text-lime-300"
                 />
               </li>

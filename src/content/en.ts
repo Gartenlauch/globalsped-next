@@ -2714,6 +2714,7 @@ export const en = {
     },
 
     pageLinksTitle: "Pages",
+    cookieSettingsLabel: "Cookie-Settings",
     pageLinks: [
       { label: "Start", href: "/en" },
       { label: "Legal Notice", href: "/en/legal-notice" },

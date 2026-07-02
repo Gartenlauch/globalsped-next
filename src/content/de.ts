@@ -2671,6 +2671,7 @@ export const de = {
     },
 
     pageLinksTitle: "Seiten",
+    cookieSettingsLabel: "Cookie-Einstellungen",
     pageLinks: [
       { label: "Start", href: "/de" },
       { label: "Impressum", href: "/de/impressum" },
