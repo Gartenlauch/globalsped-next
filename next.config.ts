@@ -266,6 +266,17 @@ const nextConfig: NextConfig = {
       },
 
       // Alte Länder ohne neue Detailseite
+      // Alte Länder ohne neue Detailseite
+      {
+        source: "/transport-moldau",
+        destination: "/de/ziellaender",
+        permanent: true,
+      },
+      {
+        source: "/transport-moldau/",
+        destination: "/de/ziellaender",
+        permanent: true,
+      },
       {
         source: "/transport-moldawien",
         destination: "/de/ziellaender",
@@ -273,6 +284,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/transport-moldawien/",
+        destination: "/de/ziellaender",
+        permanent: true,
+      },
+      {
+        source: "/transport-afghanistan",
         destination: "/de/ziellaender",
         permanent: true,
       },
