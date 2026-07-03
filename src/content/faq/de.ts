@@ -2364,7 +2364,7 @@ GLOBALSPED berücksichtigt bei internationalen Transporten Faktoren wie Verpacku
     keywords: ["GDP Temperaturvorgaben", "Pharma Temperaturbereich", "GDP Transport Planung", "GDP Logistik"]
   },
   {
-    slug: "gdp-transport-anfrage-benötigte-angaben",
+    slug: "gdp-transport-anfrage-benoetigte-angaben",
     question: "Welche Informationen benötigt GLOBALSPED für eine GDP-Transportanfrage?",
     answer: `Für eine GDP-Transportanfrage benötigt GLOBALSPED vollständige Sendungs- und Produktinformationen. Dazu gehören Abhol- und Lieferadresse, Warenbeschreibung, Gewicht, Packstücke, gewünschte Termine und der erforderliche Temperaturbereich.
   

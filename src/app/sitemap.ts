@@ -15,7 +15,7 @@ type SitemapEntryInput = {
   priority?: number;
 };
 
-const now = new Date();
+const lastSignificantUpdate = new Date("2026-07-02T17:16:55.000Z");
 
 function buildUrl(path: string) {
   const normalizedBaseUrl = siteUrl.replace(/\/$/, "");
@@ -32,7 +32,7 @@ function entry({
 }: SitemapEntryInput): MetadataRoute.Sitemap[number] {
   return {
     url: buildUrl(path),
-    lastModified: now,
+    lastModified: lastSignificantUpdate,
     changeFrequency,
     priority,
     alternates: {

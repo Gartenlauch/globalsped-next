@@ -206,7 +206,7 @@ const nextConfig: NextConfig = {
       // Alte Sonderseiten
       {
         source: "/index.php/en/locations",
-        destination: "/de/ziellaender",
+        destination: "/en/destinations",
         permanent: true,
       },
       {
@@ -217,6 +217,63 @@ const nextConfig: NextConfig = {
       {
         source: "/transport-wohin%20sie%20wollen%21",
         destination: "/de/transport-anfrage",
+        permanent: true,
+      },
+      // Alte englische Länder-URLs aus Google Search Console
+      {
+        source: "/en/transport-armenia",
+        destination: "/en/destinations/freight-transport-armenia",
+        permanent: true,
+      },
+      {
+        source: "/en/transport-kazakhstan",
+        destination: "/en/destinations/freight-transport-kazakhstan",
+        permanent: true,
+      },
+      {
+        source: "/en/transport-georgia",
+        destination: "/en/destinations/freight-transport-georgia",
+        permanent: true,
+      },
+      {
+        source: "/en/transport-iraq",
+        destination: "/en/destinations/freight-transport-iraq",
+        permanent: true,
+      },
+      {
+        source: "/en/transport-tajikistan",
+        destination: "/en/destinations/freight-transport-tajikistan",
+        permanent: true,
+      },
+      {
+        source: "/en/transport-kyrgyzstan",
+        destination: "/en/destinations/freight-transport-kyrgyzstan",
+        permanent: true,
+      },
+
+      // Alte englische Übersichtsseite
+      {
+        source: "/index.php/en/locations",
+        destination: "/en/destinations",
+        permanent: true,
+      },
+
+      // Alte englische Impressums-URL
+      {
+        source: "/en/impress",
+        destination: "/en/legal-notice",
+        permanent: true,
+      },
+
+      // Alte Länder ohne neue Detailseite
+      {
+        source: "/transport-moldawien",
+        destination: "/de/ziellaender",
+        permanent: true,
+      },
+      {
+        source: "/transport-moldawien/",
+        destination: "/de/ziellaender",
         permanent: true,
       },
     ];
