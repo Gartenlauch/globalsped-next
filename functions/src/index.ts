@@ -119,10 +119,84 @@ export const submitTransportLead = onCall(
   },
 );
 
+// Transport Mail and Documents
+
+function normalizeDocuments(documents: any): any[] {
+  if (!documents) return [];
+
+  if (Array.isArray(documents)) {
+    return documents.filter(Boolean);
+  }
+
+  return [documents].filter(Boolean);
+}
+
+function getDocumentUrl(document: any): string | null {
+  if (!document) return null;
+
+  if (typeof document === "string") {
+    return document;
+  }
+
+  return document.downloadUrl || null;
+}
+
+function getDocumentLabel(document: any, index: number): string {
+  if (!document || typeof document === "string") {
+    return `Dokument ${index + 1}`;
+  }
+
+  return (
+    document.name ||
+    document.fileName ||
+    document.filename ||
+    document.originalName ||
+    `Dokument ${index + 1}`
+  );
+}
+
+function buildDocumentLinks(title: string, documents: any[]) {
+  if (!documents.length) {
+    return `
+      <h4>${escapeHtml(title)}</h4>
+      <p>Keine Dokumente</p>
+    `;
+  }
+
+  const links = documents
+    .map((document, index) => {
+      const url = getDocumentUrl(document);
+      const label = getDocumentLabel(document, index);
+
+      if (!url) {
+        return `<li>${escapeHtml(label)} - kein Download-Link vorhanden</li>`;
+      }
+
+      return `
+        <li>
+          <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(label)}
+          </a>
+        </li>
+      `;
+    })
+    .join("");
+
+  return `
+    <h4>${escapeHtml(title)}</h4>
+    <ul>
+      ${links}
+    </ul>
+  `;
+}
+
 function buildInternalMailHtml(leadId: string, lead: any) {
+  const standardDocs = normalizeDocuments(lead.documents?.standardDocs);
+  const adrDocs = normalizeDocuments(lead.documents?.adrDocs);
+
   return `
     <h2>Neue Transportanfrage</h2>
-    <p><strong>Lead-ID:</strong> ${leadId}</p>
+    <p><strong>Lead-ID:</strong> ${escapeHtml(leadId)}</p>
     <p><strong>Firma:</strong> ${escapeHtml(lead.contact.company)}</p>
     <p><strong>Ansprechpartner:</strong> ${escapeHtml(lead.contact.contactPerson)}</p>
     <p><strong>E-Mail:</strong> ${escapeHtml(lead.contact.email)}</p>
@@ -135,6 +209,10 @@ function buildInternalMailHtml(leadId: string, lead: any) {
 
     <h3>Ladungsdaten</h3>
     <pre>${escapeHtml(JSON.stringify(lead.cargo, null, 2))}</pre>
+
+    <h3>Dokumente</h3>
+    ${buildDocumentLinks("Standard-Dokumente", standardDocs)}
+    ${buildDocumentLinks("ADR-Dokumente", adrDocs)}
   `;
 }
 
