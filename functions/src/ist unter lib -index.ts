@@ -177,7 +177,7 @@ function buildDocumentLinks(
 /* -------------------------------------------------------------------------- */
 /* Transportanfrage                                                            */
 /* -------------------------------------------------------------------------- */
-
+const FUNCTION_VERSION = "transport-mail-2026-07-17-v3";
 export const submitTransportLead = onCall(
   {
     region: "europe-west3",
@@ -279,7 +279,9 @@ export const submitTransportLead = onCall(
     const now = admin.firestore.FieldValue.serverTimestamp();
     const leadRef = db.collection("leads").doc();
 
+
     const leadData = {
+      functionVersion: FUNCTION_VERSION,
       source: "homepage",
       leadTag: "homepage",
       type: "transport_request",
@@ -419,6 +421,10 @@ function buildInternalMailHtml(
       <strong>Lead-ID:</strong>
       ${escapeHtml(leadId)}
     </p>
+    <p>
+  <strong>Function-Version:</strong>
+  ${escapeHtml(FUNCTION_VERSION)}
+</p>
 
     <h3>Kontaktdaten</h3>
 
