@@ -128,6 +128,8 @@ function buildInternalMailHtml(leadId: string, lead: any) {
     <p><strong>E-Mail:</strong> ${escapeHtml(lead.contact.email)}</p>
     <p><strong>Telefon:</strong> ${escapeHtml(lead.contact.phone)}</p>
 
+    <p><strong>Nachricht:</strong> ${escapeHtml(lead.contact.message)}</p>
+
     <h3>Transportdaten</h3>
     <pre>${escapeHtml(JSON.stringify(lead.transport, null, 2))}</pre>
 
