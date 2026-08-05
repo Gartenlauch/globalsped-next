@@ -5,6 +5,7 @@ import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import { updateGoogleConsent } from "@/lib/tracking/google";
 import { getCookieConsentContent } from "@/content/cookies";
+import { captureAttributionFromCurrentUrl } from "@/lib/tracking/attribution";
 
 type Props = {
     locale: string;
@@ -17,6 +18,20 @@ export function CookieConsentBanner({ locale }: Props) {
     const consentLocale = locale === "en" ? "en" : "de";
 
     const initializedRef = useRef(false);
+
+    const applyConsent = (categories: string[]) => {
+        const analytics = categories.includes("analytics");
+        const marketing = categories.includes("marketing");
+
+        updateGoogleConsent({
+            analytics,
+            marketing,
+        });
+
+        if (marketing) {
+            captureAttributionFromCurrentUrl();
+        }
+    };
     useEffect(() => {
         if (initializedRef.current) return;
 
@@ -101,24 +116,15 @@ export function CookieConsentBanner({ locale }: Props) {
             },
 
             onFirstConsent: ({ cookie }) => {
-                updateGoogleConsent({
-                    analytics: cookie.categories.includes("analytics"),
-                    marketing: cookie.categories.includes("marketing"),
-                });
+                applyConsent(cookie.categories);
             },
 
             onConsent: ({ cookie }) => {
-                updateGoogleConsent({
-                    analytics: cookie.categories.includes("analytics"),
-                    marketing: cookie.categories.includes("marketing"),
-                });
+                applyConsent(cookie.categories);
             },
 
             onChange: ({ cookie }) => {
-                updateGoogleConsent({
-                    analytics: cookie.categories.includes("analytics"),
-                    marketing: cookie.categories.includes("marketing"),
-                });
+                applyConsent(cookie.categories);
             },
             disablePageInteraction: true
 
