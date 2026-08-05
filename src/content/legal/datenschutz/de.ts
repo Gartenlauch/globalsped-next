@@ -128,7 +128,7 @@ export const datenschutzDe: DatenschutzContent = {
         {
           title: "Interne Empfänger",
           items: [
-            "Transportanfragen können intern an logistik@globalsped.de oder zuständige Fachabteilungen weitergeleitet werden.",
+            "Transportanfragen können intern an transport@globalsped.de oder zuständige Fachabteilungen weitergeleitet werden.",
           ],
         },
       ],

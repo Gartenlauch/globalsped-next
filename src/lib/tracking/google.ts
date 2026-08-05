@@ -105,6 +105,8 @@ function ensureDataLayer(): void {
 
   if (!window.gtag) {
     window.gtag = function gtag() {
+      // Google gtag.js expects the native arguments object in dataLayer.
+      // eslint-disable-next-line prefer-rest-params
       window.dataLayer?.push(arguments);
     };
   }

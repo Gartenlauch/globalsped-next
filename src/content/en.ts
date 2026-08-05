@@ -2678,7 +2678,7 @@ export const en = {
         title: "Germany (HQ)",
         address: "Pendelhagen 1, D-83416 Saaldorf-Surheim",
         phone: "+49 (0)8654 5762-0",
-        email: "info@globalsped.de",
+        email: "transport@globalsped.de",
         mapsUrl:
           "https://www.google.com/maps/dir/?api=1&destination=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%2C%20Germany",
       },
@@ -2704,12 +2704,12 @@ export const en = {
 
     contactTitle: "Contact",
     contact: {
-      email: "info@globalsped.de",
+      email: "transport@globalsped.de",
       phone: "+49 (0) 8654 5762 0",
       address: "Pendel­hagen 1, D-83416 Saaldorf-Surheim",
       openingHoursLabel: "Opening hours",
-      openingDays: "Monday - Friday",
-      openingHours: "08:00 am – 5:00 pm",
+      openingDays: "Monday-Friday",
+      openingHours: "08:00 am–5:00 pm",
     },
 
     pageLinksTitle: "Pages",
@@ -2721,7 +2721,7 @@ export const en = {
       { label: "FAQ", href: "/en/faq" },
     ],
 
-    transportsTitle: "Main transports countries",
+    transportsTitle: "Key destinations",
     transports: [
       { label: "Transport to Uzbekistan", href: "/en/destinations/freight-transport-uzbekistan" },
       { label: "Transport to Kazakhstan", href: "/en/destinations/freight-transport-kazakhstan" },
@@ -2753,7 +2753,7 @@ export const en = {
     ],
 
     copyright:
-      "© GLOBALSPED International Spedition GmbH. All rights reserved",
+      "© GLOBALSPED Internationale Spedition GmbH. All rights reserved",
   },
 
 } satisfies typeof de;

@@ -2593,7 +2593,7 @@ export const de = {
   },
   contact: {
     badge: "Kontakt",
-    title: "Wenn sie Fragen haben, ",
+    title: "Sie planen einen Transport? Sprechen Sie mit uns.",
     highlight: "kontaktieren sie uns",
     intro:
       "Sie haben Fragen zu internationalen Transporten, Zollabwicklung, FTL, LTL oder Projektlogistik? Schreiben Sie uns eine Nachricht – unser Team meldet sich schnellstmöglich bei Ihnen.",
@@ -2635,7 +2635,7 @@ export const de = {
         title: "Deutschland (HQ)",
         address: "Pendelhagen 1, D-83416 Saaldorf-Surheim",
         phone: "+49 (0)8654 5762-0",
-        email: "info@globalsped.de",
+        email: "transport@globalsped.de",
         mapsUrl:
           "https://www.google.com/maps/dir/?api=1&destination=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%2C%20Germany",
       },
@@ -2661,12 +2661,12 @@ export const de = {
 
     contactTitle: "Kontakt",
     contact: {
-      email: "info@globalsped.de",
+      email: "transport@globalsped.de",
       phone: "+49 (0) 8654 5762 0",
       address: "Pendel­hagen 1, D-83416 Saaldorf-Surheim",
       openingHoursLabel: "Öffnungszeiten",
-      openingDays: "Montag - Freitag",
-      openingHours: "von 08:00–17:00 Uhr",
+      openingDays: "Montag-Freitag",
+      openingHours: "08:00–17:00 Uhr",
     },
 
     pageLinksTitle: "Seiten",
@@ -2678,7 +2678,7 @@ export const de = {
       { label: "FAQ", href: "/de/faq" },
     ],
 
-    transportsTitle: "Main Transporte",
+    transportsTitle: "Wichtige Zielländer",
     transports: [
       { label: "Transport Usbekistan", href: "/de/ziellaender/transport-usbekistan" },
       { label: "Transport Kasachstan", href: "/de/ziellaender/transport-kasachstan" },
@@ -2710,6 +2710,6 @@ export const de = {
     ],
 
     copyright:
-      "© GLOBALSPED International Spedtion GmbH. Alle Rechte vorbehalten.",
+      "© GLOBALSPED Internationale Spedtion GmbH. Alle Rechte vorbehalten.",
   },
 };

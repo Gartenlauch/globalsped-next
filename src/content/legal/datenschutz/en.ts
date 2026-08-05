@@ -128,7 +128,7 @@ export const datenschutzEn: DatenschutzContent = {
         {
           title: "Internal recipients",
           items: [
-            "Transport requests may be forwarded internally to logistik@globalsped.de or to the responsible specialist departments.",
+            "Transport requests may be forwarded internally to transport@globalsped.de or to the responsible specialist departments.",
           ],
         },
       ],
