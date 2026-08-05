@@ -567,12 +567,16 @@ export function TransportRequestPage({ locale }: Props) {
         "submitTransportLead"
       );
 
+      const attribution = getStoredAttribution();
+
+      console.log("[submitTransportLead] attribution", attribution);
+
       await submitTransportLead({
         requestId,
         locale,
         pagePath: t.routes.pagePath,
         source: t.tracking.source,
-        attribution: getStoredAttribution(),
+        attribution,
         contact,
 
         transport: {
