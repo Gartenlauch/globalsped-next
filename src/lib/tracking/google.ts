@@ -1,5 +1,41 @@
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+function normalizeGoogleTagId(
+  value: string | undefined,
+  validPrefixes: string[],
+): string | null {
+  const normalized = value?.trim();
+
+  if (!normalized) {
+    return null;
+  }
+
+  const disabledValues = new Set([
+    "disabled",
+    "false",
+    "none",
+    "null",
+    "undefined",
+  ]);
+
+  if (disabledValues.has(normalized.toLowerCase())) {
+    return null;
+  }
+
+  if (!validPrefixes.some((prefix) => normalized.startsWith(prefix))) {
+    return null;
+  }
+
+  return normalized;
+}
+
+const GA_MEASUREMENT_ID = normalizeGoogleTagId(
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+  ["G-"],
+);
+
+const GOOGLE_ADS_ID = normalizeGoogleTagId(
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_ID,
+  ["AW-", "GT-"],
+);
 
 const GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO;
@@ -7,7 +43,19 @@ const GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO =
 function getValidGoogleAdsTransportConversionSendTo() {
   const sendTo = GOOGLE_ADS_TRANSPORT_CONVERSION_SEND_TO?.trim();
 
-  if (!sendTo || sendTo === "DISABLED") {
+  if (!sendTo) {
+    return null;
+  }
+
+  const disabledValues = new Set([
+    "disabled",
+    "false",
+    "none",
+    "null",
+    "undefined",
+  ]);
+
+  if (disabledValues.has(sendTo.toLowerCase())) {
     return null;
   }
 
