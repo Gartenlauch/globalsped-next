@@ -170,7 +170,6 @@ function configureGoogleTags(consent: GoogleConsentState) {
   ) {
     window.gtag?.("config", GA_MEASUREMENT_ID, {
       send_page_view: false,
-      debug_mode: true,
     });
 
     window.__globalspedGoogleConfigured.ga4 = true;
