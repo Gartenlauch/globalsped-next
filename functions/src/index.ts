@@ -20,6 +20,56 @@ type LeadAttribution = {
   capturedAt: string;
 };
 
+type OfflineConversionType = "qualifyLead" | "closeConvertLead";
+
+type ConversionUploadState =
+  | "not_ready"
+  | "pending"
+  | "uploaded"
+  | "failed";
+
+type ConversionUploadStatus = Record<
+  OfflineConversionType,
+  ConversionUploadState
+>;
+
+type ConversionUploadAttempts = Record<OfflineConversionType, number>;
+
+type ConversionUploadErrors = Record<
+  OfflineConversionType,
+  string | null
+>;
+
+type InitialLeadConversionFields = {
+  qualifiedAt: null;
+  convertedAt: null;
+  conversionUploadStatus: ConversionUploadStatus;
+  conversionUploadAttempts: ConversionUploadAttempts;
+  conversionUploadError: ConversionUploadErrors;
+};
+
+function createInitialLeadConversionFields(): InitialLeadConversionFields {
+  return {
+    qualifiedAt: null,
+    convertedAt: null,
+
+    conversionUploadStatus: {
+      qualifyLead: "not_ready",
+      closeConvertLead: "not_ready",
+    },
+
+    conversionUploadAttempts: {
+      qualifyLead: 0,
+      closeConvertLead: 0,
+    },
+
+    conversionUploadError: {
+      qualifyLead: null,
+      closeConvertLead: null,
+    },
+  };
+}
+
 function normalizeOptionalString(
   value: unknown,
   maxLength = 500,
@@ -372,6 +422,8 @@ export const submitTransportLead = onCall(
       type: "transport_request",
       status: "new",
       priority: "normal",
+
+      ...createInitialLeadConversionFields(),
 
       createdAt: now,
       updatedAt: now,
@@ -965,6 +1017,8 @@ export const submitContactInquiry = onCall(
       status: "new",
       priority: "normal",
 
+      ...createInitialLeadConversionFields(),
+      
       createdAt: now,
       updatedAt: now,
 
