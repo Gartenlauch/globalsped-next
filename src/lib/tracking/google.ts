@@ -1,3 +1,5 @@
+import { captureAttributionFromCurrentUrl } from "@/lib/tracking/attribution";
+
 function normalizeGoogleTagId(
   value: string | undefined,
   validPrefixes: string[],
@@ -203,6 +205,10 @@ export function updateGoogleConsent(consent: GoogleConsentState) {
 
   if (consent.analytics || consent.marketing) {
     configureGoogleTags(consent);
+  }
+
+  if (consent.marketing) {
+    captureAttributionFromCurrentUrl();
   }
 
   if (consent.analytics) {

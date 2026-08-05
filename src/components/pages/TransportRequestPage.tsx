@@ -15,6 +15,7 @@ import {
   Truck,
   X,
 } from "lucide-react";
+import { getStoredAttribution } from "@/lib/tracking/attribution";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getTransportRequestContent } from "@/content/forms/transport";
 import { trackTransportRequestSubmit } from "@/lib/tracking/google";
@@ -571,7 +572,7 @@ export function TransportRequestPage({ locale }: Props) {
         locale,
         pagePath: t.routes.pagePath,
         source: t.tracking.source,
-
+        attribution: getStoredAttribution(),
         contact,
 
         transport: {

@@ -6,6 +6,91 @@ admin.initializeApp();
 
 const db = admin.firestore();
 
+type LeadAttribution = {
+  gclid: string | null;
+  gbraid: string | null;
+  wbraid: string | null;
+  utmSource: string | null;
+  utmMedium: string | null;
+  utmCampaign: string | null;
+  utmContent: string | null;
+  utmTerm: string | null;
+  landingPage: string;
+  referrer: string | null;
+  capturedAt: string;
+};
+
+function normalizeOptionalString(
+  value: unknown,
+  maxLength = 500,
+): string | null {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const normalized = value.trim();
+
+  if (!normalized) {
+    return null;
+  }
+
+  return normalized.slice(0, maxLength);
+}
+
+function normalizeAttribution(value: unknown): LeadAttribution | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return null;
+  }
+
+  const attribution = value as Record<string, unknown>;
+
+  const landingPage = normalizeOptionalString(
+    attribution.landingPage,
+    2_000,
+  );
+
+  const capturedAt = normalizeOptionalString(
+    attribution.capturedAt,
+    100,
+  );
+
+  if (!landingPage || !capturedAt) {
+    return null;
+  }
+
+  const capturedDate = new Date(capturedAt);
+
+  if (Number.isNaN(capturedDate.getTime())) {
+    return null;
+  }
+
+  const normalized: LeadAttribution = {
+    gclid: normalizeOptionalString(attribution.gclid),
+    gbraid: normalizeOptionalString(attribution.gbraid),
+    wbraid: normalizeOptionalString(attribution.wbraid),
+    utmSource: normalizeOptionalString(attribution.utmSource),
+    utmMedium: normalizeOptionalString(attribution.utmMedium),
+    utmCampaign: normalizeOptionalString(attribution.utmCampaign),
+    utmContent: normalizeOptionalString(attribution.utmContent),
+    utmTerm: normalizeOptionalString(attribution.utmTerm),
+    landingPage,
+    referrer: normalizeOptionalString(attribution.referrer, 2_000),
+    capturedAt: capturedDate.toISOString(),
+  };
+
+  const hasCampaignInformation = Boolean(
+    normalized.gclid ||
+    normalized.gbraid ||
+    normalized.wbraid ||
+    normalized.utmSource ||
+    normalized.utmMedium ||
+    normalized.utmCampaign ||
+    normalized.utmContent ||
+    normalized.utmTerm,
+  );
+
+  return hasCampaignInformation ? normalized : null;
+}
 /* -------------------------------------------------------------------------- */
 /* Gemeinsame Typen                                                            */
 /* -------------------------------------------------------------------------- */
@@ -21,7 +106,7 @@ type TransportUploadedDocument = {
 type TransportLeadPayload = {
   locale?: string;
   pagePath?: string;
-
+  attribution?: LeadAttribution | null;
   contact: {
     company: string;
     contactPerson: string;
@@ -231,12 +316,12 @@ export const submitTransportLead = onCall(
      */
     const normalizedStandardDocs = normalizeDocuments(
       data.documents?.standardDocs ??
-        data.standardDocs,
+      data.standardDocs,
     );
 
     const normalizedAdrDocs = normalizeDocuments(
       data.documents?.adrDocs ??
-        data.adrDocs,
+      data.adrDocs,
     );
 
     logger.info("Transportanfrage empfangen", {
@@ -293,6 +378,7 @@ export const submitTransportLead = onCall(
 
       locale: data.locale || "de",
       pagePath: data.pagePath || "/de/transport-anfrage",
+      attribution: normalizeAttribution(data.attribution),
 
       contact: {
         ...data.contact,
@@ -469,8 +555,8 @@ function buildInternalMailHtml(
       padding: 12px;
       border-radius: 4px;
     ">${escapeHtml(
-      JSON.stringify(lead.transport ?? {}, null, 2),
-    )}</pre>
+    JSON.stringify(lead.transport ?? {}, null, 2),
+  )}</pre>
 
     <h3>Ladungsdaten</h3>
 
@@ -482,20 +568,20 @@ function buildInternalMailHtml(
       padding: 12px;
       border-radius: 4px;
     ">${escapeHtml(
-      JSON.stringify(lead.cargo ?? {}, null, 2),
-    )}</pre>
+    JSON.stringify(lead.cargo ?? {}, null, 2),
+  )}</pre>
 
     <h3>Dokumente</h3>
 
     ${buildDocumentLinks(
-      "Standard-Dokumente",
-      standardDocs,
-    )}
+    "Standard-Dokumente",
+    standardDocs,
+  )}
 
     ${buildDocumentLinks(
-      "ADR-Dokumente",
-      adrDocs,
-    )}
+    "ADR-Dokumente",
+    adrDocs,
+  )}
   `;
 }
 
@@ -670,23 +756,23 @@ function buildInternalApplicationMailHtml(
 
   const fileLinks = files.length
     ? files
-        .map((file: any, index: number) => {
-          const label =
-            file?.name ||
-            file?.fileName ||
-            `Datei ${index + 1}`;
+      .map((file: any, index: number) => {
+        const label =
+          file?.name ||
+          file?.fileName ||
+          `Datei ${index + 1}`;
 
-          const url = file?.downloadUrl;
+        const url = file?.downloadUrl;
 
-          if (!url) {
-            return `
+        if (!url) {
+          return `
               <li>
                 ${escapeHtml(label)} – kein Download-Link vorhanden
               </li>
             `;
-          }
+        }
 
-          return `
+        return `
             <li>
               <a
                 href="${escapeHtml(url)}"
@@ -697,8 +783,8 @@ function buildInternalApplicationMailHtml(
               </a>
             </li>
           `;
-        })
-        .join("")
+      })
+      .join("")
     : "<li>Keine Dateien</li>";
 
   return `
@@ -768,9 +854,9 @@ function buildInternalApplicationMailHtml(
 
     <p>
       ${escapeHtml(data.application.message).replace(
-        /\r?\n/g,
-        "<br />",
-      )}
+    /\r?\n/g,
+    "<br />",
+  )}
     </p>
 
     <h3>Dateien</h3>
@@ -987,9 +1073,9 @@ function buildInternalContactMailHtml(
 
     <p>
       ${escapeHtml(data.contact.message).replace(
-        /\r?\n/g,
-        "<br />",
-      )}
+    /\r?\n/g,
+    "<br />",
+  )}
     </p>
 
     <h3>Meta</h3>
@@ -1025,9 +1111,9 @@ function buildContactConfirmationMailHtml(data: any): string {
 
     <p>
       ${escapeHtml(data.contact.message).replace(
-        /\r?\n/g,
-        "<br />",
-      )}
+    /\r?\n/g,
+    "<br />",
+  )}
     </p>
 
     <p>
