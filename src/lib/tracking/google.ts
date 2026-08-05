@@ -93,16 +93,18 @@ function getPrimaryGoogleTagId() {
   return GA_MEASUREMENT_ID || GOOGLE_ADS_ID;
 }
 
-function ensureDataLayer() {
-  if (typeof window === "undefined") return;
+function ensureDataLayer(): void {
+  if (typeof window === "undefined") {
+    return;
+  }
 
   window.dataLayer = window.dataLayer || [];
 
-  window.gtag =
-    window.gtag ||
-    function gtag(...args: unknown[]) {
-      window.dataLayer?.push(args);
+  if (!window.gtag) {
+    window.gtag = function gtag() {
+      window.dataLayer?.push(arguments);
     };
+  }
 }
 
 export function initializeGoogleConsentMode() {
