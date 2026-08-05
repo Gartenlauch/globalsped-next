@@ -20,14 +20,21 @@ const STORAGE_KEY = "globalsped_lead_attribution";
 const ATTRIBUTION_LIFETIME_DAYS = 90;
 const MAX_VALUE_LENGTH = 500;
 
-function sanitizeValue(value: string | null): string | null {
-  const normalized = value?.trim();
+function sanitizeValue(
+  value: unknown,
+  maxLength = MAX_VALUE_LENGTH,
+): string | null {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const normalized = value.trim();
 
   if (!normalized) {
     return null;
   }
 
-  return normalized.slice(0, MAX_VALUE_LENGTH);
+  return normalized.slice(0, maxLength);
 }
 
 function hasCampaignInformation(
@@ -35,13 +42,13 @@ function hasCampaignInformation(
 ): boolean {
   return Boolean(
     attribution.gclid ||
-      attribution.gbraid ||
-      attribution.wbraid ||
-      attribution.utmSource ||
-      attribution.utmMedium ||
-      attribution.utmCampaign ||
-      attribution.utmContent ||
-      attribution.utmTerm,
+    attribution.gbraid ||
+    attribution.wbraid ||
+    attribution.utmSource ||
+    attribution.utmMedium ||
+    attribution.utmCampaign ||
+    attribution.utmContent ||
+    attribution.utmTerm,
   );
 }
 
@@ -113,49 +120,128 @@ export function getStoredAttribution(): LeadAttribution | null {
     return null;
   }
 
+  let rawValue: string | null = null;
+
   try {
-    const rawValue = window.localStorage.getItem(STORAGE_KEY);
+    rawValue = window.localStorage.getItem(STORAGE_KEY);
+  } catch (error) {
+    console.warn(
+      "[lead-attribution] Local Storage konnte nicht gelesen werden.",
+      error,
+    );
+    return null;
+  }
 
-    if (!rawValue) {
-      return null;
-    }
+  if (!rawValue) {
+    return null;
+  }
 
-    const stored = JSON.parse(rawValue) as Partial<StoredAttribution>;
+  try {
+    const parsed: unknown = JSON.parse(rawValue);
 
-    if (!stored.expiresAt) {
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      console.warn(
+        "[lead-attribution] Gespeicherter Wert ist kein gültiges Objekt.",
+        parsed,
+      );
       removeStoredAttribution();
       return null;
     }
 
-    const expiresAt = new Date(stored.expiresAt);
+    const stored = parsed as Record<string, unknown>;
 
-    if (
-      Number.isNaN(expiresAt.getTime()) ||
-      expiresAt.getTime() <= Date.now()
-    ) {
+    const expiresAtValue = sanitizeValue(stored.expiresAt, 100);
+    const landingPage = sanitizeValue(stored.landingPage, 2_000);
+    const capturedAtValue = sanitizeValue(stored.capturedAt, 100);
+
+    if (!expiresAtValue) {
+      console.warn(
+        "[lead-attribution] expiresAt fehlt oder ist ungültig.",
+        stored.expiresAt,
+      );
       removeStoredAttribution();
       return null;
     }
 
-    if (!stored.landingPage || !stored.capturedAt) {
+    const expiresAt = new Date(expiresAtValue);
+
+    if (Number.isNaN(expiresAt.getTime())) {
+      console.warn(
+        "[lead-attribution] expiresAt ist kein gültiges Datum.",
+        expiresAtValue,
+      );
       removeStoredAttribution();
       return null;
     }
 
-    return {
-      gclid: sanitizeValue(stored.gclid ?? null),
-      gbraid: sanitizeValue(stored.gbraid ?? null),
-      wbraid: sanitizeValue(stored.wbraid ?? null),
-      utmSource: sanitizeValue(stored.utmSource ?? null),
-      utmMedium: sanitizeValue(stored.utmMedium ?? null),
-      utmCampaign: sanitizeValue(stored.utmCampaign ?? null),
-      utmContent: sanitizeValue(stored.utmContent ?? null),
-      utmTerm: sanitizeValue(stored.utmTerm ?? null),
-      landingPage: String(stored.landingPage).slice(0, 2_000),
-      referrer: sanitizeValue(stored.referrer ?? null),
-      capturedAt: String(stored.capturedAt),
+    if (expiresAt.getTime() <= Date.now()) {
+      console.warn(
+        "[lead-attribution] Attribution ist abgelaufen.",
+        {
+          expiresAt: expiresAt.toISOString(),
+          now: new Date().toISOString(),
+        },
+      );
+      removeStoredAttribution();
+      return null;
+    }
+
+    if (!landingPage || !capturedAtValue) {
+      console.warn(
+        "[lead-attribution] landingPage oder capturedAt fehlt.",
+        {
+          landingPage: stored.landingPage,
+          capturedAt: stored.capturedAt,
+        },
+      );
+      removeStoredAttribution();
+      return null;
+    }
+
+    const capturedAt = new Date(capturedAtValue);
+
+    if (Number.isNaN(capturedAt.getTime())) {
+      console.warn(
+        "[lead-attribution] capturedAt ist kein gültiges Datum.",
+        capturedAtValue,
+      );
+      removeStoredAttribution();
+      return null;
+    }
+
+    const attribution: LeadAttribution = {
+      gclid: sanitizeValue(stored.gclid),
+      gbraid: sanitizeValue(stored.gbraid),
+      wbraid: sanitizeValue(stored.wbraid),
+      utmSource: sanitizeValue(stored.utmSource),
+      utmMedium: sanitizeValue(stored.utmMedium),
+      utmCampaign: sanitizeValue(stored.utmCampaign),
+      utmContent: sanitizeValue(stored.utmContent),
+      utmTerm: sanitizeValue(stored.utmTerm),
+      landingPage,
+      referrer: sanitizeValue(stored.referrer, 2_000),
+      capturedAt: capturedAt.toISOString(),
     };
-  } catch {
+
+    if (!hasCampaignInformation(attribution)) {
+      console.warn(
+        "[lead-attribution] Keine Kampagneninformationen vorhanden.",
+        attribution,
+      );
+      removeStoredAttribution();
+      return null;
+    }
+
+    return attribution;
+  } catch (error) {
+    console.warn(
+      "[lead-attribution] Gespeicherte Attribution konnte nicht verarbeitet werden.",
+      {
+        error,
+        rawValue,
+      },
+    );
+
     removeStoredAttribution();
     return null;
   }

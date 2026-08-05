@@ -567,9 +567,17 @@ export function TransportRequestPage({ locale }: Props) {
         "submitTransportLead"
       );
 
+      const rawAttribution = window.localStorage.getItem(
+        "globalsped_lead_attribution",
+      );
+
+      console.log("[submitTransportLead] raw attribution", rawAttribution);
+
       const attribution = getStoredAttribution();
 
-      console.log("[submitTransportLead] attribution", attribution);
+      console.log("[submitTransportLead] parsed attribution", attribution);
+
+
 
       await submitTransportLead({
         requestId,
