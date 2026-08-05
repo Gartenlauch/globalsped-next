@@ -19,6 +19,7 @@ import { getStoredAttribution } from "@/lib/tracking/attribution";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getTransportRequestContent } from "@/content/forms/transport";
 import { trackTransportRequestSubmit } from "@/lib/tracking/google";
+import { getDestinationCountryFromQuery } from "@/lib/transport/destination-query";
 
 const initialTransport = {
   pickupLocation: "",
@@ -61,6 +62,7 @@ const maxUploadSize = 10 * 1024 * 1024;
 
 type Props = {
   locale: string;
+  initialDestinationQuery?: string;
 };
 
 type ShipmentType = "ltl" | "loadingMeters" | "ftl";
@@ -97,7 +99,11 @@ function getDateInputValueFromOffset(daysFromToday: number) {
   return `${year}-${month}-${day}`;
 }
 
-export function TransportRequestPage({ locale }: Props) {
+export function TransportRequestPage({
+  locale,
+  initialDestinationQuery,
+}: Props) {
+
   const t = getTransportRequestContent(locale);
   const destinationCityListId = useId();
   const minPickupDate = useMemo(() => getDateInputValueFromOffset(2), []);
@@ -134,11 +140,38 @@ export function TransportRequestPage({ locale }: Props) {
   const [shipmentType, setShipmentType] = useState<ShipmentType>("ltl");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [transport, setTransport] = useState(initialTransport);
+
   const [contact, setContact] = useState(initialContact);
   const [units, setUnits] = useState<Unit[]>(createInitialUnits);
   const [standardDocs, setStandardDocs] = useState<File[]>([]);
   const [adrDocs, setAdrDocs] = useState<File[]>([]);
+
+  const createInitialTransportState = () => {
+    const requestedCountry = getDestinationCountryFromQuery(
+      locale,
+      initialDestinationQuery ?? null,
+    );
+
+    if (
+      requestedCountry &&
+      requestedCountry in t.destinationCities
+    ) {
+      return {
+        ...initialTransport,
+        deliveryCountry: requestedCountry,
+        destinationCity: "",
+      };
+    }
+
+    return {
+      ...initialTransport,
+    };
+  };
+
+  const [transport, setTransport] = useState(
+    createInitialTransportState,
+  );
+
 
   const selectedAdrClass = useMemo(
     () => t.adrClasses.find((item) => item.value === transport.adrClass),
@@ -188,6 +221,8 @@ export function TransportRequestPage({ locale }: Props) {
   }, [units]);
 
   const showVolume = shipmentType === "ltl";
+
+
 
   useEffect(() => {
     formTopRef.current?.scrollIntoView({
@@ -532,7 +567,7 @@ export function TransportRequestPage({ locale }: Props) {
     setInvalidFields([]);
     setStep(1);
     setShipmentType("ltl");
-    setTransport(initialTransport);
+    setTransport(createInitialTransportState());
     setContact(initialContact);
     setUnits(createInitialUnits());
     setStandardDocs([]);

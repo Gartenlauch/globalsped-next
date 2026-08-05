@@ -15,6 +15,9 @@ type Props = {
   params: Promise<{
     locale: string;
   }>;
+  searchParams: Promise<{
+    destination?: string | string[];
+  }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -27,11 +30,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function TransportRequestAliasPage({ params }: Props) {
+export default async function TransportRequestAliasPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  const resolvedSearchParams = await searchParams;
+
+  const initialDestinationQuery =
+    typeof resolvedSearchParams.destination === "string"
+      ? resolvedSearchParams.destination
+      : undefined;
 
   if (locale !== "en") {
-    redirect(getLocalizedRoute(locale, "transportRequest"));
+    const targetPath = getLocalizedRoute(locale, "transportRequest");
+
+    redirect(
+      initialDestinationQuery
+        ? `${targetPath}?destination=${encodeURIComponent(
+          initialDestinationQuery,
+        )}`
+        : targetPath,
+    );
   }
 
   const siteContent = getContent(locale);
@@ -66,7 +83,10 @@ export default async function TransportRequestAliasPage({ params }: Props) {
         ]}
       />
 
-      <TransportRequestPage locale={locale} />
+      <TransportRequestPage
+        locale={locale}
+        initialDestinationQuery={initialDestinationQuery}
+      />
     </>
   );
 }

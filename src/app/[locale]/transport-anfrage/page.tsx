@@ -11,6 +11,9 @@ type Props = {
   params: Promise<{
     locale: string;
   }>;
+  searchParams: Promise<{
+    destination?: string | string[];
+  }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -26,8 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function Page({ params }: Props) {
+export default async function TransportRequest({
+  params,
+  searchParams,
+}: Props) {
   const { locale } = await params;
+  const resolvedSearchParams = await searchParams;
+
+  const initialDestinationQuery =
+    typeof resolvedSearchParams.destination === "string"
+      ? resolvedSearchParams.destination
+      : undefined;
 
   return (
     <>
@@ -45,7 +57,10 @@ export default async function Page({ params }: Props) {
         description="Anfrage für internationale Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten."
         serviceType="Internationale Transport- und Logistikanfrage"
       />
-      <TransportRequestPage locale={locale} />
+      <TransportRequestPage
+        locale={locale}
+        initialDestinationQuery={initialDestinationQuery}
+      />
     </>
   );
 }

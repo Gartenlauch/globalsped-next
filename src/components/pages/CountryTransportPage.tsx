@@ -9,8 +9,8 @@ import {
   ShieldCheck,
   Truck,
 } from "lucide-react";
-
 import type { CountryTransportPage as CountryTransportPageType } from "@/content/types";
+import { getTransportRequestHref } from "@/lib/transport/destination-query";
 
 type Props = {
   locale: string;
@@ -124,7 +124,7 @@ export function CountryTransportPage({ locale, page }: Props) {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href={page.cta.href} className="btn-primary">
+              <Link href={getTransportRequestHref(locale, page.country)} className="btn-primary">
                 {page.cta.label}
               </Link>
 
@@ -389,7 +389,7 @@ export function CountryTransportPage({ locale, page }: Props) {
           </div>
 
           <div className="mt-10">
-            <Link href={page.cta.href} className="btn-primary">
+            <Link href={getTransportRequestHref(locale, page.country)} className="btn-primary">
               {page.cta.label}
             </Link>
           </div>
