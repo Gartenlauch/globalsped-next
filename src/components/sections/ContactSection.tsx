@@ -88,23 +88,8 @@ export function ContactSection({ locale }: Props) {
         setMessage("");
 
         try {
-            const rawAttribution =
-                typeof window !== "undefined"
-                    ? window.localStorage.getItem("globalsped_lead_attribution")
-                    : null;
-
             const attribution = getStoredAttribution();
-
-            console.log(
-                "[submitContactInquiry] raw attribution",
-                rawAttribution,
-            );
-
-            console.log(
-                "[submitContactInquiry] parsed attribution",
-                attribution,
-            );
-
+            
             const submitContactInquiry = httpsCallable<
                 ContactInquiryPayload,
                 ContactInquiryResponse
