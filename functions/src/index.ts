@@ -948,7 +948,8 @@ function buildApplicantConfirmationMailHtml(data: any): string {
 type ContactInquiryPayload = {
   locale?: string;
   pagePath?: string;
-
+  attribution?: LeadAttribution | null;
+  
   contact?: {
     name?: string;
     company?: string;
@@ -1024,6 +1025,7 @@ export const submitContactInquiry = onCall(
 
       locale: data.locale || "de",
       pagePath: data.pagePath || "/de#kontakt",
+      attribution: normalizeAttribution(data.attribution),
 
       contact: {
         name: contact.name,

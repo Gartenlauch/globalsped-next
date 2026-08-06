@@ -7,7 +7,8 @@ import { Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
 import { getContent } from "@/content";
 import { functions } from "@/lib/firebase/client";
 import { trackContactFormSubmit } from "@/lib/tracking/google";
-import { webMcpContent as webMcpDe } from "@/content/wmcp"
+import { getStoredAttribution, type LeadAttribution } from "@/lib/tracking/attribution";
+import { webMcpContent as webMcpDe } from "@/content/wmcp";
 type Props = {
     locale: string;
 };
@@ -15,6 +16,7 @@ type Props = {
 type ContactInquiryPayload = {
     locale: string;
     pagePath: string;
+    attribution: LeadAttribution | null;
     contact: {
         name: string;
         company: string;
@@ -49,9 +51,11 @@ export function ContactSection({ locale }: Props) {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
         if (hasSubmitted) {
             return;
         }
+
         const form = event.currentTarget;
         const formData = new FormData(form);
 
@@ -84,6 +88,23 @@ export function ContactSection({ locale }: Props) {
         setMessage("");
 
         try {
+            const rawAttribution =
+                typeof window !== "undefined"
+                    ? window.localStorage.getItem("globalsped_lead_attribution")
+                    : null;
+
+            const attribution = getStoredAttribution();
+
+            console.log(
+                "[submitContactInquiry] raw attribution",
+                rawAttribution,
+            );
+
+            console.log(
+                "[submitContactInquiry] parsed attribution",
+                attribution,
+            );
+
             const submitContactInquiry = httpsCallable<
                 ContactInquiryPayload,
                 ContactInquiryResponse
@@ -92,6 +113,7 @@ export function ContactSection({ locale }: Props) {
             await submitContactInquiry({
                 locale,
                 pagePath: contactPagePath,
+                attribution,
                 contact: {
                     name,
                     company,
@@ -102,15 +124,18 @@ export function ContactSection({ locale }: Props) {
                 meta: {
                     honeypot,
                     userAgent:
-                        typeof window !== "undefined" ? window.navigator.userAgent : "",
+                        typeof window !== "undefined"
+                            ? window.navigator.userAgent
+                            : "",
                 },
             });
+
             trackContactFormSubmit(contactPagePath);
+
             formRef.current?.reset();
             setHasSubmitted(true);
             setIsSuccess(true);
             setMessage(t.form.successMessage);
-
         } catch (error) {
             console.error("submitContactInquiry failed:", error);
             setIsSuccess(false);
@@ -143,8 +168,8 @@ export function ContactSection({ locale }: Props) {
 
                 <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
                     <div className="rounded-3xl border border-white/12 bg-white/8 p-7 shadow-[0_30px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-                        <form 
-                            ref={formRef} 
+                        <form
+                            ref={formRef}
                             onSubmit={handleSubmit}
                             className="grid gap-5"
                             toolname={webMcpDe.contactInquiry.toolname}
@@ -170,7 +195,7 @@ export function ContactSection({ locale }: Props) {
                                         className="input-premium"
                                         disabled={isSubmitting}
                                         toolparamdescription={webMcpDe.contactInquiry.fields.name.description}
-                                        
+
                                     />
                                 </label>
 
@@ -241,8 +266,8 @@ export function ContactSection({ locale }: Props) {
                             {message && (
                                 <p
                                     className={`rounded-2xl border px-4 py-3 text-sm font-bold ${isSuccess
-                                            ? "border-lime-300/25 bg-lime-300/10 text-lime-300"
-                                            : "border-red-300/30 bg-red-500/10 text-red-200"
+                                        ? "border-lime-300/25 bg-lime-300/10 text-lime-300"
+                                        : "border-red-300/30 bg-red-500/10 text-red-200"
                                         }`}
                                 >
                                     {message}
