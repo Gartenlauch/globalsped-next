@@ -13,7 +13,6 @@ Relaunch of globalsped.de as a multilingual Next.js onepager with SEO-ready subp
 ## Languages
 - German: /de
 - English: /en
-- Azerbaijani: /az
 
 ## Main rule
 Always consider SEO and GEO optimization when creating routes, content, components, metadata and schema.
