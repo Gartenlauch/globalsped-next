@@ -1575,10 +1575,8 @@ export const de = {
 
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Armenien – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Kaukasus.",
-
-      seoText:
-        "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Armenien, insbesondere nach Jerewan und weitere wirtschaftlich relevante Regionen. Armenien stellt aufgrund seiner geografischen Lage besondere Anforderungen an Transportplanung und Routenführung. Unsere Leistungen umfassen Transportkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere und effiziente Transporte in den Kaukasus.",
-
+        seoText:
+        "Als internationale Spedition für Armenien unterstützt GLOBALSPED Unternehmen bei FTL- und LTL-LKW-Transporten von Europa nach Armenien, insbesondere nach Jerewan, Gjumri und Vanadsor. Armenien stellt aufgrund seiner geografischen Lage besondere Anforderungen an Transportplanung und Routenführung. Unsere Leistungen umfassen Transportkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere und effiziente Transporte in den Kaukasus.",
       services: [
         "FTL Komplettladungen nach Armenien",
         "LTL Teilpartien und Sammelgut",
@@ -1592,7 +1590,7 @@ export const de = {
       labels: {
         backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
-        logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
+        logisticsTitlePrefix: "Spedition und Logistiklösungen für",
         citiesTitle: "Wichtige Zielorte",
         authorityBadge: "Dokumente & Hinweise",
         authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",

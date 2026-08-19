@@ -165,9 +165,10 @@ export const metadataDe: LocaleMetadata = {
     },
 
     "transport-armenien": {
-      title: "Transport nach Armenien | GLOBALSPED",
+      title:
+        "Spedition Armenien & Transporte | FTL/LTL | GLOBALSPED",
       description:
-        "Internationale Transporte nach Armenien mit GLOBALSPED – inklusive FTL, LTL, Dokumentenprüfung, Zollabwicklung und Routenplanung.",
+        "GLOBALSPED ist Ihre Spedition für Armenien: FTL- und LTL-LKW-Transporte von Europa nach Jerewan, Gjumri und Vanadsor – inklusive Zoll- und Routenkoordination.",
     },
 
     "transport-mongolei": {
