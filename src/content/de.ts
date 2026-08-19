@@ -1396,7 +1396,7 @@ export const de = {
       heroImage:{
         desktop: "/images/country-hero/globalsped-transport-georgien-hero-desktop-2560x960.webp",
         mobile: "/images/country-hero/globalsped-transport-georgien-hero-mobile-1200x1600.webp",
-        alt:"GLOBALSPED Transporte nach Gerorgien",
+        alt: "GLOBALSPED Transporte nach Georgien",
      },
 
       title: "Transport von Europa",
@@ -1405,8 +1405,8 @@ export const de = {
       intro:
         "Globalsped organisiert zuverlässige Transporte nach Georgien – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Kaukasus.",
 
-      seoText:
-        "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Georgien, insbesondere nach Tiflis, Batumi und Kutaissi. Georgien ist ein zentraler Logistikstandort zwischen Europa und Asien und spielt eine wichtige Rolle als Transitland für Transporte in den Kaukasus und nach Zentralasien. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere und effiziente Transporte.",
+        seoText:
+        "Als internationale Spedition für Georgien unterstützt GLOBALSPED Unternehmen bei FTL- und LTL-LKW-Transporten von Europa nach Georgien, insbesondere nach Tiflis, Batumi und Kutaissi. Georgien ist ein zentraler Logistikstandort zwischen Europa und Asien und spielt eine wichtige Rolle als Transitland für Transporte in den Kaukasus und nach Zentralasien. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für sichere und effiziente Transporte.",
 
       services: [
         "FTL Komplettladungen nach Georgien",
@@ -1421,7 +1421,7 @@ export const de = {
       labels: {
         backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
-        logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
+        logisticsTitlePrefix: "Spedition und Logistiklösungen für",
         citiesTitle: "Wichtige Zielorte",
         authorityBadge: "Dokumente & Hinweise",
         authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",

@@ -159,9 +159,10 @@ export const metadataDe: LocaleMetadata = {
     },
 
     "transport-georgien": {
-      title: "Transport nach Georgien | GLOBALSPED",
+      title:
+        "Transport Georgien & Spedition | FTL/LTL | GLOBALSPED",
       description:
-        "GLOBALSPED organisiert Transporte nach Georgien per FTL, LTL, Sammelgut und Projektlogistik inklusive Zoll- und Transitkoordination.",
+        "GLOBALSPED ist Ihre Spedition für Georgien: FTL- und LTL-LKW-Transporte von Europa nach Tiflis, Batumi und Kutaissi – inklusive Zoll- und Transitkoordination.",
     },
 
     "transport-armenien": {
