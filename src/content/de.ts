@@ -1236,7 +1236,7 @@ export const de = {
         "Globalsped organisiert zuverlässige Transporte nach Aserbaidschan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte für anspruchsvolle Lieferketten im Kaukasus.",
 
       seoText:
-        "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Aserbaidschan, insbesondere nach Baku, Sumqayit und Ganja. Als wichtiges Transitland zwischen Europa und Zentralasien spielt Aserbaidschan eine zentrale Rolle im internationalen Warenverkehr. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für effiziente und sichere Transporte in den Kaukasus.",
+      "Als internationale Spedition für Aserbaidschan unterstützt GLOBALSPED Unternehmen bei FTL- und LTL-LKW-Transporten von Europa nach Aserbaidschan, insbesondere nach Baku, Sumqayit und Ganja. Als wichtiges Transitland zwischen Europa und Zentralasien spielt Aserbaidschan eine zentrale Rolle im internationalen Warenverkehr. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung sowie Export- und Importprozesse für effiziente und sichere Transporte in den Kaukasus.",
 
       services: [
         "FTL Komplettladungen nach Aserbaidschan",
@@ -1251,7 +1251,7 @@ export const de = {
       labels: {
         backToDestinations: "Zurück zu den Zielländern",
         introBadge: "Internationale Logistik",
-        logisticsTitlePrefix: "Logistiklösungen für Transporte nach",
+        logisticsTitlePrefix: "Spedition und Logistiklösungen für",
         citiesTitle: "Wichtige Zielorte",
         authorityBadge: "Dokumente & Hinweise",
         authorityLinksTitle: "Seriöse Quellen & weiterführende Informationen",

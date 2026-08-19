@@ -152,9 +152,10 @@ export const metadataDe: LocaleMetadata = {
     },
 
     "transport-aserbaidschan": {
-      title: "Transport nach Aserbaidschan | GLOBALSPED",
+      title:
+        "Aserbaidschan Transporte & Spedition | FTL/LTL | GLOBALSPED",
       description:
-        "Transporte nach Aserbaidschan und in den Kaukasus: FTL, LTL, Projektlogistik, Zollabwicklung und persönliche Transportbetreuung.",
+        "GLOBALSPED ist Ihre Spedition für Aserbaidschan: FTL- und LTL-LKW-Transporte von Europa nach Baku, Ganja und Sumqayit – mit Zoll- und Routenkoordination.",
     },
 
     "transport-georgien": {
