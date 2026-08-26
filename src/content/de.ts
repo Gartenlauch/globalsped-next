@@ -23,7 +23,7 @@ export const de = {
     homeHint: "Zur GLOBALSPED Startseite",
   },
   hero: {
-    badge: "Globalsped International Logistics Solutions",
+    badge: "GLOBALSPED International Logistics Solutions",
 
     headline: {
       line1: "Internationale Transporte",
@@ -219,7 +219,7 @@ export const de = {
       title: "Transport von Europa",
       highlight: "nach Usbekistan",
       intro:
-        "Globalsped organisiert zuverlässige Transporte von ganz Europa nach Usbekistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
+        "GLOBALSPED organisiert zuverlässige Transporte von ganz Europa nach Usbekistan – darunter FTL, LTL, Sammelgut, Thermotransporte und Projekttransporte.",
       seoText:
         "Wir unterstützen Unternehmen bei internationalen Transporten von Europa nach Usbekistan, insbesondere nach Taschkent, Samarkand, Kokand und Navoi. Unsere Leistungen umfassen Transportplanung, Routenkoordination, Zollabwicklung, Export- und Importprozesse sowie persönliche Betreuung für anspruchsvolle Lieferketten.",
       services: [
@@ -2652,7 +2652,7 @@ export const de = {
       "https://www.google.com/maps?q=Pendelhagen%201%2C%2083416%20Saaldorf-Surheim%20Germany%20OR%20Metzgerstra%C3%9Fe%2054%2C%205020%20Salzburg%20Austria&output=embed",
   },
   footer: {
-    companyName: "Globalsped Internationale Spedition GmbH",
+    companyName: "GLOBALSPED Internationale Spedition GmbH",
     shortName: "GLOBALSPED",
     claim: "International Transport Solutions",
     text: "Spezialisierte Transport- und Logistiklösungen zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten – inklusive Zollabwicklung, FTL, LTL, Thermotransporten und Projektlogistik.",

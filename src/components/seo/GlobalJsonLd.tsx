@@ -1,6 +1,3 @@
-// src/components/seo/GlobalJsonLd.tsx
-// src/components/seo/GlobalJsonLd.tsx
-
 import { JsonLd } from "./JsonLd";
 import {
   globalspedOrganization,

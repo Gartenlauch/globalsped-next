@@ -9,9 +9,12 @@ const websiteId = `${absoluteUrl()}/#website`;
 export const globalspedOrganization = {
   "@type": "Organization",
   "@id": organizationId,
-  name: "GLOBALSPED Internationale Spedition GmbH",
+  name: "GLOBALSPED",
   legalName: "GLOBALSPED Internationale Spedition GmbH",
-  alternateName: "GLOBALSPED",
+  alternateName: [
+    "GLOBALSPED Internationale Spedition",
+    "GLOBALSPED Internationale Spedition GmbH",
+  ],
   url: absoluteUrl(),
   logo: {
     "@type": "ImageObject",
@@ -127,8 +130,12 @@ export const globalspedProfessionalService = {
 export const globalspedWebSite = {
   "@type": "WebSite",
   "@id": websiteId,
-  url: absoluteUrl(),
+  url: `${absoluteUrl()}/`,
   name: "GLOBALSPED",
+  alternateName: [
+    "GLOBALSPED Internationale Spedition",
+    "GLOBALSPED Internationale Spedition GmbH",
+  ],
   publisher: {
     "@id": organizationId,
   },
