@@ -21,6 +21,11 @@ export const globalspedOrganization = {
     url: absoluteUrl("/images/logo/globalsped-logo.png"),
     contentUrl: absoluteUrl("/images/logo/globalsped-logo.png"),
   },
+  image: {
+    "@type": "ImageObject",
+    url: absoluteUrl("/images/og/globalsped-og.jpg"),
+    contentUrl: absoluteUrl("/images/og/globalsped-og.jpg"),
+  },
   description:
     "GLOBALSPED organisiert internationale Transporte, FTL, LTL, Thermotransporte, Gefahrguttransporte, Projektlogistik und Zollabwicklung zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten.",
   email: "info@globalsped.de",
@@ -93,7 +98,7 @@ export const globalspedProfessionalService = {
   description:
     "Internationale Spedition für Transporte zwischen Europa, Zentralasien, Kaukasus, Osteuropa und dem Mittleren Osten.",
   telephone: "+49 8654 5762-0",
-  email: "info@globalsped.de",
+  email: "transport@globalsped.de",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Pendelhagen 1",
