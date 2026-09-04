@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && (
+          request.auth.token.role == "admin"
+          || request.auth.token.admin == true
+        );
+    }
+
+    function isViewer() {
+      return isSignedIn()
+        && request.auth.token.role == "viewer";
+    }
+
+    function isStaff() {
+      return isAdmin() || isViewer();
+    }
+
+    // Transportanfragen und Kontaktanfragen
+    // Lesen für Admins und Betrachter.
+    // Änderungen ausschließlich über geschützte Cloud Functions.
+    match /leads/{leadId} {
+      allow get, list: if isStaff();
+      allow create, update, delete: if false;
+    }
+
+    // Bewerbungen
+    // Lesen für Admins und Betrachter.
+    // Änderungen/Löschen ausschließlich über geschützte Cloud Functions.
+    match /applications/{applicationId} {
+      allow get, list: if isStaff();
+      allow create, update, delete: if false;
+    }
+
+    // Standard: alles andere verboten.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

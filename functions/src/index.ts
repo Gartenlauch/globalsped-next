@@ -6,6 +6,7 @@ import { defineString } from "firebase-functions/params";
 import { onCall, HttpsError, type CallableRequest } from "firebase-functions/v2/https";
 import * as admin from "firebase-admin";
 import { buildInternalTransportMailHtml, TransportUploadedDocument } from "./mail/transport-mail-template";
+import { prepareInitialLeadAutomation } from "./autoreply/state";
 admin.initializeApp();
 
 const db = admin.firestore();
@@ -1446,16 +1447,20 @@ export const submitTransportLead = onCall(
       },
     });
 
+    const automation = await prepareInitialLeadAutomation();
     const now = admin.firestore.FieldValue.serverTimestamp();
     const leadRef = db.collection("leads").doc();
 
 
     const leadData = {
+      leadId: leadRef.id,
       functionVersion: FUNCTION_VERSION,
       source: "homepage",
       leadTag: "homepage",
       type: "transport_request",
       status: "new",
+      assignment: automation.assignment,
+      autoReply: automation.autoReply,
       priority: "normal",
 
       ...createInitialLeadConversionFields(),
@@ -2148,14 +2153,18 @@ export const submitContactInquiry = onCall(
       );
     }
 
+    const automation = await prepareInitialLeadAutomation();
     const now = admin.firestore.FieldValue.serverTimestamp();
     const contactRef = db.collection("leads").doc();
 
     const contactData = {
+      leadId: contactRef.id,
       source: "homepage",
       leadTag: "homepage",
       type: "contact_inquiry",
       status: "new",
+      assignment: automation.assignment,
+      autoReply: automation.autoReply,
       priority: "normal",
 
       ...createInitialLeadConversionFields(),
@@ -2480,3 +2489,38 @@ export const updateApplicationNotes = onCall(
     };
   },
 );
+
+export {
+  getLeadManagementConfig,
+  saveAdminUserProfile,
+  setCurrentLeadAssignee,
+} from "./admin/lead-management";
+
+
+export {
+  createAdminUser,
+  deleteAdminUser,
+  listAdminUsers,
+  updateAdminUser,
+} from "./admin/user-management";
+
+export {
+  getAutoReplySettings,
+  updateAutoReplySettings,
+} from "./admin/auto-reply-settings";
+
+export {
+  deleteAdminUserPhoto,
+  getAdminUserPhoto,
+  uploadAdminUserPhoto,
+} from "./admin/user-photo";
+
+export {
+    previewAutoReplyPlan,
+} from "./autoreply/preview";
+
+export {
+    autoReplyTaskDiagnostic,
+    scheduleAutoReplyTaskDiagnostic,
+    getAutoReplyTaskDiagnostic,
+} from "./autoreply/task-diagnostic";
