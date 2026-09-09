@@ -5,7 +5,7 @@ import {
     type CallableRequest,
 } from "firebase-functions/v2/https";
 import * as admin from "firebase-admin";
-
+import { FieldValue } from "firebase-admin/firestore";
 import {
     requireAdmin,
     requireStaff,
@@ -315,10 +315,7 @@ export const uploadAdminUserPhoto =
                     },
                 );
 
-            const now =
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp()
 
             await admin
                 .firestore()
@@ -525,10 +522,7 @@ export const deleteAdminUserPhoto =
                 uid,
             );
 
-            const now =
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp()
 
             await admin
                 .firestore()

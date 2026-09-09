@@ -14,7 +14,8 @@
     "fb:projects": "firebase projects:list",
     "fb:deploy:functions": "firebase deploy --only functions",
     "fb:deploy:contact": "firebase deploy --only functions:submitContactInquiry",
-    "fb:emulators": "firebase emulators:start"
+    "fb:emulators": "firebase emulators:start",
+    "emulators": "firebase emulators:start --import=./emulator-db --export-on-exit=./emulator-db"
   },
   "dependencies": {
     "firebase": "^12.13.0",

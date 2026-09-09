@@ -8,7 +8,7 @@ import {
     type CallableRequest,
 } from "firebase-functions/v2/https";
 import * as admin from "firebase-admin";
-
+import { FieldValue } from "firebase-admin/firestore";
 import {
     requireAdmin,
     requireStaff,
@@ -649,10 +649,7 @@ export const createAdminUser =
                     input.role,
                 );
 
-                const now =
-                    admin.firestore
-                        .FieldValue
-                        .serverTimestamp();
+                const now = FieldValue.serverTimestamp()
 
                 await admin
                     .firestore()
@@ -876,10 +873,7 @@ export const updateAdminUser =
                 input.role,
             );
 
-            const now =
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp()
 
             await admin
                 .firestore()
@@ -1024,10 +1018,7 @@ export const deleteAdminUser =
                 .auth()
                 .deleteUser(uid);
 
-            const now =
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp()
 
             await admin
                 .firestore()

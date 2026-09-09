@@ -1,4 +1,7 @@
-import * as admin from "firebase-admin";
+import {
+    FieldValue,
+    Timestamp,
+  } from "firebase-admin/firestore";
 
 import {
     getCurrentLeadAssignmentSnapshot,
@@ -15,10 +18,16 @@ import {
     readCurrentAutoReplySettings,
 } from "./settings";
 
-export type InitialAutoReplyStatus =
+export type AutoReplyStatus =
     | "disabled"
     | "blocked_no_assignee"
-    | "planned";
+    | "planned"
+    | "scheduled"
+    | "dispatching"
+    | "sent"
+    | "cancelled"
+    | "failed"
+    | "dry_run_completed";
 
 type AutoReplySettingsSnapshot = {
     delayMinutes: number;
@@ -32,16 +41,13 @@ type AutoReplySettingsSnapshot = {
 export type LeadAutoReplyState = {
     enabled: boolean;
 
-    status: InitialAutoReplyStatus;
+    status: AutoReplyStatus;
 
-    receivedAt:
-    admin.firestore.Timestamp;
+    receivedAt: Timestamp;
 
-    plannedAt:
-    admin.firestore.FieldValue;
+    plannedAt: FieldValue;
 
-    scheduledFor:
-    admin.firestore.Timestamp | null;
+    scheduledFor: Timestamp | null;
 
     scheduleReason:
     AutoReplyScheduleReason | null;
@@ -49,7 +55,7 @@ export type LeadAutoReplyState = {
     settingsSnapshot:
     AutoReplySettingsSnapshot;
 
-    taskName: null;
+    taskName: string | null;
 
     manualSendRequestedAt: null;
     manualSendRequestedByUid: null;
@@ -60,7 +66,7 @@ export type LeadAutoReplyState = {
     cancelledReason: null;
 
     attemptCount: number;
-    lastError: null;
+    lastError: string | null;
 };
 
 export type InitialLeadAutomation = {
@@ -116,13 +122,9 @@ function createBaseState(
     | "lastError"
 > {
     return {
-        receivedAt:
-            admin.firestore.Timestamp
-                .fromDate(receivedAt),
+        receivedAt: Timestamp.fromDate(receivedAt),
 
-        plannedAt:
-            admin.firestore.FieldValue
-                .serverTimestamp(),
+        plannedAt: FieldValue.serverTimestamp(),
 
         settingsSnapshot:
             createSettingsSnapshot(
@@ -255,8 +257,7 @@ export async function prepareInitialLeadAutomation(
             enabled: true,
             status: "planned",
 
-            scheduledFor:
-                admin.firestore.Timestamp
+            scheduledFor: Timestamp
                     .fromDate(
                         decision.scheduledFor,
                     ),

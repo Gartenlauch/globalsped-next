@@ -1,6 +1,6 @@
 import { logger } from "firebase-functions";
 import * as admin from "firebase-admin";
-
+import { FieldValue } from "firebase-admin/firestore";
 const ADMIN_USERS_COLLECTION = "adminUsers";
 
 const SETTINGS_COLLECTION = "settings";
@@ -45,7 +45,7 @@ export type LeadAssignmentSnapshot = {
     "bearbeiter_of_the_day";
 
     assignedAt:
-    admin.firestore.FieldValue;
+    FieldValue;
 
     assignee:
     LeadAssigneeSnapshot;
@@ -285,10 +285,7 @@ export async function getCurrentLeadAssignmentSnapshot():
             source:
                 "bearbeiter_of_the_day",
 
-            assignedAt:
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp(),
+            assignedAt: FieldValue.serverTimestamp(),
 
             assignee: {
                 uid:

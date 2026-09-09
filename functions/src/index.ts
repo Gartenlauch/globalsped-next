@@ -7,6 +7,12 @@ import { onCall, HttpsError, type CallableRequest } from "firebase-functions/v2/
 import * as admin from "firebase-admin";
 import { buildInternalTransportMailHtml, TransportUploadedDocument } from "./mail/transport-mail-template";
 import { prepareInitialLeadAutomation } from "./autoreply/state";
+import {
+  FieldValue,
+  Timestamp,
+} from "firebase-admin/firestore";
+
+
 admin.initializeApp();
 
 const db = admin.firestore();
@@ -399,7 +405,7 @@ async function uploadGoogleAdsLeadConversion(
 function getFirestoreDate(
   value: unknown,
 ): Date | null {
-  if (value instanceof admin.firestore.Timestamp) {
+  if (value instanceof Timestamp) {
     return value.toDate();
   }
 
@@ -919,7 +925,7 @@ export const updateLeadStatus = onCall(
       unknown
     >;
 
-    const now = admin.firestore.FieldValue.serverTimestamp();
+    const now = FieldValue.serverTimestamp();
 
     const updates: Record<string, unknown> = {
       status,
@@ -1143,7 +1149,7 @@ export const updateLeadStatus = onCall(
          */
         await leadRef.update({
           [`conversionUploadAttempts.${conversionStateKey}`]:
-            admin.firestore.FieldValue.increment(1),
+            FieldValue.increment(1),
 
           [`conversionUploadError.${conversionStateKey}`]:
             null,
@@ -1177,10 +1183,9 @@ export const updateLeadStatus = onCall(
             result.requestId,
 
           [`conversionUploadAcceptedAt.${conversionStateKey}`]:
-            admin.firestore.FieldValue.serverTimestamp(),
+            FieldValue.serverTimestamp(),
 
-          updatedAt:
-            admin.firestore.FieldValue.serverTimestamp(),
+          updatedAt: FieldValue.serverTimestamp(),
         });
 
         conversionUpload = {
@@ -1214,7 +1219,7 @@ export const updateLeadStatus = onCall(
             uploadError,
 
           updatedAt:
-            admin.firestore.FieldValue.serverTimestamp(),
+            FieldValue.serverTimestamp(),
         };
 
         /*
@@ -1225,7 +1230,7 @@ export const updateLeadStatus = onCall(
         if (!attemptIncremented) {
           failureUpdates[
             `conversionUploadAttempts.${conversionStateKey}`
-          ] = admin.firestore.FieldValue.increment(1);
+          ] = FieldValue.increment(1);
         }
 
         await leadRef.update(failureUpdates);
@@ -1448,7 +1453,7 @@ export const submitTransportLead = onCall(
     });
 
     const automation = await prepareInitialLeadAutomation();
-    const now = admin.firestore.FieldValue.serverTimestamp();
+    const now = FieldValue.serverTimestamp();
     const leadRef = db.collection("leads").doc();
 
 
@@ -1849,7 +1854,7 @@ export const submitApplication = onCall(
       .collection("applications")
       .doc(data.applicationId);
 
-    const now = admin.firestore.FieldValue.serverTimestamp();
+    const now = FieldValue.serverTimestamp();
 
     const applicationData = {
       source: "homepage",
@@ -2154,7 +2159,7 @@ export const submitContactInquiry = onCall(
     }
 
     const automation = await prepareInitialLeadAutomation();
-    const now = admin.firestore.FieldValue.serverTimestamp();
+    const now = FieldValue.serverTimestamp();
     const contactRef = db.collection("leads").doc();
 
     const contactData = {
@@ -2396,7 +2401,7 @@ export const updateApplicationStatus = onCall(
       throw new HttpsError("not-found", "Bewerbung wurde nicht gefunden.");
     }
 
-    const now = admin.firestore.FieldValue.serverTimestamp();
+    const now = FieldValue.serverTimestamp();
 
     const updateData: Record<string, unknown> = {
       status,
@@ -2472,7 +2477,7 @@ export const updateApplicationNotes = onCall(
       throw new HttpsError("not-found", "Bewerbung wurde nicht gefunden.");
     }
 
-    const now = admin.firestore.FieldValue.serverTimestamp();
+    const now = FieldValue.serverTimestamp();
 
     await applicationRef.update({
       "admin.notes": notes,
@@ -2524,3 +2529,11 @@ export {
     scheduleAutoReplyTaskDiagnostic,
     getAutoReplyTaskDiagnostic,
 } from "./autoreply/task-diagnostic";
+
+
+// JUST FOR EMULATOR USE
+export {
+  createAutoReplyLeadDryRun,
+  autoReplyLeadDryRunTask,
+  getAutoReplyLeadDryRunStatus,
+} from "./autoreply/emulator-lead-flow";

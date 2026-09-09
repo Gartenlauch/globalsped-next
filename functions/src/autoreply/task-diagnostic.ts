@@ -13,11 +13,11 @@ import {
 } from "firebase-functions/tasks";
 import * as admin from "firebase-admin";
 
-import {
-    requireAdmin,
-} from "../admin/auth";
+import { requireAdmin } from "../admin/auth";
 
 const REGION = "europe-west3";
+import { Timestamp, FieldValue } from "firebase-admin/firestore";
+
 
 const TASK_FUNCTION_NAME =
     "autoReplyTaskDiagnostic";
@@ -119,8 +119,7 @@ function timestampToIso(
     value: unknown,
 ): string | null {
     if (
-        value instanceof
-        admin.firestore.Timestamp
+        value instanceof Timestamp
     ) {
         return value
             .toDate()
@@ -193,10 +192,7 @@ export const autoReplyTaskDiagnostic =
                     "scheduledFor",
                 );
 
-            const now =
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp();
 
             await admin
                 .firestore()
@@ -289,10 +285,7 @@ export const scheduleAutoReplyTaskDiagnostic =
                         DIAGNOSTIC_DOCUMENT_ID,
                     );
 
-            const now =
-                admin.firestore
-                    .FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp();
 
             await diagnosticRef.set(
                 {
@@ -413,10 +406,7 @@ export const scheduleAutoReplyTaskDiagnostic =
                                 1000,
                             ),
 
-                        updatedAt:
-                            admin.firestore
-                                .FieldValue
-                                .serverTimestamp(),
+                        updatedAt: FieldValue.serverTimestamp(),
                     },
                     {
                         merge: true,

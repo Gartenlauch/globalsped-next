@@ -12,6 +12,7 @@ import {
     resolveStaffRole,
 } from "./auth";
 const REGION = "europe-west3";
+import { FieldValue } from "firebase-admin/firestore";
 
 const ADMIN_USERS_COLLECTION = "adminUsers";
 const SETTINGS_COLLECTION = "settings";
@@ -623,9 +624,7 @@ export const saveAdminUserProfile =
                 }
             }
 
-            const now =
-                admin.firestore.FieldValue
-                    .serverTimestamp();
+            const now = FieldValue.serverTimestamp();
 
             const updates:
                 Record<string, unknown> = {
@@ -802,9 +801,7 @@ export const setCurrentLeadAssignee =
                         );
                     }
 
-                    const now =
-                        admin.firestore.FieldValue
-                            .serverTimestamp();
+                    const now = FieldValue.serverTimestamp();
 
                     const updates:
                         Record<string, unknown> = {

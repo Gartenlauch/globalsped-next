@@ -4,7 +4,7 @@ import {
     type CallableRequest,
 } from "firebase-functions/v2/https";
 import * as admin from "firebase-admin";
-
+import { FieldValue } from "firebase-admin/firestore";
 import {
     requireAdmin,
     requireStaff,
@@ -33,7 +33,7 @@ type AutoReplySettings = {
 
 const DEFAULT_SETTINGS:
     AutoReplySettings = {
-    enabled: true,
+    enabled: false,
     delayMinutes: 10,
     timezone: "Europe/Berlin",
     businessDays: [
@@ -365,8 +365,7 @@ export const updateAutoReplySettings =
             };
 
             const now =
-                admin.firestore
-                    .FieldValue
+                FieldValue
                     .serverTimestamp();
 
             await admin
