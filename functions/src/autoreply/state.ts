@@ -100,6 +100,9 @@ export type LeadAutoReplyState = {
     templateVersion:
     string | null;
 
+    messageSubject: string | null;
+    messageLocale: "de" | "en" | null;
+
     providerMessageId:
     string | null;
 
@@ -178,6 +181,8 @@ function createBaseState(
     | "recipientEmail"
     | "internalCopyEmail"
     | "templateVersion"
+    | "messageSubject"
+    | "messageLocale"
     | "providerMessageId"
     | "failedAt"
     | "cancelledAt"
@@ -221,6 +226,9 @@ function createBaseState(
 
         templateVersion:
             null,
+
+        messageSubject: null,
+        messageLocale: null,
 
         providerMessageId:
             null,

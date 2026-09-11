@@ -1,3 +1,4 @@
+import {prepareAutoReplyMessage} from "./message-prepare";
 import {
     randomUUID,
 } from "node:crypto";
@@ -241,10 +242,12 @@ export const autoReplyDispatchTask =
                     "manualSendRequestedByUid",
                 ) : null;
 
-                const metadata =
+                const delivery =
                     resolveAutoReplyDeliveryMetadata(
                         lead,
                     );
+
+                const message = await prepareAutoReplyMessage(lead);
 
                 /*
                  * Audit-Daten bereits vor
@@ -253,16 +256,18 @@ export const autoReplyDispatchTask =
                  */
                 await leadRef.update({
                     "autoReply.recipientEmail":
-                        metadata
+                        delivery
                             .recipientEmail,
 
                     "autoReply.internalCopyEmail":
-                        metadata
+                        delivery
                             .internalCopyEmail,
 
+                    "autoReply.messageSubject": message.subject,
+                    "autoReply.messageLocale": message.locale,
+
                     "autoReply.templateVersion":
-                        metadata
-                            .templateVersion,
+                        message.templateVersion,
 
                     updatedAt:
                         FieldValue
@@ -320,17 +325,18 @@ export const autoReplyDispatchTask =
                     sentByUid,
 
                     recipientEmail:
-                        metadata
+                        delivery
                             .recipientEmail,
 
                     internalCopyEmail:
-                        metadata
+                        delivery
                             .internalCopyEmail,
 
                     templateVersion:
-                        metadata
-                            .templateVersion,
+                        message.templateVersion,
 
+                    messageSubject: message.subject,
+                    messageLocale: message.locale,
                     providerMessageId,
                 });
 
@@ -362,16 +368,15 @@ export const autoReplyDispatchTask =
                         sendMode,
 
                         recipientEmail:
-                            metadata
+                            delivery
                                 .recipientEmail,
 
                         internalCopyEmail:
-                            metadata
+                            delivery
                                 .internalCopyEmail,
 
                         templateVersion:
-                            metadata
-                                .templateVersion,
+                            message.templateVersion,
                     },
                 );
             } catch (error) {

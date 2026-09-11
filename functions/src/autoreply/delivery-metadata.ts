@@ -4,7 +4,6 @@ export type AutoReplyDeliveryMetadata = {
     internalCopyEmail:
     string | null;
 
-    templateVersion: string;
 };
 
 function isRecord(
@@ -57,40 +56,6 @@ export function resolveAutoReplyDeliveryMetadata(
         );
     }
 
-    const type =
-        stringValue(
-            lead.type,
-        );
-
-    const locale =
-        stringValue(
-            lead.locale,
-        ) === "en"
-            ? "en"
-            : "de";
-
-    let templateVersion:
-        string;
-
-    switch (type) {
-        case "transport_request":
-            templateVersion =
-                `transport-${locale}-v1`;
-            break;
-
-        case "contact_inquiry":
-            templateVersion =
-                `contact-${locale}-v1`;
-            break;
-
-        default:
-            throw new Error(
-                `AutoReply wird für Lead-Typ ${String(
-                    type,
-                )} noch nicht unterstützt.`,
-            );
-    }
-
     return {
         recipientEmail:
             recipientEmail
@@ -104,6 +69,5 @@ export function resolveAutoReplyDeliveryMetadata(
                 ?.toLowerCase() ??
             null,
 
-        templateVersion,
     };
 }

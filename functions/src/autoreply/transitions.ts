@@ -9,6 +9,7 @@ import type {
 } from "./state";
 import {HttpsError} from "firebase-functions/v2/https";
 import {resolveAutoReplyDeliveryMetadata} from "./delivery-metadata";
+import {renderAutoReplyMessage} from "./message-renderer";
 
 export async function requestManualAutoReplyDispatch(params: {
     leadRef: DocumentReference;
@@ -35,6 +36,7 @@ export async function requestManualAutoReplyDispatch(params: {
         }
         try {
             resolveAutoReplyDeliveryMetadata(lead);
+            renderAutoReplyMessage(lead);
         } catch (error) {
             throw new HttpsError("failed-precondition", error instanceof Error ? error.message : "Empfänger-Daten fehlen.");
         }
@@ -341,6 +343,9 @@ export async function completeAutoReplyDispatch(
         templateVersion:
         string;
 
+        messageSubject: string;
+        messageLocale: "de" | "en";
+
         providerMessageId:
         string | null;
     },
@@ -354,6 +359,8 @@ export async function completeAutoReplyDispatch(
         recipientEmail,
         internalCopyEmail,
         templateVersion,
+        messageSubject,
+        messageLocale,
         providerMessageId,
     } = params;
 
@@ -436,6 +443,9 @@ export async function completeAutoReplyDispatch(
                             "autoReply.templateVersion":
                                 templateVersion,
 
+                            "autoReply.messageSubject": messageSubject,
+                            "autoReply.messageLocale": messageLocale,
+
                             "autoReply.providerMessageId":
                                 providerMessageId,
 
@@ -475,6 +485,9 @@ export async function completeAutoReplyDispatch(
 
                         "autoReply.templateVersion":
                             templateVersion,
+
+                        "autoReply.messageSubject": messageSubject,
+                        "autoReply.messageLocale": messageLocale,
 
                         "autoReply.providerMessageId":
                             providerMessageId,
