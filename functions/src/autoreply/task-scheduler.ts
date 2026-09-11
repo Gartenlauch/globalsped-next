@@ -14,7 +14,9 @@ import {
 import {
     failAutoReplyDispatch,
     markAutoReplyTaskScheduled,
+    requestManualAutoReplyDispatch,
 } from "./transitions";
+import { HttpsError } from "firebase-functions/v2/https";
 
 import {
     getFunctionUrl,
@@ -37,6 +39,15 @@ type AutoReplyTaskPayload = {
 
     deliveryMode:
     AutoReplyDeliveryMode;
+
+    sendMode:
+    "automatic" | "manual";
+
+    requestedByUid?:
+    string | null;
+
+    executeNotBefore?:
+    string;
 };
 
 function isRecord(
@@ -171,6 +182,16 @@ export async function scheduleAutoReplyTaskForLead(
             taskToken,
 
             deliveryMode,
+
+            sendMode:
+                "automatic",
+
+            executeNotBefore:
+                isFunctionsEmulator() &&
+                    deliveryMode === "dry_run"
+                    ? executionScheduledFor
+                        .toISOString()
+                    : undefined,
         };
 
         if (isFunctionsEmulator()) {
@@ -218,6 +239,48 @@ export async function scheduleAutoReplyTaskForLead(
             error,
         });
 
+        throw error;
+    }
+}
+
+export function requireManualAutoReplyEmulator(): void {
+    if (!isFunctionsEmulator() ||
+        !process.env.FIRESTORE_EMULATOR_HOST ||
+        !process.env.CLOUD_TASKS_EMULATOR_HOST) {
+        throw new HttpsError("failed-precondition", "Der echte AutoReply-Mail-Provider ist noch nicht aktiviert. Manueller Versand ist nur im lokalen Emulator als Dry Run verfügbar.");
+    }
+}
+
+export async function scheduleManualAutoReplyTaskForLead(params: {
+    leadRef: DocumentReference;
+    requestedByUid: string;
+    deliveryMode: AutoReplyDeliveryMode;
+}): Promise<{ taskToken: string }> {
+    requireManualAutoReplyEmulator();
+    const { leadRef, requestedByUid, deliveryMode } = params;
+    if (deliveryMode !== "dry_run") {
+        throw new HttpsError("failed-precondition", "Echter AutoReply-Mailversand ist noch nicht aktiviert.");
+    }
+    const taskToken = randomUUID();
+    await requestManualAutoReplyDispatch({
+        leadRef,
+        requestedByUid,
+        taskToken,
+        taskName: `manual:${taskToken}`,
+    });
+    try {
+        const queue = getFunctions().taskQueue<AutoReplyTaskPayload>(
+            `locations/${REGION}/functions/${TASK_FUNCTION_NAME}`,
+        );
+        await queue.enqueue({
+            leadId: leadRef.id,
+            taskToken,
+            deliveryMode,
+            sendMode: "manual",
+        }, { scheduleTime: new Date(), dispatchDeadlineSeconds: 60 });
+        return { taskToken };
+    } catch (error) {
+        await failAutoReplyDispatch({ leadRef, taskToken, error });
         throw error;
     }
 }

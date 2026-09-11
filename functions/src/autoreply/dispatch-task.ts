@@ -142,6 +142,11 @@ export const autoReplyDispatchTask =
             const db =
                 admin.firestore();
 
+            const sendMode = request.data.sendMode ?? "automatic";
+            if (sendMode !== "automatic" && sendMode !== "manual") {
+                throw new Error("Ungültiger AutoReply-Versandmodus.");
+            }
+
             const leadRef =
                 db
                     .collection(
@@ -150,6 +155,51 @@ export const autoReplyDispatchTask =
                     .doc(
                         leadId,
                     );
+
+            if (
+                deliveryMode ===
+                "dry_run" &&
+                isFunctionsEmulator()
+            ) {
+                const executeNotBefore =
+                    request.data
+                        .executeNotBefore;
+
+                if (
+                    typeof executeNotBefore ===
+                    "string"
+                ) {
+                    const targetTime =
+                        new Date(
+                            executeNotBefore,
+                        ).getTime();
+
+                    const waitMs =
+                        targetTime -
+                        Date.now();
+
+                    if (waitMs > 0) {
+                        logger.info(
+                            "AutoReply dry-run waits until planned emulator execution time.",
+                            {
+                                leadId,
+                                taskToken,
+                                waitMs,
+                                executeNotBefore,
+                            },
+                        );
+
+                        await new Promise<void>(
+                            (resolve) => {
+                                setTimeout(
+                                    resolve,
+                                    waitMs,
+                                );
+                            },
+                        );
+                    }
+                }
+            }
 
             const claim =
                 await claimAutoReplyDispatch({
@@ -184,6 +234,12 @@ export const autoReplyDispatchTask =
                 const lead =
                     snapshot.data() ??
                     {};
+
+                const autoReply = isRecord(lead.autoReply) ? lead.autoReply : {};
+                const sentByUid = sendMode === "manual" ? requiredString(
+                    autoReply.manualSendRequestedByUid,
+                    "manualSendRequestedByUid",
+                ) : null;
 
                 const metadata =
                     resolveAutoReplyDeliveryMetadata(
@@ -260,6 +316,9 @@ export const autoReplyDispatchTask =
                     mode:
                         "dry_run",
 
+                    dryRunSendMode: sendMode,
+                    sentByUid,
+
                     recipientEmail:
                         metadata
                             .recipientEmail,
@@ -299,6 +358,8 @@ export const autoReplyDispatchTask =
                         leadId,
 
                         deliveryMode,
+
+                        sendMode,
 
                         recipientEmail:
                             metadata

@@ -7,6 +7,51 @@ import {
 import type {
     AutoReplySendMode,
 } from "./state";
+import {HttpsError} from "firebase-functions/v2/https";
+import {resolveAutoReplyDeliveryMetadata} from "./delivery-metadata";
+
+export async function requestManualAutoReplyDispatch(params: {
+    leadRef: DocumentReference;
+    taskToken: string;
+    requestedByUid: string;
+    taskName: string;
+}): Promise<void> {
+    const {leadRef, taskToken, requestedByUid, taskName} = params;
+    await leadRef.firestore.runTransaction(async (transaction) => {
+        const snapshot = await transaction.get(leadRef);
+        if (!snapshot.exists) {
+            throw new HttpsError("not-found", "Lead existiert nicht.");
+        }
+        const lead = snapshot.data() ?? {};
+        if (!isRecord(lead.autoReply)) {
+            throw new HttpsError("failed-precondition", "Für diesen Lead liegen keine AutoReply-Daten vor.");
+        }
+        const autoReply = lead.autoReply;
+        if (!["planned", "scheduled", "failed"].includes(String(autoReply.status))) {
+            throw new HttpsError("failed-precondition", "Die Autoantwort kann im aktuellen Status nicht manuell angefordert werden.");
+        }
+        if (!taskToken.trim() || taskToken === autoReply.taskToken || !requestedByUid.trim() || !taskName.trim()) {
+            throw new HttpsError("invalid-argument", "Neuer Task-Token und Administrator sind erforderlich.");
+        }
+        try {
+            resolveAutoReplyDeliveryMetadata(lead);
+        } catch (error) {
+            throw new HttpsError("failed-precondition", error instanceof Error ? error.message : "Empfänger-Daten fehlen.");
+        }
+        const now = FieldValue.serverTimestamp();
+        transaction.update(leadRef, {
+            "autoReply.status": "scheduled",
+            "autoReply.taskToken": taskToken,
+            "autoReply.taskName": taskName,
+            "autoReply.manualSendRequestedAt": now,
+            "autoReply.manualSendRequestedByUid": requestedByUid,
+            "autoReply.scheduledAt": now,
+            "autoReply.failedAt": null,
+            "autoReply.lastError": null,
+            updatedAt: now,
+        });
+    });
+}
 
 export type AutoReplyTaskClaimResult = {
     claimed: boolean;
@@ -205,18 +250,6 @@ export async function claimAutoReplyDispatch(
                         autoReply.status,
                     );
 
-                if (
-                    isTerminalStatus(
-                        status,
-                    )
-                ) {
-                    return {
-                        claimed: false,
-                        reason:
-                            "terminal",
-                    };
-                }
-
                 const storedToken =
                     readString(
                         autoReply
@@ -232,6 +265,10 @@ export async function claimAutoReplyDispatch(
                         reason:
                             "stale_task",
                     };
+                }
+
+                if (isTerminalStatus(status)) {
+                    return {claimed: false, reason: "terminal"};
                 }
 
                 if (
@@ -290,6 +327,8 @@ export async function completeAutoReplyDispatch(
         AutoReplySendMode |
         "dry_run";
 
+        dryRunSendMode?: AutoReplySendMode;
+
         sentByUid?:
         string | null;
 
@@ -310,6 +349,7 @@ export async function completeAutoReplyDispatch(
         leadRef,
         taskToken,
         mode,
+        dryRunSendMode = "automatic",
         sentByUid = null,
         recipientEmail,
         internalCopyEmail,
@@ -383,6 +423,9 @@ export async function completeAutoReplyDispatch(
                         {
                             "autoReply.status":
                                 "dry_run_completed",
+
+                            "autoReply.sentMode": dryRunSendMode,
+                            "autoReply.sentByUid": dryRunSendMode === "manual" ? sentByUid : null,
 
                             "autoReply.recipientEmail":
                                 recipientEmail,

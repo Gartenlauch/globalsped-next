@@ -2540,3 +2540,5 @@ export {
 export {
     autoReplyDispatchTask,
 } from "./autoreply/dispatch-task";
+
+export {sendAutoReplyNow} from "./autoreply/send-now";
