@@ -29,6 +29,8 @@ type AutoReplySettings = {
     businessStart: string;
     businessEnd: string;
     deferredSendTime: string;
+    sendInternalCopy: boolean;
+    internalCopyEmail: string;
 };
 
 const DEFAULT_SETTINGS:
@@ -36,6 +38,7 @@ const DEFAULT_SETTINGS:
     enabled: false,
     delayMinutes: 10,
     timezone: "Europe/Berlin",
+
     businessDays: [
         1,
         2,
@@ -43,9 +46,15 @@ const DEFAULT_SETTINGS:
         4,
         5,
     ],
+
     businessStart: "08:00",
     businessEnd: "17:00",
     deferredSendTime: "08:30",
+
+    sendInternalCopy: true,
+
+    internalCopyEmail:
+        "as@fair-it.net",
 };
 
 function isRecord(
@@ -65,6 +74,17 @@ function validTime(
         typeof value === "string" &&
         /^([01]\d|2[0-3]):[0-5]\d$/.test(
             value,
+        )
+    );
+}
+
+function validEmail(
+    value: unknown,
+): value is string {
+    return (
+        typeof value === "string" &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+            value.trim(),
         )
     );
 }
@@ -186,6 +206,22 @@ function normalizeSettings(
                 value.deferredSendTime :
                 DEFAULT_SETTINGS
                     .deferredSendTime,
+        sendInternalCopy:
+            typeof value.sendInternalCopy ===
+                "boolean"
+                ? value.sendInternalCopy
+                : DEFAULT_SETTINGS
+                    .sendInternalCopy,
+
+        internalCopyEmail:
+            validEmail(
+                value.internalCopyEmail,
+            )
+                ? value.internalCopyEmail
+                    .trim()
+                    .toLowerCase()
+                : DEFAULT_SETTINGS
+                    .internalCopyEmail,
     };
 }
 
@@ -291,6 +327,12 @@ export const updateAutoReplySettings =
             const deferredSendTime =
                 data.deferredSendTime;
 
+            const sendInternalCopy =
+                data.sendInternalCopy;
+
+            const internalCopyEmail =
+                data.internalCopyEmail;
+
             if (
                 typeof enabled !==
                 "boolean"
@@ -342,26 +384,38 @@ export const updateAutoReplySettings =
                     "Das Ende der Geschäftszeit muss nach dem Beginn liegen.",
                 );
             }
+            if (
+                typeof sendInternalCopy !==
+                "boolean"
+            ) {
+                throw new HttpsError(
+                    "invalid-argument",
+                    "Die Einstellung für die interne Kopie ist ungültig.",
+                );
+            }
+
+            if (
+                !validEmail(
+                    internalCopyEmail,
+                )
+            ) {
+                throw new HttpsError(
+                    "invalid-argument",
+                    "Die E-Mail-Adresse für die interne Kopie ist ungültig.",
+                );
+            }
 
             const settings:
                 AutoReplySettings = {
                 enabled,
-
                 delayMinutes,
-
-                timezone:
-                    "Europe/Berlin",
-
-                businessDays:
-                    parseBusinessDays(
-                        data.businessDays,
-                    ),
-
+                timezone: "Europe/Berlin",
+                businessDays: parseBusinessDays(data.businessDays),
                 businessStart,
-
                 businessEnd,
-
                 deferredSendTime,
+                sendInternalCopy,
+                internalCopyEmail: internalCopyEmail.trim().toLowerCase(),
             };
 
             const now =

@@ -3,10 +3,6 @@ import {
 } from "node:crypto";
 
 import {
-    getFunctions,
-} from "firebase-admin/functions";
-
-import {
     FieldValue,
     Timestamp,
 } from "firebase-admin/firestore";
@@ -21,10 +17,6 @@ import {
     type CallableRequest,
 } from "firebase-functions/v2/https";
 
-import {
-    onTaskDispatched,
-} from "firebase-functions/tasks";
-
 import * as admin from "firebase-admin";
 
 import {
@@ -35,22 +27,18 @@ import {
     prepareInitialLeadAutomation,
 } from "./state";
 
+import {
+    scheduleAutoReplyTaskForLead,
+} from "./task-scheduler";
+
 const REGION =
     "europe-west3";
-
-const TASK_FUNCTION_NAME =
-    "autoReplyLeadDryRunTask";
 
 const TEST_EXECUTION_DELAY_SECONDS =
     20;
 
 const TEST_MODE =
     "autoreply_dry_run";
-
-type DryRunTaskPayload = {
-    leadId: string;
-    testId: string;
-};
 
 function isRecord(
     value: unknown,
@@ -89,26 +77,11 @@ function requireEmulator():
     }
 }
 
-function requiredString(
-    value: unknown,
-    fieldName: string,
-): string {
-    if (
-        typeof value !== "string" ||
-        !value.trim()
-    ) {
-        throw new Error(
-            `${fieldName} fehlt.`,
-        );
-    }
-
-    return value.trim();
-}
-
 /*
  * Erzeugt einen rein lokalen,
  * synthetischen Testlead und reiht
- * eine lokale Task ein.
+ * ihn über den produktionsnahen
+ * AutoReply-Scheduler ein.
  *
  * KEINE Mail.
  * KEIN GA4.
@@ -145,7 +118,8 @@ export const createAutoReplyLeadDryRun =
              * Für diesen Integrations-Test
              * muss die lokale AutoReply-
              * Konfiguration aktiv und ein
-             * Bearbeiter vorhanden sein.
+             * gültiger Bearbeiter vorhanden
+             * sein.
              */
             if (
                 automation.autoReply
@@ -177,12 +151,13 @@ export const createAutoReplyLeadDryRun =
 
             /*
              * Die echte Business-Planung
-             * bleibt im autoReply-State
+             * bleibt im AutoReply-State
              * erhalten.
              *
-             * Nur die Dry-Run-Task wird
-             * für den Test bereits nach
-             * 20 Sekunden ausgeführt.
+             * Nur die tatsächliche
+             * Dry-Run-Task wird lokal
+             * bereits nach 20 Sekunden
+             * ausgeführt.
              */
             const executionScheduledFor =
                 new Date(
@@ -221,6 +196,9 @@ export const createAutoReplyLeadDryRun =
                     TEST_MODE,
 
                 testId,
+
+                locale:
+                    "de",
 
                 contact: {
                     company:
@@ -275,35 +253,24 @@ export const createAutoReplyLeadDryRun =
             });
 
             try {
-                const queue =
-                    getFunctions()
-                        .taskQueue<DryRunTaskPayload>(
-                            `locations/${REGION}/functions/${TASK_FUNCTION_NAME}`,
-                        );
+                /*
+                 * Ab hier wird derselbe
+                 * Scheduler verwendet, der
+                 * später auch echte Leads
+                 * planen wird.
+                 */
+                const scheduled =
+                    await scheduleAutoReplyTaskForLead({
+                        leadRef,
 
-                await queue.enqueue(
-                    {
-                        leadId:
-                            leadRef.id,
+                        deliveryMode:
+                            "dry_run",
 
-                        testId,
-                    },
-                    {
-                        scheduleTime:
+                        scheduleTimeOverride:
                             executionScheduledFor,
-
-                        dispatchDeadlineSeconds:
-                            60,
-                    },
-                );
+                    });
 
                 await leadRef.update({
-                    "autoReply.status":
-                        "scheduled",
-
-                    "autoReply.taskName":
-                        `emulator:${testId}`,
-
                     "autoReply.emulatorDryRun.stage":
                         "scheduled",
 
@@ -321,8 +288,13 @@ export const createAutoReplyLeadDryRun =
                         testId,
 
                         executionScheduledFor:
-                            executionScheduledFor
+                            scheduled
+                                .executionScheduledFor
                                 .toISOString(),
+
+                        taskToken:
+                            scheduled
+                                .taskToken,
                     },
                 );
 
@@ -343,7 +315,8 @@ export const createAutoReplyLeadDryRun =
                         null,
 
                     executionScheduledFor:
-                        executionScheduledFor
+                        scheduled
+                            .executionScheduledFor
                             .toISOString(),
 
                     assignee:
@@ -353,14 +326,24 @@ export const createAutoReplyLeadDryRun =
                         null,
                 };
             } catch (error) {
+                /*
+                 * Der Scheduler selbst setzt
+                 * bei einem Enqueue-Fehler
+                 * bereits den AutoReply-State
+                 * auf "failed".
+                 *
+                 * Hier ergänzen wir nur noch
+                 * die Dry-Run-spezifischen
+                 * Diagnoseinformationen.
+                 */
                 const message =
                     error instanceof Error
                         ? error.message
                         : "Unbekannter Fehler.";
 
                 await leadRef.update({
-                    "autoReply.status":
-                        "failed",
+                    "autoReply.emulatorDryRun.stage":
+                        "enqueue_failed",
 
                     "autoReply.lastError":
                         message.slice(
@@ -368,230 +351,28 @@ export const createAutoReplyLeadDryRun =
                             1000,
                         ),
 
-                    "autoReply.emulatorDryRun.stage":
-                        "enqueue_failed",
-
                     updatedAt:
                         FieldValue
                             .serverTimestamp(),
                 });
+
+                logger.error(
+                    "AutoReply emulator dry-run could not be scheduled.",
+                    {
+                        leadId:
+                            leadRef.id,
+
+                        testId,
+
+                        error,
+                    },
+                );
 
                 throw new HttpsError(
                     "internal",
                     "Die lokale Dry-Run-Task konnte nicht geplant werden.",
                 );
             }
-        },
-    );
-
-/*
- * Lokale Task-Ausführung.
- *
- * Der Handler verschickt ausdrücklich
- * KEINE Mail.
- */
-export const autoReplyLeadDryRunTask =
-    onTaskDispatched(
-        {
-            region: REGION,
-
-            retryConfig: {
-                maxAttempts: 2,
-                minBackoffSeconds: 10,
-            },
-
-            rateLimits: {
-                maxConcurrentDispatches: 5,
-            },
-        },
-        async (request) => {
-            /*
-             * Zusätzlicher Schutz:
-             * Sollte die Function jemals
-             * versehentlich deployed sein,
-             * beendet sie sich ohne Aktion.
-             */
-            if (!isEmulatorRuntime()) {
-                logger.error(
-                    "AutoReply dry-run task blocked outside emulator.",
-                );
-
-                return;
-            }
-
-            if (
-                !isRecord(
-                    request.data,
-                )
-            ) {
-                throw new Error(
-                    "Ungültige Dry-Run-Task-Daten.",
-                );
-            }
-
-            const leadId =
-                requiredString(
-                    request.data.leadId,
-                    "leadId",
-                );
-
-            const testId =
-                requiredString(
-                    request.data.testId,
-                    "testId",
-                );
-
-            const db =
-                admin.firestore();
-
-            const leadRef =
-                db
-                    .collection(
-                        "leads",
-                    )
-                    .doc(
-                        leadId,
-                    );
-
-            let shouldProcess =
-                false;
-
-            await db.runTransaction(
-                async (
-                    transaction,
-                ) => {
-                    const snapshot =
-                        await transaction.get(
-                            leadRef,
-                        );
-
-                    if (
-                        !snapshot.exists
-                    ) {
-                        throw new Error(
-                            "Dry-Run-Lead existiert nicht.",
-                        );
-                    }
-
-                    const data =
-                        snapshot.data() ??
-                        {};
-
-                    if (
-                        data.testMode !==
-                        TEST_MODE
-                    ) {
-                        throw new Error(
-                            "Der Lead ist kein AutoReply-Dry-Run.",
-                        );
-                    }
-
-                    if (
-                        data.testId !==
-                        testId
-                    ) {
-                        throw new Error(
-                            "Die Dry-Run-Test-ID stimmt nicht überein.",
-                        );
-                    }
-
-                    const autoReply =
-                        isRecord(
-                            data.autoReply,
-                        )
-                            ? data.autoReply
-                            : {};
-
-                    /*
-                     * Idempotenz:
-                     * Eine erneut zugestellte
-                     * Task darf den Test nicht
-                     * doppelt ausführen.
-                     */
-                    if (
-                        autoReply.status ===
-                        "dry_run_completed"
-                    ) {
-                        return;
-                    }
-
-                    if (
-                        autoReply.status !==
-                        "scheduled"
-                    ) {
-                        throw new Error(
-                            `Unerwarteter AutoReply-Status: ${String(
-                                autoReply.status,
-                            )}`,
-                        );
-                    }
-
-                    transaction.update(
-                        leadRef,
-                        {
-                            "autoReply.status":
-                                "dispatching",
-
-                            "autoReply.attemptCount":
-                                FieldValue
-                                    .increment(
-                                        1,
-                                    ),
-
-                            "autoReply.emulatorDryRun.stage":
-                                "dispatching",
-
-                            "autoReply.emulatorDryRun.dispatchedAt":
-                                FieldValue
-                                    .serverTimestamp(),
-
-                            updatedAt:
-                                FieldValue
-                                    .serverTimestamp(),
-                        },
-                    );
-
-                    shouldProcess =
-                        true;
-                },
-            );
-
-            if (!shouldProcess) {
-                return;
-            }
-
-            /*
-             * Genau hier würde später
-             * der echte Mailversand
-             * stattfinden.
-             *
-             * Im Dry Run passiert bewusst
-             * NICHTS.
-             */
-
-            await leadRef.update({
-                "autoReply.status":
-                    "dry_run_completed",
-
-                "autoReply.emulatorDryRun.stage":
-                    "dry_run_completed",
-
-                "autoReply.emulatorDryRun.completedAt":
-                    FieldValue
-                        .serverTimestamp(),
-
-                updatedAt:
-                    FieldValue
-                        .serverTimestamp(),
-            });
-
-            logger.info(
-                "AutoReply emulator dry-run completed.",
-                {
-                    leadId,
-                    testId,
-                },
-            );
         },
     );
 
@@ -612,7 +393,10 @@ export const getAutoReplyLeadDryRunStatus =
                 CallableRequest<unknown>,
         ) => {
             requireEmulator();
-            requireAdmin(request);
+
+            requireAdmin(
+                request,
+            );
 
             if (
                 !isRecord(

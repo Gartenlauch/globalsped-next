@@ -1,20 +1,17 @@
 import * as admin from "firebase-admin";
+import type { AutoReplyScheduleSettings } from "./schedule";
+export type AutoReplyRuntimeSettings =
+    AutoReplyScheduleSettings & {
+        sendInternalCopy: boolean;
+        internalCopyEmail: string;
+    };
 
-import type {
-    AutoReplyScheduleSettings,
-} from "./schedule";
-
-const SETTINGS_COLLECTION =
-    "settings";
-
-const AUTO_REPLY_SETTINGS_ID =
-    "autoReply";
-
-const LEAD_MANAGEMENT_SETTINGS_ID =
-    "leadManagement";
+const SETTINGS_COLLECTION = "settings";
+const AUTO_REPLY_SETTINGS_ID = "autoReply";
+const LEAD_MANAGEMENT_SETTINGS_ID = "leadManagement";
 
 const FALLBACK_AUTO_REPLY_SETTINGS:
-    AutoReplyScheduleSettings = {
+    AutoReplyRuntimeSettings = {
     enabled: false,
     delayMinutes: 10,
     timezone: "Europe/Berlin",
@@ -28,6 +25,8 @@ const FALLBACK_AUTO_REPLY_SETTINGS:
     businessStart: "08:00",
     businessEnd: "17:00",
     deferredSendTime: "08:30",
+    sendInternalCopy: true,
+    internalCopyEmail: "as@fair-it.de",
 };
 
 function isRecord(
@@ -53,7 +52,7 @@ function validTime(
 
 export function normalizeAutoReplySettings(
     value: unknown,
-): AutoReplyScheduleSettings {
+): AutoReplyRuntimeSettings {
     if (!isRecord(value)) {
         return {
             ...FALLBACK_AUTO_REPLY_SETTINGS,
@@ -62,6 +61,17 @@ export function normalizeAutoReplySettings(
                     .businessDays,
             ],
         };
+    }
+
+    function validEmail(
+        value: unknown,
+    ): value is string {
+        return (
+            typeof value === "string" &&
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+                value.trim(),
+            )
+        );
     }
 
     const businessDays =
@@ -147,11 +157,27 @@ export function normalizeAutoReplySettings(
                 ? value.deferredSendTime
                 : FALLBACK_AUTO_REPLY_SETTINGS
                     .deferredSendTime,
+        sendInternalCopy:
+            typeof value.sendInternalCopy ===
+                "boolean"
+                ? value.sendInternalCopy
+                : FALLBACK_AUTO_REPLY_SETTINGS
+                    .sendInternalCopy,
+
+        internalCopyEmail:
+            validEmail(
+                value.internalCopyEmail,
+            )
+                ? value.internalCopyEmail
+                    .trim()
+                    .toLowerCase()
+                : FALLBACK_AUTO_REPLY_SETTINGS
+                    .internalCopyEmail,
     };
 }
 
 export async function readCurrentAutoReplySettings():
-    Promise<AutoReplyScheduleSettings> {
+    Promise<AutoReplyRuntimeSettings> {
     const db =
         admin.firestore();
 

@@ -2533,7 +2533,10 @@ export {
 
 // JUST FOR EMULATOR USE
 export {
-  createAutoReplyLeadDryRun,
-  autoReplyLeadDryRunTask,
-  getAutoReplyLeadDryRunStatus,
+    createAutoReplyLeadDryRun,
+    getAutoReplyLeadDryRunStatus,
 } from "./autoreply/emulator-lead-flow";
+
+export {
+    autoReplyDispatchTask,
+} from "./autoreply/dispatch-task";

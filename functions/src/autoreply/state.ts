@@ -1,7 +1,7 @@
 import {
     FieldValue,
     Timestamp,
-  } from "firebase-admin/firestore";
+} from "firebase-admin/firestore";
 
 import {
     getCurrentLeadAssignmentSnapshot,
@@ -11,12 +11,21 @@ import {
 import {
     calculateAutoReplySchedule,
     type AutoReplyScheduleReason,
-    type AutoReplyScheduleSettings,
 } from "./schedule";
 
 import {
     readCurrentAutoReplySettings,
+    type AutoReplyRuntimeSettings,
 } from "./settings";
+
+export type AutoReplySendMode =
+    | "automatic"
+    | "manual";
+
+type FirestoreTimeValue =
+    | Timestamp
+    | FieldValue
+    | null;
 
 export type AutoReplyStatus =
     | "disabled"
@@ -36,6 +45,9 @@ type AutoReplySettingsSnapshot = {
     businessStart: string;
     businessEnd: string;
     deferredSendTime: string;
+
+    sendInternalCopy: boolean;
+    internalCopyEmail: string;
 };
 
 export type LeadAutoReplyState = {
@@ -56,17 +68,54 @@ export type LeadAutoReplyState = {
     AutoReplySettingsSnapshot;
 
     taskName: string | null;
+    taskToken: string | null;
 
-    manualSendRequestedAt: null;
-    manualSendRequestedByUid: null;
+    scheduledAt:
+    FirestoreTimeValue;
 
-    sentAt: null;
+    dispatchStartedAt:
+    FirestoreTimeValue;
 
-    cancelledAt: null;
-    cancelledReason: null;
+    manualSendRequestedAt:
+    FirestoreTimeValue;
+
+    manualSendRequestedByUid:
+    string | null;
+
+    sentAt:
+    FirestoreTimeValue;
+
+    sentMode:
+    AutoReplySendMode | null;
+
+    sentByUid:
+    string | null;
+
+    recipientEmail:
+    string | null;
+
+    internalCopyEmail:
+    string | null;
+
+    templateVersion:
+    string | null;
+
+    providerMessageId:
+    string | null;
+
+    failedAt:
+    FirestoreTimeValue;
+
+    cancelledAt:
+    FirestoreTimeValue;
+
+    cancelledReason:
+    string | null;
 
     attemptCount: number;
-    lastError: string | null;
+
+    lastError:
+    string | null;
 };
 
 export type InitialLeadAutomation = {
@@ -78,8 +127,7 @@ export type InitialLeadAutomation = {
 };
 
 function createSettingsSnapshot(
-    settings:
-        AutoReplyScheduleSettings,
+    settings: AutoReplyRuntimeSettings,
 ): AutoReplySettingsSnapshot {
     return {
         delayMinutes:
@@ -100,22 +148,38 @@ function createSettingsSnapshot(
 
         deferredSendTime:
             settings.deferredSendTime,
+        sendInternalCopy:
+
+            settings.sendInternalCopy,
+
+        internalCopyEmail:
+            settings.internalCopyEmail,
     };
 }
 
 function createBaseState(
     receivedAt: Date,
     settings:
-        AutoReplyScheduleSettings,
+        AutoReplyRuntimeSettings,
 ): Pick<
     LeadAutoReplyState,
     | "receivedAt"
     | "plannedAt"
     | "settingsSnapshot"
     | "taskName"
+    | "taskToken"
+    | "scheduledAt"
+    | "dispatchStartedAt"
     | "manualSendRequestedAt"
     | "manualSendRequestedByUid"
     | "sentAt"
+    | "sentMode"
+    | "sentByUid"
+    | "recipientEmail"
+    | "internalCopyEmail"
+    | "templateVersion"
+    | "providerMessageId"
+    | "failedAt"
     | "cancelledAt"
     | "cancelledReason"
     | "attemptCount"
@@ -132,6 +196,10 @@ function createBaseState(
             ),
 
         taskName: null,
+        taskToken: null,
+
+        scheduledAt: null,
+        dispatchStartedAt: null,
 
         manualSendRequestedAt:
             null,
@@ -140,6 +208,24 @@ function createBaseState(
             null,
 
         sentAt: null,
+        sentMode: null,
+        sentByUid: null,
+
+        recipientEmail:
+            null,
+
+        internalCopyEmail:
+            settings.sendInternalCopy
+                ? settings.internalCopyEmail
+                : null,
+
+        templateVersion:
+            null,
+
+        providerMessageId:
+            null,
+
+        failedAt: null,
 
         cancelledAt: null,
         cancelledReason: null,
@@ -258,9 +344,9 @@ export async function prepareInitialLeadAutomation(
             status: "planned",
 
             scheduledFor: Timestamp
-                    .fromDate(
-                        decision.scheduledFor,
-                    ),
+                .fromDate(
+                    decision.scheduledFor,
+                ),
 
             scheduleReason:
                 decision.reason,
