@@ -8,7 +8,7 @@ import {
     Mail,
     MessageCircle,
     Phone,
-  } from "lucide-react";
+} from "lucide-react";
 import { getContent } from "@/content";
 
 type Props = {
@@ -21,6 +21,31 @@ const valueIcons: Record<string, typeof Globe2> = {
     communication: MessageCircle,
     customs: FileCheck2,
 };
+
+type TeamMemberImageSettings = {
+    imageFormat?: "square" | "portrait";
+    imagePosition?: string;
+};
+
+function getTeamMemberImageSettings(
+    member: object
+): TeamMemberImageSettings {
+    const imageFormat =
+        "imageFormat" in member &&
+            (member.imageFormat === "portrait" || member.imageFormat === "square")
+            ? member.imageFormat
+            : undefined;
+
+    const imagePosition =
+        "imagePosition" in member && typeof member.imagePosition === "string"
+            ? member.imagePosition
+            : undefined;
+
+    return {
+        imageFormat,
+        imagePosition,
+    };
+}
 
 export function AboutUsSection({ locale }: Props) {
     const t = getContent(locale).aboutUs;
@@ -142,51 +167,82 @@ export function AboutUsSection({ locale }: Props) {
                     </div>
 
                     <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                        {t.teamMembers.map((member) => (
-                            <article
-                                key={member.contact.email ?? member.name}
-                                className="group overflow-hidden rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.74)] shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-lime-300/45 hover:shadow-[0_30px_90px_rgba(163,230,53,0.14)]"
-                            >
-                                <div className="relative aspect-square overflow-hidden bg-white/5">
-                                    <Image
-                                        src={member.imgURL}
-                                        alt={`${member.name} – ${member.job} bei GLOBALSPED`}
-                                        fill
-                                        className="object-cover transition duration-700 group-hover:scale-105"
-                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                                    />
-                                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_45%,rgba(0,40,31,0.55)_100%)]" />
-                                </div>
+                        {t.teamMembers.map((member) => {
+                            const { imageFormat, imagePosition } =
+                                getTeamMemberImageSettings(member);
 
-                                <div className="p-5">
-                                    <h4 className="text-lg leading-tight text-white">
-                                        {member.name}
-                                    </h4>
+                            return (
+                                <article
+                                    key={member.contact.email ?? member.name}
+                                    className="group overflow-hidden rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.74)] shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-lime-300/45 hover:shadow-[0_30px_90px_rgba(163,230,53,0.14)]"
+                                >
+                                    <div className="relative aspect-square overflow-hidden bg-[var(--color-global-deep)]">
+                                        {imageFormat === "portrait" && (
+                                            <>
+                                                <Image
+                                                    src={member.imgURL}
+                                                    alt=""
+                                                    aria-hidden="true"
+                                                    fill
+                                                    className="scale-110 object-cover opacity-55 blur-xl"
+                                                    style={{
+                                                        objectPosition: imagePosition ?? "50% 50%",
+                                                    }}
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                                                />
 
-                                    <p className="mt-1 text-sm tracking-wide text-lime-300">
-                                        {member.job}
-                                    </p>
+                                                <div className="absolute inset-0 bg-[rgba(0,40,31,0.20)]" />
+                                            </>
+                                        )}
 
-                                    <div className="mt-5 grid gap-3 text-sm text-white/82">
-                                        <a
-                                            href={`mailto:${member.contact.email}`}
-                                            className="flex items-center gap-2 transition hover:text-lime-300"
-                                        >
-                                            <Mail size={16} className="shrink-0 text-lime-300" />
-                                            {member.contact.email}
-                                        </a>
+                                        <Image
+                                            src={member.imgURL}
+                                            alt={`${member.name} – ${member.job} bei GLOBALSPED`}
+                                            fill
+                                            className={
+                                                imageFormat === "portrait"
+                                                    ? "object-contain transition duration-700 group-hover:scale-[1.025]"
+                                                    : "object-cover transition duration-700 group-hover:scale-105"
+                                            }
+                                            style={{
+                                                objectPosition: imagePosition ?? "50% 50%",
+                                            }}
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                                        />
 
-                                        <a
-                                            href={`tel:${member.contact.phone.replaceAll(" ", "")}`}
-                                            className="flex items-center gap-2 transition hover:text-lime-300"
-                                        >
-                                            <Phone size={16} className="shrink-0 text-lime-300" />
-                                            {member.contact.phone}
-                                        </a>
+                                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_45%,rgba(0,40,31,0.48)_100%)]" />
                                     </div>
-                                </div>
-                            </article>
-                        ))}
+
+                                    <div className="p-5">
+                                        <h4 className="text-lg leading-tight text-white">
+                                            {member.name}
+                                        </h4>
+
+                                        <p className="mt-1 text-sm tracking-wide text-lime-300">
+                                            {member.job}
+                                        </p>
+
+                                        <div className="mt-5 grid gap-3 text-sm text-white/82">
+                                            <a
+                                                href={`mailto:${member.contact.email}`}
+                                                className="flex items-center gap-2 transition hover:text-lime-300"
+                                            >
+                                                <Mail size={16} className="shrink-0 text-lime-300" />
+                                                {member.contact.email}
+                                            </a>
+
+                                            <a
+                                                href={`tel:${member.contact.phone.replaceAll(" ", "")}`}
+                                                className="flex items-center gap-2 transition hover:text-lime-300"
+                                            >
+                                                <Phone size={16} className="shrink-0 text-lime-300" />
+                                                {member.contact.phone}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

@@ -2544,3 +2544,5 @@ export {
 export {sendAutoReplyNow} from "./autoreply/send-now";
 
 export {previewAutoReplyMessage} from "./autoreply/message-preview";
+
+export {sendMicrosoftGraphTestMail} from "./microsoft/graph-test-mail";

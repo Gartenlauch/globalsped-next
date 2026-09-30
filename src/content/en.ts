@@ -2451,24 +2451,26 @@ export const en = {
       {
         imgURL: "/images/team/globalsped-robert.jpg",
         name: "Robert Tiefenthaler",
-        job: "Managing Director",
+        job: "Geschäftsführer",
         contact: {
           phone: "+49 8654 5762 20",
           email: "rt@globalsped.de",
         },
       },
       {
-        imgURL: "/images/team/globalsped-selina.jpg",
+        imgURL: "/images/team/globalsped-spedition-selina.webp",
         name: "Selina Tatzmann",
-        job: "Principal Shareholder",
+        imageFormat: "portrait",
+        job: "Hauptgesellschafterin",
         contact: {
           phone: "+49 8654 5762 27",
           email: "st@globalsped.de",
         },
       },
       {
-        imgURL: "/images/team/globalsped-no-image.gif",
+        imgURL: "/images/team/globalsped-spedition-adisa.webp",
         name: "Adisa Metolli",
+        imageFormat: "portrait",
         job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 51",
@@ -2476,7 +2478,8 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-jahan.jpg",
+        imgURL: "/images/team/globalsped-spedition-jahan.webp",
+        imageFormat: "portrait",
         name: "Jahan Ilgeldyyeva",
         job: "Transport Manager",
         contact: {
@@ -2485,7 +2488,8 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-thomas.jpg",
+        imgURL: "/images/team/globalsped-spedition-thomas.webp",
+        imageFormat: "portrait",
         name: "Thomas Höllmüller",
         job: "Transport Manager",
         contact: {
@@ -2494,7 +2498,8 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-manfred.jpg",
+        imgURL: "/images/team/globalsped-spedition-manfred.webp",
+        imageFormat: "portrait",
         name: "Manfred Steidl",
         job: "Transport Manager",
         contact: {
@@ -2503,17 +2508,19 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-herbert.jpg",
+        imgURL: "/images/team/globalsped-spedition-herbert.webp",
         name: "Herbert Sesko",
-        job: "Authorized Signatory",
+        imageFormat: "portrait",
+        job: "Prokurist",
         contact: {
           phone: "+49 8654 5762 21",
           email: "hs@globalsped.de",
         },
       },
       {
-        imgURL: "/images/team/globalsped-no-image.gif",
+        imgURL: "/images/team/globalsped-spedition-elias.webp",
         name: "Elias Schuhböck",
+        imageFormat: "portrait",
         job: "Transport Manager",
         contact: {
           phone: "+49 8654 5762 25",
@@ -2521,7 +2528,8 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-no-image.gif",
+        imgURL: "/images/team/globalsped-spedition-ida.webp",
+        imageFormat: "portrait",
         name: "Ida Tosun Kaiymova",
         job: "Transport Manager",
         contact: {
@@ -2539,13 +2547,14 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-fini.jpg",
+        imgURL: "/images/team/globalsped-spedition-security.webp",
+        imageFormat: "portrait",
         name: "Fini",
-        job: "Collections",
+        job: "Inkasso",
         contact: {
           phone: "+49 (0)8654 5762 0",
           email: "fini@globalsped.de",
-        },
+        }
       },
     ],
   },

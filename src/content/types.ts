@@ -176,6 +176,8 @@ export type AboutUsPage = {
       imgURL: string;
       name: string;
       job: string;
+      imageFormat?: "square" | "portrait";
+      imagePosition?: string;
       contact: {
         phone: string;
         email: string;
