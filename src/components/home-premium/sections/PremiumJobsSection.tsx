@@ -1,9 +1,10 @@
 import Image from "next/image";
-import type { PremiumHomeContent, PremiumValueItem, } from "@/content/home-premium/types";
+import type { PremiumHomeContent } from "@/content/home-premium/types";
 import { PremiumCta } from "../ui/PremiumCta";
 import { PremiumEyebrow } from "../ui/PremiumEyebrow";
 import { premiumIconMap } from "../icons/premiumIcons";
 import { PremiumSectionHeading } from "../ui/PremiumSectionHeading";
+
 type Props = {
   content: PremiumHomeContent["jobs"];
   locale: string;
@@ -18,8 +19,8 @@ export function PremiumJobsSection({ content, locale }: Props) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_24%,rgba(107,159,18,0.28),transparent_34%),radial-gradient(circle_at_18%_74%,rgba(0,59,47,0.38),transparent_42%),linear-gradient(135deg,rgba(0,40,31,0.52),rgba(0,59,47,0.18)_48%,rgba(0,0,0,0.28))]" />
       <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(247,247,242,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(247,247,242,0.10)_1px,transparent_1px)] [background-size:38px_38px]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div>
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:gap-12 sm:px-8 lg:gap-14">
+        <div className="max-w-3xl">
           <PremiumEyebrow>{content.eyebrow}</PremiumEyebrow>
 
           <PremiumSectionHeading highlight={content.titleHighlight}>
@@ -33,45 +34,48 @@ export function PremiumJobsSection({ content, locale }: Props) {
           <div className="mt-9">
             <PremiumCta cta={content.cta} locale={locale} />
           </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {content.values.map((item: PremiumValueItem) => {
-              const Icon = premiumIconMap[item.icon];
-
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] p-5 shadow-[0_20px_55px_rgba(0,0,0,0.2)] backdrop-blur-xl"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#9bc43a]/25 bg-[#6b9f12]/10 text-[#9bc43a]">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
-
-                  <h3 className="mt-4 text-sm font-semibold text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs leading-5 text-[#f7f7f2]/62">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
         </div>
 
-        <div className="relative min-h-[480px] overflow-hidden rounded-[2rem] border-0 bg-[#00281f] shadow-[0_34px_100px_rgba(0,0,0,0.36)] outline-none ring-0 lg:min-h-[560px]">
+        <figure className="overflow-hidden rounded-3xl border border-white/15 bg-[#a5a3a7] shadow-[0_34px_100px_rgba(0,0,0,0.36)]">
+          <figcaption className="px-6 py-6 sm:px-8 sm:py-8">
+            <h3 className="text-2xl font-semibold uppercase leading-tight tracking-[-0.04em] text-[#00281f] sm:text-3xl">
+              JOBS GLOBALSPED
+            </h3>
+          </figcaption>
           <Image
             src={content.image.src}
             alt={content.image.alt}
-            fill
+            width={1920}
+            height={947}
             quality={80}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover object-[50%_50%]"
+            sizes="(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"
+            className="h-auto w-full"
           />
+        </figure>
 
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,40,31,0.18)_0%,rgba(0,40,31,0.10)_42%,rgba(0,0,0,0.16)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(107,159,18,0.10),transparent_34%)]" />
+        <div className="grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {content.values.map((item) => {
+            const Icon = premiumIconMap[item.icon];
+
+            return (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-[#f7f7f2]/10 bg-[#f7f7f2]/[0.055] p-7 shadow-[0_20px_55px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-8"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#9bc43a]/25 bg-[#6b9f12]/10 text-[#9bc43a]">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+
+                <h3 className="mt-5 text-xl font-semibold leading-tight text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#f7f7f2]/72">
+                  {item.text}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

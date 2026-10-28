@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getContent } from "@/content";
 import { Menu, X } from "lucide-react";
@@ -70,14 +71,23 @@ export function Header({ locale }: Props) {
         : "bg-[linear-gradient(90deg,rgba(0,40,31,0.84)_0%,rgba(0,78,66,0.62)_50%,rgba(0,40,31,0.84)_100%)]"
         }`}
     >
-      <div className="container flex items-center justify-between py-4 pr-16 lg:pr-0">
+      <div className="container flex h-20 items-center justify-between pr-16 lg:h-[88px] lg:pr-0">
         {/* Logo */}
         <Link
           href={`/${locale}`}
           onClick={() => handleNavClick(`/${locale}`)}
-          className="logo-text text-[26px] font-black uppercase tracking-[0.08em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition"
+          className="inline-flex shrink-0 items-center rounded-sm transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300"
         >
-          {t.logoLabel}
+          <Image
+            src="/images/logo/globalsped-logo-horizontal-monochrome-white.png"
+            alt={t.logoLabel}
+            width={4000}
+            height={587}
+            sizes="(min-width: 1280px) 240px, (min-width: 1024px) 200px, (min-width: 640px) 220px, 190px"
+            quality={90}
+            preload
+            className="h-auto w-[190px] sm:w-[220px] lg:w-[200px] xl:w-[240px]"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -128,8 +138,8 @@ export function Header({ locale }: Props) {
       {/* Mobile Menu */}
       <div
         id="mobile-navigation"
-        className={`fixed left-0 right-0 top-[76px] z-[99998] bg-white text-[var(--color-global-dark)] shadow-[0_30px_80px_rgba(0,0,0,0.18)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden overflow-hidden ${isOpen
-          ? "max-h-[calc(100vh-76px)] opacity-100 pointer-events-auto"
+        className={`absolute left-0 right-0 top-full z-[99998] bg-white text-[var(--color-global-dark)] shadow-[0_30px_80px_rgba(0,0,0,0.18)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden overflow-y-auto ${isOpen
+          ? "max-h-[calc(100dvh-80px)] opacity-100 pointer-events-auto"
           : "max-h-0 opacity-0 pointer-events-none"
           }`}
       >

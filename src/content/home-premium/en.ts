@@ -304,8 +304,8 @@ export const premiumHomeEn: PremiumHomeContent = {
       href: "/{locale}/careers",
     },
     image: {
-      src: "/images/home-premium/globalsped-premium-jobs-spedition-logistik-team-620x560.webp",
-      alt: "GLOBALSPED team planning international transport in freight forwarding and logistics",
+      src: "/images/team/globalsped-spedition-transport-team.webp",
+      alt: "Meet the GLOBALSPED team",
     },
     values: [
       {

@@ -28,18 +28,20 @@ export function Footer({ locale }: Props) {
   return (
     <footer className="relative overflow-hidden border-t border-lime-300/20 bg-[#031a15] text-white shadow-[0_-30px_90px_rgba(0,0,0,0.45)]">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.28)_0%,rgba(3,26,21,1)_45%,rgba(1,12,10,1)_100%)]" />
-      <div className="absolute left-0 top-0 flex w-full items-center justify-center">
+      <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 flex w-full items-center justify-center">
         {/* LINKE LINIE */}
         <div className="h-[2px] flex-1 bg-[linear-gradient(90deg,transparent,rgba(163,230,53,0.75))]" />
 
-        {/* LOGO */}
+        {/* SIGNET */}
         <div className="mx-6 flex h-16 w-16 items-center justify-center rounded-full border border-lime-300/30 bg-[rgba(3,26,21,0.95)] shadow-[0_0_35px_rgba(163,230,53,0.18)] backdrop-blur-xl">
           <Image
-            src="/images/logo/globalsped-logo.png"
-            alt="GLOBALSPED Logo"
-            width={32}
-            height={32}
-            className="h-8 w-8 object-contain"
+            src="/images/logo/globalsped-signet-master.webp"
+            alt=""
+            width={160}
+            height={154}
+            sizes="40px"
+            quality={90}
+            className="h-10 w-10 object-contain"
           />
         </div>
 
@@ -52,10 +54,21 @@ export function Footer({ locale }: Props) {
       <div className="container relative z-10 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
           <div>
-            <div className="text-2xl font-black uppercase tracking-tight text-lime-300">
-              {t.shortName}
-            </div>
-            <div className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+            <Link
+              href={`/${locale}`}
+              className="inline-block rounded-sm transition hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300"
+            >
+              <Image
+                src="/images/logo/globalsped-logo-horizontal-compact.webp"
+                alt={t.shortName}
+                width={720}
+                height={92}
+                sizes="(min-width: 640px) 240px, 220px"
+                quality={90}
+                className="h-auto w-[220px] sm:w-[240px]"
+              />
+            </Link>
+            <div className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
               {t.claim}
             </div>
 

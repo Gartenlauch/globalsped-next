@@ -23,26 +23,18 @@ const valueIcons: Record<string, typeof Globe2> = {
 };
 
 type TeamMemberImageSettings = {
-    imageFormat?: "square" | "portrait";
     imagePosition?: string;
 };
 
 function getTeamMemberImageSettings(
     member: object
 ): TeamMemberImageSettings {
-    const imageFormat =
-        "imageFormat" in member &&
-            (member.imageFormat === "portrait" || member.imageFormat === "square")
-            ? member.imageFormat
-            : undefined;
-
     const imagePosition =
         "imagePosition" in member && typeof member.imagePosition === "string"
             ? member.imagePosition
             : undefined;
 
     return {
-        imageFormat,
         imagePosition,
     };
 }
@@ -168,49 +160,38 @@ export function AboutUsSection({ locale }: Props) {
 
                     <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                         {t.teamMembers.map((member) => {
-                            const { imageFormat, imagePosition } =
+                            const { imagePosition } =
                                 getTeamMemberImageSettings(member);
+                            const isPlaceholder =
+                                member.imgURL === "/images/team/globalsped-no-image.gif";
 
                             return (
                                 <article
                                     key={member.contact.email ?? member.name}
                                     className="group overflow-hidden rounded-3xl border border-white/12 bg-[rgba(0,40,31,0.74)] shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-lime-300/45 hover:shadow-[0_30px_90px_rgba(163,230,53,0.14)]"
                                 >
-                                    <div className="relative aspect-square overflow-hidden bg-[var(--color-global-deep)]">
-                                        {imageFormat === "portrait" && (
-                                            <>
-                                                <Image
-                                                    src={member.imgURL}
-                                                    alt=""
-                                                    aria-hidden="true"
-                                                    fill
-                                                    className="scale-110 object-cover opacity-55 blur-xl"
-                                                    style={{
-                                                        objectPosition: imagePosition ?? "50% 50%",
-                                                    }}
-                                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                                                />
-
-                                                <div className="absolute inset-0 bg-[rgba(0,40,31,0.20)]" />
-                                            </>
+                                    <div className={`relative aspect-[2/3] overflow-hidden ${isPlaceholder ? "flex items-center justify-center bg-[#b8b5b6]" : "bg-[var(--color-global-deep)]"}`}>
+                                        {isPlaceholder ? (
+                                            <Image
+                                                src={member.imgURL}
+                                                alt={`${member.name} – ${member.job} bei GLOBALSPED`}
+                                                width={120}
+                                                height={120}
+                                                className="h-[120px] w-[120px] object-contain"
+                                                sizes="120px"
+                                            />
+                                        ) : (
+                                            <Image
+                                                src={member.imgURL}
+                                                alt={`${member.name} – ${member.job} bei GLOBALSPED`}
+                                                fill
+                                                className="object-cover"
+                                                style={{
+                                                    objectPosition: imagePosition ?? "50% 0%",
+                                                }}
+                                                sizes="(min-width: 1280px) 221px, (min-width: 1024px) calc((100vw - 104px) / 3), (min-width: 640px) calc((100vw - 80px) / 2), calc(100vw - 40px)"
+                                            />
                                         )}
-
-                                        <Image
-                                            src={member.imgURL}
-                                            alt={`${member.name} – ${member.job} bei GLOBALSPED`}
-                                            fill
-                                            className={
-                                                imageFormat === "portrait"
-                                                    ? "object-contain transition duration-700 group-hover:scale-[1.025]"
-                                                    : "object-cover transition duration-700 group-hover:scale-105"
-                                            }
-                                            style={{
-                                                objectPosition: imagePosition ?? "50% 50%",
-                                            }}
-                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                                        />
-
-                                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_45%,rgba(0,40,31,0.48)_100%)]" />
                                     </div>
 
                                     <div className="p-5">

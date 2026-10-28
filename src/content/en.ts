@@ -2449,7 +2449,8 @@ export const en = {
 
     teamMembers: [
       {
-        imgURL: "/images/team/globalsped-robert.jpg",
+        imgURL: "/images/team/globalsped-spedition-robert.webp",
+        imageFormat: "portrait",
         name: "Robert Tiefenthaler",
         job: "Geschäftsführer",
         contact: {
@@ -2488,7 +2489,7 @@ export const en = {
         },
       },
       {
-        imgURL: "/images/team/globalsped-spedition-thomas.webp",
+        imgURL: "/images/team/globalsped-spedition-thomas-7831bfbaa2.webp",
         imageFormat: "portrait",
         name: "Thomas Höllmüller",
         job: "Transport Manager",
@@ -2505,16 +2506,6 @@ export const en = {
         contact: {
           phone: "+49 8654 5762 23",
           email: "ms@globalsped.de",
-        },
-      },
-      {
-        imgURL: "/images/team/globalsped-spedition-herbert.webp",
-        name: "Herbert Sesko",
-        imageFormat: "portrait",
-        job: "Prokurist",
-        contact: {
-          phone: "+49 8654 5762 21",
-          email: "hs@globalsped.de",
         },
       },
       {
@@ -2540,6 +2531,7 @@ export const en = {
       {
         imgURL: "/images/team/globalsped-no-image.gif",
         name: "Afrim Sabani",
+        imageFormat: "portrait",
         job: "Manager",
         contact: {
           phone: "+43 662 450 842",
